@@ -1,0 +1,430 @@
+.book-content h1, h2, h3, h4, h5, h6{
+font-family: "Trebuchet MS", "Futura", "Segoe UI", "Dejavu Sans", "Bitstream Vera Sans", 
+				   sans-serif;
+}
+.book-content h1.chapterNumber{
+font-family: "Century Gothic", "Futura", "Arial Narrow", "Dejavu Sans", 
+				   sans-serif;
+}
+.book-content a, code, pre, span.url{
+font-family: "Consolas", "Monaco", "Lucida Console", "Lucida Sans Typewriter", "Liberation Mono", 
+				   monospace; 
+	  word-wrap: break-word;
+	  word-break: break-word;
+}
+.book-content h1{
+font-size: 1.7531em;
+}
+.book-content h2{
+font-size: 1.6180em;
+}
+.book-content h3{
+font-size: 1.4933em;
+}
+.book-content h4{
+font-size: 1.3782em;
+}
+.book-content h5{
+font-size: 1.2720em;
+}
+.book-content h6{
+font-size: 1.1740em;
+}
+.book-content blockquote{
+font-size: 1.0835em;
+}
+.book-content p, pre, ul, ol, code{
+font-size: 1.0000em;
+}
+.book-content h1.chapterNumber{
+font-size: 6em;
+}
+.book-content h1.chapterTitle{
+font-size: 2em;
+}
+.book-content h1.mainHeading{
+font-size: 2em;
+}
+.book-content h1.partNumber{
+font-size: 3.1748em;
+}
+.book-content h1.partTitle{
+font-size: 2.5198em;
+}
+.book-content h1, h2, h3, h4, h5, h6{
+line-height: 1.25;
+	margin: 1em 0em 0.15em 0em;
+}
+.book-content h1.chapterNumber{
+margin: 0.50em 0.00em 0.00em 0.00em;
+}
+.book-content h1.chapterTitle{
+margin: 1.00em 0.00em 1.50em 0.00em;
+}
+.book-content h1.mainHeading{
+margin: 1.00em 0.00em 1.50em 0.00em; text-align: right;
+}
+.book-content h1.partNumber{
+margin: 0.50em 0.00em 0.50em 0.00em; text-align: center;
+}
+.book-content h1.partTitle+*, h1.chapterTitle+*, h1.mainHeading+*{
+margin-top: 1em;
+}
+.book-content h1.partNumber::before, h1.partNumber::after{
+font-size: 1rem;
+	font-weight: normal;
+	letter-spacing: -0.1em;
+	padding: 0em 1em;
+	vertical-align: 0.65em;
+	content: "—————————";
+}
+.book-content h1.partTitle{
+margin: 0.00em 0.00em 0.10em 0.00em; text-align: center;
+}
+.book-content p, pre, ul, ol{
+margin: 1em 0em;
+}
+.book-content p.center, figure, p.packt_figref{
+text-align: center;
+}
+.book-content p.cite{
+text-align: right;
+}
+.book-content p.eop{
+page-break-after: always;
+}
+.book-content blockquote.packt_quote{
+font-style: italic;
+	border-top: 4px;
+	border-bottom: 4px;
+	margin: auto auto auto 40px;
+}
+.book-content blockquote.packt_quote::before, blockquote.packt_quote::after{
+display: block;
+	height: 30px;
+	content: "";
+	background-repeat: no-repeat;
+	background-size: auto 30px;
+}
+.book-content blockquote.packt_quote::before{
+background-image: url("../Images/blockquote-top.png");
+}
+.book-content blockquote.packt_quote::after{
+background-image: url("../Images/blockquote-bottom.png");
+}
+.book-content blockquote>*{
+margin-left: 50px; margin-right: 20px;
+}
+.book-content blockquote p:first-child{
+margin-top: 0px;
+}
+.book-content blockquote p:last-child{
+margin-bottom: 0px;
+}
+.book-content div.note, div.packt_tip{
+margin: 1em 0em;
+	padding: 0px 10px 0px 110px;
+	background-repeat: no-repeat;
+ 	background-size: 90px auto;
+	background-position: 0px center;
+	border: 3px solid #ededed;
+}
+.book-content div.note{
+background-image: url("../Images/info.png");
+}
+.book-content div.packt_tip{
+background-image: url("../Images/tip.png");
+}
+.book-content p.normal, p.center, ul, ol, figure{
+margin: 0.5em 0em;
+}
+.book-content figure{
+margin-top: 1em;
+}
+.book-content p.packt_figref{
+font-size: 0.85em;
+	font-style: italic;
+	margin: 1em 0em;
+}
+.book-content figure>img{
+max-width: 85%;
+}
+.book-content h1+p.normal, h1+p.center, h1+ul, h1+ol,
+h2+p.normal, h2+p.center, h2+ul, h2+ol,
+h3+p.normal, h3+p.center, h3+ul, h3+ol,
+h4+p.normal, h4+p.center, h4+ul, h4+ol,
+h5+p.normal, h5+p.center, h5+ul, h5+ol,
+h6+p.normal, h6+p.center, h6+ul, h6+ol{
+margin-top: 0.15em;
+}
+.book-content li, li>p, li>figure, li>div, li>table{
+margin: 0.1em 0em;
+}
+.book-content li>ul, ul>li:first-child, li>ol ol>li:first-child{
+margin: 0em 0em;
+}
+.book-content pre.programlisting, pre.programlisting.code, pre.programlisting.con{
+padding: 5px 15px;
+	line-height: 1.35;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+.book-content pre.programlisting.gen{
+background: none;
+}
+.book-content pre.programlisting.code{
+background-color: #fafafa;
+	border-left: 6px solid #e1e1e1;
+}
+.book-content pre.programlisting.con{
+background-color: #282a36;
+	border-left: 6px solid #44475A;
+}
+.book-content li pre:first-of-type{
+margin-top: 0.75em;
+}
+.book-content pre.programlisting.code span.code-highlight{
+background: #e1e1e1;
+}
+.book-content pre.programlisting.con span.code-highlight{
+background: #44475a;
+}
+.book-content p.snippet{
+font-family: "Consolas", "Monaco", "Lucida Console", "Lucida Sans Typewriter", "Liberation Mono", 
+				 monospace;
+	margin: 0em 0em 0em 2em;
+	font-size: 0.9em;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+.book-content :not(.snippet) + p.snippet{
+margin-top: 0.5em;
+}
+.book-content li p.snippet:first-of-type, li p.snippet-code:first-of-type, li p.snippet-con:first-of-type{
+margin-top: 0.5em;
+}
+.book-content li p.snippet:last-of-type, li p.snippet-code:last-of-type, li p.snippet-con:last-of-type{
+margin-bottom: 0.5em;
+}
+.book-content p.snippet-code{
+background-color: #fafafa;
+}
+.book-content p.snippet-con{
+background-color: #282a36;
+}
+.book-content code.inlineCode, code.codeHighlighted{
+background-color: rgba(210, 210, 210, 0.6);
+	border-radius: 2px;
+	padding: 1px 2px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+.book-content strong, strong.keyWord, strong.screenText,
+span.FM-authorNameInBio,
+strong.bold-italic,
+code.codeHighlighted,
+sub.bold, sub.bold-italic,
+sup.bold, sup.bold-italic,
+	span.keyWord, span.screenText,
+	strong.FM-authorNameInBio,
+	em.bold-italic, span.bold-italic,
+	sub.sub-bold, sub.sub-bold-italic,
+	sup.sup-bold, sup.sup-bold-italic{
+font-weight: bold;
+}
+.book-content em, em.italic, em.chapterRef, em.keystroke,
+strong.bold-italic,
+sub.bold-italic, sub.italic,
+sup.bold-italic, sup.italic,
+	span.italic, span.italic, span.chapterRef, span.keystroke,
+	em.bold-italic, span.bold-italic,
+	sub.sub-italic, sub.sub-bold-italic, 
+	sup.sup-italic, sup.sup-bold-italic{
+font-style: italic;
+}
+.book-content sub, sub.subscript, sub.bold, sub.italic, sub.bold-italic, 
+	span.subscript,
+	sub.sub-bold, sub.sub-italic, sub.sub-bold-italic{
+vertical-align: sub;
+}
+.book-content sup, sup.superscript, sup.bold, sup.italic, sup.bold-italic,
+	span.superscript,
+	sup.sup-bold, sup.sup-italic, sup.sup-bold-italic{
+vertical-align: super;
+}
+.book-content table, table.table-container{
+border: 1px solid black; 
+	border-collapse: collapse; 
+	margin: 0.5em auto;
+}
+.book-content table, table.table-container{
+margin-top: 1em;
+}
+.book-content table td, table td.table-cell, table.table-container td.table-cell,
+table th, table th.table-head, table.table-container th.table-head{
+border: 1px solid black;
+}
+.book-content th.table-head{
+background-color: #ededed;
+}
+.book-content th, th.table-head, td, td.table-cell{
+vertical-align: top;
+	padding: 5px 10px;
+}
+.book-content th *:first-child, td *:first-child{
+margin-top: 0px;
+}
+.book-content th *:last-child,  td *:last-child{
+margin-bottom: 0px;
+}
+.book-content p.FM-bookTitle, p.FM-bookEdition, p.FM-subtitle, 
+p.FM-authorName, p.FM-packtLogo, p.FM-packtLogo-footer,
+p.FM-copyright-bookTitle, p.FM-copyright-bookEdition{
+font-family: "Trebuchet MS", "Futura", "Segoe UI", "Dejavu Sans", sans-serif;
+}
+.book-content p.FM-bookTitle{
+font-size: 2em;
+}
+.book-content p.FM-bookEdition{
+font-size: 1.6818em;
+}
+.book-content p.FM-subtitle{
+font-size: 1.4142em;
+}
+.book-content p.FM-authorName{
+font-size: 1.1892em;
+}
+.book-content p.FM-bookTitle{
+font-weight: bold;
+	line-height: 1.25;
+	margin: 60pt 0pt 0pt 0pt;
+}
+.book-content p.FM-bookEdition{
+line-height: 1.25;
+	margin: 20pt 0pt 0pt 0pt;
+}
+.book-content p.FM-subtitle{
+line-height: 1.25;
+	font-weight: bold;
+	margin: 60pt 0em;
+}
+.book-content p.FM-authorName{
+line-height: 1.25;
+	margin: 16pt 0pt;
+}
+.book-content p.FM-packtLogo{
+margin: 60pt 0pt 0pt 0pt;
+}
+.book-content p.FM-packtLogo img{
+width: 120pt; height: auto;
+}
+.book-content p.FM-packtLogo-footer{
+margin-top: 0em;
+}
+.book-content p.FM-copyright-bookTitle{
+font-size: 1.4142em; font-weight: bold;
+}
+.book-content p.FM-copyright-bookEdition{
+font-size: 1.1892em;
+}
+.book-content p.FM-copyright-text{
+font-size: 1em;
+}
+.book-content p.FM-copyright-contributorsList{
+font-size: 1em; margin: 0.25em 0em;
+}
+.book-content p.FM-acknowledgement{
+margin-left: 20pt; margin-right: 20pt; font-style: italic;
+}
+.book-content p.BM-bookCover{
+margin-top: 50px;
+}
+.book-content p.BM-bookCover img{
+width: 200px;
+}
+.book-content p.BM-packtLogo img{
+width: 250px;
+}
+.book-content h1.index-title, 
+	p.Index-Title{
+font-family: "Trebuchet MS", "Futura", "Segoe UI", "Dejavu Sans", "Bitstream Vera Sans", 
+		   sans-serif;
+}
+.book-content p.index-section-head, p.index-level-1, p.index-level-2{
+font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+	margin: 0.2em;
+}
+.book-content h1.index-title, 
+	p.Index-Title{
+font-size: 2em;
+	font-weight: bold;
+	text-align: right;
+}
+.book-content p.index-section-head{
+font-size: 1.4933em;
+	font-weight: bold;
+	margin-top: 1em;
+}
+.book-content p.index-level-1{
+font-weight: bold;
+}
+.book-content p.index-level-2{
+margin-left: 40px;
+}
+.book-content span.FM-authorNameInBio,
+	strong.FM-authorNameInBio{
+font-weight: bold;
+}
+.book-content @media amzn-kf8,
+amzn-mobi{
+font-family: "Bookerly", "Palatino Linotype", "Palatino", "Century Schoolbook", 
+				   "Baskerville", "Nimbus Roman No9 L", "Times", "Times New Roman", 
+				   serif;
+}
+.book-content pre.programlisting, pre.programlisting.code, pre.programlisting.con{
+margin: 1em 0em;
+		line-height: 1.35;
+}
+.book-content pre.programlisting.con{
+background: none;
+		border-left: none;
+}
+.book-content code, code.inlineCode, code.codeHighlighted, code.hljs, code.hls-code, code.hljs-con, code.hljs-gen{
+font-size: 0.9em;
+}
+.book-content @media amzn-kf8
+	and (device-height: 1024px) 
+	and (device-width:  758px),
+amzn-kf8
+	and (device-height:758px) 
+	and (device-width:1024px),
+amzn-kf8 
+	and (device-height: 800px) 
+	and (device-width: 600px), 
+amzn-kf8 
+	and (device-height: 600px) 
+	and (device-width: 800px),
+amzn-kf8 
+	and (device-height: 1448px) 
+	and (device-width: 1072px),
+amzn-kf8 
+	and (device-height: 1072px) 
+	and (device-width: 1448px){
+font-family: "Bookerly", "Palatino Linotype", "Palatino", "Century Schoolbook", 
+					   "Baskerville", "Nimbus Roman No9 L", "Times", "Times New Roman", 
+					   serif;
+}
+.book-content pre.programlisting, pre.programlisting.code{
+background: none;
+}

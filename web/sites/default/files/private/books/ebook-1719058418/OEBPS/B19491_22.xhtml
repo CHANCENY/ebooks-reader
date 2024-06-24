@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_22</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_22">
+		<div id="_idContainer147">
+			<h1 id="_idParaDest-354" class="chapter-number"><a id="_idTextAnchor671"></a>22</h1>
+			<h1 id="_idParaDest-355"><a id="_idTextAnchor672"></a>Multisite Management</h1>
+			<p><a id="_idTextAnchor673"></a>Drupal allows you to manage many sites with the same code through its multisite feature. This can be useful in many settings where it’s desirable to have parity across a large number of Drupal applications. Leveraging one codebase allows for a level of scale where you can manage a lot of sites uniformly way. However, this comes with some benefits and drawbacks that adopters should be mindful of before <span class="No-Break">they implement</span><span class="No-Break">.</span></p>
+			<p>In this chapter we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>The <span class="No-Break">multisite feature</span></li>
+				<li><span class="No-Break">Benefits</span></li>
+				<li><span class="No-Break">Drawbacks</span></li>
+				<li>Automating deployments across <span class="No-Break">many sites</span></li>
+			</ul>
+			<h1 id="_idParaDest-356"><a id="_idTextAnchor674"></a>The multisite feature</h1>
+			<p>Every Drupal codebase<a id="_idIndexMarker749"></a> has a site’s directory. Single site instances leverage a <strong class="source-inline">sites/default</strong> directory to store the Drupal application settings, which includes its corresponding database. Another standard convention is to place custom and contributed modules within the <strong class="source-inline">sites/all</strong> directory. The intention for this convention is to potentially share code. The “default” site still has access to the code found <span class="No-Break">in </span><span class="No-Break"><strong class="source-inline">sites/all</strong></span><span class="No-Break">.</span></p>
+			<p><strong class="source-inline">Default</strong> does not have to be the only site if used at all. Suppose a university wants to offer each department its website but wants to maintain all websites through centralized IT. One Drupal codebase could be leveraged that has a specific site directory for every department in the university. The same modules and features can then be installed on each site given they&apos;re all running the <span class="No-Break">same code.</span></p>
+			<p>Each Drupal application has a <strong class="source-inline">sites.php </strong>file that helps map a domain to its corresponding site directory. This is not fully required. Site directories can also be a full domain name, but this is less ideal when working with environments.  An example of a <strong class="source-inline">sites.php</strong> file is <span class="No-Break">shown here:</span></p>
+			<pre class="source-code">
+$sites[&apos;compsci.university.com&apos;] = &apos;compsci&apos;;
+$sites[&apos;physics.university.com&apos;] = &apos;physics&apos;;
+$sites[&apos;literature.university.com&apos;] = &apos;literature&apos;;</pre>			<p>The example helps Drupal process requests from specific domains to the corresponding compsci, physics, and literature <span class="No-Break">site directories.</span></p>
+			<p>Also, note that leveraging multisite requires work on servers. If you&apos;re leveraging Apache, each domain would need to be its virtual host that points to the same Drupal docroot where the code is installed. The code does not need to be copied for each docroot since the Drupal application can derive the correct size from the <span class="No-Break"><strong class="source-inline">sites.php</strong></span><span class="No-Break"> file.</span></p>
+			<p>Multisite is a <a id="_idIndexMarker750"></a>feature that helps the same Drupal codebase run multiple websites. This can easily be configured and often requires additional databases and filesystems <span class="No-Break">per sit<a id="_idTextAnchor675"></a>e.</span></p>
+			<h1 id="_idParaDest-357"><a id="_idTextAnchor676"></a>Benefits</h1>
+			<p>Drupal developers get<a id="_idIndexMarker751"></a> major benefits and significant drawbacks with the <span class="No-Break">multisite feature.</span></p>
+			<p>The main benefit is consistent governance to help manage sites at scale. Imagine having to manage hundreds or even thousands of similar Drupal applications. Performing code updates site by site would be <span class="No-Break">extremely laborious.</span></p>
+			<p>Another benefit is growth. New sites can be added at any point and they can build off of the existing systems and code implemented. Practices established for leveraging multisite can readily be extended to <span class="No-Break">more site<a id="_idTextAnchor677"></a>s.</span></p>
+			<h1 id="_idParaDest-358"><a id="_idTextAnchor678"></a>Drawbacks</h1>
+			<p>The main <a id="_idIndexMarker752"></a>drawback is failure at scale. Code updates can be problematic, especially given Drupal’s value proposition is its extensibility. Updates that introduce regressions are not caught on just one or two sites, they&apos;re deployed to all of them. And, once the code is updated, the Drupal application needs to be updated. This must happen immediately. It is impossible to manage failures in just one site; each site needs to be remediated. And, it’s common that a code-level failure applies to one if not <span class="No-Break">all, sites.</span></p>
+			<p>To do any level of testing before deploying to a large number of sites, it is important to use environments and perform rigorous testing against multiple sites. Check logs for anomalies and run automated tests. All of these steps should be done before a production deployment to <span class="No-Break">mitigate risk.</span></p>
+			<p>A similar <a id="_idIndexMarker753"></a>approach is leveraging a shared codebase with orchestration but without multisite. Developers often use Git repositories to manage Drupal codebases. The same Git repositories can be cloned for any number of sites, even a large number. Some orchestration can exist to perform updates, but developers have the discretion to create orchestration capable of updating sites in batches through <span class="No-Break">progressive updat<a id="_idTextAnchor679"></a>es.</span></p>
+			<h1 id="_idParaDest-359"><a id="_idTextAnchor680"></a>Automating deployments across many sites</h1>
+			<p>When leveraging <a id="_idIndexMarker754"></a>multisite, it is important to consider automation. Updating every site in a large-scale Drupal multisite implementation would be difficult, especially given the frequency with which <span class="No-Break">updates happen.</span></p>
+			<p>Drush provides helpful commands to <span class="No-Break">manage this.</span></p>
+			<pre class="console">
+$ drush site:alias &gt; list-of-sites.txt</pre>			<p>The preceding command prints a list of site aliases for a Drupal <span class="No-Break">application (</span><a href="https://www.drush.org/12.x/commands/site_alias/"><span class="No-Break">https://www.drush.org/12.x/commands/site_alias/</span></a><span class="No-Break">).</span></p>
+			<pre class="console">
+$ while read s; do \
+drush sql-dump &gt; backup-$s.sql \
+drush &quot;@$s&quot; deploy \
+done &lt;list-of-sites.txt</pre>			<p>This small script takes the results of each alias from the previous command and performs a deployment. While it is a simple example, a script could then invoke rollback logic <span class="No-Break">upon error.</span></p>
+			<pre class="console">
+$ if grep -Fxq &quot;error&quot; list-of-sites.txt \
+then \
+while read s; do \
+drush &quot;@$s&quot; sql-import -y &lt; backup-$s.sql \
+done &lt;list-of-sites.txt \
+fi</pre>			<p>It is<a id="_idIndexMarker755"></a> highly recommended that you stage down multisites into non-production environments to test a <span class="No-Break">production deplo<a id="_idTextAnchor681"></a>yment.</span></p>
+			<h1 id="_idParaDest-360"><a id="_idTextAnchor682"></a>Summary</h1>
+			<p>Drupal multisite can be an option if you wish to run a large number of similar sites with the same codebase. The benefits of consistency and centralized management of multisite can be appealing over maintaining a large number of single Drupal applications. However, code deployments and testing can become complicated, especially if regressions <span class="No-Break">are introduced</span><span class="No-Break">.</span></p>
+			<p>That concludes this book. Drupal is a powerful tool that covers different personas, such as a site builder, developer, site administrator, and even user. It has many features that can be enabled and configured based on the needs of an application. It also has an underlying framework that can be used to extend for custom modules and themes. While the book would not effectively be able to cover every topic and every technology in depth, hopefully, the book offered a broad overview that <span class="No-Break">proved useful.</span></p>
+			<p>We express our sincere gratitude for accompanying us to the end of this book. Again, thank you and wishing <span class="No-Break">you success!</span></p>
+		</div>
+	</body>
+</html>

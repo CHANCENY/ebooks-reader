@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_13</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_13">
+		<div id="_idContainer092">
+			<h1 id="_idParaDest-209" class="chapter-number"><a id="_idTextAnchor388"></a>13</h1>
+			<h1 id="_idParaDest-210"><a id="_idTextAnchor389"></a>Contact Forms</h1>
+			<p><a id="_idTextAnchor390"></a>Modern websites have the ability to engage users. One of the ways Drupal engages site users is through contact forms, a feature that allows for users to engage through a website generally or personally through user profiles. This chapter covers the basic concepts of creating and configuring contact forms in a Drupal application, including access control and form submissions. Finally, the chapter covers a few popular ways to extend out-of-the-box <span class="No-Break">contact forms.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>Contact forms <span class="No-Break">in Drupal</span></li>
+				<li>Configuring <span class="No-Break">contact forms</span></li>
+				<li>Extending <span class="No-Break">contact forms</span></li>
+			</ul>
+			<h1 id="_idParaDest-211"><a id="_idTextAnchor391"></a>Contact forms in Drupal</h1>
+			<p>Have <a id="_idIndexMarker432"></a>you ever gone to a website that has a “Contact us” page where a visitor can fill out a form? That is contact forms in Drupal. They give visitors to a site a means of communicating with those who run it. This could be someone who wants to inquire about hosting a party at a restaurant or leveraging services to remodel a house. It is very common for a website to offer more than just a phone number, especially given the ability to <span class="No-Break">communicate digitally.</span><strong class="bold"><a id="_idTextAnchor392"></a></strong></p>
+			<h2 id="_idParaDest-212"><a id="_idTextAnchor393"></a>Basic information</h2>
+			<p>The contact forms feature comes out <a id="_idIndexMarker433"></a>of the box with Drupal in the <strong class="bold">Contact</strong> module. Forms are commonly exposed to end users that allow for engagement through the <span class="No-Break">Drupal application.</span></p>
+			<p>The <strong class="bold">Contact</strong> module <a id="_idIndexMarker434"></a>represents one of the more lightweight systems in Drupal. It is composed of an entity type, and contact forms, with bundles for each form. Form submissions represent instances of the entity. Given that it leverages entities, contact forms are fieldable, much like other structured content in Drupal. Contact forms can leverage the underlying entity <strong class="bold">create, read, update, and delete</strong> (<strong class="bold">CRUD</strong>) operations<a id="_idIndexMarker435"></a> as part of its framework. This has allowed for several projects that extend the default functionality<a id="_idIndexMarker436"></a> for the <span class="No-Break">entity type.</span></p>
+			<p>The module offers two types of forms out of <span class="No-Break">the box:</span></p>
+			<ul>
+				<li><strong class="bold">Site-wide forms</strong>: These provide <a id="_idIndexMarker437"></a>more general-purpose forms meant for <a id="_idIndexMarker438"></a><span class="No-Break">general engagement</span></li>
+				<li><strong class="bold">Personal forms</strong>: These are <a id="_idIndexMarker439"></a>associated with user profiles in Drupal and are <a id="_idIndexMarker440"></a>intended for engaging with a <span class="No-Break">specific person</span></li>
+			</ul>
+			<p>Both offer similar functionality in terms of the underlying functionality but are intended to address two different engagement <span class="No-Break">us<a id="_idTextAnchor394"></a>e cases.</span></p>
+			<h2 id="_idParaDest-213"><a id="_idTextAnchor395"></a>Form management</h2>
+			<p>Site builders are also able to <a id="_idIndexMarker441"></a>build their forms. This interface is provided through Drupal’s administrative backend <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/structure/contact</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer088" class="IMG---Figure">
+					<img src="image/B19491_13_1.jpg" alt="Figure 13.1 – The primary contact form management screen" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 13.1 – The primary contact form management screen</p>
+			<p><span class="No-Break"><em class="italic">Figure 13</em></span><em class="italic">.1</em> demonstrates the various operations for a <span class="No-Break">contact form.</span></p>
+			<p>The <strong class="bold">Edit</strong> operation controls the metadata of the form and has the following <span class="No-Break">useful features:</span></p>
+			<ul>
+				<li><strong class="bold">Recipients</strong>: This controls which email addresses receive an email after a user submits <span class="No-Break">the forms.</span></li>
+				<li><strong class="bold">Message</strong>: After submitting the form, you might choose to give the user a message, such as <strong class="source-inline">Thank you for </strong><span class="No-Break"><strong class="source-inline">contacting us</strong></span><span class="No-Break">.</span></li>
+				<li><strong class="bold">Redirect path</strong>: This controls where to send a user after a form has been submitted, which can be useful if you have created a node with content that provides another means of reaching the <span class="No-Break">site administrator.</span></li>
+				<li><strong class="bold">Auto-reply</strong>: A default<a id="_idIndexMarker442"></a> auto-reply email can be sent to the user who submitted the form. It is common to acknowledge the recipient of the message or tell them when they can expect <span class="No-Break">a reply.</span></li>
+			</ul>
+			<p>The <strong class="bold">Manage fields</strong> operation manages what fields are on the form, which provides a fieldable functionality that is similar to editing fields for a content type. The entity ships with default fields that cannot be altered. Those fields include the sender’s name, the sender’s email, the subject, the message, the option to preview, and the ability to send a copy. This is seen in <span class="No-Break"><em class="italic">Figure 13</em></span><span class="No-Break"><em class="italic">.2</em></span><span class="No-Break">.</span></p>
+			<p>The <strong class="bold">Manage form display</strong> page configures how the form is shown <span class="No-Break">to users:</span></p>
+			<div>
+				<div id="_idContainer089" class="IMG---Figure">
+					<img src="image/B19491_13_2.jpg" alt="Figure 13.2 – Controlling the display of the form" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 13.2 – Controlling the display of the form</p>
+			<p><span class="No-Break"><em class="italic">Figure 13</em></span><em class="italic">.2</em> shows how<a id="_idIndexMarker443"></a> to enable or disable specific fields in the form. It also controls the order of the display, the various widgets to render form fields, and the specific settings for <span class="No-Break">each field.</span></p>
+			<p>The final operation, <strong class="bold">Manage display</strong>, controls the form submission display. This renders the <strong class="bold">Message</strong> field from the form editing interface after a user submits <a id="_idTextAnchor396"></a><span class="No-Break">the form.</span></p>
+			<h2 id="_idParaDest-214"><a id="_idTextAnchor397"></a>Form submissions</h2>
+			<p>Form submissions primarily send <a id="_idIndexMarker444"></a>emails through the <strong class="bold">Desired recipients</strong> field defined when editing the form. Out of the box, contact forms do not persistently store the submissions to the form like <span class="No-Break">most entities.</span></p>
+			<p>Logging is provided by Drupal’s watchdog, which captures form submissions <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/reports/dblog</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer090" class="IMG---Figure">
+					<img src="image/B19491_13_3.jpg" alt="Figure 13.3 – Controlling the display of the form" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 13.3 – Controlling the display of the form</p>
+			<p><span class="No-Break"><em class="italic">Figure 13</em></span><em class="italic">.3</em> shows how filtering for the <strong class="source-inline">contact</strong> type shows form submissions through Drupal’s <span class="No-Break">logging system.</span></p>
+			<p>Contact forms <a id="_idIndexMarker445"></a>provide site builders a means for visitors to engage with the Drupal site and with Drupal users. Forms are fieldable to collect as much information as needed for the specific requirements. Submissions are emailed to recipients and logged <a id="_idTextAnchor398"></a><span class="No-Break">in Drupal.</span></p>
+			<h1 id="_idParaDest-215"><a id="_idTextAnchor399"></a>Configuring contact forms</h1>
+			<p>Most of the<a id="_idIndexMarker446"></a> configuration for contact forms happens through the aforementioned form configuration operations due to their association with structured content in Drupal. There are a few more <span class="No-Break">configuration<a id="_idTextAnchor400"></a>s possible.</span></p>
+			<h2 id="_idParaDest-216"><a id="_idTextAnchor401"></a>User profile configuration</h2>
+			<p>It should not be assumed that a <a id="_idIndexMarker447"></a>Drupal application wants to have engagement with users. While this feature is provided out of the box, it can be turned off by default globally through Drupal’s account settings configuration at <strong class="source-inline">admin/config/people/accounts</strong>. Each logged-in user can enable or disable a form at their discretion by editing their user profile and changing the <strong class="bold">Personal Contact </strong><span class="No-Break"><strong class="bold">F<a id="_idTextAnchor402"></a>orm</strong></span><span class="No-Break"> setting.</span></p>
+			<h2 id="_idParaDest-217"><a id="_idTextAnchor403"></a>Permissions</h2>
+			<p>Before launching the Drupal application, double-check the contact <span class="No-Break">form permissions:</span></p>
+			<div>
+				<div id="_idContainer091" class="IMG---Figure">
+					<img src="image/B19491_13_4.jpg" alt="Figure 13.4 – Permissions for contact forms" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 13.4 – Permissions for contact forms</p>
+			<p><span class="No-Break"><em class="italic">Figure 13</em></span><em class="italic">.4</em> shows how to map roles to control both who can use or access the forms themselves and who has permission to <span class="No-Break">administer forms.</span></p>
+			<p>While most configuration <a id="_idIndexMarker448"></a>happens through the form editing interfaces, additional configuration exists for both user profiles <span class="No-Break">and <a id="_idTextAnchor404"></a>permissions.</span></p>
+			<h1 id="_idParaDest-218"><a id="_idTextAnchor405"></a>Extending contact forms</h1>
+			<p>Like most features in Drupal, contact <a id="_idIndexMarker449"></a>forms can be extended to address a few common use cases not found ou<a id="_idTextAnchor406"></a>t of <span class="No-Break">the box.</span></p>
+			<h2 id="_idParaDest-219"><a id="_idTextAnchor407"></a>Viewing and managing form submissions</h2>
+			<p>Unlike other <a id="_idIndexMarker450"></a>entity types in Drupal, there is no management interface for form submissions out of the box. The Contact Storage project (<strong class="source-inline">drupal.org/project/contact_storage</strong>) provides persistent storage and an administrative interface that allows you to view and manage form submissions. This is a useful feature that helps expose form submissions in Drupal rather than relying on <span class="No-Break">email n<a id="_idTextAnchor408"></a>otifications.</span></p>
+			<h2 id="_idParaDest-220"><a id="_idTextAnchor409"></a>Beyond just a page</h2>
+			<p>By default, the experience of using a contact form is like building a page. However, the Contact Block project<a id="_idIndexMarker451"></a> allows for contact forms to be exposed as blocks. Managing blocks is covered in greater detail in <a href="B19491_15.xhtml#_idTextAnchor431"><span class="No-Break"><em class="italic">Chapter 15</em></span></a>. This allows for a contact form to leverage block visibility settings to be displayed through various contextual options across pages and in specific regions of th<a id="_idTextAnchor410"></a>e <span class="No-Break">Drupal theme.</span></p>
+			<h2 id="_idParaDest-221"><a id="_idTextAnchor411"></a>More robust email notifications</h2>
+			<p>The email <a id="_idIndexMarker452"></a>notifications that are sent from the Drupal application are basically plain text, and they do not allow for customization. The Contact Emails project (<strong class="source-inline">drupal.org/project/contact_emails</strong>) provides a more robust WYSIWYG interface that can format email notifications. It also can send more than one email notification and message per form for <span class="No-Break">var<a id="_idTextAnchor412"></a>ious audiences.</span></p>
+			<h2 id="_idParaDest-222"><a id="_idTextAnchor413"></a>Spam prevention</h2>
+			<p>It is common for forms to be<a id="_idIndexMarker453"></a> open for any visitor to use. Unfortunately, this can lead to spam form submissions if not managed. Spam management can happen in Drupal through the CAPTCHA project (<strong class="source-inline">drupal.org/project/captcha</strong>) or the Honeypot project (<strong class="source-inline">drupal.org/project/honeypot</strong>). Both have various configuration options available and can work to prevent spam on <span class="No-Break">contact forms.</span></p>
+			<p>Several popular modules extend contact forms for common use cases such as form submission management, spam prevention, greater customization of form submission messages, and placing f<a id="_idTextAnchor414"></a>orms <span class="No-Break">with blocks.</span></p>
+			<h2 id="_idParaDest-223"><a id="_idTextAnchor415"></a>More advanced forms</h2>
+			<p>The Webform module (<a href="https://www.drupal.org/project/webform">https://www.drupal.org/project/webform</a>) is a <a id="_idIndexMarker454"></a>robust and extensibl<a id="_idIndexMarker455"></a>e form-building capability offered through Drupal’s contributed projects. This project, along with many of the supporting contributed projects, provides site builders with a tool that creates forms, manages form submissions, and has corresponding capabilities such as email notifications and spam prevention. Multi-step form wizards, modals, and pre-populated values are also included features. Forms <a id="_idIndexMarker456"></a>are built much like configuring fields with structured content. The community has widely adopted this module and has<a id="_idIndexMarker457"></a> built an ecosystem of projects that extend it. Such <a id="_idIndexMarker458"></a>examples include Webform Validation (<a href="https://www.drupal.org/project/webform_validation">https://www.drupal.org/project/webform_validation</a>) for advanced form validation logic, Webform Views (<a href="https://www.drupal.org/project/webform_views">https://www.drupal.org/project/webform_views</a>) for form submission integration with Views, and Webform REST (<a href="https://www.drupal.org/project/webform_rest">https://www.drupal.org/project/webform_rest</a>), which <a id="_idIndexMarker459"></a>exposes REST APIs on t<a id="_idTextAnchor416"></a>op of <span class="No-Break">Webform features.</span></p>
+			<h1 id="_idParaDest-224"><a id="_idTextAnchor417"></a>Summary</h1>
+			<p>This chapter covered Drupal’s contact forms feature, which is useful for both site-specific and user-specific engagement. Contact forms have various out-of-the-box features, such as response messaging, auto-replies, and more. They are also fieldable to allow you to collect responses with specific information. Extending forms to prevent spam, have persistent form submissions, or have greater control over response messages are all possible through <span class="No-Break">contributed projects.</span></p>
+			<p>The next chapter pivots into the experience of managing content and media within Drupal. All site builders must understand Drupal through the experience of content authors, and the next chapter introduces the basics built from Drupal’s native <span class="No-Break">structured content.</span></p>
+		</div>
+	</body>
+</html>

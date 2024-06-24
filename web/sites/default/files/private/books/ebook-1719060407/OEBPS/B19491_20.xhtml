@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_20</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_20">
+		<div id="_idContainer145">
+			<h1 id="_idParaDest-331" class="chapter-number"><a id="_idTextAnchor628"></a>20</h1>
+			<h1 id="_idParaDest-332"><a id="_idTextAnchor629"></a>Delivering Drupal <br />Content through APIs</h1>
+			<p><a id="_idTextAnchor630"></a>Drupal’s structured content capabilities can be used beyond just rendering content in Drupal. Modern JavaScript frameworks, such as ReactJS and Vue.js, and more, often rely on third-party web services. Drupal is a natural fit for this use case and has features out of the box. This chapter extends what was already covered for structured content by configuring web service APIs through Drupal’s JSON:API and REST capabilities. This helps configure web service endpoints that follow standard conventions and manage access to those endpoints. The chapter finishes by using and testing web services that can be called from any <span class="No-Break">third-party system.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>Web <span class="No-Break">services primer</span></li>
+				<li>Web service APIs <span class="No-Break">in Drupal</span></li>
+				<li>Using <span class="No-Break">web services</span></li>
+			</ul>
+			<h1 id="_idParaDest-333"><a id="_idTextAnchor631"></a>Web services primer</h1>
+			<p>Web services<a id="_idIndexMarker708"></a> is a general concept that is used to promote systems interoperability. Companies often adopt or purchase products. Some of those products may be the source of truth for certain data or perform specific business functions. However, the technical implementation of these products and systems is often very different. Some of the implementation details, such as those found in SaaS products, are even abstracted from those who procured the service. But products often do not run in isolation and the need for interoperability has become a critical requirement for <span class="No-Break">many businesses.</span></p>
+			<p>Let’s take the simple example of a website. Many websites, such as those in Drupal, have means of engagement. This engagement may come through a web form on a website to inquire about services or products for that business. But businesses often have different departments. The marketing or sales departments may be the recipients of the engagement. While Drupal could easily send an email notification, there are many popular sales and CRM products that a business may have already adopted. In favor of using an email notification, it would be ideal to integrate a web form with a third-party product. Web services aim to solve <span class="No-Break">this problem.</span></p>
+			<p>Web services define and promote common standards so that systems have common definitions when performing interoperability. Some standards include REST or JSON:API for the format of requests and responses. Other standards apply to the format of the data, such as JSON and XML. Web services are implemented as APIs commonly with support for specifically adopted standards. APIs are offered as specific endpoints that perform one <span class="No-Break">specific action.</span></p>
+			<p>Interoperability follows similar patterns to CRUD concepts discussed in earlier chapters. Some endpoints may be used only to retrieve specific data. Others may be used transactionally to create, update, or delete a record in another system or, more generally, perform <span class="No-Break">an action.</span></p>
+			<p>The standards<a id="_idIndexMarker709"></a> help abstract the underlying technical details. The system that is hosting the APIs may be a Java application, while a system calling the endpoints may be in PHP, JavaScript, or practically anything else. While businesses also may seek to standardize their technical tools and stacks, web services allow businesses to procure best-of-breed solutions that are interoperable and can work with other technologies they <span class="No-Break">have adopted.</span></p>
+			<h1 id="_idParaDest-334"><a id="_idTextAnchor632"></a>Web service APIs in Drupal</h1>
+			<p>Drupal, which commonly <a id="_idIndexMarker710"></a>maintains structured content and has features other systems may need, can play an important role in both calling and providing <span class="No-Break">web services.</span></p>
+			<p>Drupal commonly refers to its backend and frontend. Out of the box, it offers both. But Drupal’s frontend can be replaced, often through the use of Drupal’s backend APIs. This approach is known as decoupled or headless Drupal. The frontend is not assumed. It could be an app on a mobile phone, an Internet of Things device, or even another <span class="No-Break">web application.</span></p>
+			<p>A lot of recent focus has has harnessed web service features in Drupal to pull content for modern JavaScript frontend applications. Frameworks such as ReactJS and Vue.js can interface with any third-party web service and create performant, innovative web frontends. Drupal’s technology stack, given that it spans systems, backend, and frontend, often drives specific types of experts, such as a backend or frontend engineer. But Drupal’s web service APIs allow Drupal to be used by others already trained outside of Drupal. Developers familiar with ReactJS or Vue.js can make web service requests to Drupal’s backend without necessarily having to be an expert in all of Drupal. And it solves problems in making use of the<a id="_idIndexMarker711"></a> underlying structured content, which does not necessarily presume how that content will <span class="No-Break">be rendered.</span><a id="_idTextAnchor633"></a></p>
+			<h2 id="_idParaDest-335"><a id="_idTextAnchor634"></a>Concepts</h2>
+			<p>Drupal leverages <a id="_idIndexMarker712"></a>common API concepts to promote the most interoperability with other tools <span class="No-Break">and systems.</span></p>
+			<p>Drupal’s web service APIs manage the serialization of its data structures and conversion to standard response formats. Out<a id="_idIndexMarker713"></a> of the box, web services can be configured to serve <strong class="bold">JavaScript object notation</strong> (<strong class="bold">JSON</strong>) and <strong class="bold">Extensible Markup Language</strong> (<strong class="bold">XML</strong>). These formats are widely adopted by frameworks that often have parsers for <a id="_idIndexMarker714"></a>these data formats. Consistency in data formats helps developers to focus on their applications by reusing tools that can both serialize and parse <span class="No-Break">the data.</span></p>
+			<p>Drupal also harnesses common standards in REST API and JSON:API, both of which have specific conventions that promote consistency and interoperability. <strong class="bold">REST</strong>, which also goes by RESTful APIs, stands <a id="_idIndexMarker715"></a>for <strong class="bold">representational state transfer</strong>. REST APIs were created to manage and return information about resources at the time the request was made (its current state). JSON:API also focuses on resources but is a convention of the format of a JSON request and response. This convention is adopted by Drupal and is especially beneficial for <span class="No-Break">JavaScript-based applications.</span></p>
+			<p>All APIs are built around the concept of endpoints. An endpoint<a id="_idIndexMarker716"></a> is an interface that processes a request, interprets the request, and returns a response. In its simplest form, an endpoint is a URL to the Drupal application with its own <span class="No-Break">expected parameters.</span></p>
+			<p>Given that both REST and JSON:API emphasize resources, an endpoint often represents Drupal entities. It is common to have CRUD through endpoints based on request methods (<strong class="source-inline">GET</strong>, <strong class="source-inline">POST</strong>, <strong class="source-inline">PATCH</strong>, and <strong class="source-inline">DELETE</strong>). Each request type has a semantic meaning. <strong class="source-inline">GET</strong> retrieves resources, <strong class="source-inline">POST</strong> creates, <strong class="source-inline">PATCH</strong> updates, and <strong class="source-inline">DELETE</strong> removes. APIs can extend these conventions with specific actions. For instance, users can log in to create a session within the <span class="No-Break">Drupal application.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">API requests still observe Drupal’s built-in permissions. Drupal’s configurable permission system also applies to APIs. Anonymous requests without authorization credentials would largely be blocked from performing administrative actions (unless explicitly authorized to do so). Actions that are performed through APIs, such as <strong class="source-inline">POST</strong> requests that create an entity, will be subjected to the corresponding permissions for that entity. It is important to understand that Drupal does not simply open up an API without the proper checks in place that requests <span class="No-Break">are valid.</span></p>
+			<p>Requests to<a id="_idIndexMarker717"></a> web service APIs make use of several HTTP conventions. Aside from the URL, the header and request body are critical for web service APIs given the conventions for both JSON:API and REST. The header is common to provide authorization, specify the type of request, and specify the desired data format. The request body also must provide the correct format and data. For instance, a <strong class="source-inline">POST</strong> request to create a user must have a request body with all of the relevant structured content for the user and provide all of the necessary credentials in <span class="No-Break">the <a id="_idTextAnchor635"></a>header.</span></p>
+			<h2 id="_idParaDest-336"><a id="_idTextAnchor636"></a>Modules and configuration</h2>
+			<p>Drupal core offers two common modules that provide web services. Both are tied to their specific web standards and can be configured to provide <span class="No-Break">different funct<a id="_idTextAnchor637"></a>ionality.</span></p>
+			<h3>JSON:API</h3>
+			<p>JSON:API <a id="_idIndexMarker718"></a>works more seamlessly with Drupal entities. It can automatically create API endpoints for Drupal entities tied to standard request types, formats, <span class="No-Break">and more.</span></p>
+			<p>Once enabled, the module configuration is quite simple, as seen in the following figure from <strong class="bold">Home | Administration | Configuration | Web services | </strong><span class="No-Break"><strong class="bold">JSON:API</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer138" class="IMG---Figure">
+					<img src="image/B19491_20_1.jpg" alt="Figure 20.1 - Configuration page for the JSON:API module" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.1 - Configuration page for the JSON:API module</p>
+			<p>As shown in <span class="No-Break"><em class="italic">Figure 20</em></span><em class="italic">.1</em>, the module differentiates between read operations and other transactions that can modify data in the Drupal application. The module handles the rest. All entities are then exposed as resources with their <span class="No-Break">specific operations.</span></p>
+			<p>Sometimes, more granular configuration is welcomed, such as being able to enable or disable what resources are exposed. The contributed <strong class="bold">JSON:API Extras</strong> module provides this. The following figure shows additional configuration added by the module, found at <span class="No-Break"><strong class="bold">Home/Administration/Configuration/Web services/JSON:API/Extras</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer139" class="IMG---Figure">
+					<img src="image/B19491_20_2.jpg" alt="Figure 20.2 - Additional configuration provided by JSON:API Extras" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.2 - Additional configuration provided by JSON:API Extras</p>
+			<p>The path<a id="_idIndexMarker719"></a> prefix allows a site builder to override the out-of-the-box location for the JSON:API endpoints. Also, the option for disabled by default changes JSON:API’s automatic behavior of enabling everything. The <strong class="bold">Resource overrides</strong> tab, found at <strong class="source-inline">Home/Administration/Configuration/Web services/JSON:API/Extras/</strong> <strong class="source-inline">resource_types</strong>, provides the ability for fine-grained modification of which resources are enabled or disabled. This is shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer140" class="IMG---Figure">
+					<img src="image/B19491_20_3.jpg" alt="Figure 20.3 - Configuring resource types provided by JSON:API Extras" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.3 - Configuring resource types provided by JSON:API Extras</p>
+			<p>Resource <a id="_idIndexMarker720"></a>types, such as those shown in <span class="No-Break"><em class="italic">Figure 20</em></span><em class="italic">.3</em>, can be enabled, disabled, and configured within JSON:API. This is the logic for configuring specific endpoints within the web service API, often tied to specific entities <span class="No-Break">and<a id="_idTextAnchor638"></a> bundles.</span></p>
+			<h3>REST</h3>
+			<p>Drupal’s RESTful <a id="_idIndexMarker721"></a>Web Services module provides a general framework for web service APIs. It offers common data formats (JSON, XML, and more) and allows for custom REST resource definition. This framework is extensible programmatically. Out of the box, the module does not have an administrative UI as it primarily relies on modules and the application’s configuration. Once enabled, all node-related REST web services <span class="No-Break">are enabled.</span></p>
+			<p>Drupal core also has a module for HTTP Basic Authentication. This complements the REST API, as a username and password can be passed through the request header. Once enabled, this provides a mechanism for API requests to pass Drupal credentials through a request. Doing so provides the authorization with Drupal’s <span class="No-Break">permission system.</span></p>
+			<p>The contributed module<a id="_idIndexMarker722"></a> REST UI (<a href="https://www.drupal.org/project/restui">https://www.drupal.org/project/restui</a>) offers a UI to view and configure REST web services. This helps offer more conventional configuration methods and helps administrators see what is configured. The following figure is what is available from <span class="No-Break">this UI:</span></p>
+			<div>
+				<div id="_idContainer141" class="IMG---Figure">
+					<img src="image/B19491_20_4.jpg" alt="Figure 20.4 - Endpoint management by REST UI" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.4 - Endpoint management by REST UI</p>
+			<p>REST UI <a id="_idIndexMarker723"></a>shows<a id="_idIndexMarker724"></a> which modules, such as the node module, provide REST resources<strong class="bold"> </strong>and allow for these resources to be enabled or disabled individually. The figure also shows the available request types tied to <span class="No-Break">the resources.</span></p>
+			<p>After configuring endpoints in Drupal, API endpoints can then be invoked through tools that use web services <span class="No-Break">for inter<a id="_idTextAnchor639"></a>operability.</span></p>
+			<h1 id="_idParaDest-337"><a id="_idTextAnchor640"></a>Using web services</h1>
+			<p>Any system that is capable of making an<a id="_idIndexMarker725"></a> HTTP request can use web services. Covering those topics would be outside of the scope of this book given many different languages, platforms, tools, and capabilities have some support for web services. This section outlines how to invoke endpoints in Drupal using the <span class="No-Break">aforementio<a id="_idTextAnchor641"></a>ned features.</span></p>
+			<h2 id="_idParaDest-338"><a id="_idTextAnchor642"></a>Basic JSON:API examples</h2>
+			<p>A catalog of available<a id="_idIndexMarker726"></a> JSON:API requests can be generated from <strong class="source-inline">/jsonapi</strong>. The following figure shows part of a <span class="No-Break">sample response:</span></p>
+			<div>
+				<div id="_idContainer142" class="IMG---Figure">
+					<img src="image/B19491_20_5.jpg" alt="Figure 20.5 - JSON:API catalog response" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.5 - JSON:API catalog response</p>
+			<p>This response provides <a id="_idIndexMarker727"></a>a machine-readable response with a series of links to get to the configured resources. Each of the links provides more detail based on the resource. For instance, clicking on the link for block--block provides a catalog of blocks (metadata and block placement), as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer143" class="IMG---Figure">
+					<img src="image/B19491_20_6.jpg" alt="Figure 20.6 - JSON:API block catalog response" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.6 - JSON:API block catalog response</p>
+			<p>Getting to the structured data for each block is available through the link from the block catalog. This type of functionality can be expected for each entity and entity type given they are exposed <span class="No-Break">a<a id="_idTextAnchor643"></a>s resources.</span></p>
+			<h2 id="_idParaDest-339"><a id="_idTextAnchor644"></a>Basic REST API examples</h2>
+			<p>The REST UI module provides an <a id="_idIndexMarker728"></a>administrative interface to manage REST API endpoints outside of configuration. To enable node content to be served via REST API, the <strong class="source-inline">node/{node}</strong> endpoint must be enabled with the <strong class="source-inline">GET. A _format</strong> parameter and a data format value must be passed to access a node. The following figure shows an example of a node with an ID of 1 generated <span class="No-Break">from </span><span class="No-Break"><strong class="source-inline">node/1?_format=json</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer144" class="IMG---Figure">
+					<img src="image/B19491_20_7.jpg" alt="Figure 20.7 - Example REST API response for a test node" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 20.7 - Example REST API response for a test node</p>
+			<p>The<a id="_idIndexMarker729"></a> response returns JSON structured data for all of the entity’s fields and metadata. Please note that there is not a base API endpoint like there is with the JSON:API module. Simply going to <strong class="source-inline">node/1</strong> without a <strong class="source-inline">_format</strong> parameter would attempt to render node 1 as HTML through Drupal’s <span class="No-Break">stand<a id="_idTextAnchor645"></a>ard rendering.</span></p>
+			<h2 id="_idParaDest-340"><a id="_idTextAnchor646"></a>REST clients</h2>
+			<p>Several REST API clients<a id="_idIndexMarker730"></a> are available to help with debugging. Tools such as Postman or various REST-related browser extensions can be very helpful in debugging requests, modifying headers, passing various parameters, performing basic authorization, and more. This can help work l<a id="_idTextAnchor647"></a>ocally <span class="No-Break">as well.</span></p>
+			<h1 id="_idParaDest-341"><a id="_idTextAnchor648"></a>Summary</h1>
+			<p>Drupal offers native web service API features that are complementary to its structured content. APIs leveraging Drupal’s RESTful Web Services or JSON:API modules can be used for decoupled or headless applications that build custom frontends outside of Drupal or connect with the Internet of Things, mobile apps, and more. Drupal helps provide serialization, authorization tied to its permission system, and common data formats (JSON and XML). Various contributed modules help manage these APIs and provide <span class="No-Break">fine-grained controls.</span></p>
+			<p>The next chapter covers the basics of Drupal’s migration system, which is the primary tool used to migrate content into a <span class="No-Break">Drupal application.</span></p>
+		</div>
+	</body>
+</html>

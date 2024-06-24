@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * Implementing hook _attachments_assets().
+ * @param array $assets
+ * @return void
+ */
+function epub_attachments_assets(array &$assets): void
+{
+    $current_route = \Mini\Cms\Modules\Storage\Tempstore::load('current_route');
+    if($current_route instanceof \Mini\Cms\Controller\Route) {
+       if(str_contains($current_route->getCurrentUri(), '/book/read/')) {
+           $list = explode('/', $current_route->getCurrentUri());
+          if(!empty(end($list))) {
+              $book = new \Mini\Modules\contrib\epub\src\Plugin\Book(end($list));
+              $css_files = $book->bookStyleSheets();
+
+              if(!empty($css_files)) {
+                  foreach ($css_files as $css_file) {
+                      $assets['head'][] = $css_file;
+                      $assets['head'][] = '/modules/contrib/epub/assets/css/navigation_list.css';
+                      $assets['footer'][] = '/modules/contrib/epub/assets/js/book_cofigs.js';
+                      $assets['footer'][] = '/modules/contrib/epub/assets/js/screen_adjust.js';
+                      $assets['footer'][] = '/modules/contrib/epub/assets/js/chapters_opener.js';
+                      $assets['footer'] = array_unique($assets['footer']);
+                  }
+              }
+          }
+
+       }
+       if(str_contains($current_route->getCurrentUri(), '/book-shop-dashboard/')) {
+           $assets['footer'][] = '/themes/global/js/simple-datatables/simple-datatables.js';
+           $assets['head'][] = '/themes/global/js/simple-datatables/style.css';
+           $assets['footer'][] = '/themes/global/js/main.js';
+           $assets['footer'][] = '/modules/contrib/epub/assets/js/my_book_dashboard.js';
+           $assets['footer'] = array_unique($assets['footer']);
+           $assets['head'] = array_unique($assets['head']);
+       }
+    }
+}
+
+/**
+ * Implementing metadata hook.
+ * @param \Mini\Cms\Modules\MetaTag\MetaTag $meta
+ * @return void
+ */
+function epub_meta_data_initialize_alter(\Mini\Cms\Modules\MetaTag\MetaTag &$meta): void
+{
+    // set charset
+    $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::Charset, 'utf-8');
+    $current_route = \Mini\Cms\Modules\Storage\Tempstore::load('current_route');
+    if($current_route instanceof \Mini\Cms\Controller\Route) {
+        if(str_contains($current_route->getCurrentUri(), '/book/read/')) {
+            $list = explode('/', $current_route->getCurrentUri());
+            if(!empty(end($list))) {
+                $book = new \Mini\Modules\contrib\epub\src\Plugin\Book(end($list));
+                $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::Author,$book->getBookAuthor());
+                $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::Description,$book->getBookDescription());
+                $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::Title,$book->getBookTitle());
+                $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::Copyright,$book->getBookCopyright());
+                $meta->set(\Mini\Cms\Modules\MetaTag\MetagEnum::OGImage,$book->getBookCover());
+            }
+
+        }
+    }
+}
+
+/**
+ * @param \Mini\Cms\Theme\Menus $menus
+ * @return void
+ */
+function epub_menus_alter(\Mini\Cms\Theme\Menus &$menus): void
+{
+    $list_menus = $menus->getMenus();
+    foreach ($list_menus as $menu_key=>&$menu) {
+        if($menu_key === 'menu_password') {
+            $menus->unset('menu_password');
+        }
+    }
+}

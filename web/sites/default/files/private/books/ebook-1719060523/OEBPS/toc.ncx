@@ -1,0 +1,3613 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+
+  <head>
+    <meta content="urn:uuid:c8aee4d9-2017-4049-a604-c8ec5ab05cfe" name="dtb:uid" />
+    <meta content="7" name="dtb:depth" />
+    <meta content="0" name="dtb:totalPageCount" />
+    <meta content="0" name="dtb:maxPageNumber" />
+  </head>
+  <docTitle>
+    <text>Apps and Services with .NET 8, Second Edition</text>
+  </docTitle>
+  <docAuthor>
+    <text>Mark J. Price</text>
+  </docAuthor>
+  <navMap>
+    <navPoint id="navpoint5" playOrder="1">
+      <navLabel>
+        <text>Preface</text>
+      </navLabel>
+      <content src="Text/Preface.xhtml#_idParaDest-5" />
+      <navPoint id="navpoint6" playOrder="2">
+        <navLabel>
+          <text>Where to find the code solutions</text>
+        </navLabel>
+        <content src="Text/Preface.xhtml#_idParaDest-6" />
+      </navPoint>
+      <navPoint id="navpoint7" playOrder="3">
+        <navLabel>
+          <text>What this book covers</text>
+        </navLabel>
+        <content src="Text/Preface.xhtml#_idParaDest-7" />
+      </navPoint>
+      <navPoint id="navpoint14" playOrder="4">
+        <navLabel>
+          <text>What you need for this book</text>
+        </navLabel>
+        <content src="Text/Preface.xhtml#_idParaDest-14" />
+      </navPoint>
+      <navPoint id="navpoint17" playOrder="5">
+        <navLabel>
+          <text>Get in touch</text>
+        </navLabel>
+        <content src="Text/Preface.xhtml#_idParaDest-17" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint20" playOrder="6">
+      <navLabel>
+        <text>Introducing Apps and Services with .NET</text>
+      </navLabel>
+      <content src="Text/Chapter_01.xhtml#_idParaDest-20" />
+      <navPoint id="navpoint21" playOrder="7">
+        <navLabel>
+          <text>Introducing this book and its contents</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-21" />
+        <navPoint id="navpoint22" playOrder="8">
+          <navLabel>
+            <text>Companion books to continue your learning journey</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-22" />
+        </navPoint>
+        <navPoint id="navpoint23" playOrder="9">
+          <navLabel>
+            <text>What you will learn in this book</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-23" />
+        </navPoint>
+        <navPoint id="navpoint24" playOrder="10">
+          <navLabel>
+            <text>My learning philosophy</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-24" />
+        </navPoint>
+        <navPoint id="navpoint25" playOrder="11">
+          <navLabel>
+            <text>Fixing my mistakes</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-25" />
+        </navPoint>
+        <navPoint id="navpoint26" playOrder="12">
+          <navLabel>
+            <text>Finding the solution code on GitHub</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-26" />
+        </navPoint>
+        <navPoint id="navpoint27" playOrder="13">
+          <navLabel>
+            <text>Project naming and port numbering conventions</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-27" />
+        </navPoint>
+        <navPoint id="navpoint28" playOrder="14">
+          <navLabel>
+            <text>Treating warnings as errors</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-28" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint29" playOrder="15">
+        <navLabel>
+          <text>App and service technologies</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-29" />
+        <navPoint id="navpoint30" playOrder="16">
+          <navLabel>
+            <text>Understanding .NET</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-30" />
+        </navPoint>
+        <navPoint id="navpoint31" playOrder="17">
+          <navLabel>
+            <text>Building websites and apps using ASP.NET Core</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-31" />
+        </navPoint>
+        <navPoint id="navpoint32" playOrder="18">
+          <navLabel>
+            <text>Building web and other services</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-32" />
+        </navPoint>
+        <navPoint id="navpoint33" playOrder="19">
+          <navLabel>
+            <text>Windows Communication Foundation</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-33" />
+        </navPoint>
+        <navPoint id="navpoint34" playOrder="20">
+          <navLabel>
+            <text>Common service principles</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-34" />
+        </navPoint>
+        <navPoint id="navpoint35" playOrder="21">
+          <navLabel>
+            <text>Summary of choices for services</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-35" />
+        </navPoint>
+        <navPoint id="navpoint36" playOrder="22">
+          <navLabel>
+            <text>Building Windows-only apps</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-36" />
+          <navPoint id="navpoint37" playOrder="23">
+            <navLabel>
+              <text>Understanding legacy Windows application platforms</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-37" />
+          </navPoint>
+          <navPoint id="navpoint38" playOrder="24">
+            <navLabel>
+              <text>Understanding modern .NET support for legacy Windows platforms</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-38" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint39" playOrder="25">
+          <navLabel>
+            <text>Building cross-platform mobile and desktop apps</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-39" />
+        </navPoint>
+        <navPoint id="navpoint40" playOrder="26">
+          <navLabel>
+            <text>.NET MAUI alternatives</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-40" />
+          <navPoint id="navpoint41" playOrder="27">
+            <navLabel>
+              <text>Understanding the Uno platform</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-41" />
+          </navPoint>
+          <navPoint id="navpoint42" playOrder="28">
+            <navLabel>
+              <text>Understanding Avalonia</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-42" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint43" playOrder="29">
+        <navLabel>
+          <text>Setting up your development environment</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-43" />
+        <navPoint id="navpoint44" playOrder="30">
+          <navLabel>
+            <text>Choosing the appropriate tool and application type for learning</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-44" />
+          <navPoint id="navpoint45" playOrder="31">
+            <navLabel>
+              <text>Using Visual Studio 2022 for general development</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-45" />
+          </navPoint>
+          <navPoint id="navpoint46" playOrder="32">
+            <navLabel>
+              <text>Using Visual Studio Code for cross-platform development</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-46" />
+          </navPoint>
+          <navPoint id="navpoint47" playOrder="33">
+            <navLabel>
+              <text>Using GitHub Codespaces for development in the cloud</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-47" />
+          </navPoint>
+          <navPoint id="navpoint48" playOrder="34">
+            <navLabel>
+              <text>What I used</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-48" />
+          </navPoint>
+          <navPoint id="navpoint49" playOrder="35">
+            <navLabel>
+              <text>JetBrains Rider and its warnings about boxing</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-49" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint50" playOrder="36">
+          <navLabel>
+            <text>Deploying cross-platform</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-50" />
+        </navPoint>
+        <navPoint id="navpoint51" playOrder="37">
+          <navLabel>
+            <text>Downloading and installing Visual Studio 2022</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-51" />
+          <navPoint id="navpoint52" playOrder="38">
+            <navLabel>
+              <text>Visual Studio 2022 keyboard shortcuts</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-52" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint53" playOrder="39">
+          <navLabel>
+            <text>Downloading and installing Visual Studio Code</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-53" />
+          <navPoint id="navpoint54" playOrder="40">
+            <navLabel>
+              <text>Installing other extensions</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-54" />
+          </navPoint>
+          <navPoint id="navpoint55" playOrder="41">
+            <navLabel>
+              <text>Managing Visual Studio Code extensions at the command prompt</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-55" />
+          </navPoint>
+          <navPoint id="navpoint56" playOrder="42">
+            <navLabel>
+              <text>Understanding Microsoft Visual Studio Code versions</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-56" />
+          </navPoint>
+          <navPoint id="navpoint57" playOrder="43">
+            <navLabel>
+              <text>Visual Studio Code keyboard shortcuts</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-57" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint58" playOrder="44">
+          <navLabel>
+            <text>Consuming Azure resources</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-58" />
+        </navPoint>
+        <navPoint id="navpoint59" playOrder="45">
+          <navLabel>
+            <text>Using other project templates</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-59" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint60" playOrder="46">
+        <navLabel>
+          <text>Installing additional template packs</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-60" />
+      </navPoint>
+      <navPoint id="navpoint61" playOrder="47">
+        <navLabel>
+          <text>Exploring top-level programs, functions, and namespaces</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-61" />
+        <navPoint id="navpoint62" playOrder="48">
+          <navLabel>
+            <text>What is automatically generated for a local function?</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-62" />
+        </navPoint>
+        <navPoint id="navpoint63" playOrder="49">
+          <navLabel>
+            <text>Writing static functions in a separate Program class file</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-63" />
+        </navPoint>
+        <navPoint id="navpoint64" playOrder="50">
+          <navLabel>
+            <text>What is automatically generated for a static function?</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-64" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint65" playOrder="51">
+        <navLabel>
+          <text>Making good use of the GitHub repository for this book</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-65" />
+        <navPoint id="navpoint66" playOrder="52">
+          <navLabel>
+            <text>Raising issues with the book</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-66" />
+        </navPoint>
+        <navPoint id="navpoint67" playOrder="53">
+          <navLabel>
+            <text>Giving me feedback</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-67" />
+        </navPoint>
+        <navPoint id="navpoint68" playOrder="54">
+          <navLabel>
+            <text>Downloading solution code from the GitHub repository</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-68" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint69" playOrder="55">
+        <navLabel>
+          <text>Where to go for help</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-69" />
+        <navPoint id="navpoint70" playOrder="56">
+          <navLabel>
+            <text>Reading documentation on Microsoft Learn</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-70" />
+        </navPoint>
+        <navPoint id="navpoint71" playOrder="57">
+          <navLabel>
+            <text>Getting help for the dotnet tool</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-71" />
+        </navPoint>
+        <navPoint id="navpoint72" playOrder="58">
+          <navLabel>
+            <text>AI tools like ChatGPT and GitHub Copilot</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-72" />
+          <navPoint id="navpoint73" playOrder="59">
+            <navLabel>
+              <text>ChatGPT</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-73" />
+          </navPoint>
+          <navPoint id="navpoint74" playOrder="60">
+            <navLabel>
+              <text>GitHub Copilot</text>
+            </navLabel>
+            <content src="Text/Chapter_01.xhtml#_idParaDest-74" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint75" playOrder="61">
+          <navLabel>
+            <text>Subscribing to the official .NET blog and announcements</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-75" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint76" playOrder="62">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-76" />
+        <navPoint id="navpoint77" playOrder="63">
+          <navLabel>
+            <text>Exercise 1.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-77" />
+        </navPoint>
+        <navPoint id="navpoint78" playOrder="64">
+          <navLabel>
+            <text>Exercise 1.2 – Review the online-only sections</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-78" />
+        </navPoint>
+        <navPoint id="navpoint79" playOrder="65">
+          <navLabel>
+            <text>Exercise 1.3 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_01.xhtml#_idParaDest-79" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint80" playOrder="66">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_01.xhtml#_idParaDest-80" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint82" playOrder="67">
+      <navLabel>
+        <text>Managing Relational Data Using SQL Server</text>
+      </navLabel>
+      <content src="Text/Chapter_02.xhtml#_idParaDest-82" />
+      <navPoint id="navpoint83" playOrder="68">
+        <navLabel>
+          <text>Understanding modern databases</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-83" />
+        <navPoint id="navpoint84" playOrder="69">
+          <navLabel>
+            <text>Using a sample relational database</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-84" />
+        </navPoint>
+        <navPoint id="navpoint85" playOrder="70">
+          <navLabel>
+            <text>Connecting to a SQL Server database</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-85" />
+        </navPoint>
+        <navPoint id="navpoint86" playOrder="71">
+          <navLabel>
+            <text>Installing and setting up SQL Server locally</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-86" />
+          <navPoint id="navpoint87" playOrder="72">
+            <navLabel>
+              <text>Installing SQL Server Developer Edition for Windows</text>
+            </navLabel>
+            <content src="Text/Chapter_02.xhtml#_idParaDest-87" />
+          </navPoint>
+          <navPoint id="navpoint88" playOrder="73">
+            <navLabel>
+              <text>Visual Studio Code extension for working with SQL Server</text>
+            </navLabel>
+            <content src="Text/Chapter_02.xhtml#_idParaDest-88" />
+          </navPoint>
+          <navPoint id="navpoint89" playOrder="74">
+            <navLabel>
+              <text>Creating the Northwind sample database locally</text>
+            </navLabel>
+            <content src="Text/Chapter_02.xhtml#_idParaDest-89" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint90" playOrder="75">
+          <navLabel>
+            <text>Setting up Azure SQL Database</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-90" />
+          <navPoint id="navpoint91" playOrder="76">
+            <navLabel>
+              <text>JetBrains Rider tool window for working with SQL Server</text>
+            </navLabel>
+            <content src="Text/Chapter_02.xhtml#_idParaDest-91" />
+          </navPoint>
+          <navPoint id="navpoint92" playOrder="77">
+            <navLabel>
+              <text>Creating the Northwind sample database in the cloud</text>
+            </navLabel>
+            <content src="Text/Chapter_02.xhtml#_idParaDest-92" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint93" playOrder="78">
+        <navLabel>
+          <text>Managing data with Transact-SQL</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-93" />
+        <navPoint id="navpoint94" playOrder="79">
+          <navLabel>
+            <text>T-SQL data types</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-94" />
+        </navPoint>
+        <navPoint id="navpoint95" playOrder="80">
+          <navLabel>
+            <text>Documenting with comments</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-95" />
+        </navPoint>
+        <navPoint id="navpoint96" playOrder="81">
+          <navLabel>
+            <text>Declaring variables</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-96" />
+        </navPoint>
+        <navPoint id="navpoint97" playOrder="82">
+          <navLabel>
+            <text>Specifying data types</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-97" />
+        </navPoint>
+        <navPoint id="navpoint98" playOrder="83">
+          <navLabel>
+            <text>Controlling flow</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-98" />
+        </navPoint>
+        <navPoint id="navpoint99" playOrder="84">
+          <navLabel>
+            <text>Operators</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-99" />
+        </navPoint>
+        <navPoint id="navpoint100" playOrder="85">
+          <navLabel>
+            <text>Data Manipulation Language (DML)</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-100" />
+        </navPoint>
+        <navPoint id="navpoint101" playOrder="86">
+          <navLabel>
+            <text>DML for adding, updating, and deleting data</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-101" />
+        </navPoint>
+        <navPoint id="navpoint102" playOrder="87">
+          <navLabel>
+            <text>Data Definition Language (DDL)</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-102" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint103" playOrder="88">
+        <navLabel>
+          <text>Managing data with low-level APIs</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-103" />
+        <navPoint id="navpoint104" playOrder="89">
+          <navLabel>
+            <text>Understanding the types in ADO.NET</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-104" />
+        </navPoint>
+      
+      <navPoint id="navpoint110" playOrder="90">
+        <navLabel>
+          <text>Creating a console app for working with ADO.NET</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-110" />
+      </navPoint>
+      <navPoint id="navpoint111" playOrder="91">
+        <navLabel>
+          <text>Executing queries and working with data readers using ADO.NET</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-111" />
+      </navPoint>
+      <navPoint id="navpoint112" playOrder="92">
+        <navLabel>
+          <text>Outputting statistics</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-112" />
+      </navPoint>
+      <navPoint id="navpoint113" playOrder="93">
+        <navLabel>
+          <text>Working with ADO.NET asynchronously</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-113" />
+      </navPoint>
+      <navPoint id="navpoint114" playOrder="94">
+        <navLabel>
+          <text>Executing stored procedures using ADO.NET</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-114" />
+      </navPoint>
+      <navPoint id="navpoint115" playOrder="95">
+        <navLabel>
+          <text>Outputting streams with a data reader</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-115" />
+      </navPoint>
+      <navPoint id="navpoint116" playOrder="96">
+        <navLabel>
+          <text>Generating objects with a data reader</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-116" />
+      </navPoint>
+		</navPoint>
+      <navPoint id="navpoint117" playOrder="97">
+        <navLabel>
+          <text>Managing data with Dapper</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-117" />
+        <navPoint id="navpoint118" playOrder="98">
+          <navLabel>
+            <text>Dapper connection extension methods</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-118" />
+        </navPoint>
+        <navPoint id="navpoint119" playOrder="99">
+          <navLabel>
+            <text>Querying using Dapper</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-119" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint120" playOrder="100">
+        <navLabel>
+          <text>Cleaning up data resources</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-120" />
+        <navPoint id="navpoint121" playOrder="101">
+          <navLabel>
+            <text>Removing Azure resources</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-121" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint122" playOrder="102">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-122" />
+        <navPoint id="navpoint123" playOrder="103">
+          <navLabel>
+            <text>Exercise 2.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-123" />
+        </navPoint>
+        <navPoint id="navpoint124" playOrder="104">
+          <navLabel>
+            <text>Exercise 2.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-124" />
+        </navPoint>
+        <navPoint id="navpoint125" playOrder="105">
+          <navLabel>
+            <text>Exercise 2.3 – Alternatives for storing secrets</text>
+          </navLabel>
+          <content src="Text/Chapter_02.xhtml#_idParaDest-125" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint126" playOrder="106">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_02.xhtml#_idParaDest-126" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint127" playOrder="107">
+      <navLabel>
+        <text>Building Entity Models for SQL Server Using EF Core</text>
+      </navLabel>
+      <content src="Text/Chapter_03.xhtml#_idParaDest-127" />
+      <navPoint id="navpoint128" playOrder="108">
+        <navLabel>
+          <text>Managing data with EF Core</text>
+        </navLabel>
+        <content src="Text/Chapter_03.xhtml#_idParaDest-128" />
+        <navPoint id="navpoint129" playOrder="109">
+          <navLabel>
+            <text>Understanding Entity Framework Core</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-129" />
+        </navPoint>
+        <navPoint id="navpoint130" playOrder="110">
+          <navLabel>
+            <text>Scaffolding models using an existing database</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-130" />
+        </navPoint>
+        <navPoint id="navpoint131" playOrder="111">
+          <navLabel>
+            <text>Setting up the dotnet-ef tool</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-131" />
+        </navPoint>
+        <navPoint id="navpoint132" playOrder="112">
+          <navLabel>
+            <text>Defining EF Core models</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-132" />
+        </navPoint>
+        <navPoint id="navpoint133" playOrder="113">
+          <navLabel>
+            <text>Using EF Core conventions to define the model</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-133" />
+        </navPoint>
+        <navPoint id="navpoint134" playOrder="114">
+          <navLabel>
+            <text>Using EF Core annotation attributes to define the model</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-134" />
+        </navPoint>
+        <navPoint id="navpoint135" playOrder="115">
+          <navLabel>
+            <text>Using the EF Core Fluent API to define the model</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-135" />
+        </navPoint>
+        <navPoint id="navpoint136" playOrder="116">
+          <navLabel>
+            <text>Understanding data seeding with the Fluent API</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-136" />
+        </navPoint>
+        <navPoint id="navpoint137" playOrder="117">
+          <navLabel>
+            <text>Defining the Northwind database model</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-137" />
+        </navPoint>
+        <navPoint id="navpoint138" playOrder="118">
+          <navLabel>
+            <text>Querying the Northwind model</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-138" />
+        </navPoint>
+        <navPoint id="navpoint139" playOrder="119">
+          <navLabel>
+            <text>Controlling the tracking of entities</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-139" />
+          <navPoint id="navpoint140" playOrder="120">
+            <navLabel>
+              <text>A scenario using default tracking</text>
+            </navLabel>
+            <content src="Text/Chapter_03.xhtml#_idParaDest-140" />
+          </navPoint>
+          <navPoint id="navpoint141" playOrder="121">
+            <navLabel>
+              <text>The same scenario using no tracking</text>
+            </navLabel>
+            <content src="Text/Chapter_03.xhtml#_idParaDest-141" />
+          </navPoint>
+          <navPoint id="navpoint142" playOrder="122">
+            <navLabel>
+              <text>The same scenario using no tracking with identity resolution</text>
+            </navLabel>
+            <content src="Text/Chapter_03.xhtml#_idParaDest-142" />
+          </navPoint>
+          <navPoint id="navpoint143" playOrder="123">
+            <navLabel>
+              <text>Summary of tracking</text>
+            </navLabel>
+            <content src="Text/Chapter_03.xhtml#_idParaDest-143" />
+          </navPoint>
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint144" playOrder="124">
+        <navLabel>
+          <text>Mapping inheritance hierarchies with EF Core</text>
+        </navLabel>
+        <content src="Text/Chapter_03.xhtml#_idParaDest-144" />
+        <navPoint id="navpoint145" playOrder="125">
+          <navLabel>
+            <text>Table-per-hierarchy (TPH) mapping strategy</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-145" />
+        </navPoint>
+        <navPoint id="navpoint146" playOrder="126">
+          <navLabel>
+            <text>Table-per-type (TPT) mapping strategy</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-146" />
+        </navPoint>
+        <navPoint id="navpoint147" playOrder="127">
+          <navLabel>
+            <text>Table-per-concrete-type (TPC) mapping strategy</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-147" />
+        </navPoint>
+        <navPoint id="navpoint148" playOrder="128">
+          <navLabel>
+            <text>Configuring inheritance hierarchy mapping strategies</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-148" />
+        </navPoint>
+        <navPoint id="navpoint149" playOrder="129">
+          <navLabel>
+            <text>Example of hierarchy mapping strategies</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-149" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint150" playOrder="130">
+        <navLabel>
+          <text>Building a reusable entity data model</text>
+        </navLabel>
+        <content src="Text/Chapter_03.xhtml#_idParaDest-150" />
+        <navPoint id="navpoint151" playOrder="131">
+          <navLabel>
+            <text>Creating a class library for entity models using SQL Server</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-151" />
+        </navPoint>
+        <navPoint id="navpoint152" playOrder="132">
+          <navLabel>
+            <text>Creating a class library for the data context using SQL Server</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-152" />
+        </navPoint>
+        <navPoint id="navpoint153" playOrder="133">
+          <navLabel>
+            <text>Calculated properties on entity creation</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-153" />
+        </navPoint>
+        <navPoint id="navpoint154" playOrder="134">
+          <navLabel>
+            <text>Creating a test project to check the integration of the class libraries</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-154" />
+        </navPoint>
+        <navPoint id="navpoint155" playOrder="135">
+          <navLabel>
+            <text>Writing unit tests for entity models</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-155" />
+        </navPoint>
+        <navPoint id="navpoint156" playOrder="136">
+          <navLabel>
+            <text>Running unit tests using Visual Studio 2022</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-156" />
+        </navPoint>
+        <navPoint id="navpoint157" playOrder="137">
+          <navLabel>
+            <text>Running unit tests using Visual Studio Code</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-157" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint158" playOrder="138">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_03.xhtml#_idParaDest-158" />
+        <navPoint id="navpoint159" playOrder="139">
+          <navLabel>
+            <text>Exercise 3.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-159" />
+        </navPoint>
+        <navPoint id="navpoint160" playOrder="140">
+          <navLabel>
+            <text>Exercise 3.2 – Practice benchmarking ADO.NET against EF Core</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-160" />
+        </navPoint>
+        <navPoint id="navpoint161" playOrder="141">
+          <navLabel>
+            <text>Exercise 3.3 – Review performance choices</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-161" />
+        </navPoint>
+        <navPoint id="navpoint162" playOrder="142">
+          <navLabel>
+            <text>Exercise 3.4 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_03.xhtml#_idParaDest-162" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint163" playOrder="143">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_03.xhtml#_idParaDest-163" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint165" playOrder="144">
+      <navLabel>
+        <text>Managing NoSQL Data Using Azure Cosmos DB</text>
+      </navLabel>
+      <content src="Text/Chapter_04.xhtml#_idParaDest-165" />
+      <navPoint id="navpoint166" playOrder="145">
+        <navLabel>
+          <text>Understanding NoSQL databases</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-166" />
+        <navPoint id="navpoint167" playOrder="146">
+          <navLabel>
+            <text>Cosmos DB and its APIs</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-167" />
+        </navPoint>
+        <navPoint id="navpoint168" playOrder="147">
+          <navLabel>
+            <text>Document modeling</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-168" />
+        </navPoint>
+        <navPoint id="navpoint169" playOrder="148">
+          <navLabel>
+            <text>Consistency levels</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-169" />
+        </navPoint>
+        <navPoint id="navpoint170" playOrder="149">
+          <navLabel>
+            <text>Hierarchy of components</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-170" />
+        </navPoint>
+        <navPoint id="navpoint171" playOrder="150">
+          <navLabel>
+            <text>Throughput provisioning</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-171" />
+        </navPoint>
+        <navPoint id="navpoint172" playOrder="151">
+          <navLabel>
+            <text>Partition strategies</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-172" />
+        </navPoint>
+        <navPoint id="navpoint173" playOrder="152">
+          <navLabel>
+            <text>Data storage design</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-173" />
+        </navPoint>
+        <navPoint id="navpoint174" playOrder="153">
+          <navLabel>
+            <text>Migrating data to Cosmos DB</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-174" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint175" playOrder="154">
+        <navLabel>
+          <text>Creating Cosmos DB resources</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-175" />
+        <navPoint id="navpoint176" playOrder="155">
+          <navLabel>
+            <text>Using an emulator on Windows to create Azure Cosmos DB resources</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-176" />
+        </navPoint>
+        <navPoint id="navpoint177" playOrder="156">
+          <navLabel>
+            <text>Using the Azure portal to create Azure Cosmos DB resources</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-177" />
+        </navPoint>
+        <navPoint id="navpoint178" playOrder="157">
+          <navLabel>
+            <text>Using a .NET app to create Azure Cosmos DB resources</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-178" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint179" playOrder="158">
+        <navLabel>
+          <text>Manipulating data with the Core (SQL) API</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-179" />
+        <navPoint id="navpoint180" playOrder="159">
+          <navLabel>
+            <text>Performing CRUD operations with the Cosmos SQL API</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-180" />
+        </navPoint>
+        <navPoint id="navpoint181" playOrder="160">
+          <navLabel>
+            <text>Understanding SQL queries</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-181" />
+        </navPoint>
+        <navPoint id="navpoint182" playOrder="161">
+          <navLabel>
+            <text>Exploring other SQL queries with Cosmos DB</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-182" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint183" playOrder="162">
+        <navLabel>
+          <text>Exploring server-side programming</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-183" />
+        <navPoint id="navpoint184" playOrder="163">
+          <navLabel>
+            <text>Implementing user-defined functions</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-184" />
+        </navPoint>
+        <navPoint id="navpoint185" playOrder="164">
+          <navLabel>
+            <text>Implementing stored procedures</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-185" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint186" playOrder="165">
+        <navLabel>
+          <text>Cleaning up Azure resources</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-186" />
+      </navPoint>
+      <navPoint id="navpoint187" playOrder="166">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-187" />
+        <navPoint id="navpoint188" playOrder="167">
+          <navLabel>
+            <text>Exercise 4.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-188" />
+        </navPoint>
+        <navPoint id="navpoint189" playOrder="168">
+          <navLabel>
+            <text>Exercise 4.2 – Practice data modeling and partitioning</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-189" />
+        </navPoint>
+        <navPoint id="navpoint190" playOrder="169">
+          <navLabel>
+            <text>Exercise 4.3 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-190" />
+        </navPoint>
+        <navPoint id="navpoint191" playOrder="170">
+          <navLabel>
+            <text>Exercise 4.4 – Download cheat sheets</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-191" />
+        </navPoint>
+        <navPoint id="navpoint192" playOrder="171">
+          <navLabel>
+            <text>Exercise 4.5 – Explore the Gremlin API for Cosmos DB</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-192" />
+        </navPoint>
+        <navPoint id="navpoint193" playOrder="172">
+          <navLabel>
+            <text>Exercise 4.6 – Explore NoSQL databases</text>
+          </navLabel>
+          <content src="Text/Chapter_04.xhtml#_idParaDest-193" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint194" playOrder="173">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_04.xhtml#_idParaDest-194" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint195" playOrder="174">
+      <navLabel>
+        <text>Multitasking and Concurrency</text>
+      </navLabel>
+      <content src="Text/Chapter_05.xhtml#_idParaDest-195" />
+      <navPoint id="navpoint196" playOrder="175">
+        <navLabel>
+          <text>Understanding processes, threads, and tasks</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-196" />
+      </navPoint>
+      <navPoint id="navpoint197" playOrder="176">
+        <navLabel>
+          <text>Running tasks asynchronously</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-197" />
+        <navPoint id="navpoint198" playOrder="177">
+          <navLabel>
+            <text>Running multiple actions synchronously</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-198" />
+        </navPoint>
+        <navPoint id="navpoint199" playOrder="178">
+          <navLabel>
+            <text>Running multiple actions asynchronously using tasks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-199" />
+        </navPoint>
+        <navPoint id="navpoint200" playOrder="179">
+          <navLabel>
+            <text>Starting tasks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-200" />
+        </navPoint>
+        <navPoint id="navpoint201" playOrder="180">
+          <navLabel>
+            <text>Waiting for tasks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-201" />
+        </navPoint>
+        <navPoint id="navpoint202" playOrder="181">
+          <navLabel>
+            <text>Using wait methods with tasks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-202" />
+        </navPoint>
+        <navPoint id="navpoint203" playOrder="182">
+          <navLabel>
+            <text>Continuing with another task</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-203" />
+        </navPoint>
+        <navPoint id="navpoint204" playOrder="183">
+          <navLabel>
+            <text>Nested and child tasks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-204" />
+        </navPoint>
+        <navPoint id="navpoint205" playOrder="184">
+          <navLabel>
+            <text>Wrapping tasks around other objects</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-205" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint206" playOrder="185">
+        <navLabel>
+          <text>Synchronizing access to shared resources</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-206" />
+        <navPoint id="navpoint207" playOrder="186">
+          <navLabel>
+            <text>Accessing a resource from multiple threads</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-207" />
+        </navPoint>
+        <navPoint id="navpoint208" playOrder="187">
+          <navLabel>
+            <text>Applying a mutually exclusive lock to a conch</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-208" />
+        </navPoint>
+        <navPoint id="navpoint209" playOrder="188">
+          <navLabel>
+            <text>Understanding the lock statement</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-209" />
+        </navPoint>
+        <navPoint id="navpoint210" playOrder="189">
+          <navLabel>
+            <text>Avoiding deadlocks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-210" />
+        </navPoint>
+        <navPoint id="navpoint211" playOrder="190">
+          <navLabel>
+            <text>Synchronizing events</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-211" />
+        </navPoint>
+        <navPoint id="navpoint212" playOrder="191">
+          <navLabel>
+            <text>Making CPU operations atomic</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-212" />
+        </navPoint>
+        <navPoint id="navpoint213" playOrder="192">
+          <navLabel>
+            <text>Applying other types of synchronization</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-213" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint214" playOrder="193">
+        <navLabel>
+          <text>Understanding async and await</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-214" />
+        <navPoint id="navpoint215" playOrder="194">
+          <navLabel>
+            <text>Improving responsiveness for console apps</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-215" />
+        </navPoint>
+        <navPoint id="navpoint216" playOrder="195">
+          <navLabel>
+            <text>Working with async streams</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-216" />
+        </navPoint>
+        <navPoint id="navpoint217" playOrder="196">
+          <navLabel>
+            <text>Improving responsiveness for GUI apps</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-217" />
+        </navPoint>
+        <navPoint id="navpoint218" playOrder="197">
+          <navLabel>
+            <text>Improving scalability for web applications and web services</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-218" />
+        </navPoint>
+        <navPoint id="navpoint219" playOrder="198">
+          <navLabel>
+            <text>Common types that support multitasking</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-219" />
+        </navPoint>
+        <navPoint id="navpoint220" playOrder="199">
+          <navLabel>
+            <text>Using await in catch blocks</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-220" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint221" playOrder="200">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-221" />
+        <navPoint id="navpoint222" playOrder="201">
+          <navLabel>
+            <text>Exercise 5.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-222" />
+        </navPoint>
+        <navPoint id="navpoint223" playOrder="202">
+          <navLabel>
+            <text>Exercise 5.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-223" />
+        </navPoint>
+        <navPoint id="navpoint224" playOrder="203">
+          <navLabel>
+            <text>Exercise 5.3 – Read more about parallel programming</text>
+          </navLabel>
+          <content src="Text/Chapter_05.xhtml#_idParaDest-224" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint225" playOrder="204">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_05.xhtml#_idParaDest-225" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint226" playOrder="205">
+      <navLabel>
+        <text>Using Popular Third-Party Libraries</text>
+      </navLabel>
+      <content src="Text/Chapter_06.xhtml#_idParaDest-226" />
+      <navPoint id="navpoint227" playOrder="206">
+        <navLabel>
+          <text>Which third-party libraries are most popular?</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-227" />
+        <navPoint id="navpoint228" playOrder="207">
+          <navLabel>
+            <text>What is covered in my books</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-228" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint229" playOrder="208">
+        <navLabel>
+          <text>Working with images</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-229" />
+        <navPoint id="navpoint230" playOrder="209">
+          <navLabel>
+            <text>Generating grayscale thumbnails</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-230" />
+        </navPoint>
+        <navPoint id="navpoint231" playOrder="210">
+          <navLabel>
+            <text>ImageSharp packages for drawing and the web</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-231" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint232" playOrder="211">
+        <navLabel>
+          <text>Working with text and numbers using Humanizer</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-232" />
+        <navPoint id="navpoint233" playOrder="212">
+          <navLabel>
+            <text>Working with text</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-233" />
+        </navPoint>
+        <navPoint id="navpoint234" playOrder="213">
+          <navLabel>
+            <text>Humanizer case transformations</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-234" />
+        </navPoint>
+        <navPoint id="navpoint235" playOrder="214">
+          <navLabel>
+            <text>Humanizer spacing conversions</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-235" />
+        </navPoint>
+        <navPoint id="navpoint236" playOrder="215">
+          <navLabel>
+            <text>Humanizer’s Singularize and Pluralize methods</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-236" />
+        </navPoint>
+        <navPoint id="navpoint237" playOrder="216">
+          <navLabel>
+            <text>Exploring text manipulations with a console app</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-237" />
+        </navPoint>
+        <navPoint id="navpoint238" playOrder="217">
+          <navLabel>
+            <text>Working with numbers</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-238" />
+        </navPoint>
+        <navPoint id="navpoint239" playOrder="218">
+          <navLabel>
+            <text>Working with dates and times</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-239" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint240" playOrder="219">
+        <navLabel>
+          <text>Logging with Serilog</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-240" />
+        <navPoint id="navpoint241" playOrder="220">
+          <navLabel>
+            <text>Structured event data</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-241" />
+        </navPoint>
+        <navPoint id="navpoint242" playOrder="221">
+          <navLabel>
+            <text>Serilog sinks</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-242" />
+        </navPoint>
+        <navPoint id="navpoint243" playOrder="222">
+          <navLabel>
+            <text>Logging to the console and a rolling file with Serilog</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-243" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint244" playOrder="223">
+        <navLabel>
+          <text>Mapping between objects</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-244" />
+        <navPoint id="navpoint245" playOrder="224">
+          <navLabel>
+            <text>Defining models for an AutoMapper configuration</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-245" />
+        </navPoint>
+        <navPoint id="navpoint246" playOrder="225">
+          <navLabel>
+            <text>Defining mappers for an AutoMapper configuration</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-246" />
+        </navPoint>
+        <navPoint id="navpoint247" playOrder="226">
+          <navLabel>
+            <text>Performing tests for an AutoMapper configuration</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-247" />
+        </navPoint>
+        <navPoint id="navpoint248" playOrder="227">
+          <navLabel>
+            <text>Performing live mappings between models</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-248" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint249" playOrder="228">
+        <navLabel>
+          <text>Making fluent assertions in unit testing</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-249" />
+        <navPoint id="navpoint250" playOrder="229">
+          <navLabel>
+            <text>Making assertions about strings</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-250" />
+        </navPoint>
+        <navPoint id="navpoint251" playOrder="230">
+          <navLabel>
+            <text>Making assertions about collections and arrays</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-251" />
+        </navPoint>
+        <navPoint id="navpoint252" playOrder="231">
+          <navLabel>
+            <text>Making assertions about dates and times</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-252" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint253" playOrder="232">
+        <navLabel>
+          <text>Validating data</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-253" />
+        <navPoint id="navpoint254" playOrder="233">
+          <navLabel>
+            <text>Understanding the built-in validators</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-254" />
+        </navPoint>
+        <navPoint id="navpoint255" playOrder="234">
+          <navLabel>
+            <text>Performing custom validation</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-255" />
+        </navPoint>
+        <navPoint id="navpoint256" playOrder="235">
+          <navLabel>
+            <text>Customizing validation messages</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-256" />
+        </navPoint>
+        <navPoint id="navpoint257" playOrder="236">
+          <navLabel>
+            <text>Defining a model and validator</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-257" />
+        </navPoint>
+        <navPoint id="navpoint258" playOrder="237">
+          <navLabel>
+            <text>Testing the validator</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-258" />
+        </navPoint>
+        <navPoint id="navpoint259" playOrder="238">
+          <navLabel>
+            <text>Validating data with ASP.NET Core</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-259" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint260" playOrder="239">
+        <navLabel>
+          <text>Generating PDFs</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-260" />
+        <navPoint id="navpoint261" playOrder="240">
+          <navLabel>
+            <text>Using QuestPDF on Apple silicon Macs</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-261" />
+        </navPoint>
+        <navPoint id="navpoint262" playOrder="241">
+          <navLabel>
+            <text>Creating class libraries to generate PDF documents</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-262" />
+        </navPoint>
+        <navPoint id="navpoint263" playOrder="242">
+          <navLabel>
+            <text>Creating a console app to generate PDF documents</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-263" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint264" playOrder="243">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-264" />
+        <navPoint id="navpoint265" playOrder="244">
+          <navLabel>
+            <text>Exercise 6.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-265" />
+        </navPoint>
+        <navPoint id="navpoint266" playOrder="245">
+          <navLabel>
+            <text>Exercise 6.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_06.xhtml#_idParaDest-266" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint267" playOrder="246">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_06.xhtml#_idParaDest-267" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint269" playOrder="247">
+      <navLabel>
+        <text>Handling Dates, Times, and Internationalization</text>
+      </navLabel>
+      <content src="Text/Chapter_07.xhtml#_idParaDest-269" />
+      <navPoint id="navpoint270" playOrder="248">
+        <navLabel>
+          <text>Working with dates and times</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-270" />
+        <navPoint id="navpoint271" playOrder="249">
+          <navLabel>
+            <text>Specifying date and time values</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-271" />
+        </navPoint>
+        <navPoint id="navpoint272" playOrder="250">
+          <navLabel>
+            <text>Formatting date and time values</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-272" />
+        </navPoint>
+        <navPoint id="navpoint273" playOrder="251">
+          <navLabel>
+            <text>Date and time calculations</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-273" />
+        </navPoint>
+        <navPoint id="navpoint274" playOrder="252">
+          <navLabel>
+            <text>Microseconds and nanoseconds</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-274" />
+        </navPoint>
+        <navPoint id="navpoint275" playOrder="253">
+          <navLabel>
+            <text>Globalization with dates and times</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-275" />
+        </navPoint>
+        <navPoint id="navpoint276" playOrder="254">
+          <navLabel>
+            <text>Complexities of Daylight Saving Time (DST)</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-276" />
+        </navPoint>
+        <navPoint id="navpoint277" playOrder="255">
+          <navLabel>
+            <text>Localizing the DayOfWeek enum</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-277" />
+        </navPoint>
+        <navPoint id="navpoint278" playOrder="256">
+          <navLabel>
+            <text>Working with only a date or a time</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-278" />
+        </navPoint>
+        <navPoint id="navpoint279" playOrder="257">
+          <navLabel>
+            <text>Getting date/time formatting information</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-279" />
+        </navPoint>
+        <navPoint id="navpoint280" playOrder="258">
+          <navLabel>
+            <text>Unit testing with a time provider</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-280" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint281" playOrder="259">
+        <navLabel>
+          <text>Working with time zones</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-281" />
+        <navPoint id="navpoint282" playOrder="260">
+          <navLabel>
+            <text>Understanding DateTime and TimeZoneInfo</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-282" />
+        </navPoint>
+        <navPoint id="navpoint283" playOrder="261">
+          <navLabel>
+            <text>Exploring DateTime and TimeZoneInfo</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-283" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint284" playOrder="262">
+        <navLabel>
+          <text>Working with cultures</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-284" />
+        <navPoint id="navpoint285" playOrder="263">
+          <navLabel>
+            <text>Detecting and changing the current culture</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-285" />
+        </navPoint>
+        <navPoint id="navpoint286" playOrder="264">
+          <navLabel>
+            <text>Temporarily using the invariant culture</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-286" />
+        </navPoint>
+        <navPoint id="navpoint287" playOrder="265">
+          <navLabel>
+            <text>Localizing your user interface</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-287" />
+        </navPoint>
+        <navPoint id="navpoint288" playOrder="266">
+          <navLabel>
+            <text>Defining and loading resources</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-288" />
+        </navPoint>
+        <navPoint id="navpoint289" playOrder="267">
+          <navLabel>
+            <text>Testing globalization and localization</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-289" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint290" playOrder="268">
+        <navLabel>
+          <text>Working with Noda Time</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-290" />
+        <navPoint id="navpoint291" playOrder="269">
+          <navLabel>
+            <text>Important concepts and defaults in Noda Time</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-291" />
+        </navPoint>
+        <navPoint id="navpoint292" playOrder="270">
+          <navLabel>
+            <text>Converting between Noda Time date/time types</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-292" />
+        </navPoint>
+        <navPoint id="navpoint293" playOrder="271">
+          <navLabel>
+            <text>Exploring Node Time in a console app</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-293" />
+        </navPoint>
+        <navPoint id="navpoint294" playOrder="272">
+          <navLabel>
+            <text>Unit testing and JSON serialization with Noda Time</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-294" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint295" playOrder="273">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-295" />
+        <navPoint id="navpoint296" playOrder="274">
+          <navLabel>
+            <text>Exercise 7.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-296" />
+        </navPoint>
+        <navPoint id="navpoint297" playOrder="275">
+          <navLabel>
+            <text>Exercise 7.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-297" />
+        </navPoint>
+        <navPoint id="navpoint298" playOrder="276">
+          <navLabel>
+            <text>Exercise 7.3 – Learn from expert Jon Skeet</text>
+          </navLabel>
+          <content src="Text/Chapter_07.xhtml#_idParaDest-298" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint299" playOrder="277">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_07.xhtml#_idParaDest-299" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint300" playOrder="278">
+      <navLabel>
+        <text>Building and Securing Web Services Using Minimal APIs</text>
+      </navLabel>
+      <content src="Text/Chapter_08.xhtml#_idParaDest-300" />
+      <navPoint id="navpoint301" playOrder="279">
+        <navLabel>
+          <text>Building web services using ASP.NET Core Minimal APIs</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-301" />
+        <navPoint id="navpoint302" playOrder="280">
+          <navLabel>
+            <text>Benefits of Minimal API-based web services</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-302" />
+        </navPoint>
+        <navPoint id="navpoint303" playOrder="281">
+          <navLabel>
+            <text>Understanding Minimal API route mappings</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-303" />
+        </navPoint>
+        <navPoint id="navpoint304" playOrder="282">
+          <navLabel>
+            <text>Understanding parameter mapping</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-304" />
+        </navPoint>
+        <navPoint id="navpoint305" playOrder="283">
+          <navLabel>
+            <text>Understanding return values</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-305" />
+        </navPoint>
+        <navPoint id="navpoint306" playOrder="284">
+          <navLabel>
+            <text>Documenting a Minimal APIs service</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-306" />
+        </navPoint>
+        <navPoint id="navpoint307" playOrder="285">
+          <navLabel>
+            <text>Setting up an ASP.NET Core Web API project</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-307" />
+        </navPoint>
+        <navPoint id="navpoint308" playOrder="286">
+          <navLabel>
+            <text>Testing web services using Swagger</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-308" />
+        </navPoint>
+        <navPoint id="navpoint309" playOrder="287">
+          <navLabel>
+            <text>Testing web services with code editor tools</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-309" />
+        </navPoint>
+        <navPoint id="navpoint310" playOrder="288">
+          <navLabel>
+            <text>Excluding paths from OpenAPI documentation</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-310" />
+        </navPoint>
+        <navPoint id="navpoint311" playOrder="289">
+          <navLabel>
+            <text>Visual Studio 2022 scaffolding for Minimal APIs</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-311" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint312" playOrder="290">
+        <navLabel>
+          <text>Relaxing the same origin security policy using CORS</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-312" />
+        <navPoint id="navpoint313" playOrder="291">
+          <navLabel>
+            <text>Configuring HTTP logging for the web service</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-313" />
+        </navPoint>
+        <navPoint id="navpoint314" playOrder="292">
+          <navLabel>
+            <text>Creating a web page JavaScript client</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-314" />
+        </navPoint>
+        <navPoint id="navpoint315" playOrder="293">
+          <navLabel>
+            <text>Creating a .NET client</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-315" />
+        </navPoint>
+        <navPoint id="navpoint316" playOrder="294">
+          <navLabel>
+            <text>Understanding CORS</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-316" />
+        </navPoint>
+        <navPoint id="navpoint317" playOrder="295">
+          <navLabel>
+            <text>Enabling CORS for specific endpoints</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-317" />
+        </navPoint>
+        <navPoint id="navpoint318" playOrder="296">
+          <navLabel>
+            <text>Understanding other CORS policy options</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-318" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint319" playOrder="297">
+        <navLabel>
+          <text>Preventing denial of service attacks using rate limiting</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-319" />
+        <navPoint id="navpoint320" playOrder="298">
+          <navLabel>
+            <text>Rate limiting using the AspNetCoreRateLimit package</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-320" />
+        </navPoint>
+        <navPoint id="navpoint321" playOrder="299">
+          <navLabel>
+            <text>Creating a rate-limited console client</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-321" />
+        </navPoint>
+        <navPoint id="navpoint322" playOrder="300">
+          <navLabel>
+            <text>Rate limiting using ASP.NET Core middleware</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-322" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint323" playOrder="301">
+        <navLabel>
+          <text>Improving startup time and resources using native AOT</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-323" />
+        <navPoint id="navpoint324" playOrder="302">
+          <navLabel>
+            <text>Limitations of native AOT</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-324" />
+        </navPoint>
+        <navPoint id="navpoint325" playOrder="303">
+          <navLabel>
+            <text>Reflection and native AOT</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-325" />
+        </navPoint>
+        <navPoint id="navpoint326" playOrder="304">
+          <navLabel>
+            <text>Native AOT for ASP.NET Core</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-326" />
+        </navPoint>
+        <navPoint id="navpoint327" playOrder="305">
+          <navLabel>
+            <text>Requirements for native AOT</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-327" />
+        </navPoint>
+        <navPoint id="navpoint328" playOrder="306">
+          <navLabel>
+            <text>Enabling native AOT for a project</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-328" />
+        </navPoint>
+        <navPoint id="navpoint329" playOrder="307">
+          <navLabel>
+            <text>Enabling JSON serialization with native AOT</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-329" />
+        </navPoint>
+        <navPoint id="navpoint330" playOrder="308">
+          <navLabel>
+            <text>Building a native AOT project</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-330" />
+        </navPoint>
+        <navPoint id="navpoint331" playOrder="309">
+          <navLabel>
+            <text>Publishing a native AOT project</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-331" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint332" playOrder="310">
+        <navLabel>
+          <text>Understanding identity services</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-332" />
+        <navPoint id="navpoint333" playOrder="311">
+          <navLabel>
+            <text>JWT bearer authorization</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-333" />
+        </navPoint>
+        <navPoint id="navpoint334" playOrder="312">
+          <navLabel>
+            <text>Authenticating service clients using JWT bearer authentication</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-334" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint335" playOrder="313">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-335" />
+        <navPoint id="navpoint336" playOrder="314">
+          <navLabel>
+            <text>Exercise 8.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-336" />
+        </navPoint>
+        <navPoint id="navpoint337" playOrder="315">
+          <navLabel>
+            <text>Exercise 8.2 – Review Microsoft HTTP API design policy</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-337" />
+        </navPoint>
+        <navPoint id="navpoint338" playOrder="316">
+          <navLabel>
+            <text>Exercise 8.3 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-338" />
+        </navPoint>
+        <navPoint id="navpoint339" playOrder="317">
+          <navLabel>
+            <text>Exercise 8.4 – Exposing data via the web using OData services</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-339" />
+        </navPoint>
+        <navPoint id="navpoint340" playOrder="318">
+          <navLabel>
+            <text>Exercise 8.5 – Auth0 project templates</text>
+          </navLabel>
+          <content src="Text/Chapter_08.xhtml#_idParaDest-340" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint341" playOrder="319">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_08.xhtml#_idParaDest-341" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint342" playOrder="320">
+      <navLabel>
+        <text>Caching, Queuing, and Resilient Background Services</text>
+      </navLabel>
+      <content src="Text/Chapter_09.xhtml#_idParaDest-342" />
+      <navPoint id="navpoint343" playOrder="321">
+        <navLabel>
+          <text>Understanding service architecture</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-343" />
+        <navPoint id="navpoint344" playOrder="322">
+          <navLabel>
+            <text>What parts of a system are slowest?</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-344" />
+        </navPoint>
+        <navPoint id="navpoint345" playOrder="323">
+          <navLabel>
+            <text>Numbers every (developer) should know</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-345" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint346" playOrder="324">
+        <navLabel>
+          <text>Caching with ASP.NET Core</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-346" />
+        <navPoint id="navpoint347" playOrder="325">
+          <navLabel>
+            <text>General caching guidelines</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-347" />
+        </navPoint>
+        <navPoint id="navpoint348" playOrder="326">
+          <navLabel>
+            <text>Building a controller-based Web API service</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-348" />
+        </navPoint>
+        <navPoint id="navpoint349" playOrder="327">
+          <navLabel>
+            <text>Caching objects using in-memory caching</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-349" />
+        </navPoint>
+        <navPoint id="navpoint350" playOrder="328">
+          <navLabel>
+            <text>Caching objects using distributed caching</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-350" />
+        </navPoint>
+        <navPoint id="navpoint351" playOrder="329">
+          <navLabel>
+            <text>A new abstraction for distributed caching</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-351" />
+        </navPoint>
+        <navPoint id="navpoint352" playOrder="330">
+          <navLabel>
+            <text>Caching web responses using HTTP caching</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-352" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint353" playOrder="331">
+        <navLabel>
+          <text>Fault tolerance with Polly</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-353" />
+        <navPoint id="navpoint354" playOrder="332">
+          <navLabel>
+            <text>Understanding retry and circuit breaker patterns</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-354" />
+        </navPoint>
+        <navPoint id="navpoint355" playOrder="333">
+          <navLabel>
+            <text>Defining and executing policies</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-355" />
+        </navPoint>
+        <navPoint id="navpoint356" playOrder="334">
+          <navLabel>
+            <text>Defining wait intervals between retries</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-356" />
+        </navPoint>
+        <navPoint id="navpoint357" playOrder="335">
+          <navLabel>
+            <text>Applying policies to HTTP clients</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-357" />
+        </navPoint>
+        <navPoint id="navpoint358" playOrder="336">
+          <navLabel>
+            <text>Adding random faults to the web service</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-358" />
+        </navPoint>
+        <navPoint id="navpoint359" playOrder="337">
+          <navLabel>
+            <text>Building an MVC project to call the faulty web service</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-359" />
+        </navPoint>
+        <navPoint id="navpoint360" playOrder="338">
+          <navLabel>
+            <text>Implementing the Retry pattern for transient fault handling</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-360" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint361" playOrder="339">
+        <navLabel>
+          <text>Queuing with RabbitMQ</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-361" />
+        <navPoint id="navpoint362" playOrder="340">
+          <navLabel>
+            <text>Setting up RabbitMQ using Docker</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-362" />
+        </navPoint>
+        <navPoint id="navpoint363" playOrder="341">
+          <navLabel>
+            <text>Sending messages to a queue using an MVC website</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-363" />
+        </navPoint>
+        <navPoint id="navpoint364" playOrder="342">
+          <navLabel>
+            <text>Consuming message from a queue using a console app</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-364" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint365" playOrder="343">
+        <navLabel>
+          <text>Implementing long-running background services</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-365" />
+        <navPoint id="navpoint366" playOrder="344">
+          <navLabel>
+            <text>Building a worker service</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-366" />
+        </navPoint>
+        <navPoint id="navpoint367" playOrder="345">
+          <navLabel>
+            <text>Processing queued message using a worker service</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-367" />
+        </navPoint>
+        <navPoint id="navpoint368" playOrder="346">
+          <navLabel>
+            <text>Executing code on a timed schedule</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-368" />
+        </navPoint>
+        <navPoint id="navpoint369" playOrder="347">
+          <navLabel>
+            <text>Building a website to host Hangfire</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-369" />
+        </navPoint>
+        <navPoint id="navpoint370" playOrder="348">
+          <navLabel>
+            <text>Scheduling jobs using Hangfire</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-370" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint371" playOrder="349">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-371" />
+        <navPoint id="navpoint372" playOrder="350">
+          <navLabel>
+            <text>Exercise 9.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-372" />
+        </navPoint>
+        <navPoint id="navpoint373" playOrder="351">
+          <navLabel>
+            <text>Exercise 9.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-373" />
+        </navPoint>
+        <navPoint id="navpoint374" playOrder="352">
+          <navLabel>
+            <text>Exercise 9.3 – Replace the Distributed Memory Cache with another distributed cache implementation</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-374" />
+        </navPoint>
+        <navPoint id="navpoint375" playOrder="353">
+          <navLabel>
+            <text>Exercise 9.4 – Replace Hangfire with Quartz.NET</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-375" />
+        </navPoint>
+        <navPoint id="navpoint376" playOrder="354">
+          <navLabel>
+            <text>Exercise 9.5 – Review the Reliable Web App pattern</text>
+          </navLabel>
+          <content src="Text/Chapter_09.xhtml#_idParaDest-376" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint377" playOrder="355">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_09.xhtml#_idParaDest-377" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint379" playOrder="356">
+      <navLabel>
+        <text>Building Serverless Nanoservices Using Azure Functions</text>
+      </navLabel>
+      <content src="Text/Chapter_10.xhtml#_idParaDest-379" />
+      <navPoint id="navpoint380" playOrder="357">
+        <navLabel>
+          <text>Understanding Azure Functions</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-380" />
+        <navPoint id="navpoint381" playOrder="358">
+          <navLabel>
+            <text>Azure Functions triggers and bindings</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-381" />
+        </navPoint>
+        <navPoint id="navpoint382" playOrder="359">
+          <navLabel>
+            <text>NCRONTAB expressions</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-382" />
+        </navPoint>
+        <navPoint id="navpoint383" playOrder="360">
+          <navLabel>
+            <text>Azure Functions versions and languages</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-383" />
+        </navPoint>
+        <navPoint id="navpoint384" playOrder="361">
+          <navLabel>
+            <text>Azure Functions worker models</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-384" />
+        </navPoint>
+        <navPoint id="navpoint385" playOrder="362">
+          <navLabel>
+            <text>Azure Functions hosting plans</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-385" />
+        </navPoint>
+        <navPoint id="navpoint386" playOrder="363">
+          <navLabel>
+            <text>Azure Storage requirements</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-386" />
+        </navPoint>
+        <navPoint id="navpoint387" playOrder="364">
+          <navLabel>
+            <text>Testing locally with Azurite</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-387" />
+        </navPoint>
+        <navPoint id="navpoint388" playOrder="365">
+          <navLabel>
+            <text>Azure Functions authorization levels</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-388" />
+        </navPoint>
+        <navPoint id="navpoint389" playOrder="366">
+          <navLabel>
+            <text>Azure Functions support for dependency injection</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-389" />
+        </navPoint>
+        <navPoint id="navpoint390" playOrder="367">
+          <navLabel>
+            <text>Installing Azure Functions Core Tools</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-390" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint391" playOrder="368">
+        <navLabel>
+          <text>Building an Azure Functions project</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-391" />
+        <navPoint id="navpoint392" playOrder="369">
+          <navLabel>
+            <text>Using Visual Studio 2022</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-392" />
+        </navPoint>
+        <navPoint id="navpoint393" playOrder="370">
+          <navLabel>
+            <text>Using Visual Studio Code</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-393" />
+        </navPoint>
+        <navPoint id="navpoint394" playOrder="371">
+          <navLabel>
+            <text>Using the func CLI</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-394" />
+        </navPoint>
+        <navPoint id="navpoint395" playOrder="372">
+          <navLabel>
+            <text>Reviewing the Azure Functions project</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-395" />
+        </navPoint>
+        <navPoint id="navpoint396" playOrder="373">
+          <navLabel>
+            <text>Implementing a simple function</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-396" />
+        </navPoint>
+        <navPoint id="navpoint397" playOrder="374">
+          <navLabel>
+            <text>Testing a simple function</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-397" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint398" playOrder="375">
+        <navLabel>
+          <text>Responding to timer and resource triggers</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-398" />
+        <navPoint id="navpoint399" playOrder="376">
+          <navLabel>
+            <text>Implementing a Timer triggered function</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-399" />
+        </navPoint>
+        <navPoint id="navpoint400" playOrder="377">
+          <navLabel>
+            <text>Testing the Timer triggered function</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-400" />
+        </navPoint>
+        <navPoint id="navpoint401" playOrder="378">
+          <navLabel>
+            <text>Implementing a function that works with queues and BLOBs</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-401" />
+        </navPoint>
+        <navPoint id="navpoint402" playOrder="379">
+          <navLabel>
+            <text>Testing the function that works with queues and BLOBs</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-402" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint403" playOrder="380">
+        <navLabel>
+          <text>Publishing an Azure Functions project to the cloud</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-403" />
+        <navPoint id="navpoint404" playOrder="381">
+          <navLabel>
+            <text>Using Visual Studio 2022 to publish</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-404" />
+        </navPoint>
+        <navPoint id="navpoint405" playOrder="382">
+          <navLabel>
+            <text>Using Visual Studio Code to publish</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-405" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint406" playOrder="383">
+        <navLabel>
+          <text>Cleaning up Azure Functions resources</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-406" />
+      </navPoint>
+      <navPoint id="navpoint407" playOrder="384">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-407" />
+        <navPoint id="navpoint408" playOrder="385">
+          <navLabel>
+            <text>Exercise 10.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-408" />
+        </navPoint>
+        <navPoint id="navpoint409" playOrder="386">
+          <navLabel>
+            <text>Exercise 10.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_10.xhtml#_idParaDest-409" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint410" playOrder="387">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_10.xhtml#_idParaDest-410" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint411" playOrder="388">
+      <navLabel>
+        <text>Broadcasting Real-Time Communication Using SignalR</text>
+      </navLabel>
+      <content src="Text/Chapter_11.xhtml#_idParaDest-411" />
+      <navPoint id="navpoint412" playOrder="389">
+        <navLabel>
+          <text>Understanding SignalR</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-412" />
+        <navPoint id="navpoint413" playOrder="390">
+          <navLabel>
+            <text>The history of real-time communication on the web</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-413" />
+        </navPoint>
+        <navPoint id="navpoint414" playOrder="391">
+          <navLabel>
+            <text>AJAX</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-414" />
+        </navPoint>
+        <navPoint id="navpoint415" playOrder="392">
+          <navLabel>
+            <text>WebSocket</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-415" />
+        </navPoint>
+        <navPoint id="navpoint416" playOrder="393">
+          <navLabel>
+            <text>Introducing SignalR</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-416" />
+        </navPoint>
+        <navPoint id="navpoint417" playOrder="394">
+          <navLabel>
+            <text>Azure SignalR Service</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-417" />
+        </navPoint>
+        <navPoint id="navpoint418" playOrder="395">
+          <navLabel>
+            <text>Designing method signatures</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-418" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint419" playOrder="396">
+        <navLabel>
+          <text>Building a live communication service using SignalR</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-419" />
+        <navPoint id="navpoint420" playOrder="397">
+          <navLabel>
+            <text>Defining some shared models</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-420" />
+        </navPoint>
+        <navPoint id="navpoint421" playOrder="398">
+          <navLabel>
+            <text>Enabling a server-side SignalR hub</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-421" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint422" playOrder="399">
+        <navLabel>
+          <text>Building a web client using the SignalR JavaScript library</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-422" />
+        <navPoint id="navpoint423" playOrder="400">
+          <navLabel>
+            <text>Adding a chat page to the MVC website</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-423" />
+        </navPoint>
+        <navPoint id="navpoint424" playOrder="401">
+          <navLabel>
+            <text>Testing the chat feature</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-424" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint425" playOrder="402">
+        <navLabel>
+          <text>Building a .NET console app client</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-425" />
+        <navPoint id="navpoint426" playOrder="403">
+          <navLabel>
+            <text>Creating a .NET client for SignalR</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-426" />
+        </navPoint>
+        <navPoint id="navpoint427" playOrder="404">
+          <navLabel>
+            <text>Testing the .NET console app client</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-427" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint428" playOrder="405">
+        <navLabel>
+          <text>Streaming data using SignalR</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-428" />
+        <navPoint id="navpoint429" playOrder="406">
+          <navLabel>
+            <text>Defining a hub for streaming</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-429" />
+        </navPoint>
+        <navPoint id="navpoint430" playOrder="407">
+          <navLabel>
+            <text>Creating a .NET console app client for streaming</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-430" />
+        </navPoint>
+        <navPoint id="navpoint431" playOrder="408">
+          <navLabel>
+            <text>Testing the streaming service and client</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-431" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint432" playOrder="409">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-432" />
+        <navPoint id="navpoint433" playOrder="410">
+          <navLabel>
+            <text>Exercise 11.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-433" />
+        </navPoint>
+        <navPoint id="navpoint434" playOrder="411">
+          <navLabel>
+            <text>Exercise 11.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_11.xhtml#_idParaDest-434" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint435" playOrder="412">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_11.xhtml#_idParaDest-435" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint436" playOrder="413">
+      <navLabel>
+        <text>Combining Data Sources Using GraphQL</text>
+      </navLabel>
+      <content src="Text/Chapter_12.xhtml#_idParaDest-436" />
+      <navPoint id="navpoint437" playOrder="414">
+        <navLabel>
+          <text>Understanding GraphQL</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-437" />
+        <navPoint id="navpoint438" playOrder="415">
+          <navLabel>
+            <text>GraphQL query document format</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-438" />
+          <navPoint id="navpoint439" playOrder="416">
+            <navLabel>
+              <text>Requesting fields</text>
+            </navLabel>
+            <content src="Text/Chapter_12.xhtml#_idParaDest-439" />
+          </navPoint>
+          <navPoint id="navpoint440" playOrder="417">
+            <navLabel>
+              <text>Specifying filters and arguments</text>
+            </navLabel>
+            <content src="Text/Chapter_12.xhtml#_idParaDest-440" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint441" playOrder="418">
+          <navLabel>
+            <text>Understanding other GraphQL capabilities</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-441" />
+        </navPoint>
+        <navPoint id="navpoint442" playOrder="419">
+          <navLabel>
+            <text>Understanding the ChilliCream GraphQL platform</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-442" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint443" playOrder="420">
+        <navLabel>
+          <text>Building a service that supports GraphQL</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-443" />
+        <navPoint id="navpoint444" playOrder="421">
+          <navLabel>
+            <text>Defining the GraphQL schema for Hello World</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-444" />
+        </navPoint>
+        <navPoint id="navpoint445" playOrder="422">
+          <navLabel>
+            <text>Writing and executing GraphQL queries</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-445" />
+        </navPoint>
+        <navPoint id="navpoint446" playOrder="423">
+          <navLabel>
+            <text>Naming GraphQL queries aka operations</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-446" />
+        </navPoint>
+        <navPoint id="navpoint447" playOrder="424">
+          <navLabel>
+            <text>Understanding field conventions</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-447" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint448" playOrder="425">
+        <navLabel>
+          <text>Defining GraphQL queries for EF Core models</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-448" />
+        <navPoint id="navpoint449" playOrder="426">
+          <navLabel>
+            <text>Adding support for EF Core</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-449" />
+        </navPoint>
+        <navPoint id="navpoint450" playOrder="427">
+          <navLabel>
+            <text>Exploring GraphQL queries with Northwind</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-450" />
+        </navPoint>
+        <navPoint id="navpoint451" playOrder="428">
+          <navLabel>
+            <text>Implementing paging support</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-451" />
+        </navPoint>
+        <navPoint id="navpoint452" playOrder="429">
+          <navLabel>
+            <text>Implementing filtering support</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-452" />
+        </navPoint>
+        <navPoint id="navpoint453" playOrder="430">
+          <navLabel>
+            <text>Implementing sorting support</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-453" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint454" playOrder="431">
+        <navLabel>
+          <text>Building .NET clients for a GraphQL service</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-454" />
+        <navPoint id="navpoint455" playOrder="432">
+          <navLabel>
+            <text>Choosing GraphQL request formats</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-455" />
+        </navPoint>
+        <navPoint id="navpoint456" playOrder="433">
+          <navLabel>
+            <text>Understanding the GraphQL response format</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-456" />
+        </navPoint>
+        <navPoint id="navpoint457" playOrder="434">
+          <navLabel>
+            <text>Using REST Client as a GraphQL client</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-457" />
+        </navPoint>
+        <navPoint id="navpoint458" playOrder="435">
+          <navLabel>
+            <text>Using an ASP.NET Core MVC project as a GraphQL client</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-458" />
+        </navPoint>
+        <navPoint id="navpoint459" playOrder="436">
+          <navLabel>
+            <text>Testing the .NET client</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-459" />
+        </navPoint>
+        <navPoint id="navpoint460" playOrder="437">
+          <navLabel>
+            <text>Creating a console app client using Strawberry Shake</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-460" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint461" playOrder="438">
+        <navLabel>
+          <text>Implementing GraphQL mutations</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-461" />
+        <navPoint id="navpoint462" playOrder="439">
+          <navLabel>
+            <text>Adding mutations to the GraphQL service</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-462" />
+        </navPoint>
+        <navPoint id="navpoint463" playOrder="440">
+          <navLabel>
+            <text>Exploring the add product mutation</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-463" />
+        </navPoint>
+        <navPoint id="navpoint464" playOrder="441">
+          <navLabel>
+            <text>Implementing updates and deletes as mutations</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-464" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint465" playOrder="442">
+        <navLabel>
+          <text>Implementing GraphQL subscriptions</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-465" />
+        <navPoint id="navpoint466" playOrder="443">
+          <navLabel>
+            <text>Adding a subscription and topic to the GraphQL service</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-466" />
+        </navPoint>
+        <navPoint id="navpoint467" playOrder="444">
+          <navLabel>
+            <text>Exploring subscribing to a topic</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-467" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint468" playOrder="445">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-468" />
+        <navPoint id="navpoint469" playOrder="446">
+          <navLabel>
+            <text>Exercise 12.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-469" />
+        </navPoint>
+        <navPoint id="navpoint470" playOrder="447">
+          <navLabel>
+            <text>Exercise 12.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-470" />
+        </navPoint>
+        <navPoint id="navpoint471" playOrder="448">
+          <navLabel>
+            <text>Exercise 12.3 – Practice building .NET clients</text>
+          </navLabel>
+          <content src="Text/Chapter_12.xhtml#_idParaDest-471" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint472" playOrder="449">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_12.xhtml#_idParaDest-472" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint474" playOrder="450">
+      <navLabel>
+        <text>Building Efficient Microservices Using gRPC</text>
+      </navLabel>
+      <content src="Text/Chapter_13.xhtml#_idParaDest-474" />
+      <navPoint id="navpoint475" playOrder="451">
+        <navLabel>
+          <text>Understanding gRPC</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-475" />
+        <navPoint id="navpoint476" playOrder="452">
+          <navLabel>
+            <text>How gRPC works</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-476" />
+        </navPoint>
+        <navPoint id="navpoint477" playOrder="453">
+          <navLabel>
+            <text>Defining gRPC contracts with .proto files</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-477" />
+        </navPoint>
+        <navPoint id="navpoint478" playOrder="454">
+          <navLabel>
+            <text>gRPC benefits</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-478" />
+        </navPoint>
+        <navPoint id="navpoint479" playOrder="455">
+          <navLabel>
+            <text>gRPC limitations</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-479" />
+        </navPoint>
+        <navPoint id="navpoint480" playOrder="456">
+          <navLabel>
+            <text>Types of gRPC methods</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-480" />
+        </navPoint>
+        <navPoint id="navpoint481" playOrder="457">
+          <navLabel>
+            <text>Microsoft’s gRPC packages</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-481" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint482" playOrder="458">
+        <navLabel>
+          <text>Building a gRPC service and client</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-482" />
+        <navPoint id="navpoint483" playOrder="459">
+          <navLabel>
+            <text>Building a Hello World gRPC service</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-483" />
+        </navPoint>
+        <navPoint id="navpoint484" playOrder="460">
+          <navLabel>
+            <text>Project file item configuration</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-484" />
+        </navPoint>
+        <navPoint id="navpoint485" playOrder="461">
+          <navLabel>
+            <text>Building a Hello World gRPC client</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-485" />
+        </navPoint>
+        <navPoint id="navpoint486" playOrder="462">
+          <navLabel>
+            <text>Testing a gRPC service and client</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-486" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint487" playOrder="463">
+        <navLabel>
+          <text>Implementing gRPC for an EF Core model</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-487" />
+        <navPoint id="navpoint488" playOrder="464">
+          <navLabel>
+            <text>Implementing the gRPC service</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-488" />
+        </navPoint>
+        <navPoint id="navpoint489" playOrder="465">
+          <navLabel>
+            <text>Implementing the gRPC client</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-489" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint490" playOrder="466">
+        <navLabel>
+          <text>Taking gRPC further</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-490" />
+        <navPoint id="navpoint491" playOrder="467">
+          <navLabel>
+            <text>Improving a gRPC service with native AOT publish</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-491" />
+        </navPoint>
+        <navPoint id="navpoint492" playOrder="468">
+          <navLabel>
+            <text>Getting request and response metadata</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-492" />
+        </navPoint>
+        <navPoint id="navpoint493" playOrder="469">
+          <navLabel>
+            <text>Adding a deadline for higher reliability</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-493" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint494" playOrder="470">
+        <navLabel>
+          <text>Handling dates, times, and decimal numbers</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-494" />
+        <navPoint id="navpoint495" playOrder="471">
+          <navLabel>
+            <text>Defining a custom decimal type and using date/time types</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-495" />
+        </navPoint>
+        <navPoint id="navpoint496" playOrder="472">
+          <navLabel>
+            <text>Implementing the product and employee gRPC services</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-496" />
+        </navPoint>
+        <navPoint id="navpoint497" playOrder="473">
+          <navLabel>
+            <text>Adding product and employee gRPC clients</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-497" />
+        </navPoint>
+        <navPoint id="navpoint498" playOrder="474">
+          <navLabel>
+            <text>Testing decimal, date, and bytes handling</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-498" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint499" playOrder="475">
+        <navLabel>
+          <text>Implementing interceptors and handling faults</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-499" />
+        <navPoint id="navpoint500" playOrder="476">
+          <navLabel>
+            <text>Adding a client-side interceptor</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-500" />
+        </navPoint>
+        <navPoint id="navpoint501" playOrder="477">
+          <navLabel>
+            <text>Exception and transient fault handling</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-501" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint502" playOrder="478">
+        <navLabel>
+          <text>Implementing gRPC JSON transcoding</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-502" />
+        <navPoint id="navpoint503" playOrder="479">
+          <navLabel>
+            <text>Enabling gRPC JSON transcoding</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-503" />
+        </navPoint>
+        <navPoint id="navpoint504" playOrder="480">
+          <navLabel>
+            <text>Testing gRPC JSON transcoding</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-504" />
+        </navPoint>
+        <navPoint id="navpoint505" playOrder="481">
+          <navLabel>
+            <text>Comparing with gRPC-Web</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-505" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint506" playOrder="482">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-506" />
+        <navPoint id="navpoint507" playOrder="483">
+          <navLabel>
+            <text>Exercise 13.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-507" />
+        </navPoint>
+        <navPoint id="navpoint508" playOrder="484">
+          <navLabel>
+            <text>Exercise 13.2 – Compare gRPC services with HTTP APIs</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-508" />
+        </navPoint>
+        <navPoint id="navpoint509" playOrder="485">
+          <navLabel>
+            <text>Exercise 13.3 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_13.xhtml#_idParaDest-509" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint510" playOrder="486">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_13.xhtml#_idParaDest-510" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint511" playOrder="487">
+      <navLabel>
+        <text>Building Web User Interfaces Using ASP.NET Core</text>
+      </navLabel>
+      <content src="Text/Chapter_14.xhtml#_idParaDest-511" />
+      <navPoint id="navpoint512" playOrder="488">
+        <navLabel>
+          <text>Setting up an ASP.NET Core MVC website</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-512" />
+        <navPoint id="navpoint513" playOrder="489">
+          <navLabel>
+            <text>Creating an ASP.NET Core MVC website</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-513" />
+        </navPoint>
+        <navPoint id="navpoint514" playOrder="490">
+          <navLabel>
+            <text>Exploring the default ASP.NET Core MVC website</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-514" />
+        </navPoint>
+        <navPoint id="navpoint515" playOrder="491">
+          <navLabel>
+            <text>Understanding visitor registration</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-515" />
+        </navPoint>
+        <navPoint id="navpoint516" playOrder="492">
+          <navLabel>
+            <text>Reviewing an MVC website project structure</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-516" />
+        </navPoint>
+        <navPoint id="navpoint517" playOrder="493">
+          <navLabel>
+            <text>Referencing an EF Core class library and registering a data context</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-517" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint518" playOrder="494">
+        <navLabel>
+          <text>Defining web user interfaces with Razor views</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-518" />
+        <navPoint id="navpoint519" playOrder="495">
+          <navLabel>
+            <text>Understanding Razor views</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-519" />
+        </navPoint>
+        <navPoint id="navpoint520" playOrder="496">
+          <navLabel>
+            <text>Prototyping with Bootstrap</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-520" />
+        </navPoint>
+        <navPoint id="navpoint521" playOrder="497">
+          <navLabel>
+            <text>Understanding Razor syntax and expressions</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-521" />
+        </navPoint>
+        <navPoint id="navpoint522" playOrder="498">
+          <navLabel>
+            <text>Understanding HTML Helper methods</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-522" />
+        </navPoint>
+        <navPoint id="navpoint523" playOrder="499">
+          <navLabel>
+            <text>Defining a strongly-typed Razor view</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-523" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint524" playOrder="500">
+        <navLabel>
+          <text>Localizing and globalizing with ASP.NET Core</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-524" />
+        <navPoint id="navpoint525" playOrder="501">
+          <navLabel>
+            <text>Creating resource files</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-525" />
+          <navPoint id="navpoint526" playOrder="502">
+            <navLabel>
+              <text>If you are using Visual Studio 2022</text>
+            </navLabel>
+            <content src="Text/Chapter_14.xhtml#_idParaDest-526" />
+          </navPoint>
+          <navPoint id="navpoint527" playOrder="503">
+            <navLabel>
+              <text>If you are using Visual Studio Code</text>
+            </navLabel>
+            <content src="Text/Chapter_14.xhtml#_idParaDest-527" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint528" playOrder="504">
+          <navLabel>
+            <text>Localizing Razor views with an injected view localizer</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-528" />
+        </navPoint>
+        <navPoint id="navpoint529" playOrder="505">
+          <navLabel>
+            <text>Understanding the Accept-Language header</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-529" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint530" playOrder="506">
+        <navLabel>
+          <text>Defining web user interfaces with Tag Helpers</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-530" />
+        <navPoint id="navpoint531" playOrder="507">
+          <navLabel>
+            <text>Comparing HTML Helpers and Tag Helpers</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-531" />
+        </navPoint>
+        <navPoint id="navpoint532" playOrder="508">
+          <navLabel>
+            <text>Exploring the Anchor Tag Helper</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-532" />
+        </navPoint>
+        <navPoint id="navpoint533" playOrder="509">
+          <navLabel>
+            <text>Exploring the Cache Tag Helpers</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-533" />
+        </navPoint>
+        <navPoint id="navpoint534" playOrder="510">
+          <navLabel>
+            <text>Exploring the Environment Tag Helper</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-534" />
+        </navPoint>
+        <navPoint id="navpoint535" playOrder="511">
+          <navLabel>
+            <text>Understanding how cache busting with Tag Helpers works</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-535" />
+        </navPoint>
+        <navPoint id="navpoint536" playOrder="512">
+          <navLabel>
+            <text>Exploring Forms-related Tag Helpers</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-536" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint537" playOrder="513">
+        <navLabel>
+          <text>Output caching</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-537" />
+        <navPoint id="navpoint538" playOrder="514">
+          <navLabel>
+            <text>Output caching endpoints</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-538" />
+        </navPoint>
+        <navPoint id="navpoint539" playOrder="515">
+          <navLabel>
+            <text>Output caching MVC views</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-539" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint540" playOrder="516">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-540" />
+        <navPoint id="navpoint541" playOrder="517">
+          <navLabel>
+            <text>Exercise 14.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-541" />
+        </navPoint>
+        <navPoint id="navpoint542" playOrder="518">
+          <navLabel>
+            <text>Exercise 14.2 – Practice building user interfaces with Boostrap</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-542" />
+        </navPoint>
+        <navPoint id="navpoint543" playOrder="519">
+          <navLabel>
+            <text>Exercise 14.3 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_14.xhtml#_idParaDest-543" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint544" playOrder="520">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_14.xhtml#_idParaDest-544" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint545" playOrder="521">
+      <navLabel>
+        <text>Building Web Components Using Blazor</text>
+      </navLabel>
+      <content src="Text/Chapter_15.xhtml#_idParaDest-545" />
+      <navPoint id="navpoint546" playOrder="522">
+        <navLabel>
+          <text>Understanding Blazor</text>
+        </navLabel>
+        <content src="Text/Chapter_15.xhtml#_idParaDest-546" />
+        <navPoint id="navpoint547" playOrder="523">
+          <navLabel>
+            <text>Blazor hosting models</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-547" />
+        </navPoint>
+        <navPoint id="navpoint548" playOrder="524">
+          <navLabel>
+            <text>Blazor components</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-548" />
+        </navPoint>
+        <navPoint id="navpoint549" playOrder="525">
+          <navLabel>
+            <text>Blazor routing to page components</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-549" />
+        </navPoint>
+        <navPoint id="navpoint550" playOrder="526">
+          <navLabel>
+            <text>How to pass route parameters</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-550" />
+        </navPoint>
+        <navPoint id="navpoint551" playOrder="527">
+          <navLabel>
+            <text>Setting parameters from a query string</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-551" />
+        </navPoint>
+        <navPoint id="navpoint552" playOrder="528">
+          <navLabel>
+            <text>Route constraints for parameters</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-552" />
+        </navPoint>
+        <navPoint id="navpoint553" playOrder="529">
+          <navLabel>
+            <text>Base component classes</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-553" />
+        </navPoint>
+        <navPoint id="navpoint554" playOrder="530">
+          <navLabel>
+            <text>Blazor layouts</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-554" />
+        </navPoint>
+        <navPoint id="navpoint555" playOrder="531">
+          <navLabel>
+            <text>How to navigate Blazor routes to page components</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-555" />
+        </navPoint>
+        <navPoint id="navpoint556" playOrder="532">
+          <navLabel>
+            <text>CSS and JavaScript isolation</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-556" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint557" playOrder="533">
+        <navLabel>
+          <text>Building Blazor components</text>
+        </navLabel>
+        <content src="Text/Chapter_15.xhtml#_idParaDest-557" />
+        <navPoint id="navpoint558" playOrder="534">
+          <navLabel>
+            <text>Reviewing the new Blazor project template</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-558" />
+        </navPoint>
+        <navPoint id="navpoint559" playOrder="535">
+          <navLabel>
+            <text>Using Bootstrap icons</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-559" />
+        </navPoint>
+        <navPoint id="navpoint560" playOrder="536">
+          <navLabel>
+            <text>Referencing an EF Core class library and registering a data context</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-560" />
+        </navPoint>
+        <navPoint id="navpoint561" playOrder="537">
+          <navLabel>
+            <text>Building a static server rendered component for data</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-561" />
+        </navPoint>
+        <navPoint id="navpoint562" playOrder="538">
+          <navLabel>
+            <text>Building a component with server interactivity</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-562" />
+        </navPoint>
+        <navPoint id="navpoint563" playOrder="539">
+          <navLabel>
+            <text>Building a Blazor progress bar component</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-563" />
+        </navPoint>
+        <navPoint id="navpoint564" playOrder="540">
+          <navLabel>
+            <text>Building a Blazor dialog box component</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-564" />
+        </navPoint>
+        <navPoint id="navpoint565" playOrder="541">
+          <navLabel>
+            <text>Building a Blazor alert component</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-565" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint566" playOrder="542">
+        <navLabel>
+          <text>Building a Blazor data component</text>
+        </navLabel>
+        <content src="Text/Chapter_15.xhtml#_idParaDest-566" />
+        <navPoint id="navpoint567" playOrder="543">
+          <navLabel>
+            <text>Making the component</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-567" />
+        </navPoint>
+        <navPoint id="navpoint568" playOrder="544">
+          <navLabel>
+            <text>Making the component a routable page component</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-568" />
+        </navPoint>
+        <navPoint id="navpoint569" playOrder="545">
+          <navLabel>
+            <text>Getting entities into a component by building a web service</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-569" />
+        </navPoint>
+        <navPoint id="navpoint570" playOrder="546">
+          <navLabel>
+            <text>Getting entities into a component by calling the web service</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-570" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint571" playOrder="547">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_15.xhtml#_idParaDest-571" />
+        <navPoint id="navpoint572" playOrder="548">
+          <navLabel>
+            <text>Exercise 15.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-572" />
+        </navPoint>
+        <navPoint id="navpoint573" playOrder="549">
+          <navLabel>
+            <text>Exercise 15.2 – Practice building Blazor components</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-573" />
+        </navPoint>
+        <navPoint id="navpoint574" playOrder="550">
+          <navLabel>
+            <text>Exercise 15.3 – Practice building an IndexedDB interop service</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-574" />
+        </navPoint>
+        <navPoint id="navpoint575" playOrder="551">
+          <navLabel>
+            <text>Exercise 15.4 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-575" />
+        </navPoint>
+        <navPoint id="navpoint576" playOrder="552">
+          <navLabel>
+            <text>Exercise 15.5 – Explore Blazor WebAssembly topics</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-576" />
+        </navPoint>
+        <navPoint id="navpoint577" playOrder="553">
+          <navLabel>
+            <text>Exercise 15.6 – Explore Progressive Web Apps with Blazor</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-577" />
+        </navPoint>
+        <navPoint id="navpoint578" playOrder="554">
+          <navLabel>
+            <text>Exercise 15.7 – Leveraging Open Source Blazor Component Libraries</text>
+          </navLabel>
+          <content src="Text/Chapter_15.xhtml#_idParaDest-578" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint579" playOrder="555">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_15.xhtml#_idParaDest-579" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint581" playOrder="556">
+      <navLabel>
+        <text>Building Mobile and Desktop Apps Using .NET MAUI</text>
+      </navLabel>
+      <content src="Text/Chapter_16.xhtml#_idParaDest-581" />
+      <navPoint id="navpoint582" playOrder="557">
+        <navLabel>
+          <text>Understanding XAML</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-582" />
+        <navPoint id="navpoint583" playOrder="558">
+          <navLabel>
+            <text>Simplifying code using XAML</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-583" />
+        </navPoint>
+        <navPoint id="navpoint584" playOrder="559">
+          <navLabel>
+            <text>.NET MAUI namespaces</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-584" />
+        </navPoint>
+        <navPoint id="navpoint585" playOrder="560">
+          <navLabel>
+            <text>Type converters</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-585" />
+        </navPoint>
+        <navPoint id="navpoint586" playOrder="561">
+          <navLabel>
+            <text>Choosing between .NET MAUI controls</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-586" />
+        </navPoint>
+        <navPoint id="navpoint587" playOrder="562">
+          <navLabel>
+            <text>Markup extensions</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-587" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint588" playOrder="563">
+        <navLabel>
+          <text>Understanding .NET MAUI</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-588" />
+        <navPoint id="navpoint589" playOrder="564">
+          <navLabel>
+            <text>.NET MAUI and Xamarin support</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-589" />
+        </navPoint>
+        <navPoint id="navpoint590" playOrder="565">
+          <navLabel>
+            <text>Development tools for mobile first, cloud first</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-590" />
+        </navPoint>
+        <navPoint id="navpoint591" playOrder="566">
+          <navLabel>
+            <text>Installing .NET MAUI workloads manually</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-591" />
+        </navPoint>
+        <navPoint id="navpoint592" playOrder="567">
+          <navLabel>
+            <text>.NET MAUI user interface component categories</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-592" />
+          <navPoint id="navpoint593" playOrder="568">
+            <navLabel>
+              <text>Shell control</text>
+            </navLabel>
+            <content src="Text/Chapter_16.xhtml#_idParaDest-593" />
+          </navPoint>
+          <navPoint id="navpoint594" playOrder="569">
+            <navLabel>
+              <text>ListView control</text>
+            </navLabel>
+            <content src="Text/Chapter_16.xhtml#_idParaDest-594" />
+          </navPoint>
+          <navPoint id="navpoint595" playOrder="570">
+            <navLabel>
+              <text>Entry and Editor controls</text>
+            </navLabel>
+            <content src="Text/Chapter_16.xhtml#_idParaDest-595" />
+          </navPoint>
+        </navPoint>
+        <navPoint id="navpoint596" playOrder="571">
+          <navLabel>
+            <text>.NET MAUI handlers</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-596" />
+        </navPoint>
+        <navPoint id="navpoint597" playOrder="572">
+          <navLabel>
+            <text>Writing platform-specific code</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-597" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint598" playOrder="573">
+        <navLabel>
+          <text>Building mobile and desktop apps using .NET MAUI</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-598" />
+        <navPoint id="navpoint599" playOrder="574">
+          <navLabel>
+            <text>Creating a virtual Android device for local app testing</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-599" />
+        </navPoint>
+        <navPoint id="navpoint600" playOrder="575">
+          <navLabel>
+            <text>Enabling Windows developer mode</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-600" />
+        </navPoint>
+        <navPoint id="navpoint601" playOrder="576">
+          <navLabel>
+            <text>Creating a .NET MAUI project</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-601" />
+        </navPoint>
+        <navPoint id="navpoint602" playOrder="577">
+          <navLabel>
+            <text>Adding shell navigation and more content pages</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-602" />
+        </navPoint>
+        <navPoint id="navpoint603" playOrder="578">
+          <navLabel>
+            <text>Implementing more content pages</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-603" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint604" playOrder="579">
+        <navLabel>
+          <text>Using shared resources</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-604" />
+        <navPoint id="navpoint605" playOrder="580">
+          <navLabel>
+            <text>Defining resources to share across an app</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-605" />
+        </navPoint>
+        <navPoint id="navpoint606" playOrder="581">
+          <navLabel>
+            <text>Referencing shared resources</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-606" />
+        </navPoint>
+        <navPoint id="navpoint607" playOrder="582">
+          <navLabel>
+            <text>Changing shared resources dynamically</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-607" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint608" playOrder="583">
+        <navLabel>
+          <text>Using data binding</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-608" />
+        <navPoint id="navpoint609" playOrder="584">
+          <navLabel>
+            <text>Binding to elements</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-609" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint610" playOrder="585">
+        <navLabel>
+          <text>Practicing and exploring</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-610" />
+        <navPoint id="navpoint611" playOrder="586">
+          <navLabel>
+            <text>Exercise 16.1 – Test your knowledge</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-611" />
+        </navPoint>
+        <navPoint id="navpoint612" playOrder="587">
+          <navLabel>
+            <text>Exercise 16.2 – Explore topics</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-612" />
+        </navPoint>
+        <navPoint id="navpoint613" playOrder="588">
+          <navLabel>
+            <text>Exercise 16.3 – Implementing Model-View-ViewModel for .NET MAUI</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-613" />
+        </navPoint>
+        <navPoint id="navpoint614" playOrder="589">
+          <navLabel>
+            <text>Exercise 16.4 – Integrating .NET MAUI apps with Blazor and native platforms</text>
+          </navLabel>
+          <content src="Text/Chapter_16.xhtml#_idParaDest-614" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint615" playOrder="590">
+        <navLabel>
+          <text>Summary</text>
+        </navLabel>
+        <content src="Text/Chapter_16.xhtml#_idParaDest-615" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint616" playOrder="591">
+      <navLabel>
+        <text>Epilogue</text>
+      </navLabel>
+      <content src="Text/Epilogue.xhtml#_idParaDest-616" />
+      <navPoint id="navpoint617" playOrder="592">
+        <navLabel>
+          <text>Cloud-native development using .NET Aspire</text>
+        </navLabel>
+        <content src="Text/Epilogue.xhtml#_idParaDest-617" />
+      </navPoint>
+      <navPoint id="navpoint618" playOrder="593">
+        <navLabel>
+          <text>Introducing the Survey Project Challenge</text>
+        </navLabel>
+        <content src="Text/Epilogue.xhtml#_idParaDest-618" />
+      </navPoint>
+      <navPoint id="navpoint619" playOrder="594">
+        <navLabel>
+          <text>Third edition coming in December 2025</text>
+        </navLabel>
+        <content src="Text/Epilogue.xhtml#_idParaDest-619" />
+      </navPoint>
+      <navPoint id="navpoint620" playOrder="595">
+        <navLabel>
+          <text>Next steps on your C# and .NET learning journey</text>
+        </navLabel>
+        <content src="Text/Epilogue.xhtml#_idParaDest-620" />
+        <navPoint id="navpoint621" playOrder="596">
+          <navLabel>
+            <text>Companion books to continue your learning journey</text>
+          </navLabel>
+          <content src="Text/Epilogue.xhtml#_idParaDest-621" />
+        </navPoint>
+        <navPoint id="navpoint622" playOrder="597">
+          <navLabel>
+            <text>Other books to take your learning further</text>
+          </navLabel>
+          <content src="Text/Epilogue.xhtml#_idParaDest-622" />
+        </navPoint>
+      </navPoint>
+      <navPoint id="navpoint623" playOrder="598">
+        <navLabel>
+          <text>Good luck!</text>
+        </navLabel>
+        <content src="Text/Epilogue.xhtml#_idParaDest-623" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navpoint625" playOrder="599">
+      <navLabel>
+        <text>Index</text>
+      </navLabel>
+      <content src="Text/Index.xhtml#_idParaDest-625" />
+    </navPoint>
+  </navMap>
+</ncx>

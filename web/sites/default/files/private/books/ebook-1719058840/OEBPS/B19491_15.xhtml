@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_15</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_15">
+		<div id="_idContainer118">
+			<h1 id="_idParaDest-233" class="chapter-number"><a id="_idTextAnchor431"></a>15</h1>
+			<h1 id="_idParaDest-234"><a id="_idTextAnchor432"></a>Visual Content Management</h1>
+			<p><a id="_idTextAnchor433"></a>Content authors can struggle to map administrative forms with fields for structured content against the resulting rendered visual presentation of that content. While content managers do have tools such as preview, bouncing back and forth between a preview and editing adds effort for authors. This motivated a secondary authoring experience called<a id="_idIndexMarker486"></a> Layout Builder, which offers <a id="_idIndexMarker487"></a>visual content management. The feature helps provide content authors with rendered content as changes are made. Furthermore, it extends beyond just nodes by affording the same experience for <span class="No-Break">rendered blocks.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>Blocks and custom <span class="No-Break">block types</span></li>
+				<li><span class="No-Break">Layout Builder</span></li>
+				<li><span class="No-Break">Contributed projects</span><a id="_idTextAnchor434"></a></li>
+			</ul>
+			<h1 id="_idParaDest-235"><a id="_idTextAnchor435"></a>Blocks and custom block types</h1>
+			<p>Beyond content types, Drupal offers a second fieldable content entity known as blocks. Where a <a id="_idIndexMarker488"></a>content type renders as its page, a block can be rendered on one or more pages tied to a <span class="No-Break">theme region<a id="_idTextAnchor436"></a>.</span></p>
+			<h2 id="_idParaDest-236"><a id="_idTextAnchor437"></a>Managing blocks</h2>
+			<p>Out of the box, Drupal<a id="_idIndexMarker489"></a> comes with many different blocks. Blocks help render menus, content in the header, content in the footer, and <span class="No-Break">much more.</span></p>
+			<p>Block management can be found at <strong class="source-inline">admin/structure/block</strong>. The following figure shows the centralized management screen <span class="No-Break">in Drupal:</span></p>
+			<div>
+				<div id="_idContainer107" class="IMG---Figure">
+					<img src="image/B19491_15_1.jpg" alt="Figure 15.1 – Central block management administrative screen" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.1 – Central block management administrative screen</p>
+			<p><span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.1</em> demonstrates block placement. There are tabs at the top for each enabled theme. A<a id="_idIndexMarker490"></a> block can be placed by pressing the <strong class="bold">Place block</strong> button for the region of the theme. This button prompts a modal window that contains the entire block catalog. The modal also provides the option to create a custom block, if needed. Placed blocks can also be moved between regions using the drag-and-drop handle or the region selection option. Various operations exist to disable, remove, or configure the <span class="No-Break">placed block.</span></p>
+			<p>The <strong class="bold">Configure</strong> operation<a id="_idIndexMarker491"></a> manages the settings for the block and the block’s visibility.  The settings of the block may be fields of the content or specific configurations of the block. The following figure shows the block <span class="No-Break">visibility form:</span></p>
+			<div>
+				<div id="_idContainer108" class="IMG---Figure">
+					<img src="image/B19491_15_2.jpg" alt="Figure 15.2 – Block visibility configuration for a placed block" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.2 – Block visibility configuration for a placed block</p>
+			<p><span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.2</em> shows how a <a id="_idIndexMarker492"></a>block can be placed through various settings. There are various types of context where a block can be rendered; these areas are shown as tabs. The <strong class="bold">Pages</strong> tab allows for the <strong class="source-inline">*</strong> character, which means it gets rendered on any page or one or more paths can be provided to render on specific pages. The <strong class="bold">Roles</strong>, <strong class="bold">Content type</strong>, and <strong class="bold">Vocabulary</strong> tabs allow block visibility to be restricted to <span class="No-Break">those entit<a id="_idTextAnchor438"></a>ies.</span></p>
+			<h2 id="_idParaDest-237"><a id="_idTextAnchor439"></a>Custom block types</h2>
+			<p>Beyond Drupal’s out-of-the-box<a id="_idIndexMarker493"></a> blocks, blocks with custom content can be created through custom block types. A custom block type is a fieldable content entity where each type is a bundle. This observes a similar set of features to managing content types. Drupal offers a central block type listing at <strong class="source-inline">admin/structure/block-content</strong> with a button to add a new block type. When adding, the basic block type metadata is entered and saved. There’s also a <strong class="bold">manage fields</strong> operation to alter the content structure of the block. Furthermore, a <strong class="bold">manage display</strong> operation exists to control how blocks of that type <span class="No-Break">get rendered.</span></p>
+			<p>Custom blocks can be created after pressing the <strong class="bold">Place block</strong> button under a theme region of the central block management screen. The following modal <span class="No-Break">will appear:</span></p>
+			<div>
+				<div id="_idContainer109" class="IMG---Figure">
+					<img src="image/B19491_15_3.jpg" alt="Figure 15.3 – The Place block modal window" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.3 – The Place block modal window</p>
+			<p><span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.3</em> shows how to either place a block from the library or create a new content block through the <strong class="bold">Add content block</strong> button. The <strong class="bold">Add content block</strong> button prompts you to select the desired block type, which subsequently prompts a form with all of the fields in the block type. After adding the custom content block, it can be configured with the same visibility settings <span class="No-Break">shown previously.</span></p>
+			<p>Blocks allow you to manage<a id="_idIndexMarker494"></a> the same content across multiple pages within a theme region. It can be managed centrally through block visibility, which configures the logic of when the block is rendered. Custom block types afford structured content for blocks similar to content types with fields, display settings, <span class="No-Break">and <a id="_idTextAnchor440"></a>more.</span></p>
+			<h1 id="_idParaDest-238"><a id="_idTextAnchor441"></a>Layout Builder</h1>
+			<p>Structured content can be confusing<a id="_idIndexMarker495"></a> for content authors. Ensuring that Drupal promotes usability and ease of use for content authors helps ensure a Drupal application can be adopted. Authors often struggle to understand how specific fields map to different, rendered visual presentations. Layout Builder attempts to provide a visual experience for content authors to see content change. This combined experience helps the author more directly and easily see how a change is displayed when the change <span class="No-Break">is made.</span></p>
+			<p>Layout Builder<a id="_idIndexMarker496"></a> stays with a layout. Think of this as a series of places on a page where the content can be rendered. From the perspective of structured content, each field in a node can be placed within the layout. Blocks rendered on a page can also be placed within a layout. This allows Layout Builder to author content beyond just the structured content on a page and from the experience of what is rendered, not just the <span class="No-Break">underlying fields.</span></p>
+			<p>Placement has context as well. Recall a recurring theme from earlier chapters around the importance of context. Context serves as a series of conditions Drupal uses for dynamic processing. Layout Builder supports context through various types of placement. Consider a block that is placed on all nodes of a content type. A content author would have to place the block node by node without context. Layout Builder supports context for placement that allows a block to be placed on one or more nodes with configuration of <span class="No-Break">the context</span><span class="No-Break">.</span></p>
+			<p>Layout Builder<a id="_idIndexMarker497"></a> manages content within a layout only. It does not manage content in all regions of a theme, nor does it replace the global block system and the context it manages. Consider a theme with regions for the header, footer, left menu, and main content. Layout Builder may manage a layout in the main content <span class="No-Break">regi<a id="_idTextAnchor442"></a>on only.</span></p>
+			<h2 id="_idParaDest-239"><a id="_idTextAnchor443"></a>Configuring a default layout</h2>
+			<p>The experience of using <a id="_idIndexMarker498"></a>Layout Builder must be configured within each content type. The configuration starts at the bottom of the <strong class="bold">Manage Display</strong> form on a content type; this can be found at <strong class="source-inline">admin/structure/types/manage/article/display</strong> for an <strong class="source-inline">article</strong> content type. A checkbox to <strong class="bold">use layout builder</strong> exists. Once checked, an additional option exists called <strong class="bold">Allow each content item to have its layout customized</strong>. To use the same layout for each content type, leave the second <span class="No-Break">box unchecked.</span></p>
+			<p>Saving the <strong class="bold">use layout builder</strong> change for the content type removes the field-specific display options and replaces them with a button to manage the layout. Pressing<a id="_idIndexMarker499"></a> this button prompts the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer110" class="IMG---Figure">
+					<img src="image/B19491_15_4.jpg" alt="Figure 15.4 – Configuring layouts on a content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.4 – Configuring layouts on a content type</p>
+			<p><span class="No-Break"><em class="italic">Figure </em></span><span class="No-Break"><em class="italic">15</em></span><em class="italic">.4</em> shows the<a id="_idIndexMarker500"></a> structured content in the layout. The article content type has two fields, an image and a body. Both are converted into field-specific blocks. The figure demonstrates a section in a layout where the image field is placed above the body field. The layout configuration is interactive. Each field can be dragged above another field. And, hovering over a field shows a pencil icon that contains the form for settings of that block. The settings include the option to render labels or control the display mode of <span class="No-Break">that block.</span></p>
+			<p><span class="No-Break"><em class="italic">Figure </em></span><span class="No-Break"><em class="italic">15</em></span><em class="italic">.4</em> shows the ability to add sections or blocks to a section. This provides you with an interface to place additional blocks within the layout. This is shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer111" class="IMG---Figure">
+					<img src="image/B19491_15_5.jpg" alt="Figure 15.5 – Block placement for layouts" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.5 – Block placement for layouts</p>
+			<p><span class="No-Break"><em class="italic">Figure </em></span><span class="No-Break"><em class="italic">15</em></span><em class="italic">.5</em> shows the ability to place additional blocks from the block system or content fields as blocks into a section. Again, this configuration applies throughout the content type. Do not forget to scroll up and click <strong class="bold">Save Layout</strong> to apply <span class="No-Break">the changes.</span></p>
+			<p>Layout Builder allows content authors to manage a default layout<a id="_idIndexMarker501"></a> for content types and blocks placed within the layout. This helps site builders manage structured content as field-specific blocks to promote a consistent rendering of content within a region of <a id="_idTextAnchor444"></a><span class="No-Break">a theme.</span></p>
+			<h2 id="_idParaDest-240"><a id="_idTextAnchor445"></a>Node-specific layouts</h2>
+			<p>Each node can have its<a id="_idIndexMarker502"></a> layout and this affects the experience for content authors. Recall the second checkbox, <strong class="bold">Allow each content item to have its layout customized</strong>, which is configured within the content type. This setting, and its corresponding permission per role, offers content authors control over the layout. Content authors are then afforded a new tab to manage the layout per node with the ability to override the <span class="No-Break">default layout.</span></p>
+			<p>When viewing a node, authors will see a <strong class="bold">Layout</strong> tab, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer112" class="IMG---Figure">
+					<img src="image/B19491_15_6.jpg" alt="Figure 15.6 – The Layout tab for nodes" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.6 – The Layout tab for nodes</p>
+			<p>Pressing the <strong class="bold">Layout</strong> button prompts the same layout manager found in <span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.1</em> and  <span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.2</em>. However, node-specific layouts have some additional functionality, as exemplified in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer113" class="IMG---Figure">
+					<img src="image/B19491_15_7.jpg" alt="Figure 15.7 – Node-specific operations for managing layouts" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.7 – Node-specific operations for managing layouts</p>
+			<p>While the standard operations for saving and discarding layout changes exist, a <strong class="bold">revert to defaults</strong> operation can be used to restore a node to its default layout configured with the content type. Authors are shown a message saying they are managing the specific content item, with a link to edit the default layout found in the content type. Also, note the <strong class="bold">Show content preview</strong> option, which provides a visual interface for content authors to see the node-specific content as authors are managing the layout. Finally, layouts per node can <a id="_idIndexMarker503"></a>be revised, which means they can be reverted, and you can view a log <span class="No-Break">o<a id="_idTextAnchor446"></a>f change.</span></p>
+			<h2 id="_idParaDest-241"><a id="_idTextAnchor447"></a>Setting up Layout Builder</h2>
+			<p>To enable this feature, you<a id="_idIndexMarker504"></a> must enable the Layout Builder module by going to <strong class="source-inline">admin/modules</strong>. Doing so enables both Layout Builder and a dependent module known as Layout Discovery, which manages the underlying API framework. This module turns on the functionality that can subsequently <span class="No-Break">be configured.</span></p>
+			<p>To ensure the feature can be used, configure permissions for each role by going to <strong class="source-inline">admin/people/permissions/module/layout_builder</strong>. It is important to enable the use of Layout Builder for roles that are expected to perform <span class="No-Break">content management.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Drupal community members often discuss testing as different users through a utility known as “Masquerade.” Starting with Drupal 7, the community developed the Masquerade module, which helps a site builder switch to another user in the Drupal system. This can be incredibly helpful in testing the different experiences across roles. When making changes to permissions, masquerading as a user with a different role can provide a quick way for a site builder to see the results for a different user. In the context of this chapter, it can be helpful to enable Layout Builder for some roles and allow a site builder to see the change in experience without explicitly logging out and logging in as another user. Different browsers with different user sessions also can be used in favor of logging in and out of the <span class="No-Break">same browser.</span></p>
+			<p>Layout Builder allows layouts to be managed not just within a content type but also in nodes. Doing so affords content authors with a visual experience for controlling the placement of structured content and other <span class="No-Break">system-wi<a id="_idTextAnchor448"></a><a id="_idTextAnchor449"></a>de blocks.</span></p>
+			<h1 id="_idParaDest-242"><a id="_idTextAnchor450"></a>Contributed projects</h1>
+			<p>Several contributed modules<a id="_idIndexMarker505"></a> exist on drupal.org that are complementary to the concepts in this chapter. Please note that the following projects are not necessarily recommended given that, in some circumstances, core maintains <span class="No-Break">similar fu<a id="_idTextAnchor451"></a>nctionality.</span></p>
+			<h2 id="_idParaDest-243"><a id="_idTextAnchor452"></a>Paragraphs</h2>
+			<p>Paragraphs (<a href="https://www.drupal.org/project/paragraphs">https://www.drupal.org/project/paragraphs</a>) is a vast ecosystem of modules based <a id="_idIndexMarker506"></a>on a content structure similar to blocks. Its purpose was to offer <a id="_idIndexMarker507"></a>an alternative content authoring experience to Drupal’s default block <a id="_idIndexMarker508"></a>management. The Paragraph entity has a bundle called Paragraph Types. The community has developed several out-of-the-box contributed modules for <span class="No-Break">paragraph types:</span></p>
+			<ul>
+				<li><a href="https://www.drupal.org/project/ept_accordion">https://www.drupal.org/project/ept_accordion</a> – <span class="No-Break">accordion</span></li>
+				<li><a href="https://www.drupal.org/project/ept_basic_button">https://www.drupal.org/project/ept_basic_button</a> – <span class="No-Break">a button</span></li>
+				<li><a href="https://www.drupal.org/project/ept_carousel">https://www.drupal.org/project/ept_carousel</a> – <span class="No-Break">a carousel</span></li>
+				<li><a href="https://www.drupal.org/project/ept_image_gallery">https://www.drupal.org/project/ept_image_gallery</a> – an <span class="No-Break">image gallery</span></li>
+				<li><a href="https://www.drupal.org/project/ept_quote">https://www.drupal.org/project/ept_quote</a> – <span class="No-Break">a quote</span></li>
+				<li><a href="https://www.drupal.org/project/ept_micromodal">https://www.drupal.org/project/ept_micromodal</a>, <a id="_idTextAnchor453"></a>– <span class="No-Break">a modal</span></li>
+			</ul>
+			<h2 id="_idParaDest-244"><a id="_idTextAnchor454"></a>Gutenberg</h2>
+			<p>In 2018, WordPress 5.0 released<a id="_idIndexMarker509"></a> Gutenberg, a block editing system (<a href="https://wordpress.org/documentation/wordpress-version/version-5-0/">https://wordpress.org/documentation/wordpress-version/version-5-0/</a>). The key difference between this and other <a id="_idIndexMarker510"></a>block editors was its ability to perform visual editing. Gutenberg was introduced to Drupal as a contributed module (<a href="https://www.drupal.org/project/gutenberg">https://www.drupal.org/project/gutenberg</a>) that provides support for visually editing Drupal blocks. Gutenberg <a id="_idIndexMarker511"></a>efforts were selected from the DrupalCon Pitchburgh competition, demonstrating community interest. However, it is not in core and likely does not meet the core standards <span class="No-Break">around accessibility.</span></p>
+			<p>While Layout Builder focuses on where blocks are placed, Gutenberg allows a block to be directly edited on the page. Authors then get the ability to see the content changes visually. This type of experience is often more intuitive for authors who can see the visual changes immediately instead of using administrative backend forms, clicking on the preview to render a node with changes, and subsequently <span class="No-Break">saving it.</span></p>
+			<p>Setup starts by downloading the contributed module. Gutenberg is configured per content type through its administrative settings. The following figure shows the content type settings tab once<a id="_idIndexMarker512"></a> Gutenberg <span class="No-Break">is enabled:</span></p>
+			<div>
+				<div id="_idContainer114" class="IMG---Figure">
+					<img src="image/B19491_15_8.jpg" alt="Figure 15.8 – Enabling the Gutenberg editor for a content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.8 – Enabling the Gutenberg editor for a content type</p>
+			<p>After checking the checkbox, more <a id="_idIndexMarker513"></a>advanced options are available. Given that Drupal heavily leverages blocks, there are blocks for everything. Gutenberg allows for block selection to allow site builders to control which blocks editors can access. This is shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer115" class="IMG---Figure">
+					<img src="image/B19491_15_9.jpg" alt="Figure 15.9 – Block selection in Gutenberg for a content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.9 – Block selection in Gutenberg for a content type</p>
+			<p>Once configured, Gutenberg <a id="_idIndexMarker514"></a>replaces the default, administrative form for adding new nodes. After <a id="_idIndexMarker515"></a>going to <strong class="source-inline">node/add</strong> and selecting a content type with Gutenberg enabled, an author will see a new splash page and a completely different authoring experience, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer116" class="IMG---Figure">
+					<img src="image/B19491_15_10.jpg" alt="Figure 15.10 – The initial content editing experience in Gutenberg" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.10 – The initial content editing experience in Gutenberg</p>
+			<p>The splash modal window provides a brief overview of how to use the Gutenberg editor for users who first access it. The node’s administrative <strong class="source-inline">fields/metadata</strong> area still exists as a tab on the right sidebar, but the content is managed in the middle of the page. Free-form text can be added as a paragraph <a id="_idIndexMarker516"></a>simply by typing in text. Blocks can be added by pressing the <a id="_idIndexMarker517"></a>plus (<strong class="bold">+</strong>) sign icon, which prompts a modal window for the available blocks. This is all done visually within the page, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer117" class="IMG---Figure">
+					<img src="image/B19491_15_11.jpg" alt="Figure 15.11 – Initial content editing experience with Gutenberg" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 15.11 – Initial content editing experience with Gutenberg</p>
+			<p>The same experience highlighted in <span class="No-Break"><em class="italic">Figure 15</em></span><em class="italic">.11</em> covers editing beyond just initial <span class="No-Break">node authoring.</span></p>
+			<p>For Drupal, the Gutenberg<a id="_idIndexMarker518"></a> project is still nascent. However, it was a project that was selected as part of the 2023 DrupalCon Pittsburgh’s new Pitchburgh concept where some funding<a id="_idIndexMarker519"></a> was set aside to promote ideas that the community voted on. The Gutenberg project should continue to evolve and help offer content authors a fairly intuitive and modern cont<a id="_idTextAnchor455"></a>ent <span class="No-Break">editing experience.</span></p>
+			<h1 id="_idParaDest-245"><a id="_idTextAnchor456"></a>Summary</h1>
+			<p>Drupal has a core feature for visual content management called Layout Builder. Layout Builder leverages Drupal’s blocks feature, which offers structured content entities. Layout Builder provides a different content authoring experience beyond the default block management by adding a new concept of a layout that has a default layout managed per content type and the ability to manage layouts per node. This feature helps manage the presentation of rendered content within a specific region of a theme. This works for both system-wide blocks and custom block types. Node-specific layouts afford context where a block can be placed only on a node and not on a default layout, which would apply to all nodes using the default. Layout Builder offers site builders and content authors more control over where and how a specific field can be rendered but also adds block-specific content authoring within node-specific layouts. Drupal has other contributed solutions similar to Blocks and Layout Builder, which include Paragraphs <span class="No-Break">and Gutenberg.</span></p>
+			<p>The next chapter will explore content workflows in Drupal, which are helpful for editorial processes and <span class="No-Break">content governance.</span></p>
+		</div>
+	</body>
+</html>

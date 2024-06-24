@@ -1,0 +1,179 @@
+{
+  "menu_profile": {
+    "label": "Profile",
+    "link": "/user",
+    "icon": "user",
+    "children": [],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-user",
+      "title": "Profile"
+    },
+    "options": {
+      "roles": ["administrator", "authenticated"],
+      "permission": ["administrator_access", "authenticated_access"]
+    }
+  },
+  "menu_dashboard": {
+    "label": "Dashboard",
+    "link": "/dashboard",
+    "icon": "dashboard",
+    "children": [],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-dashboard",
+      "title": "Dashboard"
+    },
+    "options": {
+      "roles": ["administrator"],
+      "permission": ["administrator_access"]
+    }
+  },
+  "menu_installation": {
+    "label": "Installation",
+    "link": "/install",
+    "icon": "installation",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-install",
+      "title": "Installation of new MiniCMS"
+    },
+    "options": {
+      "roles": ["*"],
+      "permission": ["anonymous_access"]
+    }
+  },
+  "menu_login": {
+    "label": "Login",
+    "link": "/user/login",
+    "icon": "login",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-login",
+      "title": "Login User to MiniCMS"
+    },
+    "options": {
+      "roles": ["*"],
+      "permission": ["anonymous_access"]
+    }
+  },
+  "menu_register": {
+    "label": "Register",
+    "link": "/user/register",
+    "icon": "register",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-register",
+      "title": "Register User to MiniCMS"
+    },
+    "options": {
+      "roles": ["*"],
+      "permission": ["anonymous_access", "authenticated_access"]
+    }
+  },
+  "menu_logout": {
+    "label": "Logout",
+    "link": "/user/logout",
+    "icon": "logout",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-logout",
+      "title": "Logout User to MiniCMS"
+    },
+    "options": {
+      "roles": ["*"],
+      "permission": ["authenticated_access"]
+    }
+  },
+  "menu_structure_content_type": {
+    "label": "Content Types",
+    "link": "/structure/content-type",
+    "icon": "content-type",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-content",
+      "title": "Content listing and creation page on MiniCMS"
+    },
+    "options": {
+      "roles": ["administrator"],
+      "permission": ["administrator_access"]
+    }
+  },
+  "menu_password": {
+    "label": "Forgot Password",
+    "link": "/user/password",
+    "icon": "password",
+    "children": [
+
+    ],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-password",
+      "title": "Password changing"
+    },
+    "options": {
+      "roles": ["*"],
+      "permission": ["anonymous_access", "authenticated_access", "administrator_access"]
+    }
+  },
+  "menu_content": {
+    "label": "Contents",
+    "link": "/structure/contents",
+    "icon": "contents",
+    "children": [],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-contents",
+      "title": "Contents"
+    },
+    "options": {
+      "roles": ["administrator"],
+      "permission": ["administrator_access"]
+    }
+  },
+  "menu_vocabulary": {
+    "label": "Vocabulary",
+    "link": "/structure/vocabularies",
+    "icon": "vocabularies",
+    "children": [],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-vocabularies",
+      "title": "vocabularies"
+    },
+    "options": {
+      "roles": ["administrator"],
+      "permission": ["administrator_access"]
+    }
+  },
+  "menu_extension": {
+    "label": "Extend",
+    "link": "/extension/extend",
+    "icon": "extend",
+    "children": [],
+    "attributes": {
+      "class": "nav-item",
+      "id": "nav-item-extend",
+      "title": "extend"
+    },
+    "options": {
+      "roles": ["administrator"],
+      "permission": ["administrator_access"]
+    }
+  }
+}

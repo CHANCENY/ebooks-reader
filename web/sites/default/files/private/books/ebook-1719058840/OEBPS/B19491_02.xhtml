@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_02</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_02">
+		<div id="_idContainer011">
+			<h1 id="_idParaDest-27" class="chapter-number"><a id="_idTextAnchor029"></a>2</h1>
+			<h1 id="_idParaDest-28"><a id="_idTextAnchor030"></a>Drupal Core, <br />Modules, and Themes</h1>
+			<p><a id="_idTextAnchor031"></a>Drupal starts with a powerful, foundational core that all Drupal applications build from. This chapter describes what <em class="italic">core</em> is, how it was conceptually created, how to harness it to create a Drupal application, and how an application can be extended beyond just core. Learning how to create Drupal applications starts with enabling and configuring Drupal core features. It is only after leveraging core that the application should be extended through contributed and/or custom projects. This chapter serves as the foundation for configuring applications, understanding high-level architecture, and then solving additional problems through <span class="No-Break">extended projects.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Drupal core</span></li>
+				<li>Overview of <span class="No-Break">Drupal projects</span></li>
+				<li><span class="No-Break">Drupal modules</span></li>
+				<li><span class="No-Break">Drupal themes</span></li>
+				<li><span class="No-Break">Contribution</span></li>
+			</ul>
+			<h1 id="_idParaDest-29"><a id="_idTextAnchor032"></a><a id="_idTextAnchor033"></a>Drupal core</h1>
+			<p>Drupal core<a id="_idIndexMarker015"></a> is the foundation of every Drupal application. It represents all out-of-the-box Drupal features and contains the framework every Drupal application is built on. It has the most rigorous contribution process while having the largest amount of <span class="No-Break">contribution activity.</span></p>
+			<p>While Drupal itself, as an open source project, is free, it should be viewed more through the perspective of “free like a puppy.” Drupal code is freely available, and there is a vast community helping to maintain and support it. However, Drupal applications require ongoing maintenance. Major and minor upgrades need to be performed to update the code. The underlying servers and platform need to be maintained as core evolves its platform dependencies. The community helps promote efforts to more seamlessly and automatically perform code updates, but adopters are still largely responsible for running their own platforms or picking a commercial PaaS offering. This takes ongoing work and investment as it requires a conscious decision from those selecting Drupal as their digital experience framework. But Drupal and the framework that core provides can be extensible and address complex, enterprise digital needs that can deliver value in ways other platforms simply cannot. While it can complicate upgrades with the added complexity of custom code, these capabilities position Drupal as a powerful tool capable of addressing enterprise <a id="_idIndexMarker016"></a>needs. Even with efforts that simplify the maintenance work required, adopters still need to understand Drupal and the systems required to run it. Small businesses that cannot make this investment may not be in a position to effectively get the same value out of Drupal as an enterprise would. Professionals should advocate for the right tool for the <span class="No-Break">right job<a id="_idTextAnchor034"></a>.</span></p>
+			<h2 id="_idParaDest-30"><a id="_idTextAnchor035"></a>What is core?</h2>
+			<p>Every house has a foundation. Every car has a frame. And every Drupal application has a core. It is the basis of all <span class="No-Break">Drupal applications.</span></p>
+			<p>Drupal core<a id="_idIndexMarker017"></a> is an out-of-the-box Drupal application. When the core is first downloaded, the application loads Drupal’s core installer. After installation, the application renders Drupal’s content and affords access to Drupal’s core user login feature. Logged-in users can access Drupal’s administrative systems and content management tools. All of this is facilitated by <span class="No-Break">Drupal’s core.</span></p>
+			<p>Drupal core is built to be modular. In this definition, there are a series of independent parts that encompass all of Drupal’s core. This modularity is incredibly useful to afford Drupal developers the ability to enable or disable parts independently based on their use case, and many of the parts of Drupal core are extensible through configuration and the framework. The core of Drupal and its modularity serve as an underlying design principle that has allowed Drupal to solve countless problems in the digital space and be able to deliver on a wide array of various <span class="No-Break">use cases.</span></p>
+			<p>Drupal’s core also helps drive some governance aspects of Drupal. As an example, Drupal core sets the various system requirements needed for running the Drupal application. Drupal core has explicit open-source licensing that influences all other Drupal communities and projects. Developing core often sets the highest standard for contribution to a Drupal project through processes, tooling, quality standards, <span class="No-Break">and more<a id="_idTextAnchor036"></a>.</span></p>
+			<h2 id="_idParaDest-31"><a id="_idTextAnchor037"></a>Core features</h2>
+			<p>Drupal core also has a set of <a id="_idIndexMarker018"></a>common features. The features deliver Drupal’s out-of-the-box value and help to differentiate Drupal from other digital content <span class="No-Break">management applications.</span></p>
+			<p>Content management features <a id="_idIndexMarker019"></a>help deliver on Drupal’s promise as a <strong class="bold">content management system</strong> (<strong class="bold">CMS</strong>). Such examples include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="bold">Structured content</strong>: Nodes, content types, blocks, fields, field types (dates, phone numbers, links), <span class="No-Break">and taxonomy</span></li>
+				<li><strong class="bold">Content features</strong>: WYSIWYG, comments, moderation/workflows, layout builder, API feeds/web services, multilingual, Drupal views, statistics/analytics, forums, books, <span class="No-Break">and blocks</span></li>
+				<li><strong class="bold">Digital assets</strong>: Files (PDFs, Word documents), media (images and videos), and responsive <span class="No-Break">image management</span></li>
+				<li><strong class="bold">Migration</strong>: Methods to import and export content <span class="No-Break">within Drupal</span></li>
+				<li><strong class="bold">Engagement</strong>: Contact <a id="_idIndexMarker020"></a>forms <span class="No-Break">and search</span></li>
+			</ul>
+			<p>Administrative features help provide the content management experience, manage Drupal features, or change Drupal’s settings. These include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="bold">Authorization/authentication</strong>: User roles <span class="No-Break">and permissions</span></li>
+				<li><strong class="bold">Configuration</strong>: Changing settings of the Drupal application, and managing the state of the application’s <span class="No-Break">Drupal configuration</span></li>
+				<li><strong class="bold">Logging</strong>: Accessing and managing <span class="No-Break">Drupal logs</span></li>
+				<li><strong class="bold">Documentation</strong>: Help pages, inline help, <span class="No-Break">and tours</span></li>
+			</ul>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">It is always important to leverage Drupal core’s out-of-the-box features before performing custom development or installing other projects. Drupal core itself is feature-rich, and it is the most established aspect of Drupal. The core should be leveraged before <span class="No-Break">extending it.</span></p>
+			<p>If some of the terminology or concepts are new to you, don’t fear this. These features are covered in depth in <span class="No-Break">future chapt<a id="_idTextAnchor038"></a>ers.</span></p>
+			<h2 id="_idParaDest-32"><a id="_idTextAnchor039"></a>Core systems</h2>
+			<p>Drupal core is built on<a id="_idIndexMarker021"></a> subsystems. Some subsystems can be considered features of Drupal, while others are low-level, fundamental capabilities that a feature can leverage. Some pragmatic examples of features include the “node” system, which is common for structured content, and the “media” system used for file asset management. Low-level subsystems include the module subsystem, which allows Drupal to be modular, and the database subsystem, which allows for persistent Drupal storage (not assets). The combination of these subsystems provides both the framework and the features offered by the core out of <span class="No-Break">the box.</span></p>
+			<p>Some examples of these core systems include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><span class="No-Break"><strong class="bold">User</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Cron</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Theme</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Cache</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Entity</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Batch</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Queue</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Database</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Installer</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Locale</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Mail</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Plugi<a id="_idTextAnchor040"></a>n</strong></span></li>
+				<li><span class="No-Break"><strong class="bold">Test</strong></span></li>
+			</ul>
+			<h2 id="_idParaDest-33"><a id="_idTextAnchor041"></a>Core development</h2>
+			<p>Drupal is a PHP<a id="_idIndexMarker022"></a> application that has harnessed modern PHP development practices. Drupal core is built on Symfony components that, in essence, offer low-level capabilities that Drupal adopted. Earlier versions of Drupal had their specific systems built into core that overlapped with widely adopted open-source capabilities offered throughout the PHP ecosystem. Drupal 8 introduced this change, which was a significant architectural shift from a more procedural legacy PHP application into more of<a id="_idIndexMarker023"></a> an <strong class="bold">object-oriented</strong> (<strong class="bold">OO</strong>), modern PHP approach. Composer, a popular PHP-based command-line tool, is used to manage Drupal’s dependencies to pull projects and versions based on the core’s provided directives. Both the use of Symfony components and Composer represent common practices of modern PHP applications and allow Drupal to more effectively focus effort on its value proposition. It also allows Drupal community members to contribute to and influence the broader <span class="No-Break">PHP ec<a id="_idTextAnchor042"></a>osystem.</span></p>
+			<h1 id="_idParaDest-34"><a id="_idTextAnchor043"></a>Overview of Drupal projects</h1>
+			<p>Drupal core<a id="_idIndexMarker024"></a> leverages projects as the construct for its modularity. Projects are built with code and harness Drupal core’s framework to customize Drupal. Community members have contributed their projects on <a href="https://drupal.org">drupal.org</a>. Projects created for the specific needs of a Drupal application are known as custom. Custom projects are intended to add specific business logic that may be unique to an organization, integrate internal enterprise systems, or add specific <span class="No-Break">company branding.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Before creating custom projects, evaluate the contributed projects on <a href="http://drupal.org">drupal.org</a>. Given the maturity of the Drupal project and the vast number of contributions, it is common to find a contributed project that can help address the desired use case. This all assumes the feature is not provided by the <span class="No-Break">core itself.</span></p>
+			<p>Projects are managed by Drupal core for the application. Core can install, enable, and disable projects. Each version of the project is managed so that the core can check for updates. Core also has the concept of update hooks, which allow for new versions of a project to perform specific tasks once new <span class="No-Break">cod<a id="_idTextAnchor044"></a>e exists.</span></p>
+			<h1 id="_idParaDest-35"><a id="_idTextAnchor045"></a>Drupal modules</h1>
+			<p>The first type of<a id="_idIndexMarker025"></a> project is known as<a id="_idTextAnchor046"></a> <span class="No-Break">a module.</span></p>
+			<h2 id="_idParaDest-36"><a id="_idTextAnchor047"></a>What is a module?</h2>
+			<p>A module<a id="_idIndexMarker026"></a> is a code that leverages Drupal’s framework for backend customization. This often modifies the Drupal application and is processed within the server. The core itself organizes its features by leveraging modules. This way, each application can control which core modules are installed based on the desired needs of <span class="No-Break">the application.</span></p>
+			<p>Modules have compatibility with the core. Every major version of the core modifies its framework. Given the framework changes, modules must provide metadata that defines their compatibility with major core versions. It should not be assumed that every module found on <a href="http://drupal.org">drupal.org</a> is compatible with the version of Drupal on the application. In fact, given that Drupal now has 10 major versions, basic searches for modules can find modules dating back to early versions of Drupal. Popular modules from earlier versions may have even been moved into core in later versions (for example, Views). The <strong class="bold">Content Construction Kit</strong> (<strong class="bold">CCK</strong>) module<a id="_idIndexMarker027"></a> served as the basis for what later became Drupal’s <span class="No-Break">En<a id="_idTextAnchor048"></a>tity system.</span></p>
+			<h2 id="_idParaDest-37"><a id="_idTextAnchor049"></a>Popular community modules</h2>
+			<p>Given the number of Drupal applications in the world, community members have created a large number of modules aimed at solving specific problems. It is best to check on <a href="http://drupal.org">drupal.org</a> before investing time in coding something someone <span class="No-Break">else contributed.</span></p>
+			<p>Some popular module<a id="_idIndexMarker028"></a> examples include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="bold">Webform</strong>: A <a id="_idIndexMarker029"></a>robust and extensible <span class="No-Break">form-building </span><span class="No-Break"><a id="_idIndexMarker030"></a></span><span class="No-Break">solution</span></li>
+				<li><strong class="bold">Redirect</strong>: Creates <a id="_idIndexMarker031"></a>manual and automatic path redirection, especially <a id="_idIndexMarker032"></a>useful to have old content point to <span class="No-Break">new content</span></li>
+				<li><strong class="bold">Pathauto</strong>: Provides <a id="_idIndexMarker033"></a>automatic path generation for<a id="_idIndexMarker034"></a> <span class="No-Break">content managers</span></li>
+				<li><strong class="bold">Google Analytics</strong>: Enables<a id="_idIndexMarker035"></a> integration with <a id="_idIndexMarker036"></a><span class="No-Break">Google Analytics</span></li>
+				<li><strong class="bold">Taxonomy Menu</strong>: Allows<a id="_idIndexMarker037"></a> for a hierarchical taxonomy to<a id="_idIndexMarker038"></a> be rendered as <span class="No-Break">a menu</span></li>
+				<li><strong class="bold">Antibot</strong>: Spam<a id="_idIndexMarker039"></a> protection<a id="_idIndexMarker040"></a> for <span class="No-Break">form submissions</span></li>
+				<li><strong class="bold">Sitewide Alerts</strong>: A<a id="_idIndexMarker041"></a> solution that posts a banner message at <a id="_idIndexMarker042"></a>the top of <span class="No-Break">every page</span></li>
+				<li><strong class="bold">Metatag</strong>: Delivers <a id="_idIndexMarker043"></a>more metadata for content <a id="_idIndexMarker044"></a>toward <a id="_idIndexMarker045"></a>better <strong class="bold">search engine </strong><span class="No-Break"><strong class="bold">optimization</strong></span><span class="No-Break"> (</span><span class="No-Break"><strong class="bold">SEO</strong></span><span class="No-Break">)</span></li>
+			</ul>
+			<p>Before diving into code, harness what the c<a id="_idTextAnchor050"></a>ommunity has <span class="No-Break">already provided.</span></p>
+			<h1 id="_idParaDest-38"><a id="_idTextAnchor051"></a>Drupal themes</h1>
+			<p>The seco<a id="_idTextAnchor052"></a>nd type of project is <span class="No-Break">a theme.</span></p>
+			<h2 id="_idParaDest-39"><a id="_idTextAnchor053"></a>What is a theme?</h2>
+			<p>Drupal themes<a id="_idIndexMarker046"></a> are front-end development projects that leverage the core’s visual system to control the look and feel of the Drupal application. A theme can be the visual presentation of<a id="_idIndexMarker047"></a> content for end users. It can also be the theme used for the administrative experience of the Drupal application, known as an <a id="_idIndexMarker048"></a><span class="No-Break">admin theme.</span></p>
+			<p>Themes control the<a id="_idIndexMarker049"></a> HTML, CSS, and JavaScript used for the Drupal application. HTML is<a id="_idIndexMarker050"></a> created through the use of templates. Based on the enabled features, content-related features define expected templates that map variables provided by the backend to the corresponding HTML. Templates leverage the Twig framework for functionality and syntax. A theme registers the templates, CSS, and JavaScript, which can then <a id="_idTextAnchor054"></a>be subsequently enabled <span class="No-Break">in Drupal.</span></p>
+			<h2 id="_idParaDest-40"><a id="_idTextAnchor055"></a>Core themes</h2>
+			<p>The most well-known themes are provided by Core. Core themes<a id="_idIndexMarker051"></a> provide useful examples for integrating with all core-related features, demonstrate web accessibility standards, and often leverage modern <span class="No-Break">frontend practices.</span></p>
+			<p>The following examples are the core themes provided by <span class="No-Break">Drupal 10:</span></p>
+			<ul>
+				<li><strong class="bold">Olivero</strong>: The <a id="_idIndexMarker052"></a>default<a id="_idIndexMarker053"></a> theme <span class="No-Break">for content</span></li>
+				<li><strong class="bold">Claro</strong>: The<a id="_idIndexMarker054"></a> default <a id="_idIndexMarker055"></a><span class="No-Break">admin theme</span></li>
+			</ul>
+			<p>More information about themes will be provided in the next chapter an<a id="_idTextAnchor056"></a>d as a common theme throughout <span class="No-Break">the book.</span></p>
+			<h1 id="_idParaDest-41"><a id="_idTextAnchor057"></a>Contribution</h1>
+			<p>Drupal core, modules, and themes are not even possible without developers contributing their efforts. As an open-source project, Drupal has managed to attract a large number of contributors throughout the globe. These community members provide complementary ideas, build new Drupal projects, create bugs, submit fixes, write documentation, give talks at events, and more. These contributions<a id="_idIndexMarker056"></a> have helped Drupal become one of the most established open-source projects—a project with longevity and one that continues to be relevant. Without the community, there would be no Drupal. It also emphasizes the importance of Drupal adopters finding ways to <span class="No-Break">give back.</span></p>
+			<p>Community contributions will be cov<a id="_idTextAnchor058"></a>ered in much greater detail in <a href="B19491_04.xhtml#_idTextAnchor084"><span class="No-Break"><em class="italic">Chapter 4</em></span></a><span class="No-Break">.</span></p>
+			<h1 id="_idParaDest-42"><a id="_idTextAnchor059"></a>Summary</h1>
+			<p>Drupal core provides both foundational features and an extensible framework that can be used for building the application and customization. Projects provide modularity built into Drupal core. Drupal has projects for both frontend and backend development through its themes and modules. The community and contributions to Drupal core help to continually evolve and improve this foundation, and extending Drupal can often yield useful community contributions and address the needs of enterprise integrations. The next chapter covers the infrastructure needed to run Drupal and more about Drupal’s <span class="No-Break">technical architecture.</span></p>
+		</div>
+	</body>
+</html>

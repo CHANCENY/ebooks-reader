@@ -1,0 +1,106 @@
+[
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b742991",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Ebook images",
+    "description": "This is book images loaded",
+    "url": "/book-images",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\BookImages"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b74299121",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Ebook images",
+    "description": "This is book images loaded",
+    "url": "/book/read/{book_identify}",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\BookReader"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b742991210977",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Ebook Content Loader",
+    "description": "This is book content load",
+    "url": "/book/read/chapter/{book_identify}",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\BookContentLoader"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b71210uyu977",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "Ebook Configs",
+    "description": "This is book configuration load",
+    "url": "/book/configuration-loader/{book_identify}",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\BookConfigLoader"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b98tr71210uyu977",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated",
+        "anonymous"
+      ]
+    },
+    "name": "Ebooks",
+    "description": "This is books displays",
+    "url": "/books",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\BooksCatalogues"
+  },
+  {
+    "id": "a7322f9d-3dd0-4be0-8bd4-a156b520b9-8tr712-10uyu-09977",
+    "options": {
+      "unauthorized_access": true,
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "roles": [
+        "administrator",
+        "authenticated"
+      ]
+    },
+    "name": "My Book Shop",
+    "description": "This is for my books dashboard",
+    "url": "/book-shop-dashboard/{uid}",
+    "handler": "Mini\\Modules\\contrib\\epub\\src\\Routes\\MyBookShop"
+  }
+]

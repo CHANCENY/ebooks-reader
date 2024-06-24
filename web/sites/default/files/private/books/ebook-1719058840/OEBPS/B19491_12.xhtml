@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_12</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_12">
+		<div id="_idContainer086">
+			<h1 id="_idParaDest-192" class="chapter-number"><a id="_idTextAnchor354"></a>12</h1>
+			<h1 id="_idParaDest-193"><a id="_idTextAnchor355"></a>Search</h1>
+			<p><a id="_idTextAnchor356"></a>Drupal offers a native search feature<a id="_idIndexMarker410"></a> that is well integrated with structured content. This chapter will explain the search feature, walk through how to enable search on a site and outline configuration options. Drupal also offers more advanced search features and abilities to execute different types of searches. By design, there are common Drupal modules that extend search out of the box to address common <span class="No-Break">use cases.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>About <span class="No-Break">the feature</span></li>
+				<li><span class="No-Break">Configuring search</span></li>
+				<li><span class="No-Break">Extending search</span></li>
+				<li><span class="No-Break">Use case<a id="_idTextAnchor357"></a>s</span><a id="_idTextAnchor358"></a></li>
+			</ul>
+			<h1 id="_idParaDest-194"><a id="_idTextAnchor359"></a>About the feature</h1>
+			<p>Content management<a id="_idIndexMarker411"></a> systems, especially those with a large amount of content, practically require that content to be searchable. Search engines such as Google have made search features ubiquitous, as users expect to find what they want and need as quickly as possible. Drupal is built to manage content and is capable of managing content at scale. As such, the search function is a widely used and popular feature that is built into the Drupal core and is highly extensible. Next, we explore how search capabilities are built <span class="No-Break">into Drupal<a id="_idTextAnchor360"></a>.</span></p>
+			<h2 id="_idParaDest-195"><a id="_idTextAnchor361"></a>Implementation</h2>
+			<p>The search function<a id="_idIndexMarker412"></a> is a specific feature built on top of existing content entities. Other systems introduce their entity types, but the functionality provided by the search function is only designed for the existing content-related entity types. This feature is provided by the <strong class="source-inline">Search</strong> module in <span class="No-Break">Drupal core.</span></p>
+			<p>Implementing a <a id="_idIndexMarker413"></a>search function requires an index for storage. At a high level, this can be considered a mapping between terminology and content. An out-of-the-box search function harnesses Drupal’s database schema to create relational data for a search index. Changes to content in Drupal are queued up for processing and are indexed on <strong class="source-inline">cron</strong> (<a href="https://www.drupal.org/docs/administering-a-drupal-site/cron-automated-tasks/cron-automated-tasks-overview">www.drupal.org/docs/administering-a-drupal-site/cron-automated-tasks/cron-automated-tasks-overview</a>). Once indexed, the content <span class="No-Break">is searchable.</span></p>
+			<p>Drupal offers various user interfaces for search by default. A search page exists that handles both search results and a search form widget. Drupal also offers a block with the search form widget, which can be placed on any page using the block system. The search form widget is an interface to the search page. Searches executed through the widget display on the search page and invoke Drupal’s backend search processor. All of this is out of the box in the search subsystem found in <span class="No-Break">Drupal core.</span></p>
+			<p>The subsystem also has a robust framework that helps address various use cases that extend search. Indexing in Drupal’s native database can cause the database to grow significantly. There are common search indexes, such as Apache SOLR or Elasticsearch, that are built to address search-related needs. As such, the use of the search framework can replace Drupal’s built-in index with a <span class="No-Break">third-party syste<a id="_idTextAnchor362"></a>m.</span></p>
+			<h2 id="_idParaDest-196"><a id="_idTextAnchor363"></a>Frontend experience</h2>
+			<p>The frontend search experience<a id="_idIndexMarker414"></a> is offered through the search form and the search results page. Both work in tandem to take search terms as input and display content that matches. All frontend interfaces are customizable from Drupal’s theming system and have several experience-related contributed modules that can be used based on the desired <span class="No-Break">use cases.</span></p>
+			<p>The following figure shows Drupal’s search form from the <span class="No-Break">Umami demo:</span></p>
+			<div>
+				<div id="_idContainer080" class="IMG---Figure">
+					<img src="image/B19491_12_1.jpg" alt="Figure 12.1 – Out-of-the-box search form" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.1 – Out-of-the-box search form</p>
+			<p><span class="No-Break"><em class="italic">Figure 12</em></span><em class="italic">.1</em> demonstrates the search block that is placed within Drupal’s Umami theme. Typing in any search<a id="_idIndexMarker415"></a> term and pressing the <strong class="bold">Search</strong> button reveals the <span class="No-Break">search results:</span></p>
+			<div>
+				<div id="_idContainer081" class="IMG---Figure">
+					<img src="image/B19491_12_2.jpg" alt="Figure 12.2 – Out-of-the-box search results page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.2 – Out-of-the-box search results page</p>
+			<p><span class="No-Break"><em class="italic">Figure 12</em></span><em class="italic">.2</em> shows the <a id="_idIndexMarker416"></a>result after the user makes a search, which goes to <strong class="source-inline">search/node</strong>. The input parameter is added to the end of the search page as exemplified by <strong class="source-inline">search/node?keys=test</strong> for the search performed in <span class="No-Break"><em class="italic">Figure 12</em></span><em class="italic">.2</em>. A small <strong class="source-inline">About searching</strong> link provides a help page where users can read more about advanced <span class="No-Break">search querying.</span></p>
+			<p>The search form also has an advanced search feature. The following figure shows the <span class="No-Break">various options:</span></p>
+			<div>
+				<div id="_idContainer082" class="IMG---Figure">
+					<img src="image/B19491_12_3.jpg" alt="Figure 12.3 – Advanced search on the search page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.3 – Advanced search on the search page</p>
+			<p><strong class="bold">Advanced search</strong> allows the<a id="_idIndexMarker417"></a> end user to extend the standard search<a id="_idIndexMarker418"></a> term input with more options to filter by content type or to ensure the results exactly match the search term or <span class="No-Break">contain keywords.</span></p>
+			<p>The combined experience<a id="_idIndexMarker419"></a> of the search form widget, blocks, and search pages helps Drupal offer end users both general and more targeted means of finding the content <span class="No-Break">they<a id="_idTextAnchor364"></a> want.</span></p>
+			<h2 id="_idParaDest-197"><a id="_idTextAnchor365"></a>Backend</h2>
+			<p>The search form interface triggers the backend<a id="_idIndexMarker420"></a> search processing. The processor takes the search input and queries the index against the desired <span class="No-Break">configuration logic.</span></p>
+			<p>The backend also handles content changes in the Drupal application, as previously mentioned. Such changes are queued up and processed via CRON, which perpetually refreshes the <span class="No-Break">search index.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Drupal’s search index may change by environment, especially for third-party integrations. Drupal may not correctly report the status of the index in all circumstances. Third-party integrations, such as search indexes, must have their setup for Drupal’s environments. Each environment should have their own search index to ensure search services and content are separated. This mapping happens through Drupal’s configuration and must account for <span class="No-Break">environment-specific changes.</span></p>
+			<p class="callout">Consider a development workflow that refreshes a Dev environment from content found in a production environment. Search-related configuration Dev environment may not be accurate until configuration has been synchronized, and even then, it may show inaccurate status until the Drupal application has effectively synchronized with the service. The most common way to do this is through re-indexing, given that there can be a large number of content changes found in production between the last environment synchronization. An index for Dev may be woefully behind the production index given that CRON processes production changes periodically. It is important to be aware of the configuration and the state of the indexes when dealing with <span class="No-Break">multiple environments.</span></p>
+			<p>Drupal’s search feature is split into the frontend, which offers experiences, and the backend, which handles indexing, processing, updates, and configuration. All of this makes up Drupal’s search subsystem, which is both configurable <span class="No-Break">and exte<a id="_idTextAnchor366"></a>nsible.</span></p>
+			<h1 id="_idParaDest-198">Configuring <a id="_idTextAnchor367"></a>search</h1>
+			<p>The search <a id="_idIndexMarker421"></a>settings can be found at <strong class="source-inline">admin/config/search/pages</strong> and are shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer083" class="IMG---Figure">
+					<img src="image/B19491_12_4.jpg" alt="Figure 12.4 – Out-of-the-box search configuration" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.4 – Out-of-the-box search configuration</p>
+			<p>The first section of <span class="No-Break"><em class="italic">Figure </em></span><span class="No-Break"><em class="italic">12</em></span><em class="italic">.4</em> highlights both the status of the index and the ability to re-index the entire Drupal application. Recall that Drupal leverages a queue to collect content changes and synchronize the index. This section demonstrates the state of the queue, which can help you understand if the index has all of the changes in Drupal or if CRON needs to process changes for the index to match <span class="No-Break">Drupal’s content.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">The indexing process can be very helpful in triaging issues with search. CRON runs periodically, and changes to content should not remain in the queue indefinitely. Having a large number of items to index can often be a sign of an issue. A safe starting point is checking Drupal’s logs for errors related <span class="No-Break">to searches.</span></p>
+			<p><span class="No-Break"><em class="italic">Figure </em></span><span class="No-Break"><em class="italic">12</em></span><em class="italic">.4</em> also shows different settings that may need adjustment. Index throttling will control how many content changes will be sent to the index per CRON run. This may need to be tuned based on the performance of the hosting platform. Default indexing settings help provide a word-length check to filter out common words such as “so,” “it,” or “to” from indexing. Finally, you can also enable Drupal to <span class="No-Break">log searches.</span></p>
+			<p>Being able to access<a id="_idIndexMarker422"></a> the search function is tied to Drupal’s permissions. It is common for anonymous users to be granted the “use search” permission to be able to search content on the site. There is also permission for “use advanced search” and “administer search.” All of these settings can be adjusted according to the desired use case of <span class="No-Break">the appl<a id="_idTextAnchor368"></a>ication.</span></p>
+			<h2 id="_idParaDest-199"><a id="_idTextAnchor369"></a>Search pages</h2>
+			<p>Search pages can also be<a id="_idIndexMarker423"></a> configured in <strong class="source-inline">admin/config/search/pages</strong>, as shown by the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer084" class="IMG---Figure">
+					<img src="image/B19491_12_5.jpg" alt="Figure 12.5 – Search pages listing on the search configuration page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.5 – Search pages listing on the search configuration page</p>
+			<p>This demonstrates the various <a id="_idIndexMarker424"></a>search pages on the site. By default, Drupal has two search pages: one for the <strong class="source-inline">Node</strong> entity and one for the <strong class="source-inline">User</strong> entity. The <strong class="source-inline">Node</strong> entity is the most popular for content-related search and is the default. The user search page can be removed if an application does not have a lot of engagement found in community-like applications. Search pages can be added that can address specific desired search logic through a customized page. The following figure shows the configuration of a search page accessed by pressing <strong class="bold">Edit</strong> on a specific <span class="No-Break">search page:</span></p>
+			<div>
+				<div id="_idContainer085" class="IMG---Figure">
+					<img src="image/B19491_12_6.jpg" alt="Figure 12.6 – Search pages listing on the search configuration page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 12.6 – Search pages listing on the search configuration page</p>
+			<p><span class="No-Break"><em class="italic">Figure 12</em></span><em class="italic">.6</em> demonstrates the page-specific configuration that influences the results of the search processor. One such concept is weighting, which helps provide relevance to specific search keywords. Drupal provides weights through the configuration of a search page tied to content ranking. Content ranking provides ordered relevance and influence weights based on rendered content or the metadata of the content. For instance, if the content has the <strong class="bold">Promoted on front page</strong> box selected, it can be weighted higher than other content. HTML is naturally structured into headings, such as H1, H2, and H3, that organize content into a hierarchy. This is provided by the keyword relevance content ranking in Drupal. Given Drupal renders its structured content as HTML, the search can also associate the tag of a word that is mapped to the page. Weighting can be provided by tag, commonly giving priority weighting to heading tags such as H1, H2, and H3 and less weight to DIV and <span class="No-Break">P tags.</span></p>
+			<p>Through basic <a id="_idIndexMarker425"></a>settings, permissions, and search pages, Drupal can configure the search function in a wide variety of ways and can address a large number of use cases for <span class="No-Break">the appl<a id="_idTextAnchor370"></a>ication.</span></p>
+			<h1 id="_idParaDest-200"><a id="_idTextAnchor371"></a>Extending Search</h1>
+			<p>Like most out-of-the-box Drupal features, search is designed to be extended. Several popular use cases can be addressed by <span class="No-Break">contributed<a id="_idTextAnchor372"></a> modules.</span></p>
+			<h2 id="_idParaDest-201"><a id="_idTextAnchor373"></a>Facets</h2>
+			<p>Facets (<strong class="source-inline">drupal.org/project/facets</strong>) is a project intended to offer site builders the ability to create additional<a id="_idIndexMarker426"></a> search filters for end users who use search. Facets work well with Drupal’s structured content models. Consider a taxonomy field that categorizes nodes. Being able to filter by a term could be very useful beyond the out-of-the-box <span class="No-Break">advanced search.</span></p>
+			<p>Facets go well beyond a term-based selection. Facets can natively change based on the type of field. This can be different form widgets or even different logic for searching fields. Ultimately, site builders can leverage this module to provide commonly used search interfaces tied to the underlying <span class="No-Break">structure<a id="_idTextAnchor374"></a>d content.</span></p>
+			<h2 id="_idParaDest-202"><a id="_idTextAnchor375"></a>Third-party indexes</h2>
+			<p>Drupal offers out-of-the-box search<a id="_idIndexMarker427"></a> capabilities, but other technologies might be better at allowing an application to provide search indexes. This is especially true as the amount of content in Drupal scales. Separating Drupal’s native database that replicates an index from Drupal’s content can yield performance gains while <span class="No-Break">adding complexity.</span></p>
+			<p>Drupal has a contributed project named Search API (<strong class="source-inline">drupal.org/project/search_api</strong>), which extends Drupal’s native framework. This module serves as a dependency for an ecosystem of other contributed modules that help provide integrations with <span class="No-Break">third-party indexes.</span></p>
+			<p>Two very common projects exist, primarily due to the popularity of third-party and/or native platform offerings. Apache SOLR is an open-source search index that is likely the most common third-party search index tool leveraged by Drupal applications. It has a corresponding Drupal project (<strong class="source-inline">drupal.org/project/search_api_solr</strong>). First, it is open source. Second, it is commonly offered by Drupal hosting providers. Finally, its popularity has led to a lot of adoption and subsequent polish against a large number of use cases. The second type of search index is Elasticsearch. It offers similar benefits to Apache SOLR. It is less <a id="_idIndexMarker428"></a>popular, but it offers some more modern features. Elasticsearch has its own Drupal project (<strong class="source-inline">drupal.org/project/elasticsearch_connecto<a id="_idTextAnchor376"></a>r</strong>) <span class="No-Break">as well.</span></p>
+			<h2 id="_idParaDest-203"><a id="_idTextAnchor377"></a>Autocomplete</h2>
+			<p>When you use Google, recommendations show up as you start typing. Drupal is also able to offer this kind of search experience. In Drupal terms, this is known as the autocomplete behavior. The<a id="_idIndexMarker429"></a> Search API Autocomplete project (<strong class="source-inline">drupal.org/project/search_api_autocomplete</strong>) exists to provide this functionality. As an end-user starts using the native search form, suggestions will come up based on, for example, the title of <span class="No-Break">the node.</span></p>
+			<p>One of the key benefits of the search function is its extensibility. While there are a lot of projects on <strong class="source-inline">drupal.org</strong> to extend it, popular search cases include facets, third-party indexes with Apache SOLR or Elasticsearch, and <span class="No-Break">autocomplete f<a id="_idTextAnchor378"></a>unctionality.</span></p>
+			<h1 id="_idParaDest-204"><a id="_idTextAnchor379"></a>Use cases</h1>
+			<p>Search in Drupal helps both users <a id="_idIndexMarker430"></a>and site builders create capabilities in applications to<a id="_idTextAnchor380"></a> <span class="No-Break">find content.</span></p>
+			<h2 id="_idParaDest-205"><a id="_idTextAnchor381"></a>Querying for two different movie titles simultaneously</h2>
+			<p>Drupal’s native search form, which invokes Drupal’s search processor, supports various search parameters. In the search form, the following can <span class="No-Break">be entered:</span></p>
+			<pre class="source-code">
+&quot;Wizard of Oz&quot; OR &quot;Gone with the wind&quot;</pre>			<p>And, don’t forget, Drupal does offer some advanced search options that can abstract Drupal’s nativ<a id="_idTextAnchor382"></a>e <span class="No-Break">search form.</span></p>
+			<h2 id="_idParaDest-206"><a id="_idTextAnchor383"></a>Filter by sport</h2>
+			<p>This use case is perfect for the <strong class="source-inline">Facets</strong> module. After enabling facets, which also enables Search API, facets can be created through Search API’s configuration (admin/config/search/search-api). Specific field-type widgets can be implemented through search API processors, specifically a preprocess query processor. Then, leveraging the advanced settings of the search page configuration, the processor can be added and the facets can <a id="_idTextAnchor384"></a><span class="No-Break">be configured.</span></p>
+			<h2 id="_idParaDest-207"><a id="_idTextAnchor385"></a>Restricting a specific content type from search</h2>
+			<p>Content types are <a id="_idIndexMarker431"></a>controlled by Drupal’s native search pages. <span class="No-Break"><em class="italic">Figure 12</em></span><em class="italic">.5</em> highlights how to configure search pages within Drupal. Edit the search page desired, uncheck any unwanted content types, and save. This may prompt re-indexing if unwanted nodes are <span class="No-Break">already indexed.</span></p>
+			<p>Drupal’s search offers users the ability to find content and for administrators to configure search behaviors toward com<a id="_idTextAnchor386"></a>mon <span class="No-Break">use cases.</span></p>
+			<h1 id="_idParaDest-208"><a id="_idTextAnchor387"></a>Summary</h1>
+			<p>This chapter highlighted both out-of-the-box and extended search features. Configuring search pages and the search form block allows site builders to build search functions into their applications without writing code. Concepts such as indexing were covered both within Drupal and by leveraging popular third-party indexes, such as Apache SOLR. Configuring advanced features, such as facets and autocomplete, can provide additional experiences that can be useful on a <span class="No-Break">case-by-case basis.</span></p>
+			<p>The next chapter discusses contact forms in Drupal, which is a feature for user engagement. Contact forms provide a means for users to fill out a form on the Drupal application and <span class="No-Break">reach administrators.</span></p>
+		</div>
+		<div>
+			<div id="_idContainer087" class="Content">
+			</div>
+		</div>
+	</body>
+</html>

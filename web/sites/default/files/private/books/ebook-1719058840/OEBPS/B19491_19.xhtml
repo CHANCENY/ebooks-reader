@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_19</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_19">
+		<div id="_idContainer137">
+			<h1 id="_idParaDest-289" class="chapter-number"><a id="_idTextAnchor537"></a>19</h1>
+			<h1 id="_idParaDest-290"><a id="_idTextAnchor538"></a>Theme Development</h1>
+			<p><a id="_idTextAnchor539"></a>In this chapter, you’ll learn about theming Drupal. Drupal theming is different from many other content management systems (including WordPress) because the functionality (which is typically handled at the module layer) is separated from the theme layer. Nevertheless, Drupal gives the developer nearly full control over the markup, styles, and <strong class="bold">JavaScript</strong> (<strong class="bold">JS</strong>) interactions of the frontend, which enables the developer to display data however <span class="No-Break">they wish.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Set up</span></li>
+				<li>Working with Libraries (JS <span class="No-Break">and CSS)</span></li>
+				<li>Working <span class="No-Break">with Templates</span></li>
+				<li>Preprocessing data <span class="No-Break">and PHP</span></li>
+				<li>Working <span class="No-Break">with CSS</span></li>
+				<li>Working <span class="No-Break">with JavaScript</span></li>
+				<li>Single <span class="No-Break">directory components</span></li>
+				<li>Drupal <span class="No-Break">Accessibility tips</span></li>
+				<li>Contributed modules that help <span class="No-Break">with theming</span></li>
+			</ul>
+			<h1 id="_idParaDest-291"><a id="_idTextAnchor540"></a>Technical requirements</h1>
+			<p><a id="_idTextAnchor541"></a><a id="_idTextAnchor542"></a>Given this is an advanced chapter, some specific technical knowledge is assumed. Themes in Drupal leverage CSS, JavaScript, and HTML. This book does not cover these topics in depth given they are not specific <span class="No-Break">to Drupal.</span></p>
+			<p>As stated earlier, functionality built in Drupal is typically put together using entities, views, display modes etc. All of these exist outside of the theme layer. The theme layer exists to change markup around existing functionality, and add the ability to style and add interactivity <span class="No-Break">to it.</span></p>
+			<p>As of the time of this writing, Drupal’s paid theme ecosystem is very small (compared to other CMSs such as WordPress) because of <span class="No-Break">several reasons:</span></p>
+			<p>It’s hard to style functionality that the theme author doesn’t know <span class="No-Break">will exist</span></p>
+			<p>Most Drupal sites tend to be on the larger side, and require custom <span class="No-Break">bespoke designs</span></p>
+			<h1 id="_idParaDest-292"><a id="_idTextAnchor543"></a>Setting up for theme development</h1>
+			<p>Drupal<a id="_idIndexMarker623"></a> gives you several tools to help you develop your theme, but you’ll need to enable them. Theme development capabilities should only be enabled on development systems, <span class="No-Break">not production.</span><a id="_idTextAnchor544"></a></p>
+			<h2 id="_idParaDest-293"><a id="_idTextAnchor545"></a>Disabling CSS and JS aggregation</h2>
+			<p>Drupal will <a id="_idIndexMarker624"></a>bundle CSS and JS files together. While this is great for performance, it makes development difficult. To disable this, navigate to <strong class="bold">Admin</strong> | <strong class="bold">Configuration</strong> | <strong class="bold">Development</strong> | <strong class="bold">Performance</strong>. You’ll end up at <strong class="source-inline">admin/config/development/performance</strong>. The following figure shows the options for <strong class="bold">Aggregate CSS files</strong> and <strong class="bold">Aggregate </strong><span class="No-Break"><strong class="bold">JavaScript files</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer131" class="IMG---Figure">
+					<img src="image/B19491_19_1.jpg" alt="Figure 19.1 – Aggregation settings" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.1 – Aggregation settings</p>
+			<p>Note you can<a id="_idIndexMarker625"></a> also disable these via code, by adding the following to your <span class="No-Break"><strong class="source-inline">sites/default/settings.php</strong></span><span class="No-Break"> file:</span></p>
+			<pre class="source-code">
+$config[&apos;system.performance&apos;][&apos;css&apos;][&apos;preprocess&apos;] = FALSE;
+$config[&apos;system.performance&apos;][&apos;js&apos;][&apos;preprocess&apos;] = FALSE;</pre>			<p>That ensures that aggregation is turned off <span class="No-Break">for development.</span><a id="_idTextAnchor546"></a></p>
+			<h2 id="_idParaDest-294"><a id="_idTextAnchor547"></a>Setting up theme debugging and disabling caches</h2>
+			<p>Theme debugging<a id="_idIndexMarker626"></a> enables <a id="_idIndexMarker627"></a>Drupal to output the current Twig template within comments, within the HTML markup that Drupal creates. The following figure shows the debugging output inline with the <span class="No-Break">HTML source:</span></p>
+			<div>
+				<div id="_idContainer132" class="IMG---Figure">
+					<img src="image/B19491_19_2.jpg" alt="Figure 19.2 – The browser view source with the debugging comments enabled" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.2 – The browser view source with the debugging comments enabled</p>
+			<p>In addition, theme debugging <a id="_idIndexMarker628"></a>also enables you to use the <strong class="source-inline">dump()</strong> function within your Twig templates to output a list <span class="No-Break">of variables.</span></p>
+			<p>If you’re running Drupal 10.1.0 or later, navigate to <strong class="bold">Admin</strong> | <strong class="bold">Configuration</strong> | <strong class="bold">Development</strong> | <strong class="bold">Development settings</strong>. You’ll arrive <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">/admin/config/development/settings</strong></span><span class="No-Break">.</span></p>
+			<p>Here, you’ll find a form where you <a id="_idIndexMarker629"></a>can enable Twig development mode. You’ll want to check both boxes (note the first box will expose multiple options, which you’ll want to keep checked). The following figure shows <span class="No-Break">these settings:</span></p>
+			<div>
+				<div id="_idContainer133" class="IMG---Figure">
+					<img src="image/B19491_19_3.jpg" alt="Figure 19.3 – Development settings tied to theming" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.3 – Development settings tied to theming</p>
+			<p>Note that if you’re on a version of <a id="_idIndexMarker630"></a>Drupal before 10.1, you have to edit two files to<a id="_idIndexMarker631"></a> accomplish <span class="No-Break">the same.</span></p>
+			<p>Edit <strong class="source-inline">sites/development.services.yml</strong> to get <span class="No-Break">the following:</span></p>
+			<pre class="source-code">
+parameters:
+&#160;&#160;http.response.debug_cacheability_headers: true
+&#160;&#160;twig.config:
+&#160;&#160;&#160;&#160;debug: true
+&#160;&#160;&#160;&#160;auto_reload: true
+&#160;&#160;&#160;&#160;cache: false
+services:
+&#160;&#160;cache.backend.null:
+&#160;&#160;&#160;&#160;class: Drupal\Core\Cache\NullBackendFactory</pre>			<p>Then, add the following to the bottom of your <span class="No-Break"><strong class="source-inline">sites/default/settings.php</strong></span><span class="No-Break"> file.</span></p>
+			<pre class="source-code">
+$settings[&apos;container_yamls&apos;][] = $app_root . &apos;/sites/development.services.yml&apos;;
+$settings[&apos;cache&apos;][&apos;bins&apos;][&apos;render&apos;] = &apos;cache.backend.null&apos;;
+$settings[&apos;cache&apos;][&apos;bins&apos;][&apos;page&apos;] = &apos;cache.backend.null&apos;;
+$settings[&apos;cache&apos;][&apos;bins&apos;][&apos;dynamic_page_cache&apos;] = &apos;cache.backend.null&apos;;</pre>			<p>After making that<a id="_idIndexMarker632"></a> change, you’ll <a id="_idIndexMarker633"></a>need to clear Drupal’s cache <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/config/development/perfo<a id="_idTextAnchor548"></a>rmance</strong></span><span class="No-Break">.</span></p>
+			<h2 id="_idParaDest-295"><a id="_idTextAnchor549"></a>Turning on verbose error messages</h2>
+			<p>When you’re doing<a id="_idIndexMarker634"></a> Drupal development (including frontend development), you’ll want to make sure that Drupal outputs the full errors to the screen. To do this, navigate to <strong class="bold">Admin</strong> | <strong class="bold">Configuration</strong> | <strong class="bold">Development</strong> | <strong class="bold">Logging and errors</strong>. You’ll end up <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/config/development/logging</strong></span><span class="No-Break">.</span></p>
+			<p>Select the option to display <strong class="bold">All messages, with backtrace information</strong>. Note that it’s also recommended to add the following to your development environment’s <strong class="source-inline">settings.php</strong> to do <span class="No-Break">the same:</span></p>
+			<pre class="source-code">
+$config[&apos;system.logging&apos;][&apos;error_level&apos;] = &apos;verbose&apos;;</pre>			<p>Verbose error messages will ensure that when (not if) you make a mistake in Twig or PHP, the proper error shows on <span class="No-Break">the<a id="_idTextAnchor550"></a> screen.</span></p>
+			<h2 id="_idParaDest-296"><a id="_idTextAnchor551"></a>Creating a new theme using the theme generator tool</h2>
+			<p>The official method to<a id="_idIndexMarker635"></a> create a new theme is to use Drupal core’s included theme generator tool. At the time of writing, the only theme that can be cloned is core’s included Starterkit theme, although work is currently being done to make the Olivero <span class="No-Break">theme cloneable.</span></p>
+			<p>Note, that this tool is intended to be run from the command line, and it requires a local version of PHP to be installed on the <span class="No-Break">development computer:</span></p>
+			<pre class="source-code">
+php core/scripts/drupal generate-theme mytheme</pre>			<p>This will generate a new theme, called <strong class="source-inline">mytheme</strong>, which is a clone of the Starterkit theme. The theme is extremely barebones and has only <span class="No-Break">minimal<a id="_idTextAnchor552"></a> styling.</span></p>
+			<h2 id="_idParaDest-297"><a id="_idTextAnchor553"></a>Creating a new theme from scratch</h2>
+			<p>Even if you don’t create your theme from <a id="_idIndexMarker636"></a>scratch, it’s important to know how everything works <span class="No-Break">in conjunction.</span></p>
+			<p>When you create a new theme, you’ll want to start by creating a new directory within the <strong class="source-inline">/themes</strong> directory, with the name of your theme. For our example, we’ll call our theme <strong class="source-inline">dexter</strong> (named after the <span class="No-Break">author’s dog).</span></p>
+			<p class="callout-heading">Note</p>
+			<p class="callout">You’ll need to clear the cache to see changes after modifying any of Drupal’s <span class="No-Break">Y<a id="_idTextAnchor554"></a>AML files.</span></p>
+			<h2 id="_idParaDest-298"><a id="_idTextAnchor555"></a>Creating your dexter.info.yml</h2>
+			<p>The definition of the theme is held in <a id="_idIndexMarker637"></a>the theme’s <strong class="source-inline">info.yml</strong> file. This contains the primary definitions of the themes, including which libraries (CSS and JS) are loaded by default, regions (where you place your blocks), <strong class="source-inline">library overrides</strong> (where you override the modules’ CSS and JS), dependencies, and <span class="No-Break">so on:</span></p>
+			<pre class="source-code">
+name: Dexter
+type: theme
+description: &apos;A theme named after a lovable but dumb dog.&apos;
+core_version_requirement: &apos;&gt;=10.1&apos;
+libraries:
+&#160;&#160;- dexter/global-styling
+regions:
+&#160;&#160;header: &apos;Header&apos;
+&#160;&#160;content: &apos;Content&apos;
+&#160;&#160;content_below: &apos;Sidebar first&apos;
+&#160;&#160;footer<a id="_idTextAnchor556"></a>: &apos;Footer&apos;</pre>			<h3>Regions</h3>
+			<p>Regions are areas where <a id="_idIndexMarker638"></a>you can drag and place Drupal blocks within the block layout page. You can either rely on Drupal’s default regions (check Drupal’s <strong class="source-inline">page.html.twig</strong> for a list) or you can define them yourself, using the <span class="No-Break">preced<a id="_idTextAnchor557"></a>ing pattern.</span></p>
+			<h3>Libraries</h3>
+			<p>Libraries are defined in <a id="_idIndexMarker639"></a>your <strong class="source-inline">dexter.libraries.yml</strong> file, and point to the CSS and JS that you want to load when that library is loaded. Within your <strong class="source-inline">dexter.info.yml</strong> file, you can do several things <span class="No-Break">with libraries.</span></p>
+			<ul>
+				<li>You can define your global libraries (which will always be loaded) with the <span class="No-Break"><strong class="source-inline">libraries</strong></span><span class="No-Break"> key.</span></li>
+				<li>You can override a module or theme’s library with the <strong class="source-inline">libraries-overrides</strong> keys. This is useful to swap out CSS or JS files. You can also disable libraries completely by setting the library key’s value to <strong class="source-inline">false</strong>. You can also granularly override or disable specific CSS or <span class="No-Break">JS files.</span></li>
+				<li>You can<a id="_idIndexMarker640"></a> extend a library using the <strong class="source-inline">libraries-extend</strong> key. This lets you load your additional libraries when another libr<a id="_idTextAnchor558"></a>ary <span class="No-Break">is loaded.</span></li>
+			</ul>
+			<h2 id="_idParaDest-299"><a id="_idTextAnchor559"></a>Creating your dexter.libraries.yml file</h2>
+			<p>Your theme’s <strong class="source-inline">libraries.yml</strong> file <a id="_idIndexMarker641"></a>contains definitions for all of your theme libraries (which hold the definitions and paths to all of your CSS, and the JS that you want to load). Working with libraries is covered in a section later i<a id="_idTextAnchor560"></a>n <span class="No-Break">this chapter.</span></p>
+			<h2 id="_idParaDest-300"><a id="_idTextAnchor561"></a>Creating your CSS directory and files</h2>
+			<p>You can put your <a id="_idIndexMarker642"></a>CSS files pretty much anywhere, but it’s common to place them in the a <strong class="source-inline">/css</strong> directory within the theme. Frequently, they’re organized within a directory tree. The organization of this is the developer’s choice, but my personal preference is <span class="No-Break">the following:</span></p>
+			<pre class="source-code">
+dexter/
+&#160;&#160;css/
+&#160;&#160;&#160;&#160;base/
+&#160;&#160;&#160;&#160;&#160;&#160;- contains base styles, CSS variable definitions, resets, etc
+&#160;&#160;&#160;&#160;components/
+&#160;&#160;&#160;&#160;&#160;&#160;- contains a CSS file per component
+&#160;&#160;&#160;&#160;layout/
+&#160;&#160;&#160;&#160;&#160;-&#160;&#160;contains layout styes, grid systems, etc</pre>			<p>Note that Drupal 10.1.0 and later comes with Single Directory Components. These allow you to group templates, definitions, CSS, and JS for a component in its directory, under a <strong class="source-inline">/components</strong> directory. This means that CSS components can exist here. We’ll cover Single Directory Components later <a id="_idTextAnchor562"></a>in <span class="No-Break">this chapter.</span></p>
+			<h2 id="_idParaDest-301"><a id="_idTextAnchor563"></a>Creating your templates directory</h2>
+			<p>Drupal uses the Twig templating<a id="_idIndexMarker643"></a> language, and your theme’s Twig files will live within the <strong class="source-inline">/templates</strong> directory within your theme. You can define an arbitrary directory structure within this <span class="No-Break">if needed.</span></p>
+			<p>Typically, you’ll want to copy over the Twig templates from Drupal core to populate the directory. One of the main benefits of Drupal’s <strong class="source-inline">theme generator</strong> command is that it automatically populates this d<a id="_idTextAnchor564"></a>irectory <span class="No-Break">for you.</span></p>
+			<h2 id="_idParaDest-302"><a id="_idTextAnchor565"></a>Creating your JS directory</h2>
+			<p>JS can be placed in any directory<a id="_idIndexMarker644"></a> within a theme, but it’s standard practice to create a <strong class="source-inline">/js</strong> directory within the root of your theme, placing the respective file types into <a id="_idTextAnchor566"></a><span class="No-Break">their directories.</span></p>
+			<h1 id="_idParaDest-303"><a id="_idTextAnchor567"></a>Creating a new theme from a base theme (subtheming)</h1>
+			<p>Drupal <a id="_idIndexMarker645"></a>supports a concept <a id="_idIndexMarker646"></a>of <em class="italic">subtheming</em>, where you <a id="_idIndexMarker647"></a>can declare your theme a <em class="italic">subtheme</em>, and it will inherit everything from the parent theme. This is useful when you want to implement a framework such as <a id="_idIndexMarker648"></a>Bootstrap<a id="_idIndexMarker649"></a> or <strong class="bold">U.S. Web <a id="_idTextAnchor568"></a>Design </strong><span class="No-Break"><strong class="bold">System (USWDS)</strong></span><span class="No-Break">.</span></p>
+			<h2 id="_idParaDest-304"><a id="_idTextAnchor569"></a>Popular base themes</h2>
+			<p>The<a id="_idIndexMarker650"></a> community <a id="_idIndexMarker651"></a>offers several<a id="_idIndexMarker652"></a> base themes<a id="_idIndexMarker653"></a> that can<a id="_idIndexMarker654"></a> be found <span class="No-Break">on </span><span class="No-Break"><strong class="source-inline">Drupal.org</strong></span><span class="No-Break">:</span></p>
+			<ul>
+				<li>Bootstrap <a id="_idIndexMarker655"></a><span class="No-Break">barrio (</span><a href="https://www.drupal.org/project/bootstrap_barrio"><span class="No-Break">https://www.drupal.org/project/bootstrap_barrio</span></a><span class="No-Break">)</span></li>
+				<li><span class="No-Break">Radix (</span><a href="https://www.drupal.org/project/radix"><span class="No-Break">https://www.drupal.org/project/radix</span></a><span class="No-Break">)</span></li>
+				<li>USWDS<a id="_idIndexMarker656"></a> <span class="No-Break">base (</span><a href="https://www.drupal.org/project/uswds"><span class="No-Break">https://www.drupal.org/project/uswds</span></a><span class="No-Break">)</span></li>
+			</ul>
+			<h1 id="_idParaDest-305"><a id="_idTextAnchor570"></a>Working with Libraries API (and where to put CSS/JS)</h1>
+			<p>The method by which<a id="_idIndexMarker657"></a> themes and modules attach CSS and JS to a page is through Libraries API. This is extendable, very flexible, and easy <span class="No-Break">to use.</span></p>
+			<p>To create a library, first create a <strong class="source-inline">themename.libraries.yml</strong> file in the root of your theme. Within this file, you can create a library using <span class="No-Break">YML syntax:</span></p>
+			<pre class="source-code">
+card:
+&#160;&#160;css:
+&#160;&#160;&#160;&#160;component:
+&#160;&#160;&#160;&#160;&#160;&#160;css/components/card.css: {}
+&#160;&#160;js:
+&#160;&#160;&#160;&#160;js/card.js: {}</pre>			<p>This library can then be loaded through<a id="_idTextAnchor571"></a> one of many <span class="No-Break">following methods.</span></p>
+			<h2 id="_idParaDest-306"><a id="_idTextAnchor572"></a>Loading the library globally through your theme’s *.info.yml file</h2>
+			<p>You can tell <a id="_idIndexMarker658"></a>your theme to always load the library by specifying it in the theme’s <strong class="source-inline">*.</strong><span class="No-Break"><strong class="source-inline">info.yml</strong></span><span class="No-Break"> fi<a id="_idTextAnchor573"></a>le:</span></p>
+			<pre class="source-code">
+libraries:
+&#160;&#160;- mytheme/card</pre>			<h2 id="_idParaDest-307"><a id="_idTextAnchor574"></a>Attaching the library through a Twig template</h2>
+			<p>This will <a id="_idIndexMarker659"></a>ensure the library is loaded once whenever the Twig template is <span class="No-Break">in use:</span></p>
+			<pre class="source-code">
+{{ <a id="_idTextAnchor575"></a>attach_library(&apos;mytheme/card&apos;) }}</pre>			<h2 id="_idParaDest-308"><a id="_idTextAnchor576"></a>Loading the library programmatically through preprocess</h2>
+			<p>If you <a id="_idIndexMarker660"></a>have complex logic that determines when and where to load your library, you can do so via PHP within <strong class="source-inline">preprocess</strong> (there’ll be more on <span class="No-Break">preprocess later):</span></p>
+			<pre class="source-code">
+$variables[&apos;#attac<a id="_idTextAnchor577"></a>hed&apos;][&apos;library&apos;][] = mytheme/card;</pre>			<h2 id="_idParaDest-309"><a id="_idTextAnchor578"></a>Overriding another module’s or theme’s libraries</h2>
+			<p>You can<a id="_idIndexMarker661"></a> override or disable other module’s libraries within your theme’s <strong class="source-inline">*.info.yml</strong>’s <span class="No-Break">libraries-override section:</span></p>
+			<p>To override a library, <span class="No-Break">use this:</span></p>
+			<pre class="source-code">
+libraries-override:
+&#160;&#160;some_module/card: mytheme/card</pre>			<p>To disable a library, <span class="No-Break">use this:</span></p>
+			<pre class="source-code">
+libraries-override:
+&#160;&#160;some_module/card: false</pre>			<p>To override a specific asset within an external library, <span class="No-Break">use this:</span></p>
+			<pre class="source-code">
+libraries-override:
+&#160;&#160;some_module/card:
+&#160;&#160;&#160;&#160;css:
+&#160;&#160;&#160;&#160;&#160;&#160;component:
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;old/path/to/css/card.css: new/path/to/css/card.css</pre>			<p>To disable a specific asset within an external library, <span class="No-Break">use this:</span></p>
+			<pre class="source-code">
+libraries-override:
+&#160;&#160;some_module/card:
+&#160;&#160;&#160;&#160;js:
+<a id="_idTextAnchor579"></a>&#160;&#160;&#160;&#160;&#160;&#160;old/path/to/js/card.js: false</pre>			<h2 id="_idParaDest-310"><a id="_idTextAnchor580"></a>Managing dependencies</h2>
+			<p>In <a id="_idIndexMarker662"></a>practice, many libraries depend on other libraries. To ensure that a library is loaded, use the <strong class="source-inline">dependencies</strong> key within <span class="No-Break">your library.</span></p>
+			<pre class="source-code">
+dependencies:<a id="_idTextAnchor581"></a>
+&#160;&#160;&#160;&#160;- core/jquery
+&#160;&#160;&#160;&#160;- core/drupal</pre>			<h2 id="_idParaDest-311"><a id="_idTextAnchor582"></a>Notes on CSS grouping</h2>
+			<p>When adding <a id="_idIndexMarker663"></a>CSS to your library, you need to organize it under one of several categories. These categories will enable Drupal to load the CSS <span class="No-Break">in order.</span></p>
+			<ul>
+				<li><strong class="bold">Base</strong>: CSS <strong class="source-inline">reset/normalize</strong> plus HTML <span class="No-Break">element styling</span></li>
+				<li><strong class="bold">Layout</strong>: Macro arrangement of a web page, including any <span class="No-Break">grid systems</span></li>
+				<li><strong class="bold">Component</strong>: Discrete, reusable <span class="No-Break">UI elements</span></li>
+				<li><strong class="bold">State</strong>: Styles that deal with client-side changes <span class="No-Break">to components</span></li>
+				<li><strong class="bold">Theme</strong>: Purely visual styling (“look-and-feel”) for <span class="No-Break">a component</span></li>
+			</ul>
+			<p>In practice, the vast majority of CSS w<a id="_idTextAnchor583"></a>ill be within the <span class="No-Break">component grouping.</span></p>
+			<h2 id="_idParaDest-312"><a id="_idTextAnchor584"></a>Setting weights and other options</h2>
+			<p>You can set loading weights<a id="_idIndexMarker664"></a> of CSS and JS by specifying the weight value within the object for <span class="No-Break">the asset:</span></p>
+			<pre class="source-code">
+card:
+&#160;&#160;js:
+&#160;&#160;&#160;&#160;js/card.js: { weight: -18 }</pre>			<p>If an asset is already minified, you can tell this <span class="No-Break">to Drupal:</span></p>
+			<pre class="source-code">
+card:
+&#160;&#160;js:
+&#160;&#160;&#160;&#160;js/card.js: { minified: true }</pre>			<p>You can specify<a id="_idIndexMarker665"></a> <span class="No-Break">additional attributes:</span></p>
+			<pre class="source-code">
+card:
+&#160;&#160;js:
+&#160;&#160;&#160;&#160;js/card.js: { attr<a id="_idTextAnchor585"></a>ibutes: { defer: true, type: module } }</pre>			<h1 id="_idParaDest-313"><a id="_idTextAnchor586"></a>Working with templates</h1>
+			<p>Templates help provide variables<a id="_idIndexMarker666"></a> inside of HTML markup to define the rendering of content in Drupal. The following sect<a id="_idTextAnchor587"></a>ions outline how to work <span class="No-Break">with templates.</span></p>
+			<h2 id="_idParaDest-314"><a id="_idTextAnchor588"></a>How to find and create templates</h2>
+			<p>One of the first things <a id="_idIndexMarker667"></a>you’ll need to do is figure out what template to use and <a id="_idIndexMarker668"></a>create. You can find current templates that enable Twig Debug (which we talked about earlier) <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">/admin/config/development/settings</strong></span><span class="No-Break">.</span></p>
+			<p>Doing so will tell Drupal to output HTML comments in the markup that indicate what templates are in use, and what templates are available. Note that your theme’s templates (except Single Directory Components) will reside in the theme’s <strong class="source-inline">/</strong><span class="No-Break"><strong class="source-inline">templates</strong></span><span class="No-Break"> directory.</span></p>
+			<div>
+				<div id="_idContainer134" class="IMG---Figure">
+					<img src="image/B19491_19_4.jpg" alt="Figure 19.4 – Template suggestions in rendered HTML comments" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.4 – Template suggestions in rendered HTML comments</p>
+			<p>In the preceding example, you can see under <strong class="source-inline">FILE NAME SUGGESTIONS:</strong> that six items are listed, with <strong class="source-inline">X</strong> next to the last (<strong class="source-inline">node.html.twig</strong>). This means that <strong class="source-inline">node.html.twig</strong> is in use, and if the others are created, they will <span class="No-Break">take precedence.</span></p>
+			<p>If I want to create a new<a id="_idIndexMarker669"></a> template for this specific template, copy and paste the currently <a id="_idIndexMarker670"></a>used template (in this case, the <strong class="source-inline">node.html.twig</strong> in the theme’s <strong class="source-inline">/templates</strong> directory), and then rename it as one of the names in<a id="_idTextAnchor589"></a> the list (<span class="No-Break">e.g., </span><span class="No-Break"><strong class="source-inline">node--60--full.html.twig</strong></span><span class="No-Break">).</span></p>
+			<h2 id="_idParaDest-315"><a id="_idTextAnchor590"></a>Twig basics</h2>
+			<p>Drupal uses the open-source <a id="_idIndexMarker671"></a>Twig templating language to create markup interspersed with data. This section of this chapter doesn’t have time to conclusively cover Twig, but we will cover the basics and Drupal-specific implementations. Fortunately, Twig has <a id="_idIndexMarker672"></a>excell<a id="_idTextAnchor591"></a>ent <span class="No-Break">documentation (</span><a href="https://twig.symfony.com"><span class="No-Break">https://twig.symfony.com</span></a><span class="No-Break">).</span></p>
+			<h3>Outputting a variable in Twig</h3>
+			<p>Within the <a id="_idIndexMarker673"></a>Twig templating language, you’ll want to intersperse the desired markup with variables that represent the live data from the site. To output a variable, simply wrap <a id="_idTextAnchor592"></a>it in double curly braces – <strong class="source-inline">{{ </strong><span class="No-Break"><strong class="source-inline">my_variable }}</strong></span><span class="No-Break">.</span></p>
+			<h3>Working with conditionals in Twig</h3>
+			<p>Very frequently, you’ll need to use <strong class="source-inline">if/else</strong> statements. To do so, you’ll want to wrap it <a id="_idIndexMarker674"></a>with a single curly brace and a percent sign <strong class="source-inline">{% if </strong><span class="No-Break"><strong class="source-inline">my_var %}</strong></span><span class="No-Break">.</span></p>
+			<p>You can also use the same syntax to <span class="No-Break">set variables:</span></p>
+			<pre class="source-code">
+{% set my_var = true %}</pre>			<p>The Drupal node system will give you a large content array that contains Drupal’s content. To output a single field and associated markup, you can group all <span class="No-Break">of these:</span></p>
+			<pre class="source-code">
+{% if content.field_my_field.0 %}
+&#160;&#160;&lt;div class=&quot;my-field&quot;&gt;
+&#160;&#160;&#160;&#160;{{ content.my_field }}
+&#160;&#160;&lt;/div&gt;
+{% endif %}</pre>			<p>Note the <strong class="source-inline">.0</strong> within the <strong class="source-inline">if</strong> statement. Sometimes, Drupal will have an array defined even if the field has no value. Adding <strong class="source-inline">.0</strong> at the end of the condit<a id="_idTextAnchor593"></a>ional tells Twig to only output if <span class="No-Break">data exists.</span></p>
+			<h3>Twig ternary operators</h3>
+			<p>Twig gives you options for<a id="_idIndexMarker675"></a> ternary operators, which is a shorthand for <span class="No-Break">if/else statements:</span></p>
+			<pre class="source-code">
+{{ variable ? &apos;value1&apos; : &apos;value2&apos; }}</pre>			<p>This is a shortcut for <span class="No-Break">the following:</span></p>
+			<pre class="source-code">
+{% if variable %}
+&#160;&#160;value1
+{% else %}
+&#160;&#160;value2
+{% endif %}</pre>			<p>You can also use shortcuts such as <span class="No-Break">the following:</span></p>
+			<pre class="source-code">
+{{ variable ? &apos;value1&apos; }}</pre>			<p>This is a <a id="_idIndexMarker676"></a>shortcut for <span class="No-Break">the f<a id="_idTextAnchor594"></a>ollowing:</span></p>
+			<pre class="source-code">
+{% if variable %}
+&#160;&#160;value1
+{% endif %}</pre>			<h3>Twig include, embed, and extends</h3>
+			<p>Twig includes various functions and tags t<a id="_idTextAnchor595"></a>hat allow a template to utilize <span class="No-Break">other templates.</span></p>
+			<h4>Include function</h4>
+			<p>The <strong class="source-inline">include</strong> function<a id="_idIndexMarker677"></a> allows you to include another template from where you’re <span class="No-Break">calling it:</span></p>
+			<pre class="source-code">
+{{ include(&apos;@olivero/_header.twig&apos;, { my_var: true, color: &apos;pink&apos; }, with_context = false) }}</pre>			<p>In the preceding <strong class="source-inline">include</strong> function, we call the <strong class="source-inline">_header.twig</strong> file from the Olivero theme. This function will tell Drupal to look for the file in the <strong class="source-inline">/templates</strong> directory of the Olivero theme. Note that the underscore in the filename isn’t significant, other than to indicate to other developers that this file is to be included by other files. We pass in two variables. The first, <strong class="source-inline">my_var</strong>, is a Boolean set to <strong class="source-inline">true</strong>, and the second color variable is a string set to <strong class="source-inline">pink</strong>. We also pass in <strong class="source-inline">with_context = false</strong>, which tells Twig to only pass in the variables that are explicitly declared. Otherwise, <strong class="source-inline">include</strong> would have access to all the v<a id="_idTextAnchor596"></a>ariables that the original template has <span class="No-Break">access to.</span></p>
+			<h4>The extends tag</h4>
+			<p>The <strong class="source-inline">extends</strong> tag is very<a id="_idIndexMarker678"></a> similar to the <strong class="source-inline">include</strong> function, but it does not pass through variables, instead passing data in <strong class="source-inline">block</strong> which are arbitrary groupings of markup <span class="No-Break">and variables:</span></p>
+			<pre class="source-code">
+{% extends &apos;@olivero/_meta.twig&apos; %}
+{% block meta %}
+&#160;&#160;&lt;div class=&quot;meta&quot;&gt;
+&#160;&#160;&#160;&#160;{{ content.field_meta }}
+&#160;&#160;&lt;/div&gt;
+{% endblock %}</pre>			<p>In the template that this file <a id="_idIndexMarker679"></a>extends, you will have cor<a id="_idTextAnchor597"></a>responding <strong class="source-inline">{% block meta %}</strong> and <strong class="source-inline">{% endblock %}</strong> <span class="No-Break">tags.</span></p>
+			<h4>The embed tag</h4>
+			<p>The <strong class="source-inline">embed</strong> tag <a id="_idIndexMarker680"></a>combines the best of both the <strong class="source-inline">include</strong> function and the <strong class="source-inline">extends</strong> tag. In the following case, we prevent additional data from being passed to the embedded template by using the <span class="No-Break"><strong class="source-inline">only</strong></span><span class="No-Break"> keyword:</span></p>
+			<pre class="source-code">
+{% embed &apos;@olivero/_meta.twig&apos; with { my_var: true, color: &apos;pink&apos; } only %}
+&#160;&#160;{% block meta %}
+&#160;&#160;&#160;&#160;&lt;div class=&quot;meta&quot;&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;{{ content.fiel<a id="_idTextAnchor598"></a>d_meta }}
+&#160;&#160;&#160;&#160;&lt;/div&gt;
+&#160;&#160;{% endblock %}
+{% endembed %}</pre>			<h2 id="_idParaDest-316"><a id="_idTextAnchor599"></a>Twig filters</h2>
+			<p>Twig has several <a id="_idIndexMarker681"></a>built-in <em class="italic">filters</em> that transform the data of the variable that they’re <span class="No-Break">applied to.</span></p>
+			<p>These are applied using a <strong class="source-inline">|</strong> symbol, followed by the filter’s name, and then any parameters. Note that Twig filters can <span class="No-Break">be chained.</span></p>
+			<p>Some useful Twig filters include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="source-inline">capitalize</strong>: Capitalizes <span class="No-Break">the string</span></li>
+				<li><strong class="source-inline">date</strong>: Formats the data according to the <span class="No-Break">passed-in parameters</span></li>
+				<li><strong class="source-inline">length</strong>: Returns the number of items in an array <span class="No-Break">or sequence</span></li>
+				<li><strong class="source-inline">striptags</strong>: Strips HTML tags from <span class="No-Break">a string</span></li>
+			</ul>
+			<p>Drupal implements several of <span class="No-Break">its filters:</span></p>
+			<ul>
+				<li><strong class="source-inline">t</strong>: Invoke Drupal’s translation for the <span class="No-Break">provided input</span></li>
+				<li><strong class="source-inline">clean_class</strong>: Formats a string to be in the format of aN HTML <span class="No-Break">class name</span></li>
+				<li><strong class="source-inline">clean_id</strong>: Formats a string to be in the format of aN <span class="No-Break">HTML ID</span></li>
+				<li><strong class="source-inline">format_date</strong>: Formats <span class="No-Break">a timestamp</span></li>
+				<li><strong class="source-inline">raw</strong>: Skips twig auto-escaping – use <span class="No-Break">with care!</span></li>
+				<li><strong class="source-inline">render</strong>: Converts a render array <span class="No-Break">to HTML</span></li>
+				<li><strong class="source-inline">safe_join</strong>: Joins together strings with a <span class="No-Break">passed-in separator</span></li>
+				<li><strong class="source-inline">without</strong>: Creates a copy of a render array and removes keys that are <span class="No-Break">passed in</span></li>
+				<li><strong class="source-inline">add_suggestion</strong>: Adds a theme suggestion to the <span class="No-Break">render array</span></li>
+				<li><strong class="source-inline">clean_unique_id</strong>: E<a id="_idTextAnchor600"></a>nsures<a id="_idIndexMarker682"></a> a string is unique (to be used with an <span class="No-Break">HTML ID)</span></li>
+			</ul>
+			<h2 id="_idParaDest-317"><a id="_idTextAnchor601"></a>Twig functions</h2>
+			<p>Twig has several built-in functions<a id="_idIndexMarker683"></a> available, including <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="source-inline">include</strong>: Returns the rendered content of <span class="No-Break">another template</span></li>
+				<li><strong class="source-inline">random</strong>: Returns a random number (or letter from <span class="No-Break">a string)</span></li>
+				<li><strong class="source-inline">date</strong>: Converts an argument to a date to <span class="No-Break">allow comparison</span></li>
+			</ul>
+			<p>Similar to filters, Drupal also includes several <span class="No-Break">custom filters:</span></p>
+			<ul>
+				<li><strong class="source-inline">attach_library</strong>: Attaches the specified library to the page where the template <span class="No-Break">is rendered</span></li>
+				<li><strong class="source-inline">active_theme_path</strong>: Returns the relative path of the <span class="No-Break">active theme</span></li>
+				<li><strong class="source-inline">create_attribute</strong>: Creates an <span class="No-Break"><strong class="source-inline">attributes</strong></span><span class="No-Break"> object</span></li>
+				<li><strong class="source-inline">dump</strong>: Outputs a list of variables available to <span class="No-Break">the template</span></li>
+				<li><strong class="source-inline">file_url</strong>: Returns a relative URL to <span class="No-Break">a file</span></li>
+				<li><strong class="source-inline">link</strong>: Creates <span class="No-Break">a hyperlink</span></li>
+				<li><strong class="source-inline">path</strong>: Returns a reactive path from a <span class="No-Break">ro<a id="_idTextAnchor602"></a>ute name</span></li>
+				<li><strong class="source-inline">URL</strong>: Returns <a id="_idIndexMarker684"></a>an absolute path from a <span class="No-Break">route name</span></li>
+			</ul>
+			<h3>Finding what variables are available</h3>
+			<p>Twig is relatively easy, but finding out what variables are available can be a bit tricky. Luckily, Drupal has your back with the <strong class="source-inline">dump()</strong> function. Note that for this to work, you have to enable Twig development mode and disable caching at  <strong class="source-inline">/</strong><span class="No-Break"><strong class="source-inline">admin/config/development/settings</strong></span><span class="No-Break">.</span></p>
+			<div>
+				<div id="_idContainer135" class="IMG---Figure">
+					<img src="image/B19491_19_5.jpg" alt="Figure 19.5 – The rendered output of a variable dump" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.5 – The rendered output of a variable dump</p>
+			<p>To use the <strong class="source-inline">dump()</strong> function, simply add <strong class="source-inline">{{ dump() }}</strong><em class="italic"> </em>to your template. You can also dump specific variables such <strong class="source-inline">as {{ dump(content) }}</strong>. You can then expand/collapse arrays and objects to see what variables <span class="No-Break">are available.</span></p>
+			<p>You can also use a code debugger, such as <strong class="source-inline">Xdebug</strong> (<a href="https://xdebug.org/">https://xdebug.org/</a>), to get variables in your code editor if configured. While more difficult to configur<a id="_idTextAnchor603"></a>e, it often provides for a better <span class="No-Break">developer experience.</span></p>
+			<h2 id="_idParaDest-318"><a id="_idTextAnchor604"></a>Working with the attributes object</h2>
+			<p>Many, but not all, templates <a id="_idIndexMarker685"></a>have an object variable called <strong class="source-inline">attributes</strong> available. This is used to set HTML attributes on the tag on which it <span class="No-Break">is applied:</span></p>
+			<pre class="source-code">
+&lt;article{{ attributes.addClass(&apos;my-class&apos;) }}&gt;</pre>			<p>Allowing Drupal to set HTML attributes without modifying templates allows <strong class="source-inline">contrib</strong> modules to set these as needed for <span class="No-Break">their functionality.</span></p>
+			<p>If an <strong class="source-inline">attributes</strong> object is not available, you can create one with the <strong class="source-inline">create_attribute()</strong> function within <span class="No-Break">the template.</span></p>
+			<p>There are several methods available for this, including <span class="No-Break">the following:</span></p>
+			<ul>
+				<li><strong class="source-inline">addClass</strong>: Add a CSS class to the <span class="No-Break">HTML attributes</span></li>
+				<li><strong class="source-inline">removeClass</strong>: Removes a <span class="No-Break">CSS class</span></li>
+				<li><strong class="source-inline">setAttribute<a id="_idTextAnchor605"></a></strong>: Sets <span class="No-Break">an attribute</span></li>
+				<li><strong class="source-inline">removeAttribute</strong>: Removes <span class="No-Break">an attribute</span></li>
+			</ul>
+			<h1 id="_idParaDest-319"><a id="_idTextAnchor606"></a>Preprocessing data and PHP</h1>
+			<p>Frequently, you want to<a id="_idIndexMarker686"></a> modify or create variables before they reach the template. You can do this within the theme’s <strong class="source-inline">themename.theme</strong> file. This is a pure <a id="_idIndexMarker687"></a>PHP file in which you can use hooks to <span class="No-Break">do so.</span></p>
+			<p>To find the hook that you’re looking for, enable theme debugging at <strong class="source-inline">/admin/config/development/settings</strong>. When you inspect the markup for the template, you’ll see <span class="No-Break"><strong class="source-inline">THEME HOOK</strong></span><span class="No-Break">.</span></p>
+			<div>
+				<div id="_idContainer136" class="IMG---Figure">
+					<img src="image/B19491_19_6.jpg" alt="Figure 19.6 – An example of a theme hook in the rendered markup" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 19.6 – An example of a theme hook in the rendered markup</p>
+			<p>In the preceding screenshot, the hook <span class="No-Break">is </span><span class="No-Break"><strong class="source-inline">node</strong></span><span class="No-Break">.</span></p>
+			<p>To make use of this, you can create a function called <strong class="source-inline">themename_preprocess_node</strong> within your theme’s <strong class="source-inline">themename.theme</strong> file. It takes an array as a <a id="_idIndexMarker688"></a>parameter, <strong class="source-inline">$variables</strong>. This array contains all the variables that are available in<a id="_idIndexMarker689"></a> <span class="No-Break">the template:</span></p>
+			<pre class="source-code">
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function themename_preprocess_node(&amp;$variables) {
+&#160;&#160;// Create an additional variable for use in the template
+&#160;&#160;if ($variables[&apos;view_mode&apos;] === &apos;full&apos;) {
+&#160;&#160;&#160;&#160;$variables[&apos;my_variable&apos;] = true;
+&#160;&#160;}
+}</pre>			<p>The preceding function will add a <strong class="source-inline">m<a id="_idTextAnchor607"></a>y_variable</strong> variable and set it to <strong class="source-inline">true</strong> if view mode <span class="No-Break">is full.</span></p>
+			<h1 id="_idParaDest-320"><a id="_idTextAnchor608"></a>Working with CSS</h1>
+			<p>Drupal expects specific conventions when it<a id="_idIndexMarker690"></a> comes to implementing CSS. Typically, CSS files go into a <strong class="source-inline">themename/css</strong> directory, but that’s not necessary. Drupal themes are free to use Sass, PostCSS, or other build processes as they <span class="No-Break">see fit.</span></p>
+			<p>For the theme to load a CSS file, the file must be referenced from a library. Then, the library must be called from either the <strong class="source-inline">themename.info.yml</strong> file, attached in preprocess, attached within the template through the <strong class="source-inline">attach_library</strong> function, or loaded by <span class="No-Break">a module.</span></p>
+			<p>Drupal core has a set of CSS <a id="_idIndexMarker691"></a>standards that requires the use of <strong class="bold">block element modifier</strong> (<strong class="bold">BEM</strong>) architecture. Generally, this is best practice within all themes, but it isn’t required. In addition, many popular utility-based CSS frameworks such as Tailwind or Bootstrap negate the need <span class="No-Break">for BEM.</span></p>
+			<p>The basics of BEM is that you give your component (aka a “block”) a name. In this case, the name will be <strong class="source-inline">a card</strong>. Then, any elements inside of that will have a class with an “element” appended to it, after double underscores. So, a child <strong class="source-inline">div</strong> can have the class of <strong class="source-inline">card__media</strong>. Any modifiers will have a “modifier” name appended to the class, after double hyphens. So, a landscape version of the card component might have a <strong class="source-inline">card--landscape</strong> CSS class on the same element as the card CSS class. For more information, <span class="No-Break">see </span><a href="https://getbem.com"><span class="No-Break">https://getbem.com</span></a></p>
+			<p>Drupal core has a couple of built-in CSS custom properties (aka CSS variables). They are used within the responsive grid view plugin, as well as the <strong class="source-inline">Drupal.displace</strong> JS library. The latter uses the variables to inform the theme on how tall or wide fixed Drupal administration elements are, so the theme can position against that. In the case of Drupal Displace, the cu<a id="_idTextAnchor609"></a>stom properties are attached to the <strong class="source-inline">&lt;html&gt;</strong> element <span class="No-Break">through JS.</span></p>
+			<h1 id="_idParaDest-321"><a id="_idTextAnchor610"></a>Working with JS</h1>
+			<p>Much like<a id="_idIndexMarker692"></a> CSS, for JS to be loaded, the script needs to be referenced by a library, and then the library needs to be loaded by the theme. The JS can be placed in any d<a id="_idTextAnchor611"></a>irectory but is typically placed in the <span class="No-Break"><strong class="source-inline">themename/js</strong></span><span class="No-Break"> directory.</span></p>
+			<h2 id="_idParaDest-322"><a id="_idTextAnchor612"></a>Drupal behaviors</h2>
+			<p><em class="italic">Drupal behaviors</em> is the term for the <a id="_idIndexMarker693"></a>JavaScript API that allows JS to process elements that are injected <span class="No-Break">via AJAX.</span></p>
+			<p>It usually runs multiple times when a page is loaded. It’ll run first and pass in the <em class="italic">document</em> as context. The subsequent times it loads it will then pass in the AJAX element <span class="No-Break">as context:</span></p>
+			<pre class="source-code">
+((Drupal) =&gt; {
+&#160;&#160;Drupal.behaviors.myBehavior = {
+&#160;&#160;&#160;&#160;attach(context) {
+&#160;&#160;&#160;&#160;&#160;&#160;context.querySelector(&apos;.my-element&apos;)?.addClass(&apos;is-processed&apos;);
+&#160;&#160;&#160;&#160;},
+&#160;&#160;};
+})(Drupal);</pre>			<p>In the preceding example, we create a behavior called <strong class="source-inline">myBehavior</strong>. We add this to the <strong class="source-inline">Drupal.behaviors</strong> array that Drupal runs whenever it injects content. Within that, we pass in context to the <strong class="source-inline">attach</strong> function. On page load (or when data gets AJAX’d in), Drupal loops through all the behaviors in <strong class="source-inline">Drupal.behaviors</strong>. It then runs the <strong class="source-inline">attach</strong> function on each and passes in either the document or the AJAX element <span class="No-Break">as context.</span></p>
+			<p>Note that to ensure that Drupal behaviors are available to your JS, create a dependency for <strong class="source-inline">core/drupal</strong> within the library that’s referencing <span class="No-Break">your script.</span></p>
+			<p>To ensure that behaviors do not process elements multiple times, you can use the Drupal <strong class="source-inline">once()</strong> <span class="No-Break">JS utility.</span></p>
+			<pre class="source-code">
+((Drupal, once) =&gt; {
+&#160;&#160;Drupal.behaviors.myBehavior = {
+&#160;&#160;&#160;&#160;attach(context) {
+&#160;&#160;&#160;&#160;&#160;&#160;once(&apos;my-feature&apos;, &apos;.my-element&apos;, context).forEach(el =&gt; el.addClass(&apos;is-processed&apos;))
+&#160;&#160;&#160;&#160;},
+&#160;&#160;};
+})(Drupal, once);</pre>			<p>To load the <strong class="source-inline">once</strong> library, be sure<a id="_idIndexMarker694"></a> to create a dependency<a id="_idTextAnchor613"></a> for <strong class="source-inline">core/once</strong> within the library that’s referencing <span class="No-Break">your script.</span></p>
+			<h2 id="_idParaDest-323"><a id="_idTextAnchor614"></a>Passing data from PHP into JS</h2>
+			<p>You can pass data from PHP <a id="_idIndexMarker695"></a>into JS using the <strong class="source-inline">drupalSettings</strong> object. This can be done from Drupal modules or your theme’s <span class="No-Break"><strong class="source-inline">themename.theme</strong></span><span class="No-Break"> file:</span></p>
+			<pre class="source-code">
+$variables[&apos;#attached&apos;][&apos;drupalSettings&apos;][&apos;my_setting&apos;] = &apos;my-data&apos;;</pre>			<p>Once added, this gets added to inline JS within the HTML<a id="_idTextAnchor615"></a>, and it is available through the global <strong class="source-inline">drupalSettings</strong> <span class="No-Break">JS object.</span></p>
+			<h1 id="_idParaDest-324"><a id="_idTextAnchor616"></a>Single Directory Components</h1>
+			<p><strong class="bold">Single Directory Components</strong> (<strong class="bold">SDC</strong>) were<a id="_idIndexMarker696"></a> added to Drupal 10.1 as an experimental module, and they are expected to be stable in Drupal core around 10.3.0. They are Drupal’s implementation of <span class="No-Break">component-based architecture.</span></p>
+			<p>While experimental, the SDC module needs to be explicitly enabled. After SDC stabilizes, it will just be part of the theme system, with no <span class="No-Break">separate module.</span></p>
+			<p>To use SDC, you’ll need to create a <strong class="source-inline">themename/components</strong> directory, with a minimum of <strong class="source-inline">componentName.component.yml</strong> and <strong class="source-inline">componentName.twig</strong> files. You can add <strong class="source-inline">componentName.css</strong> and <strong class="source-inline">componentName.js</strong> as well, and they’ll be included when the component is loaded. Once the component is created, it can be included in another template using Twig’s built-in <strong class="source-inline">include()</strong> function or <span class="No-Break"><strong class="source-inline">embed</strong></span><span class="No-Break"> tag.</span></p>
+			<p>The benefit of using SDC is that relevant code is grouped, and libraries are automatically generated. In addition, it enables quick reusable components that can be moved from project <span class="No-Break">to project.</span></p>
+			<p>For more information on<a id="_idIndexMarker697"></a> SDC, see Drupal’s documentation <span class="No-Break">at </span><a href="https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/"><span class="No-Break">https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/</span></a><span class="No-Break">.</span></p>
+			<h1 id="_idParaDest-325"><a id="_idTextAnchor617"></a>Drupal accessibility tips</h1>
+			<p>While Drupal core’s<a id="_idIndexMarker698"></a> accessibility is top-notch, custom themes rely on a frontend developer to ensure proper web accessibility. While most accessibility techniques are out of scope for thi<a id="_idTextAnchor618"></a>s book, Drupal does contain several techniques to help save <span class="No-Break">you time.</span></p>
+			<h2 id="_idParaDest-326"><a id="_idTextAnchor619"></a>The visually hidden CSS class</h2>
+			<p>The <em class="italic">visually-hidden</em> CSS class will hide <a id="_idIndexMarker699"></a>an element visually, but it will still be apparent to the accessibility tree <a id="_idTextAnchor620"></a>so that screen readers and other assistive technologies can <span class="No-Break">access it.</span></p>
+			<h2 id="_idParaDest-327"><a id="_idTextAnchor621"></a>Drupal announce JS API</h2>
+			<p>The <strong class="source-inline">Drupal.announce()</strong> JS function<a id="_idIndexMarker700"></a> is a way to easily add text to an <strong class="source-inline">ARIA</strong> live region so that screen reader users will be aware of the text th<a id="_idTextAnchor622"></a>at is <span class="No-Break">passed in:</span></p>
+			<pre class="source-code">
+Drupal.announce(&apos;The application has been updated.&apos;);</pre>			<h2 id="_idParaDest-328"><a id="_idTextAnchor623"></a>Using buttons as menu items</h2>
+			<p>While more <a id="_idIndexMarker701"></a>content than theming, be aware that menu items can take <strong class="source-inline">&lt;button&gt;</strong>, which will generate a <strong class="source-inline">&lt;button&gt;</strong> HTML element. This is useful to show/toggle child menu items.<a id="_idTextAnchor624"></a> Note that you still have to write the JS/CSS to show/hide <span class="No-Break">the submenus.</span></p>
+			<h1 id="_idParaDest-329"><a id="_idTextAnchor625"></a>Contributed modules that help with theming</h1>
+			<p>Many people have created contributed modules to help theme Drupal. Some of the most popular ones are <span class="No-Break">as follows:</span></p>
+			<ul>
+				<li><strong class="bold">Twig Tweak</strong> (<a href="https://www.drupal.org/project/twig_tweak">https://www.drupal.org/project/twig_tweak</a>): This creates several Twig filters, functions, and so <a id="_idIndexMarker702"></a>on that allow you to do things, such as<a id="_idIndexMarker703"></a> placing blocks/views/entities <span class="No-Break">in templates.</span></li>
+				<li><strong class="bold">Twig Field Value</strong> (<a href="https://www.drupal.org/project/twig_field_value">https://www.drupal.org/project/twig_field_value</a>): This creates a couple of <a id="_idIndexMarker704"></a>Twig filters that allow you to generate the value of a field in a <a id="_idIndexMarker705"></a>template and bypass the <span class="No-Break">field template.</span></li>
+				<li><strong class="bold">Components</strong> (<a href="https://www.drupal.org/project/components">https://www.drupal.org/project/components</a>): This allows you to create custom Twig <a id="_idIndexMarker706"></a>namespaces, so you<a id="_idIndexMarker707"></a> can reference templates <span class="No-Break">more easily.</span></li>
+			</ul>
+			<p>There are many more modules than these. <a id="_idTextAnchor626"></a>If you run into issues, search and you’ll likely find what you’re <span class="No-Break">looking for.</span></p>
+			<h1 id="_idParaDest-330"><a id="_idTextAnchor627"></a>Summary</h1>
+			<p>Drupal provides theming as a means of controlling the visual display of a Drupal application. Themes exist for both frontend and administrative visuals and adding them is a non-trivial development task. This chapter covered the major aspects of a theme in CSS, JS, Twig templates, and the expected Drupal directories and configuration. Best practices were covered for development, debugging, and so on. Emerging concepts such as single-file directories and community-related contributions also can help address specific <span class="No-Break">use cases.</span></p>
+			<p>The next chapter covers Drupal’s features tied to web service APIs that enable decoupled and headless application <span class="No-Break">use cases.</span></p>
+		</div>
+	</body>
+</html>

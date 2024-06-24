@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_17</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_17">
+		<div id="_idContainer129">
+			<h1 id="_idParaDest-257" class="chapter-number"><a id="_idTextAnchor476"></a>17</h1>
+			<h1 id="_idParaDest-258"><a id="_idTextAnchor477"></a>Git, Drush, <br />Composer, and DevOps</h1>
+			<p><a id="_idTextAnchor478"></a>Much of the book so far has covered installing and configuring Drupal to meet a variety of use cases. However, even if you are not a developer, it can be difficult to maintain a Drupal application or contribute to the community without some basic technical skills. While this is an advanced topic, a brief primer in technologies such as Git, Drush, and Composer that enable developers can serve as a foundational launchpad into future development practices. These technologies bridge development and operations through practices known as DevOps. Getting started with this technology helps work toward the 80/20 rule, as discussed in <span class="No-Break">previous chapters.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Git basics</span></li>
+				<li><span class="No-Break">Drush basics</span></li>
+				<li><span class="No-Break">Composer basics</span></li>
+				<li><span class="No-Break">DevOps practices</span></li>
+			</ul>
+			<h1 id="_idParaDest-259"><a id="_idTextAnchor479"></a>Technical requirements</h1>
+			<p>This chapter moves beyond installing, using, and configuring Drupal. Many of the items in this chapter run on the command line through a terminal and are well-suited for Mac and Linux machines. Support for Windows exists, but Mac and Linux have well-vetted paths adopted by many in the <span class="No-Break">Drupal community.</span></p>
+			<p>Technical requirements change by tool. For instance, Git may have certain system dependencies that are different from a PHP-based tool such as Composer. Much of the requirements are abstracted by installers that run on the local operating system and set up <span class="No-Break">the tools.</span></p>
+			<p>Some commands may require <strong class="bold">Secure Shell</strong> (<strong class="bold">SSH</strong>), either to access a machine remotely or for use by the tool on the local system to connect to remote systems. This is often important for connecting to environments that run Drupal applications or working with code repositories. Configuring SSH often needs to be set up locally and on remote systems. Some SaaS vendors offer user interfaces that allow for public SSH keys to be uploaded to a user account, instead of directly configuring <span class="No-Break">a system.</span><a id="_idTextAnchor480"></a></p>
+			<h1 id="_idParaDest-260"><a id="_idTextAnchor481"></a>Git basics</h1>
+			<p>Git is a distributed<a id="_idIndexMarker537"></a> code versioning system. A repository<a id="_idIndexMarker538"></a> is what stores the code, which is revised by changes known as commits. Each repository can configure remotes, which help synchronize code between repositories by fetching code from one repository to another. Remotes communicate via HTTPS with basic authentication credentials or the SSH protocol, which can leverage SSH keys. There is significant documentation on the internet on generating SSH keys and configuring SSH in Git that changes, based on operating systems and hosted Git platforms. Repositories maintain branches that help maintain a series of commits that relate to a change. Code in a branch is often merged into a main branch, which serves as a baseline for code to be accepted into <span class="No-Break">a repository.</span></p>
+			<p>SaaS vendors have helped make Git more ubiquitous. Vendors such as GitHub<a id="_idIndexMarker539"></a> and GitLab<a id="_idIndexMarker540"></a> run managed Git repositories with a UI and various complementary features. It is common for a Drupal application to manage code on one of those platforms and harness continuous integration features that automate some of the mundane building and deploying of code. Developers can clone these managed Git repositories to their local systems as an upstream remote. This provides a central code repository that all developers can contribute to and <span class="No-Break">pull from.</span></p>
+			<p>The term GitOps<a id="_idIndexMarker541"></a> refers to events around a Git repository. These events, such as creating a new branch, committing to a branch, and merging a branch into a main branch, all signify events that can be automated. Certain technologies, such as ArgoCD<a id="_idIndexMarker542"></a> and even GitHub and GitLab, leverage GitOps to perform tasks when the events occur. The most common feature is known as a <strong class="source-inline">pull or merge</strong> request, which is an event in which a developer submits candidate code from a branch to be merged into the main branch. GitHub and GitLab offer user interfaces to review code by peers and perform automated checks, before accepting code into a main branch. This helps to instrument developer workflows with scripts that can help perform code deployments that update environments, run automated tests to verify changes, and <span class="No-Break">s<a id="_idTextAnchor482"></a>o on.</span></p>
+			<h2 id="_idParaDest-261"><a id="_idTextAnchor483"></a>Setup</h2>
+			<p>Git is a <a id="_idIndexMarker543"></a>command-line tool built from open source software that has several installation methods that change by operating system. Some operating systems even offer it by default. More <a id="_idIndexMarker544"></a>instructions can be found in Git’s online <span class="No-Break">documentation (</span><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><span class="No-Break">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</span></a><span class="No-Break">).</span></p>
+			<p>Git can also be installed as a <strong class="bold">graphical user interface</strong> (<strong class="bold">GUI</strong>). The GUI can be useful to abstract some of the complexities of running<a id="_idIndexMarker545"></a> Git commands on the terminal. However, Git is a complex system, and troubleshooting concepts such as remotes and rebasing can be difficult through a GUI. It is valuable to learn the CLI to properly understand what is happening instead of seeing an abstraction through a GUI. GUIs can change per platform (e.g., GitHub Desktop) and have different support per operating system. However, the command-line tool is the <span class="No-Break">most con<a id="_idTextAnchor484"></a>sistent.</span></p>
+			<h2 id="_idParaDest-262"><a id="_idTextAnchor485"></a>Common commands</h2>
+			<p>After installation, the <strong class="source-inline">git</strong> command <a id="_idIndexMarker546"></a>should be available from the command line. The following commands are helpful when managing code through Git repositories. Note the use of placeholders in brackets where specific parameters <span class="No-Break">are required:</span></p>
+			<pre class="console">
+$ git init</pre>			<p>This command initializes a repository in a directory where <span class="No-Break">none exists:</span></p>
+			<pre class="console">
+$ git clone [link to remote repository]</pre>			<p>This command copies a remote repository by creating a new directory and pulling the code from <span class="No-Break">the remote:</span></p>
+			<pre class="console">
+$ git remote -v</pre>			<p>This command lists the remotes configured with the Git repository, including the name <span class="No-Break">and URL:</span></p>
+			<pre class="console">
+$ git remote add [name] [link to remote repository]</pre>			<p>This command adds a new remote, which can be used to add remotes for <strong class="bold">Software as a Service</strong> (<strong class="bold">SaaS</strong>) vendors or Drupal <span class="No-Break">hosting providers:</span></p>
+			<pre class="console">
+$ git commit -a -m &quot;[enter a message describing the change]&quot;</pre>			<p>This command creates a new commit for a code change, with a message describing <span class="No-Break">the change:</span></p>
+			<pre class="console">
+$ git checkout -b [branch-name]</pre>			<p>This command makes a new branch to organize a series of commits common with <span class="No-Break">trunk-based development:</span></p>
+			<pre class="console">
+$ git branch -v</pre>			<p>This command lists out branches and shows the <span class="No-Break">active branch:</span></p>
+			<pre class="console">
+$ git branch -a</pre>			<p>This command lists out branches<a id="_idIndexMarker547"></a> found <span class="No-Break">with remotes:</span></p>
+			<pre class="console">
+$ git fetch --all</pre>			<p>This command refreshes metadata from remotes on branches and their corresponding <span class="No-Break">commit references:</span></p>
+			<pre class="console">
+$ git reset --hard [remote]/[branch]</pre>			<p>This command destroys changes on the current branch and replaces it with the commit found in a remote branch. This requires a fetch to get updated information before running <span class="No-Break">this command:</span></p>
+			<pre class="console">
+$ git log --stat</pre>			<p>This command shows abbreviated information on the commit history of <span class="No-Break">the branch.</span></p>
+			<p>Learning Git is critical for managing code on <a id="_idIndexMarker548"></a>Drupal applications. Becoming familiar with even a basic few commands can help perform Drupal updates, manage code from a local system through deployments<a id="_idTextAnchor486"></a>, and <span class="No-Break">so on.</span></p>
+			<h1 id="_idParaDest-263"><a id="_idTextAnchor487"></a>Drush basics</h1>
+			<p>Drush is a command-line tool that runs operations on a<a id="_idIndexMarker549"></a> Drupal site. Because Drupal has a backend administrative area, users with the appropriate permissions can log in and operate a Drupal application. However, there are times when an application is unavailable, such as when it has pending database updates or requires a cache clear. Also, developers want to be able to run commands remotely and in scripts during events such as code deployments, without having to subsequently log in through the <span class="No-Break">web application.</span></p>
+			<p><em class="italic">Operations</em> is an overloaded term in technology, but with Drush, operations are focused on actions that run on the Drupal application – things such as logging in as a user, clearing the cache, or updating configuration from code to the application. Drush does not manage code <span class="No-Break">in Drupal.</span></p>
+			<p>Like Git, Drush <a id="_idIndexMarker550"></a>can leverage SSH to manage remotes. This feature is known as site aliases in Drush. Site aliases are helpful for developers who work on multiple Drupal applications and manage different environments found in a <span class="No-Break">Drupal<a id="_idTextAnchor488"></a> application.</span></p>
+			<h2 id="_idParaDest-264"><a id="_idTextAnchor489"></a>Setup</h2>
+			<p>Installing <a id="_idIndexMarker551"></a>Drush is dependent on the major version of the Drupal application. Installation instructions for Drush 12, which is compatible with Drupal, can be found through <a id="_idIndexMarker552"></a>Drush’s online documentation (<a href="https://www.drush.org/12.x/install/">https://www.drush.org/12.x/install/</a>). There is a compatibility matrix for Drupal and Drush versions, also available online <span class="hidden">(</span><a href="https://www.drush.org/12.x/install/#drupal-compatibility">https://www.drush.org/12.x/install/#drupal-compatibility</a>). Modern versions of Drush require the use of Composer for installation, given that is how Drupal manages its code, and it affords parity between the major version of Drupal and Drush itself. Also, note that Drush has specific PHP <span class="No-Break">versio<a id="_idTextAnchor490"></a>n requirements.</span></p>
+			<h2 id="_idParaDest-265"><a id="_idTextAnchor491"></a>Common commands</h2>
+			<p>Drush has a lot of commands, and <a id="_idIndexMarker553"></a>each command has different parameters that can be used as needed. The following commands, while not exhaustive, help serve as a few common examples to understand Drush basics. While all examples do not have an alias, which assumes Drush is run directly against a Drupal application, an alias can be provided by adding <strong class="source-inline">@[alias]</strong> directly after <strong class="source-inline">drush</strong> in the following commands. Also, note that Drush also has shorthand commands known as aliases that can be found in the <span class="No-Break">online documentation:</span></p>
+			<pre class="console">
+$ drush user:login --name=[user name]</pre>			<p>The preceding provides a link to the Drupal application to log in as a <span class="No-Break">specific user:</span></p>
+			<pre class="console">
+$ drush user:password [user name] &apos;[updated password]&apos;</pre>			<p>The preceding resets a user password in the <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ drush site:alias</pre>			<p>The preceding shows configured site aliases in Drush that can be used within any Drush command to run the command against a <span class="No-Break">remote application:</span></p>
+			<pre class="console">
+$ drush updatedb</pre>			<p>The preceding performs any updates made available after deploying new code to <span class="No-Break">an application:</span></p>
+			<pre class="console">
+$ drush config:import</pre>			<p>The preceding updates the active Drupal application configuration <span class="No-Break">from code:</span></p>
+			<pre class="console">
+$ drush cache:rebuild</pre>			<p>The preceding clears the cache in a <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ drush pm:list</pre>			<p>The preceding shows projects in code and the installation status on the <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ drush pm:enable [project name]</pre>			<p>The preceding enables a specific project on a <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ drush watchdog:show</pre>			<p>The preceding displays logs on a <span class="No-Break">Drupal application.</span></p>
+			<p>Drush is a<a id="_idIndexMarker554"></a> helpful way to execute commands against a Drupal application. Whether it’s deploying new code or helping a user reset their password, it is immensely helpful for developers on both local and <span class="No-Break">re<a id="_idTextAnchor492"></a>mote applications.</span></p>
+			<h1 id="_idParaDest-266"><a id="_idTextAnchor493"></a>Composer basics</h1>
+			<p>Composer <a id="_idIndexMarker555"></a>is a command-line tool for managing code in PHP-based applications such as Drupal. PHP has a vast ecosystem of components, libraries, and so on, including the catalog of Drupal projects and various Symfony components used by Drupal. Like a package manager, Composer helps assemble and update the PHP-based parts of <span class="No-Break">an application.</span></p>
+			<p>Composer<a id="_idIndexMarker556"></a> starts with a project. Not to be confused with a Drupal project, a Composer project is the high-level scaffolding for an application. Drupal applications are initialized as a Composer project. Composer projects have installed packages, and each package has its own dependencies – all of which can be managed by Composer through <span class="No-Break">Composer projects.</span></p>
+			<p>Once a Composer project is initialized, Composer has a few key constructs. A <strong class="source-inline">composer.json</strong> file<a id="_idIndexMarker557"></a> manages a developer-friendly list of projects, versions, and constraints for the Drupal application. A constraint in Composer is a set of directives defined per project to help manage versions of projects. For instance, the tilde constraint, such as <strong class="source-inline">~1.0.0</strong>, allows for all releases of a project before 2.x to be loaded upon update. A <strong class="source-inline">composer.lock</strong> file<a id="_idIndexMarker558"></a> manages the state of code loaded in a project by commit. This is akin to code deployment and helps Composer differentiate between building code in an application and updating code in an application, based on the constraints. <strong class="source-inline">Composer.json</strong> manages what projects exist and what updates are acceptable, while <strong class="source-inline">composer.lock</strong> manages what versions of projects should <span class="No-Break">be built.</span></p>
+			<p>Code that can be built does not need to be persistently stored in a code repository. It is common to persistently version the <strong class="source-inline">composer.lock</strong> and <strong class="source-inline">composer.json</strong> files, as these files define what gets installed. However, any open source code pulled from the broader PHP ecosystem can be ignored, as it can be readily loaded from Composer. For Drupal, core and contributed projects can be ignored. Custom code cannot. Ignored code can be managed through a <strong class="source-inline">.gitignore</strong> file managed persistently in the Git repository. There <a id="_idIndexMarker559"></a>can be multiple <strong class="source-inline">.gitignore</strong> files within different directories found in the repository. All of the scaffolding for core, contributed, and custom conventions are loaded by default with the Composer project fo<a id="_idTextAnchor494"></a>r <span class="No-Break">Drupal applications.</span></p>
+			<h2 id="_idParaDest-267"><a id="_idTextAnchor495"></a>Setup</h2>
+			<p>Composer is a PHP-based <a id="_idIndexMarker560"></a>command-line project that can be set up on any system. Installation instructions are based on the operating system and can be found through their online <a id="_idIndexMarker561"></a><span class="No-Break">documentation (</span><a href="https://getcomposer.org/doc/00-intro.md"><span class="No-Break">https://getcomposer.org/doc/00-intro.md</span></a><span class="No-Break">).</span></p>
+			<p>Like Drush, Composer <a id="_idIndexMarker562"></a>will be tightly coupled with the version of PHP running on the system. However, Composer is not tightly coupled with the Drupal application. Composer is capable of loading the correct updates based on the version of PHP on the system, and for notifying known incompatibilities of projects that have strict P<a id="_idTextAnchor496"></a>HP <span class="No-Break">version dependencies.</span></p>
+			<h2 id="_idParaDest-268"><a id="_idTextAnchor497"></a>Common commands</h2>
+			<p>Following is a list of <a id="_idIndexMarker563"></a><span class="No-Break">Composer commands:</span></p>
+			<pre class="console">
+$ composer create-project --no-install drupal/recommended-project [site]</pre>			<p>The preceding starts a new Drupal application as a <span class="No-Break">Composer project:</span></p>
+			<pre class="console">
+$ composer install</pre>			<p>The preceding builds code from a predefined Composer <span class="No-Break">install file:</span></p>
+			<pre class="console">
+$ composer outdated -D</pre>			<p>The preceding views the available updates from the <strong class="source-inline">composer.lock</strong> file within the <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ composer update</pre>			<p>The preceding performs code updates on a <span class="No-Break">Drupal application:</span></p>
+			<pre class="console">
+$ composer require drupal/[project name]</pre>			<p>The preceding adds a new Drupal project to the <span class="No-Break">Drupal application.</span></p>
+			<p>Composer is the<a id="_idIndexMarker564"></a> command-line tool to manage code in Drupal applications. It performs the management of Drupal application code definitions, loads projects from both the broader PHP ecosystem and Drupal community, and scaffol<a id="_idTextAnchor498"></a>ds new <span class="No-Break">Drupal applications.</span></p>
+			<h1 id="_idParaDest-269"><a id="_idTextAnchor499"></a>DevOps practices</h1>
+			<p>Historically, software engineers would <a id="_idIndexMarker565"></a>delegate management, coordination, and execution of releases to operators. The practice of DevOps brought those practices together, primarily through continuous learning and the use of automation. Summarizing DevOps can be challenging, given it spans a set of practices and technologies that enable that practice. At a high level, it manages operations in code through configuration and scripts. Both development and operations teams can perpetually learn from issues that arise and update code based on that knowledge. This philosophy promotes consistency, given the same code is used repeatedly to perform the same actions <span class="No-Break">on repeat.</span></p>
+			<p>Drupal best practices have evolved as DevOps has become more emergent. DevOps for Drupal applications closely align with events found in GitOps, practices tied to continuous integration, and the desire to have repeatable and frequent code deployments. Developer workflows often create new branches, review code pushed to those branches, merge code back into a main branch, and have desired deployments to environments based on release tags of the code repository. The desire to automate specific events helps promote consistency across developers and provides engineers the ability to update scripts when, or if, they learn of better ways to <span class="No-Break">do things.</span></p>
+			<p>Drupal has<a id="_idIndexMarker566"></a> specific scripts that can exist for each of these events. Automation can harness Git, Composer, and Drush as part of <span class="No-Break">the scripts.</span></p>
+			<p>Consider the following GitOps event<a id="_idTextAnchor500"></a>s and <span class="No-Break">corresponding concepts.</span></p>
+			<h2 id="_idParaDest-270"><a id="_idTextAnchor501"></a>A developer pushes a new commit to a development branch</h2>
+			<p>To do this, the following steps can <span class="No-Break">be performed:</span></p>
+			<ol>
+				<li>Create a new remote <span class="No-Break">testing environment.</span></li>
+				<li>Deploy code from the branch to <span class="No-Break">the environment.</span></li>
+				<li>Build <span class="No-Break">the code.</span></li>
+				<li>Bring database and file content down from production and sanitize a production database <span class="No-Break">and files.</span></li>
+				<li>Perform standard Drupal <span class="No-Break">deployment steps.</span></li>
+			</ol>
+			<p>This can be performed with the following example <strong class="source-inline">bash</strong> script, from a <strong class="source-inline">dev-001</strong> branch in the <strong class="source-inline">origin</strong> remote after an environment is created (which is functionality-specific to hosting providers, <span class="No-Break">if offered):</span></p>
+			<pre class="source-code">
+git restore .
+git fetch --all
+git checkout -b dev-001 origin/dev-001
+composer install --no-dev
+drush sql:sync @prod @self
+drush rsync @prod:%files @self:%files
+drush deploy</pre>			<p>Note that the script runs on the provisioned environment that was created to test the change. It should also be noted that a continuous integration tool can trigger the script to run on the environment, during the appr<a id="_idTextAnchor502"></a>opriate <span class="No-Break">GitOps configuration.</span></p>
+			<h2 id="_idParaDest-271"><a id="_idTextAnchor503"></a>Developer reviews and merges code into the main branch</h2>
+			<p>Given trunk-based <a id="_idIndexMarker567"></a>development, merging code into a main branch suggests code was accepted. This often corresponds to automatically updating environments, such as a development server, where the main branch is deployed. Thankfully, a slightly modified script can be used <span class="No-Break">for this:</span></p>
+			<pre class="source-code">
+&#160;&#160;&#160;&#160;&#160;git restore .
+git fetch --all
+git checkout -b <strong class="bold">main</strong> origin/<strong class="bold">main</strong>
+composer install --no-dev
+drush sql:sync @prod @self
+drush rsync @prod:%fi<a id="_idTextAnchor504"></a>les @self:%files
+drush deploy</pre>			<h2 id="_idParaDest-272"><a id="_idTextAnchor505"></a>Tag-based deployments for release candidates</h2>
+			<p>Release candidates often harness Git tags over branches. This is common for staging and production environments, given that development environments often maintain parity with accepted code found in <span class="No-Break">main branches.</span></p>
+			<p>The script can be augmented to do this, with the introduction of two variables to conditionally check the target environment and supply <span class="No-Break">the tag:</span></p>
+			<pre class="source-code">
+&#160;&#160;&#160;&#160;&#160;git restore .
+git fetch --all
+if [[ $TARGET_ENV = staging ]] or [[ $TARGET_ENV = production ]]
+then
+&#160;&#160;&#160;git checkout tags/$GIT_TAG -b main
+else
+&#160;&#160;&#160;git checkout -b main origin/main
+fi
+composer install --no-dev
+drush sql:sync @prod @self
+drush rsync @prod:%fi<a id="_idTextAnchor506"></a>les @self:%files
+drush deploy</pre>			<h2 id="_idParaDest-273"><a id="_idTextAnchor507"></a>Addressing production deployments</h2>
+			<p>The same script can <a id="_idIndexMarker568"></a>be reused with different parameters to perform deployments across all environments. Parameters can be passed for the environments, the code tag, and the desired branch to deploy beyond just the <span class="No-Break">main branch.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Production environments should be non-destructive, given they are the source of ground truth. This impacts the synchronization of the database and files, in particular. You cannot run the same common deployment script for production and <span class="No-Break">non-production environments.</span></p>
+			<p>Consider the following script that adds environment logic and parameters for a tag <span class="No-Break">or branch</span><span class="No-Break">:</span></p>
+			<pre class="source-code">
+TARGET_ENV=$1
+GIT_BRANCH=$2
+GIT_TAG=$3
+git restore .
+git fetch --all
+if [[ $TARGET_ENV = staging ]] or [[ $TARGET_ENV = production ]]
+then
+&#160;&#160;&#160;git checkout tags/$GIT_TAG -b $GIT_BRANCH
+else
+&#160;&#160;&#160;git checkout -b $GIT_BRANCH origin/$GIT_BRANCH
+fi
+composer install --no-dev
+if [[ $TARGET_ENV != production ]]
+then
+&#160;&#160;drush sql:sync @prod @self
+&#160;&#160;drush rsync @prod:%files @self:%files
+fi
+drush deploy</pre>			<p>This script, saved as an example <strong class="source-inline">script.sh</strong> file, can then be invoked with parameters. The parameters can be filled in through GitOps systems tied to events. The following example shows how to run a <a id="_idIndexMarker569"></a>script to deploy to a staging environment, with a main branch and <span class="No-Break"><strong class="source-inline">v.1.1.0</strong></span><span class="No-Break"> tag:</span></p>
+			<pre class="console">
+$ bash script.sh staging main &quot;v.1.1.0&quot;</pre>			<p>When performing DevOps in practice, automation can be built to maintain consistency in deployments and address all of the nuances of development workflows across environments. This harnesses several aspe<a id="_idTextAnchor508"></a>cts of Git, Drush, <span class="No-Break">and Composer.</span></p>
+			<h1 id="_idParaDest-274"><a id="_idTextAnchor509"></a>Summary</h1>
+			<p>Git, Drush, and Composer all are tools that Drupal developers are required to learn. Each of the tools handles different aspects of development. Git manages distributed code versioning from local systems through deployments. Drush manages operations that run on Drupal applications. Composer manages Drupal’s projects, dependencies, and code. All of these can be combined to do automation, which is common for consistency in <span class="No-Break">code deployments.</span></p>
+			<p>The next chapter explores creating custom modules with Drupal’s <span class="No-Break">development framework.</span></p>
+		</div>
+	</body>
+</html>

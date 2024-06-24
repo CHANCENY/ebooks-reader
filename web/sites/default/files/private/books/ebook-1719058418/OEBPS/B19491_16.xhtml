@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_16</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_16">
+		<div id="_idContainer125">
+			<h1 id="_idParaDest-246" class="chapter-number"><a id="_idTextAnchor457"></a>16</h1>
+			<h1 id="_idParaDest-247"><a id="_idTextAnchor458"></a>Content Workflows</h1>
+			<p><a id="_idTextAnchor459"></a>Content often has to be reviewed and approved before publishing. Much like with print, editors perform reviews, request changes, or authorize content for publishing. Drupal offers a feature that allows content to go through a workflow before publishing. Leveraging roles and permissions, Drupal can customize workflows for various users during an <span class="No-Break">editorial process.</span></p>
+			<p>In this chapter we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Configuring workflows</span></li>
+				<li><span class="No-Break">Using workflows</span></li>
+			</ul>
+			<h1 id="_idParaDest-248"><a id="_idTextAnchor460"></a>Configuring workflows</h1>
+			<p>Content workflows in Drupal have two <a id="_idIndexMarker520"></a>different modules relevant <span class="No-Break">to configuration:</span></p>
+			<ul>
+				<li>Content moderation, which offers additional publication states <span class="No-Break">for content</span></li>
+				<li>Workflows, which manage state, transitions, and <span class="No-Break">corresponding workflows</span></li>
+			</ul>
+			<p>This section explores how those modules are configured to deliver workflows tied to Drupal content. It is broken down into subsections on the configuration needed to manage states, transitions, and workflows and with the user permissions required to grant <span class="No-Break">specific roles.</span><a id="_idTextAnchor461"></a></p>
+			<h2 id="_idParaDest-249"><a id="_idTextAnchor462"></a>Managing states</h2>
+			<p>Workflows help define different <a id="_idIndexMarker521"></a>states of content. Consider the different states of an article. A writer drafts content. An editor reviews the draft, may perform some editorial corrections, and approves or rejects it for publishing. The authored content may come in different states. This could be a draft state or an approved/published state, or it might get sent back to draft if <span class="No-Break">it’s rejected<a id="_idTextAnchor463"></a>.</span></p>
+			<h2 id="_idParaDest-250"><a id="_idTextAnchor464"></a>Managing transitions</h2>
+			<p>Transitions capture the action of<a id="_idIndexMarker522"></a> moving between states. This helps define a workflow by understanding how content moves between states. For instance, a draft can be published for those who are allowed to perform that action. A draft would not be able to move to an archived state, given that it never got published. Configuring a transition defines the business logic of the state changes that happen <span class="No-Break">for conten<a id="_idTextAnchor465"></a>t.</span></p>
+			<h2 id="_idParaDest-251"><a id="_idTextAnchor466"></a>Managing workflows</h2>
+			<p>Both states and transitions are managed<a id="_idIndexMarker523"></a> per workflow. All workflows are managed from <strong class="source-inline">admin/config/workflow/workflows</strong>, with a default <strong class="bold">Editorial</strong> workflow added <span class="No-Break">upon installation.</span></p>
+			<p>The management form has multiple sections. The following figure demonstrates <span class="No-Break">the states:</span></p>
+			<div>
+				<div id="_idContainer119" class="IMG---Figure">
+					<img src="image/B19491_16_1.jpg" alt="Figure 16.1 – Managing states in a workflow" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.1 – Managing states in a workflow</p>
+			<p>States<a id="_idIndexMarker524"></a> can be ordered and edited, and new states can even be added. Out of the box, an archived state exists, which can be removed. Draft and published states are also out of the box but <span class="No-Break">not editable.</span></p>
+			<p>The following figure shows transitions in <span class="No-Break">the workflow:</span></p>
+			<div>
+				<div id="_idContainer120" class="IMG---Figure">
+					<img src="image/B19491_16_2.jpg" alt="Figure 16.2 – Managing transitions in a workflow" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.2 – Managing transitions in a workflow</p>
+			<p><span class="No-Break"><em class="italic">Figure 16</em></span><em class="italic">.2</em> shows that <a id="_idIndexMarker525"></a>transitions have labels (which refer to the action) and <strong class="bold">From</strong> and <strong class="bold">To</strong> states. This helps define the workflow by mapping states to their corresponding actions. Transitions<a id="_idIndexMarker526"></a> are the business logic of the workflow. In this example, a draft can be published or sent back for another draft. Published content can have new drafts or be archived. Transitions can be customized as needed based on the desired use case. All changes are logged through <span class="No-Break">Drupal’s revisions.</span></p>
+			<p>The following figure shows where the workflow <span class="No-Break">is applied:</span></p>
+			<div>
+				<div id="_idContainer121" class="IMG---Figure">
+					<img src="image/B19491_16_3.jpg" alt="Figure 16.3 – Applying the workflow" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.3 – Applying the workflow</p>
+			<p><span class="No-Break"><em class="italic">Figure 16</em></span><em class="italic">.3</em> shows content <a id="_idIndexMarker527"></a>entities that can apply the workflow. This allows for different configurations for each content entity and bundle. For instance, if only the article content type required workflows, all other content types could have standard Drupal content authoring <span class="No-Break">and publishi<a id="_idTextAnchor467"></a>ng.</span></p>
+			<h2 id="_idParaDest-252"><a id="_idTextAnchor468"></a>Managing permissions</h2>
+			<p>Role-based access control, as Drupal<a id="_idIndexMarker528"></a> provides by assigning users to roles, treats transitions as permissions. Given that a transition is an action, such as “an editor can publish,” a role can exist for an editor and they can be granted permissions for <span class="No-Break">publishing transitions.</span></p>
+			<p>The following figure exemplifies the out-of-the-box <span class="No-Break">workflow permissions:</span></p>
+			<div>
+				<div id="_idContainer122" class="IMG---Figure">
+					<img src="image/B19491_16_4.jpg" alt="Figure 16.4 – Example of transition-based permissions" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.4 – Example of transition-based permissions</p>
+			<p>Each role can be<a id="_idIndexMarker529"></a> configured to their allowable transitions. It is expected that there are different roles that can be assigned to users based on the different actions that can be performed in workflows. This experience is exemplified in the <span class="No-Break">next sec<a id="_idTextAnchor469"></a>tion.</span></p>
+			<h1 id="_idParaDest-253"><a id="_idTextAnchor470"></a>Using workflows</h1>
+			<p>Workflow features are incorporated<a id="_idIndexMarker530"></a> into Drupal’s standard content management capabilities. The community has contributed additional capabilities that can be added on. Some examples include<a id="_idIndexMarker531"></a> the <strong class="bold">Scheduler</strong> module (<a href="https://www.drupal.org/project/scheduler">https://www.drupal.org/project/scheduler</a>), which integrates time-related events with the <strong class="bold">Content Moderation</strong> module, a <a id="_idIndexMarker532"></a>bulk publishing module for use within <strong class="bold">Content Moderation</strong> (<a href="https://www.drupal.org/project/moderated_content_bulk_publish">https://www.drupal.org/project/moderated_content_bulk_publish</a>), and a notifications module also tied to <strong class="bold">Content Moderation</strong> (<a href="https://www.drupal.org/project/content_moderation_notifications">https://www.drupal.org/project/content_moderation_notifications</a>). The following section highlights the usage of out-of-the-box content workflow features in <span class="No-Break">Drupal only.</span></p>
+			<p>The main content <a id="_idIndexMarker533"></a>listing has a new <strong class="bold">Moderated content</strong> tab for viewing workflow states within the content. It is found at <strong class="source-inline">admin/content/moderated</strong> and is shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer123" class="IMG---Figure">
+					<img src="image/B19491_16_5.jpg" alt="Figure 16.5 – Content overview for the Moderated content tab" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.5 – Content overview for the Moderated content tab</p>
+			<p>This listing is different from the standard content listing because it has a <strong class="bold">Moderation state</strong> column and can be filtered <span class="No-Break">by state.</span></p>
+			<p>The content management form is updated to provide controls for content authors of various roles to manage workflows for the specific content. For this example, an <em class="italic">article</em> content type was configured for Drupal’s default editorial workflow. The content form now has a workflow field, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer124" class="IMG---Figure">
+					<img src="image/B19491_16_6.jpg" alt="Figure 16.6 – Workflow state field on the article" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 16.6 – Workflow state field on the article</p>
+			<p>The workflow <a id="_idIndexMarker534"></a>state field values change based on context. The values of the dropdown change based on the current state. For instance, if it is new content, it will apply the draft state because the content is not yet published. The only allowable values will be in the <strong class="bold">To</strong> state for the current <strong class="bold">From</strong> state of the content. If a user does not have permission for the transition, field values will be restricted to the states to which they have access. For instance, an author may see only the draft state while an editor may see draft and <span class="No-Break">publish<a id="_idTextAnchor471"></a> states.</span></p>
+			<h1 id="_idParaDest-254"><a id="_idTextAnchor472"></a>Use case</h1>
+			<p>Suppose a <a id="_idIndexMarker535"></a>public company has regulatory compliance, requires all earning reports to go through a review, and has a specific publishing date. This example assumes the <strong class="bold">Content Moderation</strong>, <strong class="bold">Workflows</strong>, and <strong class="bold">Scheduler</strong> modules are enabled. The following steps can be done to configure this <span class="No-Break">use case:</span></p>
+			<ol>
+				<li>Create an earnings report content type with any file fields configured to use the private filesystem <span class="No-Break">from </span><span class="No-Break"><strong class="source-inline">admin/structure/types/add</strong></span></li>
+				<li>Configure the earnings report content type to use the scheduler by enabling the checkbox Enable scheduled publishing for content items under the Scheduling tab when configuring the <span class="No-Break">content type.</span></li>
+				<li>Add a new regulatory workflow of type “<strong class="source-inline">content moderation</strong>” at <strong class="source-inline">admin/config/workflow/workflows</strong> with at least draft and published states and at least one transition from draft <span class="No-Break">to publish.</span></li>
+				<li>Select the earnings report content type when configuring the <span class="No-Break">regulatory workflow.</span></li>
+				<li>Create a role for the regulatory <span class="No-Break">governing users.</span></li>
+				<li>Assign relevant permissions for the regulatory role, including the following <span class="No-Break">two permissions:</span><ul><li>Set the publish transition of the regulatory workflow to <strong class="bold">Use </strong><span class="No-Break"><strong class="bold">Publish transition</strong></span></li><li>Set the scheduler permission to <strong class="bold">Schedule publishing and unpublishing </strong><span class="No-Break"><strong class="bold">of content</strong></span></li></ul></li>
+				<li>Remove the<a id="_idIndexMarker536"></a> scheduler permission from other roles so that only regulatory users <span class="No-Break">can schedule.</span></li>
+			</ol>
+			<p>This creates a new workflow that handles this regulatory<a id="_idTextAnchor473"></a> <span class="No-Break">use case.</span></p>
+			<h1 id="_idParaDest-255"><a id="_idTextAnchor474"></a>Summary</h1>
+			<p>Workflows allow for content to go through editorial processes. By harnessing Drupal’s native users, roles, and permissions, site builders can configure states and transitions and control actions for each user, which can be applied to content entities and bundles. Like editorial processes for print, Drupal offers various checks done by different users before the content <span class="No-Break">is published.</span></p>
+			<p>The next chapter explores advanced topics in Git, Drush, Composer, and DevOps that developers and operators <span class="No-Break">should understand.</span></p>
+		</div>
+	</body>
+</html>

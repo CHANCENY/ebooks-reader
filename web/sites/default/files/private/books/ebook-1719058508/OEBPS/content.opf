@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <meta name="generator" content="Adobe InDesign 19.0"/>
+    <meta name="cover" content="Cover.png"/>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <dc:title>Drupal 10 Masterclass</dc:title>
+    <dc:creator>Adam Bergstein</dc:creator>
+    <dc:description>Build responsive Drupal applications to deliver custom and extensible digital experiences to users</dc:description>
+    <dc:publisher>Packt Publishing Pvt Ltd</dc:publisher>
+    <dc:date>2023-11-23</dc:date>
+    <dc:language>en-GB</dc:language>
+    <dc:language>en-US</dc:language>
+    <meta property="dcterms:modified">2023-11-23T13:52:34Z</meta>
+    <dc:identifier id="bookid">978-1-83763-310-4</dc:identifier>
+    <meta name="Sigil version" content="1.9.30"/>
+  </metadata>
+  <manifest>
+    <item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_FM" href="B19491_FM.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_TOC_ePub" href="B19491_TOC_ePub.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Preface" href="B19491_Preface.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Part_1" href="B19491_Part_1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_01" href="B19491_01.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_02" href="B19491_02.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_03" href="B19491_03.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_04" href="B19491_04.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_05" href="B19491_05.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Part_2" href="B19491_Part_2.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_06" href="B19491_06.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_07" href="B19491_07.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Part_3" href="B19491_Part_3.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_08" href="B19491_08.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_09" href="B19491_09.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_10" href="B19491_10.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_11" href="B19491_11.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_12" href="B19491_12.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_13" href="B19491_13.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Part_4" href="B19491_Part_4.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_14" href="B19491_14.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_15" href="B19491_15.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_16" href="B19491_16.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Part_5" href="B19491_Part_5.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_17" href="B19491_17.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_18" href="B19491_18.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_19" href="B19491_19.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_20" href="B19491_20.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_21" href="B19491_21.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_22" href="B19491_22.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Appendix" href="B19491_Appendix.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_Index" href="B19491_Index.xhtml" media-type="application/xhtml+xml"/>
+    <item id="B19491_BackMatter" href="B19491_BackMatter.xhtml" media-type="application/xhtml+xml"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    <item id="toc" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="style-JRserifv6.css" href="css/style-JRserifv6.css" media-type="text/css"/>
+    <item id="x9781803234960_Cover_1.jpg" href="image/9781803234960_Cover_1.jpg" media-type="image/jpeg"/>
+    <item id="x9781803238098_Cover.jpg" href="image/9781803238098_Cover.jpg" media-type="image/jpeg"/>
+    <item id="x9781837631803_Cover_1.jpg" href="image/9781837631803_Cover_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_01_1.jpg" href="image/B19491_01_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_01_2.jpg" href="image/B19491_01_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_03_1.jpg" href="image/B19491_03_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_03_2.jpg" href="image/B19491_03_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_03_3.jpg" href="image/B19491_03_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_03_4.jpg" href="image/B19491_03_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_1.jpg" href="image/B19491_04_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_2.jpg" href="image/B19491_04_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_3.jpg" href="image/B19491_04_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_4.jpg" href="image/B19491_04_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_5.jpg" href="image/B19491_04_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_04_6.jpg" href="image/B19491_04_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_05_1.jpg" href="image/B19491_05_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_05_2.jpg" href="image/B19491_05_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_1.jpg" href="image/B19491_06_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_2.jpg" href="image/B19491_06_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_3.jpg" href="image/B19491_06_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_4.jpg" href="image/B19491_06_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_5.jpg" href="image/B19491_06_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_06_6.jpg" href="image/B19491_06_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_07_1.jpg" href="image/B19491_07_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_1.jpg" href="image/B19491_08_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_2.jpg" href="image/B19491_08_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_3.jpg" href="image/B19491_08_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_4.jpg" href="image/B19491_08_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_5.jpg" href="image/B19491_08_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_6.jpg" href="image/B19491_08_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_7.jpg" href="image/B19491_08_7.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_8.jpg" href="image/B19491_08_8.jpg" media-type="image/jpeg"/>
+    <item id="B19491_08_9.jpg" href="image/B19491_08_9.jpg" media-type="image/jpeg"/>
+    <item id="B19491_09_1.jpg" href="image/B19491_09_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_09_2.jpg" href="image/B19491_09_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_09_3.jpg" href="image/B19491_09_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_09_4.jpg" href="image/B19491_09_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_09_5.jpg" href="image/B19491_09_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_1.jpg" href="image/B19491_10_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_2.jpg" href="image/B19491_10_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_3.jpg" href="image/B19491_10_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_4.jpg" href="image/B19491_10_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_5.jpg" href="image/B19491_10_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_6.jpg" href="image/B19491_10_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_7-Merged-.jpg" href="image/B19491_10_7%28Merged%29.jpg" media-type="image/jpeg"/>
+    <item id="B19491_10_8_Merged.jpg" href="image/B19491_10_8_Merged.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_1.jpg" href="image/B19491_11_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_10.jpg" href="image/B19491_11_10.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_11.jpg" href="image/B19491_11_11.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_12.jpg" href="image/B19491_11_12.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_2.jpg" href="image/B19491_11_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_3.jpg" href="image/B19491_11_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_4.jpg" href="image/B19491_11_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_5.jpg" href="image/B19491_11_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_6.jpg" href="image/B19491_11_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_7.jpg" href="image/B19491_11_7.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_8.jpg" href="image/B19491_11_8.jpg" media-type="image/jpeg"/>
+    <item id="B19491_11_9.jpg" href="image/B19491_11_9.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_1.jpg" href="image/B19491_12_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_2.jpg" href="image/B19491_12_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_3.jpg" href="image/B19491_12_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_4.jpg" href="image/B19491_12_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_5.jpg" href="image/B19491_12_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_12_6.jpg" href="image/B19491_12_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_13_1.jpg" href="image/B19491_13_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_13_2.jpg" href="image/B19491_13_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_13_3.jpg" href="image/B19491_13_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_13_4.jpg" href="image/B19491_13_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_1.jpg" href="image/B19491_14_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_10.jpg" href="image/B19491_14_10.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_2.jpg" href="image/B19491_14_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_3.jpg" href="image/B19491_14_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_4.jpg" href="image/B19491_14_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_5.jpg" href="image/B19491_14_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_6.jpg" href="image/B19491_14_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_7.jpg" href="image/B19491_14_7.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_8.jpg" href="image/B19491_14_8.jpg" media-type="image/jpeg"/>
+    <item id="B19491_14_9.jpg" href="image/B19491_14_9.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_1.jpg" href="image/B19491_15_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_10.jpg" href="image/B19491_15_10.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_11.jpg" href="image/B19491_15_11.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_2.jpg" href="image/B19491_15_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_3.jpg" href="image/B19491_15_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_4.jpg" href="image/B19491_15_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_5.jpg" href="image/B19491_15_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_6.jpg" href="image/B19491_15_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_7.jpg" href="image/B19491_15_7.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_8.jpg" href="image/B19491_15_8.jpg" media-type="image/jpeg"/>
+    <item id="B19491_15_9.jpg" href="image/B19491_15_9.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_1.jpg" href="image/B19491_16_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_2.jpg" href="image/B19491_16_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_3.jpg" href="image/B19491_16_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_4.jpg" href="image/B19491_16_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_5.jpg" href="image/B19491_16_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_16_6.jpg" href="image/B19491_16_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_1.jpg" href="image/B19491_19_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_2.jpg" href="image/B19491_19_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_3.jpg" href="image/B19491_19_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_4.jpg" href="image/B19491_19_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_5.jpg" href="image/B19491_19_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_19_6.jpg" href="image/B19491_19_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_1.jpg" href="image/B19491_20_1.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_2.jpg" href="image/B19491_20_2.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_3.jpg" href="image/B19491_20_3.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_4.jpg" href="image/B19491_20_4.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_5.jpg" href="image/B19491_20_5.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_6.jpg" href="image/B19491_20_6.jpg" media-type="image/jpeg"/>
+    <item id="B19491_20_7.jpg" href="image/B19491_20_7.jpg" media-type="image/jpeg"/>
+    <item id="B19491_QR_Free_PDF.jpg" href="image/B19491_QR_Free_PDF.jpg" media-type="image/jpeg"/>
+    <item id="B19532_QR_Free_PDF.jpg" href="image/B19532_QR_Free_PDF.jpg" media-type="image/jpeg"/>
+    <item id="Cover.png" href="image/Cover.png" media-type="image/png" properties="cover-image"/>
+    <item id="Packt_Logo-01.png" href="image/Packt_Logo-01.png" media-type="image/png"/>
+    <item id="Packt_Logo-011.png" href="image/Packt_Logo-011.png" media-type="image/png"/>
+    <item id="CourierStd.otf" href="Fonts/CourierStd.otf" media-type="font/otf"/>
+  <item id="CourierStd-Bold.otf" href="Fonts/CourierStd-Bold.otf" media-type="font/otf"/>
+  <item id="MinionPro-Bold.otf" href="Fonts/MinionPro-Bold.otf" media-type="font/otf"/>
+  <item id="MinionPro-BoldIt.otf" href="Fonts/MinionPro-BoldIt.otf" media-type="font/otf"/>
+  <item id="MinionPro-It.otf" href="Fonts/MinionPro-It.otf" media-type="font/otf"/>
+  <item id="MinionPro-Regular.otf" href="Fonts/MinionPro-Regular.otf" media-type="font/otf"/>
+  <item id="MyriadPro-Light.otf" href="Fonts/MyriadPro-Light.otf" media-type="font/otf"/>
+  <item id="MyriadPro-Regular.otf" href="Fonts/MyriadPro-Regular.otf" media-type="font/otf"/>
+  <item id="MyriadPro-Semibold.otf" href="Fonts/MyriadPro-Semibold.otf" media-type="font/otf"/>
+  <item id="MyriadPro-SemiboldIt.otf" href="Fonts/MyriadPro-SemiboldIt.otf" media-type="font/otf"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="cover" linear="no"/>
+    <itemref idref="B19491_FM"/>
+    <itemref idref="B19491_TOC_ePub"/>
+    <itemref idref="B19491_Preface"/>
+    <itemref idref="B19491_Part_1"/>
+    <itemref idref="B19491_01"/>
+    <itemref idref="B19491_02"/>
+    <itemref idref="B19491_03"/>
+    <itemref idref="B19491_04"/>
+    <itemref idref="B19491_05"/>
+    <itemref idref="B19491_Part_2"/>
+    <itemref idref="B19491_06"/>
+    <itemref idref="B19491_07"/>
+    <itemref idref="B19491_Part_3"/>
+    <itemref idref="B19491_08"/>
+    <itemref idref="B19491_09"/>
+    <itemref idref="B19491_10"/>
+    <itemref idref="B19491_11"/>
+    <itemref idref="B19491_12"/>
+    <itemref idref="B19491_13"/>
+    <itemref idref="B19491_Part_4"/>
+    <itemref idref="B19491_14"/>
+    <itemref idref="B19491_15"/>
+    <itemref idref="B19491_16"/>
+    <itemref idref="B19491_Part_5"/>
+    <itemref idref="B19491_17"/>
+    <itemref idref="B19491_18"/>
+    <itemref idref="B19491_19"/>
+    <itemref idref="B19491_20"/>
+    <itemref idref="B19491_21"/>
+    <itemref idref="B19491_22"/>
+    <itemref idref="B19491_Appendix"/>
+    <itemref idref="B19491_Index"/>
+    <itemref idref="B19491_BackMatter"/>
+  </spine>
+  <guide>
+    <reference type="cover" title="Cover" href="cover.xhtml"/>
+    <reference type="toc" title="Table of Contents" href="B19491_TOC_ePub.xhtml#_idContainer002"/>
+  </guide>
+</package>

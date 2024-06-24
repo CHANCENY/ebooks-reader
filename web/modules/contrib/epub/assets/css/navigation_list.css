@@ -1,0 +1,147 @@
+.book-navigation .tree{
+    --spacing : 1.5rem;
+    --radius  : 10px;
+}
+
+.book-navigation ul .item-navigation {
+    margin-bottom: 15px;
+}
+
+.book-navigation .tree li{
+    display      : block;
+    position     : relative;
+    padding-left : calc(2 * var(--spacing) - var(--radius) - 2px);
+}
+
+.book-navigation .tree ul{
+    margin-left  : calc(var(--radius) - var(--spacing));
+    padding-left : 0;
+}
+
+.book-navigation .tree ul li{
+    border-left : 2px solid #ddd;
+}
+
+.book-navigation .tree ul li:last-child{
+    border-color : transparent;
+}
+
+.book-navigation .tree ul li::before{
+    content      : '';
+    display      : block;
+    position     : absolute;
+    top          : calc(var(--spacing) / -2);
+    left         : -2px;
+    width        : calc(var(--spacing) + 2px);
+    height       : calc(var(--spacing) + 1px);
+    border       : solid #ddd;
+    border-width : 0 0 2px 2px;
+}
+
+.book-navigation .tree summary{
+    display : block;
+    cursor  : pointer;
+}
+
+.book-navigation .tree summary::marker,
+.book-navigation .tree summary::-webkit-details-marker{
+    display : none;
+}
+
+.book-navigation .tree summary:focus{
+    outline : none;
+}
+
+.book-navigation .tree summary:focus-visible{
+    outline : 1px dotted #000;
+}
+
+.book-navigation .tree li::after,
+.book-navigation .tree summary::before{
+    content       : '';
+    display       : block;
+    position      : absolute;
+    top           : calc(var(--spacing) / 2 - var(--radius));
+    left          : calc(var(--spacing) - var(--radius) - 1px);
+    width         : calc(2 * var(--radius));
+    height        : calc(2 * var(--radius));
+    border-radius : 50%;
+    background    : #ddd;
+}
+
+.book-navigation .tree summary::before{
+    z-index    : 1;
+    background : #696 url('../images/expand-collapse.svg') 0 0;
+}
+
+.book-navigation .tree details[open] > summary::before{
+    background-position : calc(-2 * var(--radius)) 0;
+}
+
+.book-navigation {
+    border-radius: 5px;
+    padding: 10px;
+    background: #0F1A2E;
+    color: #fff;
+}
+
+/* Book content scrollbar */
+#book-main-content-wrapper::-webkit-scrollbar {
+    height: 10px;
+}
+#book-main-content-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#book-main-content-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+#book-main-content-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#book-main-content-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/*Navigation scrollbar*/
+#book-navigation::-webkit-scrollbar {
+    height: 10px;
+}
+#book-navigation::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#book-navigation::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+#book-navigation::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom scrollbar styles for Firefox */
+#book-navigation {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+:not(:root):fullscreen::backdrop {
+    background-color: white; /* Set backdrop background to transparent */
+}
+
+.book-content .zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+.book-content .fullscreen-link {
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}

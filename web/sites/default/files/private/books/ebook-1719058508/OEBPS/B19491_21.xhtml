@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_21</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_21">
+		<div id="_idContainer146">
+			<h1 id="_idParaDest-342" class="chapter-number"><a id="_idTextAnchor649"></a>21</h1>
+			<h1 id="_idParaDest-343"><a id="_idTextAnchor650"></a>Migrating Content into Drupal</h1>
+			<p><a id="_idTextAnchor651"></a>Drupal offers a migration system named Migrate that allows for one-time or continuous content migration into Drupal. Migrate is built on a set of standard concepts and tooling that help offer a standard to perform content-related migrations. This includes common <strong class="bold">extract, transform, load</strong> (<strong class="bold">ETL</strong>) practices<a id="_idIndexMarker731"></a> such as source-to-destination mapping and data transformation. Migrate also offers a framework that can be used for more customized needs. It enables various use cases, such as moving content from Drupal 7 to Drupal 10, moving from WordPress, and performing ongoing feed-based <span class="No-Break">content updates.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Migration concepts</span></li>
+				<li>The <span class="No-Break">Migrate system</span></li>
+				<li><span class="No-Break">Use cases</span><a id="_idTextAnchor652"></a></li>
+			</ul>
+			<h1 id="_idParaDest-344"><a id="_idTextAnchor653"></a>Migration concepts</h1>
+			<p>Enterprises often have their <a id="_idIndexMarker732"></a>existing websites and systems, but they may wish to move onto Drupal. To accommodate this, Drupal has a core Migrate system to perform migration. Migration is then made easier through a common set of tools, practices, systems, and frameworks that offer repeatability, predictability, <span class="No-Break">and consistency.</span></p>
+			<p>Migrate itself is built from a conventional ETL convention. This is a common design pattern in software engineering and not specific to Drupal. Drupal applies this concept through sources and destinations. Content is extracted from a source. Migrate’s tooling, including features within Drupal, processes that content into a raw data format. Finally, the raw data is loaded into the destination through serialization. This process maintains the foundational, underlying design of the <span class="No-Break">Migrate system.</span></p>
+			<p>Migration brings a lot of complexity to both the sources and destinations involved in migrating content. Sources can be any content source, and that content, in a general sense, can be both structured and unstructured. As a destination, Drupal itself allows for open-ended configurability in its underlying content structures. This mandates a lot of application and use case-specific complexity to be introduced to every migration. While a site builder should have as much automation as possible to perform migrations, it is not practical to expect every configuration and every contributed and custom module to have a smooth path. As such, migrations can be a lot of work and require significant effort in both code and configuration to get <span class="No-Break">them perfect.</span></p>
+			<p>Migrations are a way to promote <a id="_idIndexMarker733"></a>data integrity. A migration is transactional. It presents an opportunity to transform data from one source to a destination. It is not assumed the data in the source promotes data integrity. It’s common to find edge cases where content authors did not follow conventions. Maybe an author did not use a conventional date format, misspelled words, or even placed content in the wrong place. Migrations present opportunities to clean up mistakes to promote data integrity, and the Migrate system offers the capabilities to <span class="No-Break">do s<a id="_idTextAnchor654"></a>o.</span></p>
+			<h1 id="_idParaDest-345"><a id="_idTextAnchor655"></a>The Migrate system</h1>
+			<p>Foundationally, the Migrate system is<a id="_idIndexMarker734"></a> a backend API framework built around ETL concepts. Given the need to support diverse source and destination requirements, it must be highly configurable to work properly. This framework has been used to allow developers to address all of the migration-specific needs with defined plugins, configurations, and <span class="No-Break">so on.</span></p>
+			<p>Beyond the API, the Migrate system includes the state of the migrations specific to the Drupal application in which migrations are run. This state maintains useful information, such as which migrations are registered on the application, what content has been successfully or unsuccessfully migrated per migration, what content has not yet been migrated per migration, and execution logs of every migration execution. Given the Migrate system is specific to a Drupal application, developers are empowered to run migrations on their local systems or non-production environments before running a migration <span class="No-Break">on production.</span></p>
+			<p>Three Migrate modules come with Drupal core. The first is the <strong class="source-inline">migrate</strong> module that provides the underlying framework. The <strong class="source-inline">migrate drupal</strong> module is a utility built on top of the framework that tries to provide an automated migration utility from Drupal 6 or 7. That module also has an optional UI module named <strong class="source-inline">Migrate </strong><span class="No-Break"><strong class="source-inline">Drupal UI</strong></span><span class="No-Break">.</span></p>
+			<p>A<a id="_idIndexMarker735"></a> significant portion of migration definitions are declarative YAML files. Modules can define their migrations by placing a YAML file within a <strong class="source-inline">migrations </strong>directory of a module. The convention follows a <strong class="source-inline">[migration-id].yml</strong> file with the configuration of the migration. The following shows an <strong class="source-inline">example_migration.yml</strong> file, which was exemplified on <span class="No-Break"><strong class="source-inline">drupal.org</strong></span><span class="No-Break"> (</span><a href="https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview#s-glossary"><span class="No-Break">https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview#s-glossary</span></a><span class="No-Break">):</span></p>
+			<pre class="source-code">
+id: example_migration
+label: &apos;Example migration&apos;
+source:
+&#160;&#160;constants:
+&#160;&#160;&#160;&#160;title_suffix: &apos; (example)&apos;
+&#160;&#160;&#160;&#160;text_format: plain_text
+&#160;&#160;plugin: embedded_data
+&#160;&#160;data_rows:
+&#160;&#160;&#160;&#160;- unique_id: 1
+&#160;&#160;&#160;&#160;&#160;&#160;src_title: &apos;DRUPAL MIGRATIONS&apos;
+&#160;&#160;&#160;&#160;&#160;&#160;src_content: &apos;Example content&apos;
+&#160;&#160;&#160;&#160;- unique_id: 2
+&#160;&#160;&#160;&#160;&#160;&#160;src_title: &apos;DRUPAL UPGRADES&apos;
+&#160;&#160;&#160;&#160;&#160;&#160;src_content: &apos;Example content&apos;
+&#160;&#160;ids:
+&#160;&#160;&#160;&#160;unique_id:
+&#160;&#160;&#160;&#160;&#160;&#160;type: integer
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<strong class="bold">&#160;&#160;&#160;&#160;&#160;process:</strong>
+&#160;&#160;pseudo_title:
+&#160;&#160;&#160;&#160;- plugin: callback
+&#160;&#160;&#160;&#160;&#160;&#160;source: src_title
+&#160;&#160;&#160;&#160;&#160;&#160;callable: <strong class="bold">mb_strtolower</strong>
+&#160;&#160;&#160;&#160;- plugin: callback
+&#160;&#160;&#160;&#160;&#160;&#160;callable: <strong class="bold">ucwords</strong>
+&#160;&#160;title:
+&#160;&#160;&#160;&#160;plugin: concat
+&#160;&#160;&#160;&#160;source:
+&#160;&#160;&#160;&#160;&#160;&#160;- &apos;@pseudo_title&apos;
+&#160;&#160;&#160;&#160;&#160;&#160;- constants/title_suffix
+&#160;&#160;body/value: src_content
+&#160;&#160;body/format: constants/text_format
+<strong class="bold">destination:</strong>
+&#160;&#160;plugin: &apos;entity:node&apos;
+&#160;&#160;default_bundle: page</pre>			<p>The migration YAML file <a id="_idIndexMarker736"></a>shows how a migration definition invokes plugins. Three primary types of plugins map to the ETL process. All plugin types are provided by code in <span class="No-Break">a module:</span></p>
+			<ul>
+				<li><strong class="bold">Source plugins</strong>: A source plugin allows for <span class="No-Break">data extraction</span></li>
+				<li><strong class="bold">Destination plugins</strong>: A process plugin is responsible for <span class="No-Break">the transformation</span></li>
+				<li><strong class="bold">Processor plugins</strong>: A destination plugin manages where the data is loaded in the <span class="No-Break">Drupal application</span></li>
+			</ul>
+			<p>This example demonstrates the ETL primitives in the <span class="No-Break">following w<a id="_idTextAnchor656"></a>ays.</span></p>
+			<h2 id="_idParaDest-346"><a id="_idTextAnchor657"></a>Extract</h2>
+			<p>Under source, the migration definition leverages<a id="_idIndexMarker737"></a> the <em class="italic">embedded_data</em> plugin and provides the plugin-specific parameters necessary to process the migration. This helps identify unique identifiers, titles, and various <span class="No-Break">processing l<a id="_idTextAnchor658"></a>ogic.</span></p>
+			<h2 id="_idParaDest-347"><a id="_idTextAnchor659"></a>Transform</h2>
+			<p>The <strong class="source-inline">process</strong> block provides the<a id="_idIndexMarker738"></a> mapping and the transformations. Every child element listed under <strong class="source-inline">process</strong> is a field that is either generated or directly pulled from the source. The example demonstrates transformations through rudimentary PHP functions, such as <strong class="source-inline">ucwords</strong> and <strong class="source-inline">mb_strtolower</strong>, to perform transformations of specific <span class="No-Break">field <a id="_idTextAnchor660"></a>values.</span></p>
+			<h2 id="_idParaDest-348"><a id="_idTextAnchor661"></a>Load</h2>
+			<p>The destination block provides the<a id="_idIndexMarker739"></a> specific mapping into Drupal. In this example, content is imported into a node entity with a page bundle. The default_bundle attribute is a specific parameter of the specified plugin. Note that the example YAML file provides the entire definition for <span class="No-Break">the ETL.</span></p>
+			<p>Before developing a new plugin, check out the out-of-the-box plugins available in core, which are defined <span class="No-Break">here: </span><a href="https://api.drupal.org/api/drupal/namespace/Drupal!migrate!Plugin!migrate!source"><span class="No-Break">https://api.drupal.org/api/drupal/namespace/Drupal!migrate!Plugin!migrate!so<span id="_idTextAnchor662"></span>urce</span></a><span class="No-Break">.</span></p>
+			<h2 id="_idParaDest-349"><a id="_idTextAnchor663"></a>Custom events</h2>
+			<p>One other aspect of the <a id="_idIndexMarker740"></a>framework is events. Events provide another means for modules to customize at specific points in a migration. Events can be implemented by harnessing the <strong class="source-inline">EventSubscriber</strong> capabilities when developing Drupal modules. For instance, events exist for pre- and post-import that can alter a Drupal application before and after a migration occurs. A pre-migration event is common to disable <strong class="bold">CRON </strong>(<strong class="bold">a Linux-based job scheduler</strong>), turn off any email notifications triggered by new nodes, or disable specific modules that may interfere with migration. A post-migration event can then restore the overrides after the migration finishes. The migration system has <a id="_idIndexMarker741"></a>several other events that can perform actions where relevant. A full list of events can be found on <span class="No-Break">drupal.org (</span><a href="https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview#s-events-and-hooks"><span class="No-Break">https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview#s-events-and-hooks</span></a><span class="No-Break">).</span></p>
+			<h2 id="_idParaDest-350"><a id="_idTextAnchor664"></a>Operating migrations</h2>
+			<p>The Migrate system does<a id="_idIndexMarker742"></a> not formally have an administrative UI, although one is contributed on drupal.org. Drush commands are the best means of getting the status of migrations and performing migration-related actions. The following examples highlight how to use Drush to perform some common commands. Note that each of these commands has various options that can readily extend the basic commands <span class="No-Break">captured here:</span></p>
+			<pre class="console">
+$ drush migrate:status</pre>			<p>This reports the status of all migrations found in the Drupal application; more details can be found on <span class="No-Break"><strong class="source-inline">drush.org</strong></span><span class="No-Break"> (</span><a href="https://www.drush.org/12.x/commands/migrate_status/"><span class="No-Break">https://www.drush.org/12.x/commands/migrate_status/</span></a><span class="No-Break">):</span></p>
+			<pre class="console">
+$ drush migrate:import [migration-id]</pre>			<p>This performs the migration for the specified migration; more details can be found on <span class="No-Break">drush.org (</span><a href="https://www.drush.org/12.x/commands/migrate_import/"><span class="No-Break">https://www.drush.org/12.x/commands/migrate_import/</span></a><span class="No-Break">):</span></p>
+			<pre class="console">
+$ drush migrate:rollback [migration-id]</pre>			<p>This rolls back a specific migration within a Drupal application; more details can be found on <span class="No-Break">drush.org (</span><a href="https://www.drush.org/12.x/commands/migrate_rollback/"><span class="No-Break">https://www.drush.org/12.x/commands/migrate_rollback/</span></a><span class="No-Break">):</span></p>
+			<pre class="console">
+$ drush migrate:message [migration-id] –verbose</pre>			<p>This shows all relevant messages captured during the execution of a migration with various levels of verbosity; more details can be found on <span class="No-Break">drush.org (</span><a href="https://www.drush.org/12.x/commands/migrate_rollback/"><span class="No-Break">https://www.drush.org/12.x/commands/migrate_<span id="_idTextAnchor665"></span>rollback/</span></a><span class="No-Break">).</span></p>
+			<h2 id="_idParaDest-351"><a id="_idTextAnchor666"></a>Contributed modules</h2>
+			<p>Several contributed modules <a id="_idIndexMarker743"></a>extend the out-of-the-box Migrate system found in core. While these are optional, the use cases are common and the modules are <span class="No-Break">often used.</span></p>
+			<p>The first is the Migrate Plus contributed module. Most notably, it provides a robust set of extended ETL plugins that extend support for file-based streams, JSON, XML, various processors, and so on. Migrate Plus allows for migrations to be managed within the site config. It also provides a useful migration grouping that can help organize <span class="No-Break">various migrations.</span></p>
+			<p>Migrations do not need to only run on demand. Migrations can be scheduled or triggered through CRON. There are contributed modules for both <strong class="source-inline">migrate scheduler</strong> and <strong class="source-inline">migrate cron</strong>. This use case is covered in more detail in the <span class="No-Break">following section.</span></p>
+			<p>The Migrate system provides all of the tooling, systems, and processes to customize, run, manage, and roll back migrations within a Drupal application. A comprehensive overview of the Migrate system can be found in drupal.org’s online <span class="No-Break">documentation (</span><a href="https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-api-overview"><span class="No-Break">https://www.drupal.org/docs/drupal-apis/migrate-api/migrate-ap<span id="_idTextAnchor667"></span>i-overview</span></a><span class="No-Break">).</span></p>
+			<h1 id="_idParaDest-352"><a id="_idTextAnchor668"></a>Use cases</h1>
+			<p>There are several use <a id="_idIndexMarker744"></a>cases in which the Migrate system can <span class="No-Break">be used.</span></p>
+			<p>Migrations often are designed as one-time or ongoing (continuous migrations). One-time migrations pull from sources only once. It is common to move from one <strong class="bold">content management system (CMS)</strong> to <a id="_idIndexMarker745"></a>another, where Drupal is the new destination and the old system gets shut down. The migration moves the data only once into the new system. Ongoing migrations are often used when data is pulled from a third-party destination that changes with time and is leveraged by the Drupal application. Ongoing migrations can be executed periodically via drush calls with CRON directly on the server, or through the use of the migrate scheduler or migrate Cron <span class="No-Break">contributed modules.</span></p>
+			<p>An example of this could be a daily migration that pulls from public JSON web service feeds into Drupal. The following YAML file, which leverages the Migrate Plus and Migrate Tools modules, defines a migration definition that pulls articles from the <em class="italic">New York Times</em> RSS feed and<a id="_idIndexMarker746"></a> stores it into a hypothetical <strong class="source-inline">nyt_articles</strong> <span class="No-Break">content type:</span></p>
+			<pre class="source-code">
+id: nyt_migration
+label: &apos;New York Times RSS feed&apos;
+status: true
+source:
+&#160;&#160;plugin: url
+&#160;&#160;data_fetcher_plugin: http
+&#160;&#160;urls: &apos;https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml&apos;
+&#160;&#160;data_parser_plugin: simple_xml
+&#160;&#160;item_selector: /rss/channel/item
+&#160;&#160;fields:
+&#160;&#160;&#160;&#160;-
+&#160;&#160;&#160;&#160;&#160;&#160;name: guid
+&#160;&#160;&#160;&#160;&#160;&#160;label: GUID
+&#160;&#160;&#160;&#160;&#160;&#160;selector: guid
+&#160;&#160;&#160;&#160;-
+&#160;&#160;&#160;&#160;&#160;&#160;name: title
+&#160;&#160;&#160;&#160;&#160;&#160;label: Title
+&#160;&#160;&#160;&#160;&#160;&#160;selector: title
+&#160;&#160;&#160;&#160;-
+&#160;&#160;&#160;&#160;&#160;&#160;name: pub_date
+&#160;&#160;&#160;&#160;&#160;&#160;label: &apos;Publication date&apos;
+&#160;&#160;&#160;&#160;&#160;&#160;selector: pubDate
+&#160;&#160;&#160;&#160;-
+&#160;&#160;&#160;&#160;&#160;&#160;name: link
+&#160;&#160;&#160;&#160;&#160;&#160;label: &apos;Origin link&apos;
+&#160;&#160;&#160;&#160;&#160;&#160;selector: link
+&#160;&#160;&#160;&#160;-
+&#160;&#160;&#160;&#160;&#160;&#160;name: summary
+&#160;&#160;&#160;&#160;&#160;&#160;label: Summary
+&#160;&#160;&#160;&#160;&#160;&#160;selector: &apos;description&apos;
+&#160;&#160;ids:
+&#160;&#160;&#160;&#160;guid:
+&#160;&#160;&#160;&#160;&#160;&#160;type: string
+destination:
+&#160;&#160;plugin: &apos;entity:node&apos;
+process:
+&#160;&#160;title: title
+&#160;&#160;field_remote_url: link
+&#160;&#160;body: summary
+&#160;&#160;created:
+&#160;&#160;&#160;&#160;plugin: format_date
+&#160;&#160;&#160;&#160;from_format: &apos;D, d M Y H:i:s O&apos;
+&#160;&#160;&#160;&#160;to_format: &apos;U&apos;
+&#160;&#160;&#160;&#160;source: pub_date
+&#160;&#160;status:
+&#160;&#160;&#160;&#160;plugin: default_value
+&#160;&#160;&#160;&#160;default_value: 1
+&#160;&#160;type:
+&#160;&#160;&#160;&#160;plugin: default_value
+&#160;&#160;&#160;&#160;default_value: nyt_articles</pre>			<p>After defining the migration, the <a id="_idIndexMarker747"></a>Migrate Scheduler module can be configured to invoke the migration daily. The following code can be added <span class="No-Break">in </span><span class="No-Break"><strong class="source-inline">settings.php</strong></span><span class="No-Break">:</span></p>
+			<pre class="source-code">
+$config[&apos;migrate_scheduler&apos;][&apos;migrations&apos;] = [
+&#160;&#160;&apos;nyt_migration&apos; =&gt; [
+&#160;&#160;&#160;&#160;&apos;time&apos; =&gt; 86400,
+&#160;&#160;],
+];</pre>			<p>The code added to <strong class="source-inline">settings.php</strong> will then trigger the <strong class="source-inline">nyt_migration</strong> migration each day (<span class="No-Break">84,600 seconds).</span></p>
+			<p>Other use cases are also relevant. When moving from an existing CMS, Drupal has capabilities for common use cases. A contributed module exists to migrate from WordPress. As mentioned, Core has a module to migrate from Drupal 6 or 7. Several source plugins already exist for various web service feeds, which are offered by a broad set of CMS systems. This aids in creating migrations based on XML, JSON, and <span class="No-Break">so on.</span></p>
+			<p>The contributed module Migrate Tools also has useful features. Its main use case is providing a migration UI. Before Drush 11, it was also used to offer all of the Drush commands related to the Migrate system. Those were subsequently moved into <span class="No-Break">Drush itself.</span></p>
+			<p>Debugging<a id="_idIndexMarker748"></a> migrations can also be tricky. Migrate Devel extends the popular Devel module, which is a common tool for developers to create modules. The module offers more fine-grained reporting of rows and statuses as a migration is run. This helps expose what happens <span class="No-Break">d<a id="_idTextAnchor669"></a>uring migrations.</span></p>
+			<h1 id="_idParaDest-353"><a id="_idTextAnchor670"></a>Summary</h1>
+			<p>Drupal’s Migrate system provides a standard ETL-based framework used for one-time and ongoing migrations. The ETL is implemented through YAML file definitions, <strong class="source-inline">source/processing/destination plugins</strong>, and common tools to run, roll back, and view the status of migrations. Modules can be developed to extend the out-of-the-box plugins and harness Migrate’s event system for custom processing. The Migrate system helps address use cases where an existing CMS needs to be moved to a Drupal application, or periodic processing of web <span class="No-Break">service feeds.</span></p>
+			<p>The next chapter covers multisite management in Drupal, which can be helpful to run multiple sites from the same <span class="No-Break">code base.</span></p>
+		</div>
+	</body>
+</html>

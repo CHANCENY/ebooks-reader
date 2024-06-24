@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <title>Apps and Services with .NET 8, Second Edition</title>
+</head>
+
+<body>
+  <nav id="toc" epub:type="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li style="list-style-type: none;"><a href="Preface.xhtml#_idParaDest-5">Preface</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Preface.xhtml#_idParaDest-6">Where to find the code solutions</a></li>
+          <li style="list-style-type: none;"><a href="Preface.xhtml#_idParaDest-7">What this book covers</a>
+          </li>
+          <li style="list-style-type: none;"><a href="Preface.xhtml#_idParaDest-14">What you need for this book</a></li>
+          <li style="list-style-type: none;"><a href="Preface.xhtml#_idParaDest-17">Get in touch</a></li>
+        </ol>
+      </li>
+      <li value="1"><a href="Chapter_01.xhtml#_idParaDest-20">Introducing Apps and Services with .NET</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-21">Introducing this book and its contents</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-22">Companion books to continue your learning journey</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-23">What you will learn in this book</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-24">My learning philosophy</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-25">Fixing my mistakes</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-26">Finding the solution code on GitHub</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-27">Project naming and port numbering conventions</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-28">Treating warnings as errors</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-29">App and service technologies</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-30">Understanding .NET</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-31">Building websites and apps using ASP.NET Core</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-32">Building web and other services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-33">Windows Communication Foundation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-34">Common service principles</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-35">Summary of choices for services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-36">Building Windows-only apps</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-37">Understanding legacy Windows application platforms</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-38">Understanding modern .NET support for legacy Windows platforms</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-39">Building cross-platform mobile and desktop apps</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-40">.NET MAUI alternatives</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-41">Understanding the Uno platform</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-42">Understanding Avalonia</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-43">Setting up your development environment</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-44">Choosing the appropriate tool and application type for learning</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-45">Using Visual Studio 2022 for general development</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-46">Using Visual Studio Code for cross-platform development</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-47">Using GitHub Codespaces for development in the cloud</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-48">What I used</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-49">JetBrains Rider and its warnings about boxing</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-50">Deploying cross-platform</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-51">Downloading and installing Visual Studio 2022</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-52">Visual Studio 2022 keyboard shortcuts</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-53">Downloading and installing Visual Studio Code</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-54">Installing other extensions</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-55">Managing Visual Studio Code extensions at the command prompt</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-56">Understanding Microsoft Visual Studio Code versions</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-57">Visual Studio Code keyboard shortcuts</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-58">Consuming Azure resources</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-59">Using other project templates</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-60">Installing additional template packs</a></li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-61">Exploring top-level programs, functions, and namespaces</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-62">What is automatically generated for a local function?</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-63">Writing static functions in a separate Program class file</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-64">What is automatically generated for a static function?</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-65">Making good use of the GitHub repository for this book</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-66">Raising issues with the book</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-67">Giving me feedback</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-68">Downloading solution code from the GitHub repository</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-69">Where to go for help</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-70">Reading documentation on Microsoft Learn</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-71">Getting help for the dotnet tool</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-72">AI tools like ChatGPT and GitHub Copilot</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-73">ChatGPT</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-74">GitHub Copilot</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-75">Subscribing to the official .NET blog and announcements</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-76">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-77">Exercise 1.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-78">Exercise 1.2 – Review the online-only sections</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-79">Exercise 1.3 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_01.xhtml#_idParaDest-80">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_02.xhtml#_idParaDest-82">Managing Relational Data Using SQL Server</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-83">Understanding modern databases</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-84">Using a sample relational database</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-85">Connecting to a SQL Server database</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-86">Installing and setting up SQL Server locally</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-87">Installing SQL Server Developer Edition for Windows</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-88">Visual Studio Code extension for working with SQL Server</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-89">Creating the Northwind sample database locally</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-90">Setting up Azure SQL Database</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-91">JetBrains Rider tool window for working with SQL Server</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-92">Creating the Northwind sample database in the cloud</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-93">Managing data with Transact-SQL</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-94">T-SQL data types</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-95">Documenting with comments</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-96">Declaring variables</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-97">Specifying data types</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-98">Controlling flow</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-99">Operators</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-100">Data Manipulation Language (DML)</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-101">DML for adding, updating, and deleting data</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-102">Data Definition Language (DDL)</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-103">Managing data with low-level APIs</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-104">Understanding the types in ADO.NET</a></li>
+            
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-110">Creating a console app for working with ADO.NET</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-111">Executing queries and working with data readers using ADO.NET</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-112">Outputting statistics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-113">Working with ADO.NET asynchronously</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-114">Executing stored procedures using ADO.NET</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-115">Outputting streams with a data reader</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-116">Generating objects with a data reader</a></li>
+            </ol>
+         </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-117">Managing data with Dapper</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-118">Dapper connection extension methods</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-119">Querying using Dapper</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-120">Cleaning up data resources</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-121">Removing Azure resources</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-122">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-123">Exercise 2.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-124">Exercise 2.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-125">Exercise 2.3 – Alternatives for storing secrets</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_02.xhtml#_idParaDest-126">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_03.xhtml#_idParaDest-127">Building Entity Models for SQL Server Using EF Core</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-128">Managing data with EF Core</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-129">Understanding Entity Framework Core</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-130">Scaffolding models using an existing database</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-131">Setting up the dotnet-ef tool</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-132">Defining EF Core models</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-133">Using EF Core conventions to define the model</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-134">Using EF Core annotation attributes to define the model</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-135">Using the EF Core Fluent API to define the model</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-136">Understanding data seeding with the Fluent API</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-137">Defining the Northwind database model</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-138">Querying the Northwind model</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-139">Controlling the tracking of entities</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-140">A scenario using default tracking</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-141">The same scenario using no tracking</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-142">The same scenario using no tracking with identity resolution</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-143">Summary of tracking</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-144">Mapping inheritance hierarchies with EF Core</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-145">Table-per-hierarchy (TPH) mapping strategy</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-146">Table-per-type (TPT) mapping strategy</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-147">Table-per-concrete-type (TPC) mapping strategy</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-148">Configuring inheritance hierarchy mapping strategies</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-149">Example of hierarchy mapping strategies</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-150">Building a reusable entity data model</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-151">Creating a class library for entity models using SQL Server</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-152">Creating a class library for the data context using SQL Server</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-153">Calculated properties on entity creation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-154">Creating a test project to check the integration of the class libraries</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-155">Writing unit tests for entity models</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-156">Running unit tests using Visual Studio 2022</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-157">Running unit tests using Visual Studio Code</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-158">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-159">Exercise 3.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-160">Exercise 3.2 – Practice benchmarking ADO.NET against EF Core</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-161">Exercise 3.3 – Review performance choices</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-162">Exercise 3.4 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_03.xhtml#_idParaDest-163">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_04.xhtml#_idParaDest-165">Managing NoSQL Data Using Azure Cosmos DB</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-166">Understanding NoSQL databases</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-167">Cosmos DB and its APIs</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-168">Document modeling</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-169">Consistency levels</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-170">Hierarchy of components</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-171">Throughput provisioning</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-172">Partition strategies</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-173">Data storage design</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-174">Migrating data to Cosmos DB</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-175">Creating Cosmos DB resources</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-176">Using an emulator on Windows to create Azure Cosmos DB resources </a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-177">Using the Azure portal to create Azure Cosmos DB resources</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-178">Using a .NET app to create Azure Cosmos DB resources</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-179">Manipulating data with the Core (SQL) API</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-180">Performing CRUD operations with the Cosmos SQL API</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-181">Understanding SQL queries</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-182">Exploring other SQL queries with Cosmos DB</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-183">Exploring server-side programming</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-184">Implementing user-defined functions</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-185">Implementing stored procedures</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-186">Cleaning up Azure resources</a></li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-187">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-188">Exercise 4.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-189">Exercise 4.2 – Practice data modeling and partitioning</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-190">Exercise 4.3 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-191">Exercise 4.4 – Download cheat sheets</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-192">Exercise 4.5 – Explore the Gremlin API for Cosmos DB</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-193">Exercise 4.6 – Explore NoSQL databases</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_04.xhtml#_idParaDest-194">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_05.xhtml#_idParaDest-195">Multitasking and Concurrency</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-196">Understanding processes, threads, and tasks</a></li>
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-197">Running tasks asynchronously</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-198">Running multiple actions synchronously</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-199">Running multiple actions asynchronously using tasks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-200">Starting tasks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-201">Waiting for tasks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-202">Using wait methods with tasks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-203">Continuing with another task</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-204">Nested and child tasks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-205">Wrapping tasks around other objects</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-206">Synchronizing access to shared resources</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-207">Accessing a resource from multiple threads</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-208">Applying a mutually exclusive lock to a conch</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-209">Understanding the lock statement</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-210">Avoiding deadlocks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-211">Synchronizing events</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-212">Making CPU operations atomic</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-213">Applying other types of synchronization</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-214">Understanding async and await</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-215">Improving responsiveness for console apps</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-216">Working with async streams</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-217">Improving responsiveness for GUI apps</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-218">Improving scalability for web applications and web services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-219">Common types that support multitasking</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-220">Using await in catch blocks</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-221">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-222">Exercise 5.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-223">Exercise 5.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-224">Exercise 5.3 – Read more about parallel programming</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_05.xhtml#_idParaDest-225">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_06.xhtml#_idParaDest-226">Using Popular Third-Party Libraries</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-227">Which third-party libraries are most popular?</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-228">What is covered in my books</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-229">Working with images</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-230">Generating grayscale thumbnails</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-231">ImageSharp packages for drawing and the web</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-232">Working with text and numbers using Humanizer</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-233">Working with text</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-234">Humanizer case transformations</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-235">Humanizer spacing conversions</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-236">Humanizer’s Singularize and Pluralize methods</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-237">Exploring text manipulations with a console app</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-238">Working with numbers</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-239">Working with dates and times</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-240">Logging with Serilog</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-241">Structured event data</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-242">Serilog sinks</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-243">Logging to the console and a rolling file with Serilog</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-244">Mapping between objects</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-245">Defining models for an AutoMapper configuration</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-246">Defining mappers for an AutoMapper configuration</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-247">Performing tests for an AutoMapper configuration</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-248">Performing live mappings between models</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-249">Making fluent assertions in unit testing</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-250">Making assertions about strings</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-251">Making assertions about collections and arrays</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-252">Making assertions about dates and times</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-253">Validating data</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-254">Understanding the built-in validators</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-255">Performing custom validation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-256">Customizing validation messages</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-257">Defining a model and validator</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-258">Testing the validator</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-259">Validating data with ASP.NET Core</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-260">Generating PDFs</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-261">Using QuestPDF on Apple silicon Macs</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-262">Creating class libraries to generate PDF documents</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-263">Creating a console app to generate PDF documents</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-264">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-265">Exercise 6.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-266">Exercise 6.2 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_06.xhtml#_idParaDest-267">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_07.xhtml#_idParaDest-269">Handling Dates, Times, and Internationalization</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-270">Working with dates and times</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-271">Specifying date and time values</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-272">Formatting date and time values</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-273">Date and time calculations</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-274">Microseconds and nanoseconds</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-275">Globalization with dates and times</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-276">Complexities of Daylight Saving Time (DST)</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-277">Localizing the DayOfWeek enum</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-278">Working with only a date or a time</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-279">Getting date/time formatting information</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-280">Unit testing with a time provider</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-281">Working with time zones</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-282">Understanding DateTime and TimeZoneInfo</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-283">Exploring DateTime and TimeZoneInfo</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-284">Working with cultures</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-285">Detecting and changing the current culture</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-286">Temporarily using the invariant culture</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-287">Localizing your user interface</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-288">Defining and loading resources</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-289">Testing globalization and localization</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-290">Working with Noda Time</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-291">Important concepts and defaults in Noda Time</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-292">Converting between Noda Time date/time types</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-293">Exploring Node Time in a console app</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-294">Unit testing and JSON serialization with Noda Time</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-295">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-296">Exercise 7.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-297">Exercise 7.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-298">Exercise 7.3 – Learn from expert Jon Skeet</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_07.xhtml#_idParaDest-299">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_08.xhtml#_idParaDest-300">Building and Securing Web Services Using Minimal APIs</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-301">Building web services using ASP.NET Core Minimal APIs</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-302">Benefits of Minimal API-based web services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-303">Understanding Minimal API route mappings</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-304">Understanding parameter mapping</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-305">Understanding return values</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-306">Documenting a Minimal APIs service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-307">Setting up an ASP.NET Core Web API project</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-308">Testing web services using Swagger</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-309">Testing web services with code editor tools</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-310">Excluding paths from OpenAPI documentation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-311">Visual Studio 2022 scaffolding for Minimal APIs</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-312">Relaxing the same origin security policy using CORS</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-313">Configuring HTTP logging for the web service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-314">Creating a web page JavaScript client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-315">Creating a .NET client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-316">Understanding CORS</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-317">Enabling CORS for specific endpoints</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-318">Understanding other CORS policy options</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-319">Preventing denial of service attacks using rate limiting</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-320">Rate limiting using the AspNetCoreRateLimit package</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-321">Creating a rate-limited console client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-322">Rate limiting using ASP.NET Core middleware</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-323">Improving startup time and resources using native AOT</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-324">Limitations of native AOT</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-325">Reflection and native AOT</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-326">Native AOT for ASP.NET Core</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-327">Requirements for native AOT</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-328">Enabling native AOT for a project</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-329">Enabling JSON serialization with native AOT</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-330">Building a native AOT project</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-331">Publishing a native AOT project</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-332">Understanding identity services</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-333">JWT bearer authorization</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-334">Authenticating service clients using JWT bearer authentication</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-335">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-336">Exercise 8.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-337">Exercise 8.2 – Review Microsoft HTTP API design policy</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-338">Exercise 8.3 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-339">Exercise 8.4 – Exposing data via the web using OData services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-340">Exercise 8.5 – Auth0 project templates</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_08.xhtml#_idParaDest-341">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_09.xhtml#_idParaDest-342">Caching, Queuing, and Resilient Background Services</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-343">Understanding service architecture</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-344">What parts of a system are slowest?</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-345">Numbers every (developer) should know</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-346">Caching with ASP.NET Core</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-347">General caching guidelines</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-348">Building a controller-based Web API service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-349">Caching objects using in-memory caching</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-350">Caching objects using distributed caching</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-351">A new abstraction for distributed caching</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-352">Caching web responses using HTTP caching</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-353">Fault tolerance with Polly</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-354">Understanding retry and circuit breaker patterns</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-355">Defining and executing policies</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-356">Defining wait intervals between retries</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-357">Applying policies to HTTP clients</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-358">Adding random faults to the web service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-359">Building an MVC project to call the faulty web service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-360">Implementing the Retry pattern for transient fault handling</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-361">Queuing with RabbitMQ</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-362">Setting up RabbitMQ using Docker</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-363">Sending messages to a queue using an MVC website</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-364">Consuming message from a queue using a console app</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-365">Implementing long-running background services</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-366">Building a worker service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-367">Processing queued message using a worker service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-368">Executing code on a timed schedule</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-369">Building a website to host Hangfire</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-370">Scheduling jobs using Hangfire</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-371">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-372">Exercise 9.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-373">Exercise 9.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-374">Exercise 9.3 – Replace the Distributed Memory Cache with another distributed cache implementation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-375">Exercise 9.4 – Replace Hangfire with Quartz.NET</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-376">Exercise 9.5 – Review the Reliable Web App pattern</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_09.xhtml#_idParaDest-377">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_10.xhtml#_idParaDest-379">Building Serverless Nanoservices Using Azure Functions</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-380">Understanding Azure Functions</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-381">Azure Functions triggers and bindings</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-382">NCRONTAB expressions</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-383">Azure Functions versions and languages</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-384">Azure Functions worker models</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-385">Azure Functions hosting plans</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-386">Azure Storage requirements</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-387">Testing locally with Azurite</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-388">Azure Functions authorization levels</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-389">Azure Functions support for dependency injection</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-390">Installing Azure Functions Core Tools</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-391">Building an Azure Functions project</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-392">Using Visual Studio 2022</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-393">Using Visual Studio Code</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-394">Using the func CLI</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-395">Reviewing the Azure Functions project</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-396">Implementing a simple function</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-397">Testing a simple function</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-398">Responding to timer and resource triggers</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-399">Implementing a Timer triggered function</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-400">Testing the Timer triggered function</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-401">Implementing a function that works with queues and BLOBs</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-402">Testing the function that works with queues and BLOBs</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-403">Publishing an Azure Functions project to the cloud</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-404">Using Visual Studio 2022 to publish</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-405">Using Visual Studio Code to publish</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-406">Cleaning up Azure Functions resources</a></li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-407">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-408">Exercise 10.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-409">Exercise 10.2 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_10.xhtml#_idParaDest-410">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_11.xhtml#_idParaDest-411">Broadcasting Real-Time Communication Using SignalR</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-412">Understanding SignalR</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-413">The history of real-time communication on the web</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-414">AJAX</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-415">WebSocket</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-416">Introducing SignalR</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-417">Azure SignalR Service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-418">Designing method signatures</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-419">Building a live communication service using SignalR</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-420">Defining some shared models</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-421">Enabling a server-side SignalR hub</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-422">Building a web client using the SignalR JavaScript library</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-423">Adding a chat page to the MVC website</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-424">Testing the chat feature</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-425">Building a .NET console app client</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-426">Creating a .NET client for SignalR</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-427">Testing the .NET console app client</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-428">Streaming data using SignalR</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-429">Defining a hub for streaming</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-430">Creating a .NET console app client for streaming</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-431">Testing the streaming service and client</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-432">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-433">Exercise 11.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-434">Exercise 11.2 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_11.xhtml#_idParaDest-435">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_12.xhtml#_idParaDest-436">Combining Data Sources Using GraphQL</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-437">Understanding GraphQL</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-438">GraphQL query document format</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-439">Requesting fields</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-440">Specifying filters and arguments</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-441">Understanding other GraphQL capabilities</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-442">Understanding the ChilliCream GraphQL platform</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-443">Building a service that supports GraphQL</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-444">Defining the GraphQL schema for Hello World</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-445">Writing and executing GraphQL queries</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-446">Naming GraphQL queries aka operations</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-447">Understanding field conventions</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-448">Defining GraphQL queries for EF Core models</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-449">Adding support for EF Core</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-450">Exploring GraphQL queries with Northwind</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-451">Implementing paging support</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-452">Implementing filtering support</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-453">Implementing sorting support</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-454">Building .NET clients for a GraphQL service</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-455">Choosing GraphQL request formats</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-456">Understanding the GraphQL response format</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-457">Using REST Client as a GraphQL client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-458">Using an ASP.NET Core MVC project as a GraphQL client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-459">Testing the .NET client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-460">Creating a console app client using Strawberry Shake</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-461">Implementing GraphQL mutations</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-462">Adding mutations to the GraphQL service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-463">Exploring the add product mutation</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-464">Implementing updates and deletes as mutations</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-465">Implementing GraphQL subscriptions</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-466">Adding a subscription and topic to the GraphQL service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-467">Exploring subscribing to a topic</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-468">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-469">Exercise 12.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-470">Exercise 12.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-471">Exercise 12.3 – Practice building .NET clients</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_12.xhtml#_idParaDest-472">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_13.xhtml#_idParaDest-474">Building Efficient Microservices Using gRPC</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-475">Understanding gRPC</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-476">How gRPC works</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-477">Defining gRPC contracts with .proto files</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-478">gRPC benefits</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-479">gRPC limitations</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-480">Types of gRPC methods</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-481">Microsoft’s gRPC packages</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-482">Building a gRPC service and client</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-483">Building a Hello World gRPC service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-484">Project file item configuration</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-485">Building a Hello World gRPC client</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-486">Testing a gRPC service and client</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-487">Implementing gRPC for an EF Core model</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-488">Implementing the gRPC service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-489">Implementing the gRPC client</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-490">Taking gRPC further</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-491">Improving a gRPC service with native AOT publish</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-492">Getting request and response metadata</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-493">Adding a deadline for higher reliability</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-494">Handling dates, times, and decimal numbers</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-495">Defining a custom decimal type and using date/time types</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-496">Implementing the product and employee gRPC services</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-497">Adding product and employee gRPC clients</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-498">Testing decimal, date, and bytes handling</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-499">Implementing interceptors and handling faults</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-500">Adding a client-side interceptor</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-501">Exception and transient fault handling</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-502">Implementing gRPC JSON transcoding</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-503">Enabling gRPC JSON transcoding</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-504">Testing gRPC JSON transcoding</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-505">Comparing with gRPC-Web</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-506">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-507">Exercise 13.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-508">Exercise 13.2 – Compare gRPC services with HTTP APIs</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-509">Exercise 13.3 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_13.xhtml#_idParaDest-510">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_14.xhtml#_idParaDest-511">Building Web User Interfaces Using ASP.NET Core</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-512">Setting up an ASP.NET Core MVC website</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-513">Creating an ASP.NET Core MVC website</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-514">Exploring the default ASP.NET Core MVC website</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-515">Understanding visitor registration</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-516">Reviewing an MVC website project structure</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-517">Referencing an EF Core class library and registering a data context</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-518">Defining web user interfaces with Razor views </a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-519">Understanding Razor views</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-520">Prototyping with Bootstrap</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-521">Understanding Razor syntax and expressions</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-522">Understanding HTML Helper methods</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-523">Defining a strongly-typed Razor view</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-524">Localizing and globalizing with ASP.NET Core</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-525">Creating resource files</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-526">If you are using Visual Studio 2022</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-527">If you are using Visual Studio Code</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-528">Localizing Razor views with an injected view localizer</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-529">Understanding the Accept-Language header</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-530">Defining web user interfaces with Tag Helpers</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-531">Comparing HTML Helpers and Tag Helpers</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-532">Exploring the Anchor Tag Helper</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-533">Exploring the Cache Tag Helpers</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-534">Exploring the Environment Tag Helper</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-535">Understanding how cache busting with Tag Helpers works</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-536">Exploring Forms-related Tag Helpers</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-537">Output caching</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-538">Output caching endpoints</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-539">Output caching MVC views</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-540">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-541">Exercise 14.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-542">Exercise 14.2 – Practice building user interfaces with Boostrap</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-543">Exercise 14.3 – Explore topics</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_14.xhtml#_idParaDest-544">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_15.xhtml#_idParaDest-545">Building Web Components Using Blazor</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-546">Understanding Blazor</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-547">Blazor hosting models</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-548">Blazor components</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-549">Blazor routing to page components</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-550">How to pass route parameters</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-551">Setting parameters from a query string</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-552">Route constraints for parameters</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-553">Base component classes</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-554">Blazor layouts</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-555">How to navigate Blazor routes to page components</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-556">CSS and JavaScript isolation</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-557">Building Blazor components</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-558">Reviewing the new Blazor project template</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-559">Using Bootstrap icons</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-560">Referencing an EF Core class library and registering a data context</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-561">Building a static server rendered component for data</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-562">Building a component with server interactivity</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-563">Building a Blazor progress bar component</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-564">Building a Blazor dialog box component</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-565">Building a Blazor alert component</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-566">Building a Blazor data component</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-567">Making the component</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-568">Making the component a routable page component</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-569">Getting entities into a component by building a web service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-570">Getting entities into a component by calling the web service</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-571">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-572">Exercise 15.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-573">Exercise 15.2 – Practice building Blazor components</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-574">Exercise 15.3 – Practice building an IndexedDB interop service</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-575">Exercise 15.4 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-576">Exercise 15.5 – Explore Blazor WebAssembly topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-577">Exercise 15.6 – Explore Progressive Web Apps with Blazor</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-578">Exercise 15.7 – Leveraging Open Source Blazor Component Libraries</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_15.xhtml#_idParaDest-579">Summary</a></li>
+        </ol>
+      </li>
+      <li><a href="Chapter_16.xhtml#_idParaDest-581">Building Mobile and Desktop Apps Using .NET MAUI</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-582">Understanding XAML</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-583">Simplifying code using XAML</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-584">.NET MAUI namespaces</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-585">Type converters</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-586">Choosing between .NET MAUI controls</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-587">Markup extensions</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-588">Understanding .NET MAUI</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-589">.NET MAUI and Xamarin support</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-590">Development tools for mobile first, cloud first</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-591">Installing .NET MAUI workloads manually</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-592">.NET MAUI user interface component categories</a>
+                <ol style="list-style-type: none;">
+                  <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-593">Shell control</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-594">ListView control</a></li>
+                  <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-595">Entry and Editor controls</a></li>
+                </ol>
+              </li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-596">.NET MAUI handlers</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-597">Writing platform-specific code</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-598">Building mobile and desktop apps using .NET MAUI</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-599">Creating a virtual Android device for local app testing</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-600">Enabling Windows developer mode</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-601">Creating a .NET MAUI project</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-602">Adding shell navigation and more content pages</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-603">Implementing more content pages</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-604">Using shared resources</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-605">Defining resources to share across an app</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-606">Referencing shared resources</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-607">Changing shared resources dynamically</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-608">Using data binding</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-609">Binding to elements</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-610">Practicing and exploring</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-611">Exercise 16.1 – Test your knowledge</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-612">Exercise 16.2 – Explore topics</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-613">Exercise 16.3 – Implementing Model-View-ViewModel for .NET MAUI</a></li>
+              <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-614">Exercise 16.4 – Integrating .NET MAUI apps with Blazor and native platforms</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Chapter_16.xhtml#_idParaDest-615">Summary</a></li>
+        </ol>
+      </li>
+      <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-616">Epilogue</a>
+        <ol style="list-style-type: none;">
+          <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-617">Cloud-native development using .NET Aspire</a></li>
+          <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-618">Introducing the Survey Project Challenge</a></li>
+          <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-619">Third edition coming in December 2025</a></li>
+          <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-620">Next steps on your C# and .NET learning journey</a>
+            <ol style="list-style-type: none;">
+              <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-621">Companion books to continue your learning journey</a></li>
+              <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-622">Other books to take your learning further</a></li>
+            </ol>
+          </li>
+          <li style="list-style-type: none;"><a href="Epilogue.xhtml#_idParaDest-623">Good luck!</a></li>
+        </ol>
+      </li>
+      <li style="list-style-type: none;"><a href="Index.xhtml#_idParaDest-625">Index</a>
+      </li>
+    </ol>
+  </nav>
+  <nav epub:type="landmarks" id="landmarks" hidden="">
+    <h1>Landmarks</h1>
+    <ol style="list-style-type: none;">
+      <li style="list-style-type: none;">
+        <a epub:type="cover" href="cover.xhtml">Cover</a>
+      </li>
+      <li style="list-style-type: none;">
+        <a epub:type="index" href="Index.xhtml#_idContainer555">Index</a>
+      </li>
+    </ol>
+  </nav>
+</body>
+</html>

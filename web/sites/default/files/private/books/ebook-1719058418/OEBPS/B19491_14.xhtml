@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_14</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_14">
+		<div id="_idContainer106">
+			<h1 id="_idParaDest-226" class="chapter-number"><a id="_idTextAnchor419"></a>14</h1>
+			<h1 id="_idParaDest-227"><a id="_idTextAnchor420"></a>Basic Content <br />Authoring Experience</h1>
+			<p><a id="_idTextAnchor421"></a>So far, this book has covered foundational aspects of Drupal and knowledge of how to build Drupal applications. <em class="italic">Chapters 14</em>, <em class="italic">15</em>, and <em class="italic">16</em> present the experience offered to content authors. This chapter emphasizes the basic content author experience offered for content types, nodes, and content rendering. Because Drupal can be readily configured, a site builder must have this experience. This chapter highlights how to perform the configuration, what subsequent experience is offered for authoring, and the subsequent rendering of <span class="No-Break">the content.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Authoring content</span></li>
+				<li>Authoring <span class="No-Break">digital assets</span></li>
+			</ul>
+			<h1 id="_idParaDest-228"><a id="_idTextAnchor422"></a>Authoring content</h1>
+			<p>Never forget the content<a id="_idIndexMarker460"></a> author who is tasked with using the Drupal application you have built. Drupal has a lot of features, and structured content is not always intuitive. Many content authors who use Drupal for content management think the experience of authoring structured content is technical. It is important to demonstrate, train, and document this experience because content authors may change <span class="No-Break">over time.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Do not forget about roles and permissions when looking at the experiences of content authors. It can be immensely helpful to have deliberate roles for authors or even different roles for authors who may be responsible for different content in the <span class="No-Break">Drupal application.</span></p>
+			<p class="callout">The experience of authoring in Drupal can rapidly become better just by removing permissions for activities they do not need to do. This can remove specific administrative actions, such as managing Drupal projects, managing Drupal configuration, and viewing system logs. Roles and permissions can radically simplify what a content author can see, and this is a positive thing. Generally, this follows best practice, given that users are granted only the permissions they need to avoid <span class="No-Break">unintended consequences.</span></p>
+			<p>The <a id="_idIndexMarker461"></a>content authoring experience will be covered for Drupal’s basic content management for nodes, menus, <span class="No-Break">and taxonomies<a id="_idTextAnchor423"></a>.</span></p>
+			<h2 id="_idParaDest-229"><a id="_idTextAnchor424"></a>Nodes</h2>
+			<p>The <a id="_idIndexMarker462"></a>content authoring experience starts with the node system. Recall that a content type defines the structured content and nodes are specific instances of content types. The activity of content authoring is ultimately creating the raw structured data and metadata for every node. Nodes <a id="_idIndexMarker463"></a>are then rendered by Drupal to display webpages. At a high level, rendering is the process of taking Drupal’s raw structured data and converting it into a delivered webpage based on the context provided (typically a path that is stored as metadata on the node). As such, the basic content authoring experience of editing nodes is a bit disjointed from the visual presentation. A more visual content authoring experience is provided by Layout Builder, which is covered in the <span class="No-Break">next chapter.</span></p>
+			<p>This experience starts with the central content listing page, found at <strong class="source-inline">admin/content</strong>. This listing, for which the access is configured by role, is often made available for content authors to have one place to see all of the content they can manage. This also facilitates bulk editing, which can be useful for changing the publishing or even deleting multiple nodes <span class="No-Break">at once.</span></p>
+			<p>The centralized listing has a button to add new content and offers the ability to edit each content item listed. The underlying method of adding and editing a node is the same. This can be exemplified by looking at an example node editing form for a page content type. The form itself is configurable by content type by going to the <strong class="bold">Manage form display</strong> page found at <strong class="source-inline">admin/structure/types/manage/page/form-display</strong> for the <strong class="bold">page</strong> content type. This is shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer096" class="IMG---Figure">
+					<img src="image/B19491_14_1.jpg" alt="Figure 14.1 – Form display configuration for the page content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.1 – Form display configuration for the page content type</p>
+			<p>Making adjustments to the<a id="_idIndexMarker464"></a> form shown in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.1</em> can help you adjust the authoring experience by adding help text or adjusting the form fields to use different widgets. <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.1</em> may be difficult to read, but it exemplifies all of the various configuration options available to a site builder to control the display of a content type. Each part of the form, which spans both structured content and metadata, has its available widgets and settings, which are tied to the type of field or type of data. For instance, <strong class="bold">Authored on</strong> is a date and time widget that captures the necessary information when a node <span class="No-Break">is created.</span></p>
+			<p>To access the form and create a node after logging in, go to <strong class="source-inline">node/add</strong>, and select the Page content type. This prompts the node editing form, as exemplified by the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer097" class="IMG---Figure">
+					<img src="image/B19491_14_2.jpg" alt="Figure 14.2 – Node editing form for a page content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.2 – Node editing form for a page content type</p>
+			<p>The structured content for a<a id="_idIndexMarker465"></a> Page content type, out of the box, has two fields: <strong class="bold">Title</strong> and <strong class="bold">Body</strong>. As <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.2</em> shows, these fields are two different field types. As such, the experience of editing these fields <span class="No-Break">is different.</span></p>
+			<p>The metadata for the node is on the right side. The first box captures the most current revision information and offers the ability to describe the changes made. This description is very useful when reviewing revisions. <strong class="bold">Menu settings</strong> allow the node to be placed in a selected menu, provide a title for the menu link, and place the link within the menu hierarchy. <strong class="bold">URL alias</strong> allows the author to specify a path to access the rendered node. The authoring information provides the primary metadata for the publishing date and author for the node, which can also be optionally displayed. Finally, <strong class="bold">Promoted to front page</strong> and <strong class="bold">Sticky at the top of lists</strong> are settings that associate the node with two specific niche features <span class="No-Break">in Drupal.</span></p>
+			<p>It should be noted that the <strong class="bold">Published</strong> checkbox is also metadata and is used to control the display of a node. This is useful for content that is not yet complete or old content that may no longer need to be displayed but can be kept for archival needs or to enable in <span class="No-Break">the future.</span></p>
+			<p>After saving the node <a id="_idIndexMarker466"></a>with content, the following figure shows how a node is <span class="No-Break">subsequently rendered:</span></p>
+			<div>
+				<div id="_idContainer098" class="IMG---Figure">
+					<img src="image/B19491_14_3.jpg" alt="Figure 14.3 – A rendered article node from the Umami demo" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.3 – A rendered article node from the Umami demo</p>
+			<p>A rendered <a id="_idIndexMarker467"></a>node, as shown in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.3</em>, provides administrative links at the top of the rendered node for those who are logged in and have access. This provides a direct link for you to edit a node, see revisions, or delete <span class="No-Break">a node.</span></p>
+			<p>Each field has a different presentation. The visual presentation is handled by both the Drupal theme and configuration. The logic to render content types is provided by the <strong class="bold">Manage display</strong> configuration for the content type, found at <strong class="source-inline">admin/structure/types/manage/article/display</strong> for the <strong class="bold">article</strong> content type. The following is an example of configuring the article <span class="No-Break">content type:</span></p>
+			<div>
+				<div id="_idContainer099" class="IMG---Figure">
+					<img src="image/B19491_14_4.jpg" alt="Figure 14.4 – Manage display settings tied to a content type" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.4 – Manage display settings tied to a content type</p>
+			<p>Changing some <a id="_idIndexMarker468"></a>of the settings on the <strong class="bold">Manage display</strong> page causes the rendering of a node to update accordingly. To show this, the featured image has been hidden and a label has been added to the body field. The resulting rendered node is <span class="No-Break">then updated:</span></p>
+			<div>
+				<div id="_idContainer100" class="IMG---Figure">
+					<img src="image/B19491_14_5.jpg" alt="Figure 14.5 – An updated node rendering" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.5 – An updated node rendering</p>
+			<p><span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.5</em> shows<a id="_idIndexMarker469"></a> how updated settings on the <strong class="bold">Manage display</strong> page are automatically applied when a node is rendered. The <strong class="bold">Manage display</strong> page provides a large number of options for how the node will render. This was covered in greater depth in <a href="B19491_10.xhtml#_idTextAnchor293"><span class="No-Break"><em class="italic">Chapter 10</em></span></a>, which also covered additional <span class="No-Break">display modes.</span></p>
+			<p>Complexity comes with large content structures. Again, the separation between the visual representation of the field and an editing form can make it confusing to know exactly how a node will be rendered. This is further emphasized when there are a lot of fields, making authors question how all of the fields show up together on a rendered page. It can be helpful to encourage content authors to leverage the preview feature on the node editing page to <span class="No-Break">see changes.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Having a lot of fields within a content type or entity is typically a good thing, even if it complicates the authoring experience. Observing atomic principles often requires data to be broken down into its smallest form. Having atomic data gives Drupal control over how each field is rendered in both site building and within themes. It also helps with web service APIs that often return data in highly <span class="No-Break">structured formats.</span></p>
+			<p>The editing<a id="_idIndexMarker470"></a> experience for various field types also goes beyond the <strong class="bold">Title</strong> and <strong class="bold">Body</strong> fields shown. Out of the box, Drupal supports the following field types, which can be enabled or disabled from the application’s project <span class="No-Break">listing (</span><span class="No-Break"><strong class="source-inline">admin/modules</strong></span><span class="No-Break">):</span></p>
+			<ul>
+				<li>Dates, date and times, and <span class="No-Break">date ranges</span></li>
+				<li>Boolean (yes or no, on or <span class="No-Break">off, etc.)</span></li>
+				<li><span class="No-Break">Email</span></li>
+				<li><span class="No-Break">Numbers</span></li>
+				<li>Selection <span class="No-Break">and lists</span></li>
+				<li>Files <span class="No-Break">and images</span></li>
+				<li><span class="No-Break">Links</span></li>
+				<li><span class="No-Break">Options</span></li>
+				<li><span class="No-Break">Telephone</span></li>
+				<li>Text (short- and <span class="No-Break">long-form text)</span></li>
+				<li>Reference (selecting <span class="No-Break">another entity)</span></li>
+			</ul>
+			<p>Beyond the editorial experience, each field type offers native validation of field values to promote data integrity. Other core modules offer various field widgets that complement the <span class="No-Break">field types:</span></p>
+			<ul>
+				<li>Files, images, <span class="No-Break">and media</span></li>
+				<li><span class="No-Break">WYSIWYG</span></li>
+			</ul>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Content authors often ask for WYSIWYG over structured content. The experience offered by WYSIWYG is like that offered by tools such as Microsoft Word. However, WYSIWYG stores content as a blob that is not structured. Overusing WYSIWYG would mean not properly using Drupal features, and it could give content authors too much control over the visual style. This could potentially have adverse effects on how content is <span class="No-Break">rendered visually.</span></p>
+			<p class="callout">One compromise is configuring Drupal’s text formats and editors found at <strong class="source-inline">admin/config/content/formats</strong>. This configuration allows for site builders to change what functionality is available for WYSIWYG. It can be desirable to not let users change fonts, colors, and other things, which is effectively WYSIWYG that keeps the content free of unwanted <span class="No-Break">visual changes.</span></p>
+			<p>The following<a id="_idIndexMarker471"></a> figure shows page node configuration extended with various out-of-the-box field types and widgets which is the same for various other field types <span class="No-Break">and widgets:</span></p>
+			<div>
+				<div id="_idContainer101" class="IMG---Figure">
+					<img src="image/B19491_14_6.jpg" alt="Figure 14.6 – A reference node editing form with various field types" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.6 – A reference node editing form with various field types</p>
+			<p><span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.6</em> shows<a id="_idIndexMarker472"></a> the standard text (<strong class="bold">Title</strong>) and WYSIWYG (<strong class="bold">Body</strong>) but extended with the <span class="No-Break">following fields:</span></p>
+			<ul>
+				<li><strong class="bold">Testing Boolean</strong> (<span class="No-Break">checkbox widget)</span></li>
+				<li><strong class="bold">Testing Date</strong> (date selector <span class="No-Break">popup widget)</span></li>
+				<li><strong class="bold">Testing Phone Number</strong> (<span class="No-Break">text widget)</span></li>
+				<li><strong class="bold">Test Reference</strong> (search and <span class="No-Break">selection widget)</span></li>
+				<li><strong class="bold">Test List</strong> (<span class="No-Break">selection widget)</span></li>
+			</ul>
+			<p>Contributed <a id="_idIndexMarker473"></a>projects offer a significant number of other field types and field widgets. Some popular examples include <span class="No-Break">the following:</span></p>
+			<ul>
+				<li>The <strong class="bold">Color</strong> field (<strong class="source-inline">drupal.org/project/color_field</strong>) allows for a selection of <span class="No-Break">a color</span></li>
+				<li>Field groups (<strong class="source-inline">drupal.org/project/field_groups</strong>) help organize fields <span class="No-Break">into groups</span></li>
+				<li>The <strong class="bold">Address</strong> field (<strong class="source-inline">drupal.org/project/address</strong>) provides a field type <span class="No-Break">for addresses</span></li>
+				<li>The <strong class="bold">Geofield</strong> field (<strong class="source-inline">drupal.org/project/geofield</strong>) provides various ways to select <span class="No-Break">a location</span></li>
+				<li>The <strong class="bold">Select or Other</strong> field (<strong class="source-inline">drupal.org/project/select_or_other</strong>) allows for either a selection of data or the ability to provide a freeform option in the <span class="No-Break">same field</span></li>
+			</ul>
+			<p>Nodes cover the primary content authoring in Drupal. While it can be complex, giving authors the right permissions can help effectively harness the benefits of both Drupal and <span class="No-Break">structured c<a id="_idTextAnchor425"></a>ontent.</span></p>
+			<h2 id="_idParaDest-230"><a id="_idTextAnchor426"></a>Menus and taxonomies</h2>
+			<p>While a node best<a id="_idIndexMarker474"></a> exemplifies the end-to-end experience of structuring, editing, and rendering content across the site builder and author personas, Drupal harnesses similar experiences for other entities with customizable fields, such as the same form authoring process and a similar mechanism for configuration across fields, field types, and <span class="No-Break">field widgets.</span></p>
+			<p>Content authors <a id="_idIndexMarker475"></a>commonly interact with both menus<a id="_idIndexMarker476"></a> and taxonomies<a id="_idIndexMarker477"></a> as they author nodes. As we learned from <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.6</em>, authors can manage both taxonomies and menus associated with a node directly from the node editing page. There are alternative interfaces for managing menus and taxonomies that are <span class="No-Break">not node-specific.</span></p>
+			<p>Drupal has centralized menu management accessible by going to <strong class="source-inline">admin/structure/menu</strong> and subsequently editing a menu. The following figure demonstrates how to edit <span class="No-Break">a menu:</span></p>
+			<div>
+				<div id="_idContainer102" class="IMG---Figure">
+					<img src="image/B19491_14_7.jpg" alt="Figure 14.7 – Centralized menu editing for the administrative menu" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.7 – Centralized menu editing for the administrative menu</p>
+			<p><span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.7</em> demonstrates centralized<a id="_idIndexMarker478"></a> menu management with the out-of-the-box administrative menu. It offers the ability to add and edit menu links. A link can also be enabled or disabled within a menu. From the node editing form, it can be difficult to use the <strong class="bold">Weighting</strong> and <strong class="bold">Parent</strong> fields to see where a link gets placed in a menu. The centralized view helps visualize the full hierarchy of the menu and move items as needed through a drag-and-drop mechanism. Menu links can more readily be ordered and placed under <span class="No-Break">specific pages.</span></p>
+			<p>Similarly to <a id="_idIndexMarker479"></a>menus, taxonomies <a id="_idIndexMarker480"></a>can be managed centrally and hierarchically through <strong class="source-inline">admin/structure/taxonomy</strong>. Authors often associate taxonomies with a categorization system. While taxonomy management resembles that of <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.7</em> for menus, taxonomies have customizable fields. Configuration links, like those shown in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.1</em> for nodes, are available for managing fields, forms, and display settings for taxonomies. Each taxonomy term would <a id="_idIndexMarker481"></a>subsequently have an authoring experience closer to the fields shown in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.6</em> but without the node-centric features in the <span class="No-Break">right-hand menu.</span></p>
+			<p>Anyone building a Drupal application needs to understand the correlation between the configuration for nodes, taxonomies, and menus and the subsequent authoring experience. A content author is a critical person who needs to readily understand how to use the Drupal system. Creating a good experience for them and helping enable them is important for the success of any <span class="No-Break">Drupal<a id="_idTextAnchor427"></a> application.</span></p>
+			<h1 id="_idParaDest-231"><a id="_idTextAnchor428"></a>Authoring digital assets</h1>
+			<p><a href="B19491_11.xhtml#_idTextAnchor324"><span class="No-Break"><em class="italic">Chapter 11</em></span></a> highlights<a id="_idIndexMarker482"></a> Drupal’s capabilities for managing digital assets. In that chapter, the three primary constructs were presented: files, images, and media. All three features offer slightly different experiences for <span class="No-Break">content authors.</span></p>
+			<p>Given that entities have customizable fields, digital assets can be associated with an entity. Consider a banner image on a node. Alone, it may not be clear where that image is rendered in the Drupal application. At a high level, the motivation behind the file, image, and media field types was to incorporate digital assets into structured content. The general structure content editing experience is effectively demonstrated in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.6</em>, but there is more nuance for each type of <span class="No-Break">digital asset.</span></p>
+			<p>The following figure shows the experience of an editing form that has each of the three digital asset <span class="No-Break">field types:</span></p>
+			<div>
+				<div id="_idContainer103" class="IMG---Figure">
+					<img src="image/B19491_14_8.jpg" alt="Figure 14.8 – Field widgets for files, images, and media" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.8 – Field widgets for files, images, and media</p>
+			<p><span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.8</em> shows that<a id="_idIndexMarker483"></a> both files and images, which are uploaded to Drupal, allow the content author to select a file from their local system. The experience provides the author with desired parameters, such as file extensions, file size limitations, and more. <strong class="bold">Files</strong> will just upload the file and render the file as defined by the display settings for the attached entity. However, images can harness the more advanced image features beyond just upload, such as <strong class="bold">Image Styles</strong>, to create transformations of the uploaded image. This functionality is detailed in <a href="B19491_11.xhtml#_idTextAnchor324"><span class="No-Break"><em class="italic">Chapter 11</em></span></a> and is largely automated for a content author who simply needs to upload <span class="No-Break">an image.</span></p>
+			<p><span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.8</em> also shows the <strong class="bold">Test media</strong> field. Each media field can have two primary authoring experiences, as described in <a href="B19491_11.xhtml#_idTextAnchor324"><span class="No-Break"><em class="italic">Chapter 11</em></span></a>. A standard media field provides a rudimentary experience that allows for a content author to select media from a listing categorized by media type. A more robust media library experience is possible from the entity’s form display settings if the module is enabled, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer104" class="IMG---Figure">
+					<img src="image/B19491_14_9.jpg" alt="Figure 14.9 – The Media Library field widget" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.9 – The Media Library field widget</p>
+			<p>The Media Library in Drupal <a id="_idIndexMarker484"></a>aims to provide a better, more intuitive media authoring experience. <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.9</em> shows the native integration for a specific media field, which can be configured by media type and optionally allows for the addition <span class="No-Break">of media.</span></p>
+			<p>Media also is supported for WYSIWYG by embedding media into the unstructured content. After enabling the <strong class="bold">Media </strong>and<strong class="bold"> Media Library</strong> modules, go to <strong class="source-inline">admin/config/content/formats</strong> and edit the desired text formats. Media can be added by moving the media button from the available buttons to the active toolbar and enabling the <strong class="bold">Enable Media</strong> setting within the desired text formats. The following figure shows this with an example <span class="No-Break">text format:</span></p>
+			<div>
+				<div id="_idContainer105" class="IMG---Figure">
+					<img src="image/B19491_14_10.jpg" alt="Figure 14.10 – Configuring media for WYSIWYG with the text format" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 14.10 – Configuring media for WYSIWYG with the text format</p>
+			<p>For users who have access<a id="_idIndexMarker485"></a> to the text format, their WYSIWYG should now have a <strong class="bold">Media Library</strong> button that opens the widget in <span class="No-Break"><em class="italic">Figure 14</em></span><em class="italic">.9</em>. After selecting media, it will be embedded within <span class="No-Break">WYSIWYG content.</span></p>
+			<p>Both menus and media offer experiences that directly impact content authors beyond just nodes. Providing access and properly enabling content authors to use both menus and media can help centrally manage two other important <span class="No-Break">D<a id="_idTextAnchor429"></a>rupal features.</span></p>
+			<h1 id="_idParaDest-232"><a id="_idTextAnchor430"></a>Summary</h1>
+			<p>Those building a Drupal application must not forget about content authors. The authoring experience is widely configurable and impacts nodes, menus, and digital assets. It is important to properly train, enable, and refine the experience for content authors to ensure the experience of using a Drupal application is intuitive, despite gaps in the experience between structured content and rendering. This gap can potentially be addressed by using Layout Builder, which is the focus of the <span class="No-Break">next chapter.</span></p>
+		</div>
+	</body>
+</html>

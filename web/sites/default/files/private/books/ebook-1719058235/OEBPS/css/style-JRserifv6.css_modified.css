@@ -1,0 +1,379 @@
+.book-content @font-face{
+font-family: "CourierStd.otf";
+  font-weight: normal;
+  font-style: normal;
+  src: url ("../Fonts/CourierStd.otf");
+}
+.book-content @font-face{
+font-family: "CourierStd.otf";
+  font-weight: bold;
+  font-style: normal;
+  src: url ("../Fonts/CourierStd-Bold.otf");
+}
+.book-content @font-face{
+font-family: "MinionPro";
+  font-weight: normal;
+  font-style: italic;
+  src: url ("../Fonts/MinionPro-It.otf");
+}
+.book-content @font-face{
+font-family: "MinionPro";
+  font-weight: normal;
+  font-style: normal;
+  src: url ("../Fonts/MinionPro-Regular.otf");
+}
+.book-content @font-face{
+font-family: "MyriadPro";
+  font-weight: bold;
+  font-style: normal;
+  src: url ("../Fonts/MyriadPro-Semibold.otf");
+}
+.book-content @font-face{
+font-family: "MyriadPro";
+  font-weight: bold;
+  font-style: italic;
+  src: url ("../Fonts/MyriadPro-SemiboldIt.otf");
+}
+.book-content @font-face{
+font-family: "MyriadPro";
+  font-weight: lighter;
+  font-style: italic;
+  src: url ("../Fonts/MyriadPro-LightIt.otf");
+}
+.book-content @font-face{
+font-family: "MyriadPro";
+  font-weight: lighter;
+  font-style: normal;
+  src: url ("../Fonts/MyriadPro-Light.otf");
+}
+.book-content p{
+margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: left;
+}
+.book-content article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary{
+display: block;
+}
+.book-content [hidden],
+template,
+.hidden{
+display: none;
+}
+.book-content .author-quote{
+text-align: left;
+  margin-left: 2rem;
+  page-break-before: always;
+}
+.book-content .author-quote-source{
+text-align: right;
+  font-style: italic;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.book-content h1{
+font-family: "MyriadPro", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.11rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-weight: lighter;
+}
+.book-content .H1---Chapter{
+font-family: "MyriadPro", sans-serif;
+  font-size: 1.65rem;
+  line-height: 1.24;
+  letter-spacing: 0.142rem;
+  margin-top: 2rem;
+  margin-bottom: 1.779rem;
+  text-align: left;
+  font-weight: lighter;
+}
+.book-content h2{
+font-family: "MyriadPro", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: 0.11rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: lighter;
+}
+.book-content h3{
+font-family: "MyriadPro", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  letter-spacing: 0.1rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.book-content h3.sub{
+font-family: "MyriadPro", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  letter-spacing: 0.1rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+.book-content h4{
+font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.35;
+  letter-spacing: 0.08rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.book-content a{
+color: #1EAEDB;
+}
+.book-content a:hover{
+color: #f37121;
+}
+.book-content ul{
+list-style: disc outside;
+}
+.book-content ol{
+list-style: decimal outside;
+}
+.book-content .upper-roman{
+list-style-type: upper-roman;
+}
+.book-content .lower-roman{
+list-style-type: lower-roman;
+}
+.book-content .Alphabets{
+list-style-type: upper-alpha;
+}
+.book-content ol,
+  ul{
+padding-left: 1.5rem;
+    margin-top: 0;
+    text-align: left;
+}
+.book-content ul ul,
+  ul ol,
+  ol ol,
+  ol ul{
+margin: 0 0 1.5rem 2rem;
+}
+.book-content li{
+margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+.book-content .callout-heading{
+font-family: "MyriadPro", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+.book-content .callout{
+font-family: "MyriadPro", sans-serif;
+    font-weight: lighter;
+    font-size: 0.87rem;
+}
+.book-content code,
+  kbd,
+  pre,
+  samp,
+  .source-code,
+  .source-inline,
+  .screen-inline,
+  sc-highlight{
+font-family: "CourierStd.otf", monospace;
+    font-size: 0.85rem;
+}
+.book-content pre{
+-epub-hyphens: none;
+    -epub-ruby-position: over;
+    font-size: 0.85rem;
+    line-height: 1.03rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    
+    margin-right: 0;
+    text-align: left;
+    text-decoration: none;
+    white-space: pre-wrap;
+}
+.book-content pre.source-code{
+margin-left: 1rem;
+}
+.book-content pre.console{
+font-family: "CourierStd.otf", monospace;
+    -epub-hyphens: none;
+    -epub-ruby-position: over;
+    font-size: 0.85rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 1.03rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    margin-left: 0.4rem;
+    margin-right: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0rem;
+}
+.book-content .source-code-heading{
+margin-top: 1rem;
+    border-bottom: 2px solid #424242;
+    font-weight: bold;
+}
+.book-content .source-code-link{
+font-family: "CourierStd.otf", monospace;
+    margin-top: 1rem;
+    border-top: 2px solid #424242;
+    font-style: italic;
+}
+.book-content span.highlight{
+font-family: "CourierStd.otf", monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.book-content span.keyword{
+font-weight: bold;
+}
+.book-content hr{
+-moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+.book-content a:active,
+  a:hover{
+outline: 0;
+}
+.book-content abbr[title]{
+border-bottom: 1px dotted;
+}
+.book-content b,
+  strong,
+  sc-highlight{
+font-weight: bold;
+}
+.book-content dfn,
+  .chapter-number,
+  .callout,
+  .callout-heading,
+  .author-quote{
+font-style: italic;
+}
+.book-content mark{
+background: #ff0;
+    color: #000;
+}
+.book-content small{
+font-size: 80%;
+}
+.book-content sub,
+  sup,
+  .subscript,
+  .superscript{
+font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+.book-content sup,
+  .superscript{
+vertical-align: super;
+}
+.book-content sub,
+  .subscript{
+vertical-align: sub;
+}
+.book-content img{
+border: 0;
+    max-width: 100%;
+}
+.book-content svg:not(:root){
+overflow: hidden;
+}
+.book-content div.IMG---Figure{
+margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    page-break-inside: avoid !important;
+    page-break-before: auto;
+}
+.book-content div.figure-logo{
+text-align: left;
+    width: 40%;
+    max-width: 40%;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-bottom: auto;
+    font-weight: normal;
+}
+.book-content .figure-caption{
+font-family: "MyriadPro", sans-serif;
+    text-align: center;
+    font-size: 0.91rem;
+    font-weight: lighter;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.book-content .IMG---Caption{
+font-family: "MyriadPro", sans-serif;
+    text-align: center;
+    font-size: 0.91rem;
+    font-weight: lighter;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.book-content a{
+word-break: break-word;
+}
+.book-content a.url{
+word-break: break-word;
+}
+.book-content a:hover{
+font-colour: orange;
+}
+.book-content .list-a1{
+list-style-type: upper-alpha;
+}
+.book-content .index-head{
+font-family: "MyriadPro", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    letter-spacing: 0.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-weight: bold;
+}
+.book-content .index-2{
+margin-left: 1em;
+}
+.book-content table,
+  td,
+  th{
+border: 1px solid;
+    vertical-align: top;
+    padding: 6px;
+}
+.book-content table{
+width: 100%;
+    border-collapse: collapse;
+}

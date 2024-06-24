@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_09</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_09">
+		<div id="_idContainer057">
+			<p><a id="_idTextAnchor262"></a></p>
+			<h1 id="_idParaDest-144" class="chapter-number"><a id="_idTextAnchor263"></a>9</h1>
+			<h1 id="_idParaDest-145"><a id="_idTextAnchor264"></a>Users, Roles, and Permissions</h1>
+			<p><a id="_idTextAnchor265"></a>Drupal can allow authenticated users to perform specific actions based on their granted permissions. This chapter presents Drupal’s user system and <strong class="bold">role-based access control</strong> (<strong class="bold">RBAC</strong>) mechanisms. Drupal can model user profiles, create specific roles for those users, and grant users assigned permissions. In an enterprise setting, Drupal developers need to understand how to configure the same Drupal application to serve different user personas and manage the access of each persona accordingly. This chapter covers how to address these use cases through the user, role, and <span class="No-Break">permissions capabilities.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Users</span></li>
+				<li><span class="No-Break">Roles</span></li>
+				<li><span class="No-Break">Permissions</span></li>
+			</ul>
+			<h1 id="_idParaDest-146"><a id="_idTextAnchor266"></a>Users</h1>
+			<p>Drupal core has a subsystem<a id="_idIndexMarker310"></a> for user management. The foundational feature serves as the tool in which users can access Drupal’s backend systems. This is fundamental for site builders and <span class="No-Break">content managers.</span><a id="_idTextAnchor267"></a></p>
+			<h2 id="_idParaDest-147"><a id="_idTextAnchor268"></a>User entity</h2>
+			<p>The user subsystem starts with the user <a id="_idIndexMarker311"></a>entity. This entity, like others, is built on top of the entity system and is afforded structured data and management for <span class="No-Break">Drupal users.</span></p>
+			<p>The user entity is fieldable. Enabling fields for users affords the ability for site builders to configure user profiles. By default, the user entity has a username, password, and email, all of which can’t be <a id="_idIndexMarker312"></a>modifiable but can be harnessed by the features in the <span class="No-Break">user subsystem<a id="_idTextAnchor269"></a>.</span></p>
+			<h2 id="_idParaDest-148"><a id="_idTextAnchor270"></a>Features</h2>
+			<p>The user subsystem has <a id="_idIndexMarker313"></a>several features that are built on top of the <span class="No-Break">user entity.</span></p>
+			<p>Users can log into Drupal to perform administrative actions and manage content, as well as site-building. This leverages the entity’s username and password. The following figure shows Drupal’s login form, which can be found at <strong class="source-inline">/user/login</strong> for those not already <span class="No-Break">logged in:</span></p>
+			<div>
+				<div id="_idContainer052" class="IMG---Figure">
+					<img src="image/B19491_09_1.jpg" alt="Figure 9.1 – Drupal’s default user login form" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 9.1 – Drupal’s default user login form</p>
+			<p>Those with valid credentials to the Drupal application can enter their username and password to log in and gain access to Drupal’s administrative backend. Also, note that Drupal can be configured to enable user registration, as shown in <span class="No-Break"><em class="italic">Figure 9</em></span><em class="italic">.1</em>. It is common to turn off<a id="_idIndexMarker314"></a> open user registration if a Drupal application does not have a use case that engages any user that accesses Drupal (for example, allowing a site visitor to make an account to <span class="No-Break">post comments).</span></p>
+			<p>Once a user is logged in, the user subsystem can perform authorization. This ensures that there are checks in place when a user tries to perform a specific action. This is different from authentication, which is tied to a user entering a valid username and password to log in. As one simple example, an authenticated user logs in with their username and password and then performs an action to manage other users. If the user is not granted access to manage users, the user will be blocked. Many Drupal features often respect user authorization. As an example, content types can have their permissions so that specific users can be assigned per <span class="No-Break">content type.</span></p>
+			<p>A user is a critical aspect of Drupal watchdog, which is its auditing and logging capability. One day, a Drupal application may be working effectively, but the next day, it is not. Consider the use case of someone who incorrectly updated a configuration on the Drupal application. It is important to understand what actions a user performed and when those actions occurred. Drupal’s user system is one of the underlying capabilities that helps surface<a id="_idIndexMarker315"></a> this information and ultimately helps ensure Drupal activity can <span class="No-Break">be audited.</span></p>
+			<p>Contact forms<a id="_idIndexMarker316"></a> are another user-related feature of Drupal. A contact form allows a user to publish their form, which ultimately sends a notification to the user. Contact forms can be used by other users or even anonymous site visitors. Contact forms are separate core modules that can be enabled or disabled based on the desired use case, but they can be a useful way to engage with a user. Consider a publication with authors – if someone wishes to reach out to the author of an article, a contact form can be useful in <span class="No-Break">those circumsta<a id="_idTextAnchor271"></a>nces.</span></p>
+			<h2 id="_idParaDest-149"><a id="_idTextAnchor272"></a>User management</h2>
+			<p>During Drupal’s installation, it creates the first administrative user. This user exists to afford full access to Drupal’s backend system, which is required for all initial site building and content <a id="_idIndexMarker317"></a>management. This user is often called “user 1” and is treated sensitively due to the full access the user <span class="No-Break">is granted.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">Do not remove user 1. This is often a safeguard for administrators to have an emergency account capable of addressing issues that arise. Access to the account should be reserved only for those with the greatest amount of access. This is similar to a <em class="italic">root user</em> on a Linux system. And, even those individuals should have their users so that they can effectively log and audit <span class="No-Break">system activity.</span></p>
+			<p>Managing users is only afforded to those with a role that has been granted permission to access after logging in. This feature exists in Drupal’s administrative backend at <strong class="source-inline">/admin/people</strong>, as seen in <a id="_idIndexMarker318"></a>the <span class="No-Break">following figure:</span></p>
+			<p> </p>
+			<div>
+				<div id="_idContainer053" class="IMG---Figure">
+					<img src="image/B19491_09_2.jpg" alt="" role="presentation" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 9.2 – Drupal’s user management listing</p>
+			<p>There are many useful functions on the user management listing. Several useful filters can help you rapidly search for a user, find users of specific roles, or identify which users are granted <span class="No-Break">specific permissions.</span></p>
+			<p><span class="No-Break"><em class="italic">Figure 9</em></span><em class="italic">.2</em> also shows how to add users, as demonstrated by the blue button at the top of the listing page. Clicking on this button prompts the following user management form, which can change based on the fields that have been configured <span class="No-Break">for users:</span></p>
+			<div>
+				<div id="_idContainer054" class="IMG---Figure">
+					<img src="image/B19491_09_3.jpg" alt="Figure 9.3 – Drupal’s user form" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 9.3 – Drupal’s user form</p>
+			<p>The user form has both profile-related fields, such as <strong class="bold">Picture</strong>, and functional fields, such as those for <strong class="bold">Username</strong>, <strong class="bold">Password</strong>, <strong class="bold">Roles</strong>, and <strong class="bold">Status</strong>. <strong class="bold">Status</strong> prevents a user from logging in if this is <a id="_idIndexMarker319"></a>set to <strong class="bold">Blocked</strong>. <strong class="bold">Roles</strong> grant system access, and <strong class="bold">Locale settings</strong> allow you to set a time zone and language when certain language-based modules are enabled. Note that the form in <span class="No-Break"><em class="italic">Figure 9</em></span><em class="italic">.3</em> will change based on the fields that are configured on the <span class="No-Break">user entity.</span></p>
+			<p>You may be concerned about a user being able to update the password of another user. It is conventional for a user to only be able to update their profile and must be explicitly granted access to update other users since this is often reserved for administrators. This capability can help perform manual password resets for administrative needs when a user forgets <span class="No-Break">their password.</span></p>
+			<p>Users are foundational in Drupal as they help people log in and access parts of Drupal. A user can have their data beyond system credentials, such as their name, address, or other relevant parts of their profile. And, Drupal has specific conventions, such as user 1, that are granted very high-level <a id="_idIndexMarker320"></a>administrative access upon installation. Next, we will cover roles, which help define different personas <span class="No-Break">for u<a id="_idTextAnchor273"></a>sers.</span></p>
+			<h1 id="_idParaDest-150"><a id="_idTextAnchor274"></a>Roles</h1>
+			<p>Roles are the<a id="_idIndexMarker321"></a> different user personas for the Drupal application and are granted to users that match that persona. An effective content management analogy ties to publications that have authors and editors. The two personas have two different functions: one to write content and one to review and approve content. In Drupal, a role is effective at establishing <span class="No-Break">different personas.</span></p>
+			<p>This goes beyond just content-related use cases as Drupal can also leverage roles for performing specific administrative actions. Consider a human resources use case where new joiners need accounts on the Drupal application or accounts need to be revoked for those who leave. A specific role can be established that is just able to <span class="No-Break">manage a<a id="_idTextAnchor275"></a>ccounts.</span></p>
+			<h2 id="_idParaDest-151"><a id="_idTextAnchor276"></a>Role entity</h2>
+			<p>Like a user, a role is an entity. It is a very simple configuration entity that only has a name and is not fieldable. Given <a id="_idIndexMarker322"></a>that the entity system allows for relationships between entities, a user entity has a one-to-many relationship with the role entity. Roles are configured to their <span class="No-Break">corresponding per<a id="_idTextAnchor277"></a>missions.</span></p>
+			<h2 id="_idParaDest-152"><a id="_idTextAnchor278"></a>Default roles</h2>
+			<p>After a standard installation, Drupal <a id="_idIndexMarker323"></a>has the <span class="No-Break">following roles:</span></p>
+			<ul>
+				<li><strong class="bold">Anonymous</strong>: A role that’s <a id="_idIndexMarker324"></a>automatically granted to those <a id="_idIndexMarker325"></a><span class="No-Break">not authenticated</span></li>
+				<li><strong class="bold">Authenticated</strong>: A role that’s<a id="_idIndexMarker326"></a> automatically granted to <span class="No-Break">any</span><span class="No-Break"><a id="_idIndexMarker327"></a></span><span class="No-Break"> user</span></li>
+				<li><strong class="bold">Content editor</strong>: A role that<a id="_idIndexMarker328"></a> can perform <span class="No-Break">content </span><span class="No-Break"><a id="_idIndexMarker329"></a></span><span class="No-Break">management</span></li>
+				<li><strong class="bold">Administrator</strong>: A role with full <a id="_idIndexMarker330"></a>control of the <span class="No-Break">Drupal </span><span class="No-Break"><a id="_idIndexMarker331"></a></span><span class="No-Break">application</span></li>
+			</ul>
+			<p>Authenticated and anonymous <a id="_idIndexMarker332"></a>are fixed roles and cannot be deleted, while a content editor and<a id="_idTextAnchor279"></a> <span class="No-Break">administrator can.</span></p>
+			<h2 id="_idParaDest-153"><a id="_idTextAnchor280"></a>Configuring roles</h2>
+			<p>You can<a id="_idIndexMarker333"></a> manage roles at <strong class="source-inline">admin/people/roles</strong>, as shown in the <span class="No-Break">following figure:</span></p>
+			<div>
+				<div id="_idContainer055" class="IMG---Figure">
+					<img src="image/B19491_09_4.jpg" alt="Figure 9.4 - Drupal’s role listing" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 9.4 - Drupal’s role listing</p>
+			<p>Clicking <strong class="bold">Edit</strong> on any of the roles allows you to change the name of the role. Clicking the <strong class="bold">+ Add role</strong> button opens a form that allows you to create a new role. Adding roles can address the various<a id="_idIndexMarker334"></a> personas found in the <span class="No-Break">Drupal application.</span></p>
+			<p>Roles are the personas that are assigned to a user to help Drupal understand what that user can do. Drupal furnishes several out-of-the-box roles but allows any role to be configured. Next, we’ll review permissions to help you understand how a role maps to specific actions i<a id="_idTextAnchor281"></a>n the <span class="No-Break">Drupal system.</span></p>
+			<h1 id="_idParaDest-154"><a id="_idTextAnchor282"></a>Permissions</h1>
+			<p>A permission is<a id="_idIndexMarker335"></a> an action that is granted to a role. Authorization happens when a user attempts to perform an action that is managed by permission. The role of that user is dereferenced and a set of aggregated permissions that have been granted to t<a id="_idTextAnchor283"></a>he user <span class="No-Break">are checked.</span></p>
+			<h2 id="_idParaDest-155"><a id="_idTextAnchor284"></a>Access control</h2>
+			<p>Drupal leverages<a id="_idIndexMarker336"></a> permissions as its means of access control. Users are assigned specific roles. Those roles have specific permissions assigned to them. Access control happens when a user attempts to act Drupal. Drupal will perform authorization based on the permissions granted to roles. As a simple example, the “manage users” permission can be granted to a role for <strong class="bold">human resources</strong> (<strong class="bold">HR</strong>), who are responsible for managing new hires or attrition. When one of the members of HR logs in and tries to go to Drupal’s user management page, they are granted access where other Drupal users <span class="No-Break">would not.</span></p>
+			<p class="callout-heading">Important note</p>
+			<p class="callout">It is good practice to implement a “least privilege” model for user management. If a user does not need to access parts of Drupal, they should not. This helps limit the scope of what a user can do and subsequently manages the risk of making <span class="No-Break">uni<a id="_idTextAnchor285"></a>ntentional mistakes.</span></p>
+			<h2 id="_idParaDest-156"><a id="_idTextAnchor286"></a>Types of permissions</h2>
+			<p>Permissions can be for any action in Drupal. Given that Drupal has a significant amount of capabilities even out of the box, it has a large number of permissions, and their types are broad. This affords<a id="_idIndexMarker337"></a> granular access control and can be helpful to address use cases that may <span class="No-Break">be niche.</span></p>
+			<p>A common type of permission is <a id="_idIndexMarker338"></a>content management. Drupal has <a id="_idIndexMarker339"></a>granularity often by entity or even by bundle. In the case of content types, permissions exist for every content type (bundle). Operations can change for each entity as well, which impacts the type of permissions. Content types exemplify this with granular permissions for viewing or editing that specific <span class="No-Break">content type.</span></p>
+			<p>Other types of permissions correlate to administrative functions. Each subsystem in Drupal has permissions that are tied to the functionality provided. One example that was covered in this<a id="_idIndexMarker340"></a> chapter is permissions tied to user management. More examples include accessing Drupal logs, configuring features of Drupal, and enabli<a id="_idTextAnchor287"></a>ng or <span class="No-Break">disabling projects.</span></p>
+			<h2 id="_idParaDest-157"><a id="_idTextAnchor288"></a>Managing permissions</h2>
+			<p>Permission <a id="_idIndexMarker341"></a>management happens through Drupal’s backend user interface behind Drupal’s user login. It is a site-building exercise, the results of which impact the configuration of a Drupal application. The following figure shows the user interface for this, which can be found <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/people/permissions</strong></span><span class="No-Break">:</span></p>
+			<div>
+				<div id="_idContainer056" class="IMG---Figure">
+					<img src="image/B19491_09_5.jpg" alt="Figure 9.5 – Drupal’s permission management page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 9.5 – Drupal’s permission management page</p>
+			<p>As we can see, permissions are <a id="_idIndexMarker342"></a>mapped to roles. Each permission is grouped by the type of permission. Given the large number and granularity of permissions, leveraging the browser’s native page search <a id="_idTextAnchor289"></a>for lists can <span class="No-Break">be useful.</span></p>
+			<h2 id="_idParaDest-158"><a id="_idTextAnchor290"></a>Permission definition</h2>
+			<p>Permissions are defined <a id="_idIndexMarker343"></a>by modules. Typically, permissions are statically defined in a module’s <strong class="source-inline">[module].permissions.yml</strong> file. Alternatively, a module can leverage Drupal’s framework to dynamically generate permissions. This is common for things that change, such as site builders, who develop new content types and then assign permissions per content type to specific roles. Given that a site builder can manage content types, the permissions cannot be <span class="No-Break">statically defined.</span></p>
+			<p>Modules<a id="_idIndexMarker344"></a> own specific functionality. Not only do they define the permissions, but the module contains the logic to enforce the permission. Permissions can be reused in modules since a module can define dependencies; a dependent module may define permission leveraged by another module. The following code block demonstrates enforcement logic for the manage <span class="No-Break">user permission:</span></p>
+			<pre class="source-code">
+if (\Drupal::currentUser()-&gt;hasPermission(&apos;manage users&apos;)) {
+&#160;&#160;&#160;&#160;// perform some action
+} else {
+&#160;&#160;&#160;&#160;// prevent user from performing some action
+}</pre>			<p>This code example can be embedded in any of the PHP code found in the module, which allows that module to check permissions within any of the functionality it provides. Note that user 1 is automatically authorized to perform <span class="No-Break">any action.</span></p>
+			<p>Permissions define<a id="_idIndexMarker345"></a> what actions a user can perform that are tied to their assigned roles. They are managed through Drupal’s administrative user interface for users who have been granted the correct access. Permissions are defined by the modules that also contain authorization logic within the code to check for permissions before executing certain actions. Setting up users, roles, and permissions in combination helps ensure users are granted capabilities <a id="_idTextAnchor291"></a>tied to their <span class="No-Break">desired persona.</span></p>
+			<h1 id="_idParaDest-159"><a id="_idTextAnchor292"></a>Summary</h1>
+			<p>Users, roles, and permissions help Drupal manage access for various personas. These features are used by Drupal to provide fine-grained access controls to users of the Drupal system. Drupal can then perform authorization tied to specific system actions. These features exemplify Drupal’s extensibility for use cases tied to various personas and the specific actions each persona can be allowed to perform. Drupal’s modules help define the actions as permissions and the logic to authorize actions. The next chapter covers a complex but powerful feature in Drupal called <strong class="bold">Views</strong> that is used to create dynamic <span class="No-Break">content displays.</span></p>
+		</div>
+	</body>
+</html>

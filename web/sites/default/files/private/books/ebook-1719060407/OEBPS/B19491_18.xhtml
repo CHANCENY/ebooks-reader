@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_18</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_18">
+		<div id="_idContainer130">
+			<h1 id="_idParaDest-275" class="chapter-number"><a id="_idTextAnchor510"></a>18</h1>
+			<h1 id="_idParaDest-276"><a id="_idTextAnchor511"></a>Module Development</h1>
+			<p><a id="_idTextAnchor512"></a>The 80/20 rule in Drupal relies heavily on having a robust development framework to address functional gaps found in the 20%. While some of the 20% effort applies to visual theming, enterprise Drupal applications often require customization. Drupal modules offer this capability. Modules<a id="_idIndexMarker570"></a> can integrate with third-party services, add custom business logic, define unique data structures, or develop workflows when something happens within the Drupal application. Modules help developers create custom modules for Drupal applications or contribute to modules found in drupal.org for core and contributed use cases. Learning how to code can be complex, but this chapter offers an overview to help with the basics of developing a Drupal module. A comprehensive guide on developing Drupal modules is a far greater subject and one that is covered in depth by <span class="No-Break">other books.</span></p>
+			<p>In this chapter, we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li><span class="No-Break">Concepts</span></li>
+				<li><span class="No-Break">Design patterns</span></li>
+				<li><span class="No-Break">Module definitions</span><a id="_idTextAnchor513"></a><a id="_idTextAnchor514"></a></li>
+			</ul>
+			<h1 id="_idParaDest-277"><a id="_idTextAnchor515"></a>Concepts</h1>
+			<p>Drupal offers a robust development <a id="_idIndexMarker571"></a>framework in core that allows for the creation of modules. All types of modules leverage the same framework. A module can be found in core, be contributed to drupal.org, or be a custom module that exists only for a specific use case found in a Drupal application. Use of the framework promotes consistency and helps readily learn <span class="No-Break">across modules.</span></p>
+			<p>Modules are<a id="_idIndexMarker572"></a> set up as projects. Drupal core offers the ability to manage projects per application. This handles the installation, enabling, and disabling of projects. Some <a id="_idIndexMarker573"></a>projects are intended for specific use cases only, such as debugging on a local system or performing testing on a non-production environment. This allows the same module to exist in a code base but to be managed within a specific application or environment of <span class="No-Break">that application.</span></p>
+			<p>As a reminder from <a id="_idIndexMarker574"></a>earlier chapters, module development should observe the 80/20 rule. Developing Drupal applications starts with site building. Normally, this covers a high percentage of use cases (80%). The remainder, also known as the 20%, should be completed by leveraging custom modules and/or themes. It is only after the site building has occurred and known gaps exist should module <span class="No-Break">development hap<a id="_idTextAnchor516"></a>pen.</span></p>
+			<h2 id="_idParaDest-278"><a id="_idTextAnchor517"></a>Early Drupal concepts</h2>
+			<p>Drupal <a id="_idIndexMarker575"></a>modules <a id="_idIndexMarker576"></a>are all about conventions. Each module has its own directory in a specific part of the application’s code base (<strong class="source-inline">/modules</strong>). The code inside of the module has specific files and naming conventions to be considered a module. Even the code itself has specific standards for comments, style, <span class="No-Break">and more.</span></p>
+			<p>Much like PHP, Drupal has gone through a transformation. During its inception, PHP was used as a scripting language. The development practices were <a id="_idIndexMarker577"></a>known as <strong class="bold">procedural</strong>, given that the code was executed sequentially from when the script was loaded. Libraries could be created and included in PHP scripts, organized by functions and with global variables. Drupal 7 was the last major version of Drupal that primarily leveraged <span class="No-Break">procedural PHP.</span></p>
+			<p>To this day, there are still module concepts in Drupal that are procedural. The most obvious example for modules is known as<a id="_idIndexMarker578"></a> the <strong class="bold">hook system</strong>. At a high level, a hook is a naming convention for a function that can be considered a specific event that either core or another module defines and invokes. Some event examples include overriding a form definition, CRUD for entities, a user logging in, and more. A module defines the hook by providing a unique name for the hook and its parameters. It is common for the defining module to have a <strong class="source-inline">*.api.php</strong> file (example: <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Form%21form.api.php/10">https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Form%21form.api.php/10</a>) that provides examples for hooks and their usage. A calling module leverages the specific naming convention within its own <strong class="source-inline">.module</strong> or included PHP file to invoke the hook. This will be demonstrated in <span class="No-Break">code<a id="_idTextAnchor518"></a> later.</span></p>
+			<h2 id="_idParaDest-279"><a id="_idTextAnchor519"></a>Modern Drupal concepts</h2>
+			<p>Modern PHP has shifted to <strong class="bold">object-oriented</strong> development practices (<a href="https://www.php.net/manual/en/language.oop5.php">https://www.php.net/manual/en/language.oop5.php</a>). Starting with Drupal 8, Drupal also started adopting <a id="_idIndexMarker579"></a>object-oriented PHP. Following several other<a id="_idIndexMarker580"></a> PHP communities, Drupal was able to replace some of its foundational code with Symfony components, commonly adopted by the broader PHP ecosystem. The Symfony components introduced their own best practices and coding paradigms beyond the existing module conventions in Drupal. This includes the use of Composer, which is a standard for managing code in <span class="No-Break">PHP applications.</span></p>
+			<p>Object-oriented development replaced several earlier aspects of module development. Hooks and procedural code have been gradually deprecated (flagged for removal and subsequently removed in later releases) by object-oriented<a id="_idIndexMarker581"></a> alternatives such as <strong class="bold">EventSubscribers</strong>, <strong class="bold">Controllers</strong>, and <strong class="bold">Services</strong>. Drupal 8 introduced this new architecture and was a <a id="_idIndexMarker582"></a>significant refactoring of Drupal core. Each major version of Drupal continues <a id="_idIndexMarker583"></a>to deprecate more procedural code in favor of object orientation. This is the kind of maintenance one can expect when keeping a module up <span class="No-Break">to date.</span></p>
+			<p>Drupal 10 module development covers both procedural and object-oriented development practices, largely through the introduction of Symfony components in Drupal 8. Module developers can expect Drupal-specific conventions and common development paradigms brought in from Symfony and the broader <span class="No-Break">P<a id="_idTextAnchor520"></a>HP ecosystem.</span></p>
+			<h1 id="_idParaDest-280"><a id="_idTextAnchor521"></a>Common patterns</h1>
+			<p>As mentioned, all Drupal modules follow <a id="_idIndexMarker584"></a>specific conventions and patterns that bring uniformity across core, contributed, and custom modules. While not exhaustive, there are some common patterns used <span class="No-Break">w<a id="_idTextAnchor522"></a>ithin modules.</span></p>
+			<h2 id="_idParaDest-281"><a id="_idTextAnchor523"></a>PHP patterns</h2>
+			<p>Object-oriented PHP makes <a id="_idIndexMarker585"></a>use of<a id="_idIndexMarker586"></a> PSR standards (<a href="https://www.php-fig.org/psr/">https://www.php-fig.org/psr/</a>). PSR-4, which deprecated PSR-0, is a method of autoloading files. This is how Drupal modules, Symfony, and other PHP applications can make use of specific filenames and paths to load files. Files loaded in specific paths help register the code of specific patterns. For instance, a new service class can be placed in a <strong class="source-inline">src/Service</strong> directory to register <span class="No-Break">a service.</span></p>
+			<p>Namespaces are PHP conventions used to organize classes, which are leveraged by Drupal modules. Every auto-loaded file makes use of this pattern, as demonstrated by a namespace for a <span class="No-Break"><strong class="source-inline">MyService</strong></span><span class="No-Break"> class:</span></p>
+			<pre class="source-code">
+namespace <strong class="bold">Drupal\my_module</strong>\Service;</pre>			<p>Every class in a module uses the same base namespace to keep code organized, as shown in bold here. Other classes can then readily reference the object, as demonstrated by the <span class="No-Break">following examples:</span></p>
+			<p>Here’s an example leveraging a <strong class="source-inline">use</strong> statement <span class="No-Break">with namespaces:</span></p>
+			<pre class="source-code">
+use Drupal\user\Entity\User;
+$user = User::load(\Drupal::currentUser()-&gt;id());</pre>			<p>Here’s an example leveraging a <span class="No-Break">full namespace:</span></p>
+			<pre class="source-code">
+$user = \Drupal\user\Entity\User::load(\Drupal::currentUser()-&gt;id());</pre>			<p>Both examples show how the <strong class="source-inline">User</strong> entity class is loaded from the namespace furnished by the <span class="No-Break">user module.</span></p>
+			<p>Composer <a id="_idIndexMarker587"></a>helps Drupal assemble code from the PHP ecosystem. Every<a id="_idIndexMarker588"></a> Drupal application has a <strong class="source-inline">composer.json</strong> file that defines what version of core and contributed modules exist. It also defines dependencies of core, which brings in the various Symfony components. Drupal modules also make use of <strong class="source-inline">Composer.json</strong>. This pattern allows for modules to have their own dependencies for other modules or even other PHP projects. A module’s <strong class="source-inline">Composer.json</strong> file is exemplified by the Password Strength module (<a href="https://git.drupalcode.org/project/password_strength/-/blob/8.x-2.x/composer.json?ref_type=heads">https://git.drupalcode.org/project/password_strength/-/blob/8.x-2.x/composer.json?ref_type=heads</a>), which harnesses a third-party library for <span class="No-Break">scoring passwords:</span></p>
+			<pre class="source-code">
+{
+&#160;&#160;&quot;name&quot;: &quot;drupal/password_strength&quot;,
+&#160;&#160;&quot;description&quot;: &quot;Integrates the Password Strength into Drupal&apos;s Password Policy module.&quot;,
+&#160;&#160;&quot;type&quot;: &quot;drupal-module&quot;,
+&#160;&#160;&quot;require&quot;: {
+&#160;&#160;&#160;&#160;&quot;bjeavons/zxcvbn-php&quot;: &quot;^1.3&quot;,
+&#160;&#160;&#160;&#160;&quot;drupal/password_policy&quot;: &quot;^3.1|^4.0&quot;
+&#160;&#160;}
+}</pre>			<p>The example <a id="_idIndexMarker589"></a>demonstrates the basic metadata of the module with a name, description, <span class="No-Break">and </span><span class="No-Break"><a id="_idIndexMarker590"></a></span><span class="No-Break">type.</span></p>
+			<h2 id="_idParaDest-282"><a id="_idTextAnchor524"></a>Symfony capabilities</h2>
+			<p>New development patterns were<a id="_idIndexMarker591"></a> introduced by underlying<a id="_idIndexMarker592"></a> Symfony capabilities. While not exhaustive, several of them are commonly used in <span class="No-Break">Drupal modules:</span></p>
+			<ul>
+				<li><strong class="bold">Events</strong>: Modules often <a id="_idIndexMarker593"></a>leverage interfaces for <strong class="bold">EventSubscriber</strong> and <strong class="bold">EventDispatcher</strong> to <a id="_idIndexMarker594"></a>register and listen to events. While <a id="_idIndexMarker595"></a>modules still define and implement hooks for a <a id="_idIndexMarker596"></a>similar purpose, many of the newer Drupal subsystems, such as configuration management, harness events over hooks. More information can be found on drupal.org (<a href="https://www.drupal.org/docs/develop/creating-modules/subscribe-to-and-dispatch-events">https://www.drupal.org/docs/develop/creating-modules/subscribe-to-and-dispatch-events</a>), which explains<a id="_idIndexMarker597"></a> these differences in <span class="No-Break">greater detail.</span></li>
+				<li><strong class="bold">Routes</strong>: Drupal has <a id="_idIndexMarker598"></a>implemented the routing concept from <a id="_idIndexMarker599"></a>Symfony. Modules can define a <strong class="source-inline">.routing.yml</strong> file to statically define paths for the Drupal application. Those paths are triggered by a browser through the URL of the request. Routes can invoke both Drupal and Symfony capabilities from controllers, direct calls to services, rendering forms, viewing an entity, and more. It also has configuration for various access controls. More<a id="_idIndexMarker600"></a> information can be found on <span class="No-Break">drupal.org (</span><a href="https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes"><span class="No-Break">https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes</span></a><span class="No-Break">).</span></li>
+				<li><strong class="bold">Controllers</strong>: Symfony harnesses a controller as a means of configuring a request, defining how that request is processed, and returning a response. Controllers<a id="_idIndexMarker601"></a> are classes<a id="_idIndexMarker602"></a> that can process routes, invoke services, perform redirects, and return various forms of response classes based on the use case. Various conventions can be used, such as specific types of code comments, that can help define how the class <span class="No-Break">should function.</span></li>
+				<li><strong class="bold">Services</strong>: A lot of procedural processing logic that would commonly be found in a <strong class="source-inline">.module</strong> file, which is a conventional PHP file found in a module, has been moved into services. A service<a id="_idIndexMarker603"></a> is a specific type of class that is registered<a id="_idIndexMarker604"></a> in a <strong class="source-inline">services.yml</strong> file within the configuration of a module. This helps any module invoke the same code in a service over duplicating code <span class="No-Break">within modules.</span></li>
+				<li><strong class="bold">Container</strong>: A service container<a id="_idIndexMarker605"></a> is a Symfony construct that exists to <a id="_idIndexMarker606"></a>register all services for the application. This registration model helps centralize how services are managed and can control how they are implemented. This is often the underlying tool that enables modules to invoke services <span class="No-Break">within Drupal.</span></li>
+				<li><strong class="bold">Dependency injection</strong>: Controllers <a id="_idIndexMarker607"></a>and plugin classes often <a id="_idIndexMarker608"></a>define their dependent services and parameters that can avoid calling the services container. This pattern harnesses configuration to define the relevant services and their parameters. Registering dependent services is more performa<a id="_idTextAnchor525"></a>nt and recommended as <span class="No-Break">best practice.</span></li>
+			</ul>
+			<h2 id="_idParaDest-283"><a id="_idTextAnchor526"></a>Drupal patterns</h2>
+			<p>As an application, Drupal <a id="_idIndexMarker609"></a>may harness Symfony components, but it does <a id="_idIndexMarker610"></a>maintain its own specific patterns based on <span class="No-Break">Drupal-specific features.</span></p>
+			<p>Drupal modules have their own standards beyond just the Symfony capabilities. First, a module is encapsulated in its own directory. This directory has all of the configuration and code for the module. The configuration and code often follow specific naming conventions, as previously mentioned. Each module often has its own <strong class="source-inline">composer.json</strong> file. Modules apply the PSR-4 standard from the module’s <strong class="source-inline">src</strong> directory given the need for autoloading and leveraging Symfony conventions from within a module. These specific Drupal conventions for a module still work very similarly to other PHP communities but support the modularity <span class="No-Break">Drupal promotes.</span></p>
+			<p>Drupal has a novel object-oriented Plugin API that harnesses PSR standards to extend Drupal features. A plugin type defines the expected code and conventions to extend a feature and then a plugin is an instance of the plugin type with its own class, specific functions relevant to the plugin type, and associated metadata. A plugin harnesses annotations in coding comments to provide the metadata of the plugin. Plugin Managers perform the central management of plugins and types and are also extensible. Many core features harness the plugin pattern to allow modules to extend specific features, such as specific Views features, field formatters, blocks, conditions, and more. The use of plugins is very common in <a id="_idIndexMarker611"></a>Drupal modules and is well documented on <span class="No-Break">drupal.org (</span><a href="https://www.drupal.org/docs/drupal-apis/plugin-api"><span class="No-Break">https://www.drupal.org/docs/drupal-apis/plugin-api</span></a><span class="No-Break">).</span></p>
+			<p>The submodules pattern is another pattern specific to Drupal. A submodule is often an optional feature that comes packaged with a module. This is common for UI modules that can be turned on or off if a UI is needed. Submodules are often just directories within a module and follow all other module conventions. An example can be seen with the source code of the Password Policy module (<a href="https://git.drupalcode.org/project/password_policy">https://git.drupalcode.org/project/password_policy</a>) given each submodule is a specific rule that can be enabled as needed to enforce specific <span class="No-Break">password validation.</span></p>
+			<p>As mentioned, even with the move to object-oriented code, Drupal still leverages hooks within modules. A module can define its own hooks to extend Drupal’s framework. Drupal modules can also extend hooks by following specific naming conventions of functions commonly found in the <strong class="source-inline">modules .module</strong> file. Hooks provide a procedural pattern for registering an event and having listeners from any <span class="No-Break">Drupal module.</span></p>
+			<p>Automated tests are also recommended in modules to ensure code is tested when it changes or is maintained. This is an in-depth topic with several different patterns and operational differences from standard Drupal application functionality. Drupal harnesses the PHPUnit framework as a significant part of its automated testing. Module developers have various interfaces to use based on the type of testing desired. This includes unit tests, kernel tests, functional tests, browser tests, and more. Drupal also has testing standards for JavaScript. These tools provide fundamental features, such as mocking, that work with Drupal and Symfony features (services, controllers, etc.). Drupal.org covers a significant amount of information on automated testing within their documentation for<a id="_idIndexMarker612"></a> <span class="No-Break">modules (</span><a href="https://www.drupal.org/docs/develop/automated-testing"><span class="No-Break">https://www.drupal.org/docs/develop/automated-testing</span></a><span class="No-Break">).</span></p>
+			<p>Drupal modules<a id="_idIndexMarker613"></a> use common patterns that help define expected conventions. While Drupal has its own <a id="_idIndexMarker614"></a>patterns, Drupal builds upon existing patterns from both PHP and Composer. All of these help ensure there is consistency, uniformity, and validated patterns for developers to follow when addressin<a id="_idTextAnchor527"></a>g the specific use cases of <span class="No-Break">the application.</span></p>
+			<h1 id="_idParaDest-284"><a id="_idTextAnchor528"></a>Module definitions</h1>
+			<p>One of the most direct ways to<a id="_idIndexMarker615"></a> understand these concepts is to see actual code. For example, the following fake <strong class="source-inline">hotel_feed</strong> module demonstrates various Drupal module capabilities based on a public, free API of hotel <span class="No-Break">information<a id="_idTextAnchor529"></a> (</span><a href="https://rapidapi.com/apidojo/api/hotels4"><span class="No-Break">https://rapidapi.com/apidojo/api/hotels4</span></a><span class="No-Break">).</span></p>
+			<h2 id="_idParaDest-285"><a id="_idTextAnchor530"></a>Configuration</h2>
+			<p>The following files demonstrate the standard configuration<a id="_idIndexMarker616"></a> found in a <span class="No-Break">Drupal module:</span></p>
+			<ul>
+				<li><strong class="source-inline">composer.json</strong>: Maintains the module’s <span class="No-Break">composer definitions:</span><pre class="source-code">
+{
+&#160;&#160;&quot;name&quot;: &quot;drupal/hotel_feed&quot;,
+&#160;&#160;&quot;description&quot;: &quot;A sample module that processes and renders hotel information from a feed.&quot;,
+&#160;&#160;&quot;type&quot;: &quot;drupal-module&quot;,
+&#160;&#160;&quot;require&quot;: {
+&#160;&#160;}
+}</pre></li>				<li><strong class="source-inline">hotel_feed.info.yml</strong>: Maintains the module’s <span class="No-Break">high-level metadata:</span><pre class="source-code">
+name: Hotel Feed
+type: module
+description: A sample module that processes and renders hotel information from a feed.
+core: 10.x
+package: Custom</pre></li>				<li><strong class="source-inline">hotel_feed.services.yml</strong>: Defines the Symfony services that exist in <span class="No-Break">the module:</span><pre class="source-code">
+services:
+&#160;&#160;hotel_feed.information_service:
+&#160;&#160;&#160;&#160;class: Drupal\hotel_feed\Service\InformationService</pre></li>				<li><strong class="source-inline">hotel_feed.routing.yml</strong>: Provides <a id="_idIndexMarker617"></a>the routes defined by <span class="No-Break">the module:</span><pre class="source-code">
+hotel_feed.search:
+&#160;&#160;path: &apos;/find-hotels/{location}&apos;
+&#160;&#160;defaults:
+&#160;&#160;&#160;&#160;_controller: &apos;\Drupal\hotel_feed\Controller\SearchHotelController:find&apos;
+&#160;&#160;&#160;&#160;_title: &apos;Search hotels&apos;
+&#160;&#160;requirements:
+&#160;&#160;&#160;&#160;_permission: &apos;search hotels&apos;</pre></li>				<li><strong class="source-inline">hotel_feed.permissions.yml</strong>: Defines<a id="_idIndexMarker618"></a> the permissions provided by <span class="No-Break">the module:</span><pre class="source-code">
+search hotels:
+&#160;&#160;title: &apos;Search hotels&apos;
+&#160;&#160;descr<a id="_idTextAnchor531"></a>iption: &apos;Be able to search hotels by location.&apos;</pre></li>			</ul>
+			<h2 id="_idParaDest-286"><a id="_idTextAnchor532"></a>PHP code</h2>
+			<p>Drupal modules contain PHP <a id="_idIndexMarker619"></a>files tied to the expected patterns, some of which are <span class="No-Break">demonstrated here:</span></p>
+			<ul>
+				<li><strong class="source-inline">hotel_feed.module</strong>: The standard file in which hooks are invoked and procedural code can <span class="No-Break">be found:</span><pre class="source-code">
+&lt;?php
+/**
+ * Implements hook_theme().
+ */
+function hotel_feed_theme($existing, $type, $theme, $path) {
+&#160;&#160;return [
+&#160;&#160;&#160;&#160;&apos;hotel_feed.search&apos; =&gt; [
+&#160;&#160;&#160;&#160;&#160;&#160;&apos;render element&apos; =&gt; &apos;children&apos;,
+&#160;&#160;&#160;&#160;&#160;&#160;&apos;variables&apos; =&gt; [
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&apos;location&apos; =&gt; &apos;New York, New York&apos;,
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&apos;results&apos; =&gt; [],
+&#160;&#160;&#160;&#160;&#160;&#160;],
+&#160;&#160;&#160;&#160;],
+&#160;&#160;];
+}</pre></li>				<li><strong class="source-inline">src/Controller/SearchHotelController.php</strong>: An<a id="_idIndexMarker620"></a> example <span class="No-Break">controller file:</span><pre class="source-code">
+&lt;?php
+namespace Drupal\hotel_feed\Controller;
+use Drupal\Core\Controller\ControllerBase;
+/**
+ * A controller to search hotels.
+ */
+class SearchHotelController extends ControllerBase {
+&#160;&#160;/**
+&#160;&#160;&#160;* Returns a render array for a search page.
+&#160;&#160;&#160;*/
+&#160;&#160;public function find($location) {
+&#160;&#160;&#160;&#160;$results = \Drupal::service(&apos;hotel_feed.search&apos;)
+&#160;&#160;&#160;&#160;&#160;&#160;-&gt;find($location);
+&#160;&#160;&#160;&#160;return [
+&#160;&#160;&#160;&#160;&#160;&#160;// Your theme hook name.
+&#160;&#160;&#160;&#160;&#160;&#160;&apos;#theme&apos; =&gt; &apos;hotel_find.show_hotels&apos;,
+&#160;&#160;&#160;&#160;&#160;&#160;&apos;#results =&gt; $results,
+&#160;&#160;&#160;&#160;&#160;&#160;&apos;#location =&gt; $location
+&#160;&#160;&#160;&#160;];
+&#160;&#160;}
+}</pre></li>				<li><strong class="source-inline">src/Service/InformationService.php</strong>: A file <a id="_idIndexMarker621"></a>exemplifying <span class="No-Break">a service:</span><pre class="source-code">
+&lt;?php
+namespace Drupal\hotel_feed;
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\Finder\Finder;
+class InformationService extends ServiceProviderBase {
+&#160;&#160;public function find(string $location) {
+&#160;&#160;&#160;&#160;$response = \Drupal::httpClient()
+&#160;&#160;&#160;&#160;&#160;-&gt;get(&apos;https://hotels4.p.rapidapi.com/locations/v3/search&apos;, [
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&apos;q&apos; =&gt; $location,
+&#160;&#160;&#160;&#160;&#160;&#160;]);
+&#160;&#160;&#160;&#160;$json_string = (string) $response-&gt;get<a id="_idTextAnchor533"></a>Body();
+&#160;&#160;&#160;&#160;return json_decode($json_string);
+&#160;&#160;}
+}</pre></li>			</ul>
+			<h2 id="_idParaDest-287"><a id="_idTextAnchor534"></a>Templates</h2>
+			<p>Templates provide the markup<a id="_idIndexMarker622"></a> that bridges theming and rendering in a specific Twig <span class="No-Break">format (</span><a href="https://twig.symfony.com/"><span class="No-Break">https://twig.symfony.com/</span></a><span class="No-Break">):</span></p>
+			<p><strong class="source-inline">templates/hotel_feed.show_hotels.html.twig</strong>: Shows the markup of the listing mapped to the data in <span class="No-Break">the service:</span></p>
+			<pre class="source-code">
+&lt;p&gt;You searched for this text: &lt;b&gt;{{ location }}&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&#160;&#160;{% for item in results %}
+&#160;&#160;&#160;&#160;&lt;li&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;{{ item }}
+&#160;&#160;&#160;&#160;&lt;/li&gt;
+&#160;&#160;{% endfor %}
+&lt;/ul&gt;</pre>			<p>The example module showed a simple use case tied to a hotel web service feed that demonstrated PHP code, Twig templates, and the common configuration files found in a module. While the demonstration files are not comprehensive, they are intended to show some of the pat<a id="_idTextAnchor535"></a>terns and provide a starting example to <span class="No-Break">build from.</span></p>
+			<h1 id="_idParaDest-288"><a id="_idTextAnchor536"></a>Summary</h1>
+			<p>Developing modules in Drupal is an important way to solve the 80/20 rule and to contribute back to the community. Drupal has a robust framework that allows for modules to extend out of the box Drupal and observe standard conventions that all modules follow. Modules often make use of patterns in both Symfony and Drupal. Modules have defined best practices across configuration, PHP code, and more through constructs such as the <strong class="source-inline">composer.json</strong> file, automated tests, <span class="No-Break">and more.</span></p>
+			<p>The next chapter explores theme development in Drupal, important for the visual styling of a <span class="No-Break">Drupal application.</span></p>
+		</div>
+	</body>
+</html>

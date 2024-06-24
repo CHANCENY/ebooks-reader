@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" xmlns:epub="http://www.idpf.org/2007/ops">
+	<head>
+		<title>B19491_06</title>
+		<link href="css/style-JRserifv6.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="B19491_06">
+		<div id="_idContainer036">
+			<h1 id="_idParaDest-84" class="chapter-number"><a id="_idTextAnchor141"></a>6</h1>
+			<h1 id="_idParaDest-85"><a id="_idTextAnchor142"></a>Bootstrapping, Installing, <br />and Configuring a New <br />Drupal Project</h1>
+			<p><a id="_idTextAnchor143"></a>All Drupal developers must have the fundamental skills to create Drupal applications, install them, and perform configuration. This would be considered all of the best practices to getting started with building Drupal. Drupal 10 has various practices to start new projects.  A new codebase must be established, which requires understanding the basics of Composer, starting a Drupal project, and a series of commands frequently used to manage code. Next will be reviewing Drupal’s installation options, including use of Drush and recipes which are new in Drupal 10. The results of the installer will be reviewed that includes settings.php, a sites directory, a writable files directory, and more. The reader will then learn about how to change out-of-the-box Drupal settings like site, notification, caching, logging, regional, cron, and filesystem. Finally, the user will be introduced to the help section and <span class="No-Break">status pages.</span></p>
+			<p>In this chapter we’re going to cover the following <span class="No-Break">main topics:</span></p>
+			<ul>
+				<li>Establishing a <span class="No-Break">new codebase</span></li>
+				<li><span class="No-Break">Installing Drupal</span></li>
+				<li>Out-of-the-box <span class="No-Break">Drupal building</span></li>
+				<li><span class="No-Break">Basic configuration</span></li>
+				<li>Help, logs, <span class="No-Break">and reporting</span></li>
+			</ul>
+			<h1 id="_idParaDest-86"><a id="_idTextAnchor144"></a>Establishing a new codebase</h1>
+			<p>The first step of<a id="_idIndexMarker175"></a> creating a new Drupal application is creating the codebase. And, Drupal leverages Composer to manage its code, including provisioning a <span class="No-Break">new codebase.</span><a id="_idTextAnchor145"></a></p>
+			<h2 id="_idParaDest-87"><a id="_idTextAnchor146"></a>What is Composer?</h2>
+			<p>Composer is a<a id="_idIndexMarker176"></a> command-line tool used to manage code in a Drupal application. Composer is not just for Drupal. Drupal adopted Composer because it is used to manage code across many PHP-based projects. This is especially helpful to manage Drupal dependencies, like Symfony projects. And, it works natively with projects hosted on Drupal.org and thus can readily manage core and <span class="No-Break">community projects.</span></p>
+			<p>Composer requires two primary constructs to function, a “composer.json” file and a “composer.lock” file. Applications are composed <a id="_idIndexMarker177"></a>of various projects and those projects are, typically, managed<a id="_idIndexMarker178"></a> by Git. A built application is basically a series of projects cloned at a specific commit. The project and commit-level metadata is stored in the composer.lock file, to best understand what is currently installed in an application. Alternatively, composer.json helps maintain the logic for what code gets built when you update the codebase. This defines which projects are loaded and what versions are acceptable to download. Acceptance is determined through Composer’s native constraints which adds logic for specifying which code to download when an application is built. As an example, a release “10.0.2” can be hardcoded for Drupal core. But, to automatically pull in all Drupal 10 minor updates, a constraint like “^10” would allow for any core update in Drupal 10 but not Drupal 11.  Understanding constraints and being intentional with what releases are loaded can help provide a responsible maintenance strategy that does not unintentionally load code that could break a <span class="No-Break">Drupal application.</span></p>
+			<p>Drupal has a slightly unique implementation with <a id="_idIndexMarker179"></a>Composer to ensure it works with the architecture of core, contributed, and custom projects. Every project, including core, can define its own dependencies. This means that Composer has to cascade and resolve dependencies across all of the provided projects and their dependencies. At the root of an application, a fundamental composer.json exists for the entire Drupal application. When built, code is loaded into a subdirectory (commonly web or docroot) that should be bootstrapped by the web server. Dependencies are also loaded into a vendor directory, which is bootstrapped by Drupal. This setup is incredibly useful for projects to load dependencies throughout the PHP ecosystem, of which projects exist for countless system integrations or specific problems that someone may want to incorporate into their <span class="No-Break">Drupal application.</span></p>
+			<p>Drupal 10 and Composer are tightly coupled. Understanding how to effectively use Composer is time <span class="No-Break">well sp<a id="_idTextAnchor147"></a>ent.</span></p>
+			<h2 id="_idParaDest-88"><a id="_idTextAnchor148"></a>Composer projects</h2>
+			<p>Composer has built in capabilities to<a id="_idIndexMarker180"></a> provision new applications through its project template functionality. This is what Drupal harnesses for creating the initial codebase for <span class="No-Break">an application.</span></p>
+			<p>A very simple Drupal 10 application can be provisioned with the <span class="No-Break">following command:</span></p>
+			<pre class="console">
+$ composer create-project drupal/recommended-project</pre>			<p><br />The command will load the most recent Drupal core release and in a <span class="No-Break">default directory.</span></p>
+			<p>The command can be extended in a number of ways. The following command loads a specific version of Drupal core, 10.0.2, and into a specific <span class="No-Break">directory, my_directory.</span></p>
+			<pre class="console">
+$ composer create-project drupal/recommended-project:10.0.2 my_directory</pre>			<p>Be mindful that Composer can run on different systems, including a local system and hosted environments. The version of PHP should be the same across all of these. To enforce this, the following command can be run exemplified by <span class="No-Break">PHP 8.0.7:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$composer config platform.php 8.0.7</pre>			<p><br />Composer.json can also be manually updated with the following code exemplified by PHP <span class="No-Break">8.0.7 below.</span></p>
+			<pre class="source-code">
+&quot;config&quot;: {
+&#160;&#160;&#160;&#160;&quot;platform&quot;: {
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;php&quot;: &quot;8.0.7&quot;
+&#160;&#160;<a id="_idTextAnchor149"></a>&#160;&#160;}
+}</pre>			<p>Note that any <a id="_idIndexMarker181"></a>environment that runs Composer commands must not only have parity with the PHP version, it must also have various PHP extensions installed. Composer has native capabilities to check for PHP-based platform requirements when commands <span class="No-Break">are exec<a id="_idTextAnchor150"></a>uted.</span></p>
+			<h2 id="_idParaDest-89"><a id="_idTextAnchor151"></a>Common commands</h2>
+			<p>Once a Drupal <a id="_idIndexMarker182"></a>application has been bootstrapped from Composer’s project template, there are a series of common <span class="No-Break">commands used.</span></p>
+			<p>Most Drupal applications are managed by Git repositories. Once a Drupal application codebase has been established, it can be pushed to a Git repository. The following commands extend the earlier create-project command show to initialize a Git repository, sync it to a fake “upstream” repository, and push code to a “<span class="No-Break">main” branch.</span></p>
+			<pre class="console">
+$ cd my_directory
+$ git init
+$ git remote add upstream https://git.com/my-drupal-project.git<br /><br />$ git checkout main
+$ git add *<br /><br />$ git commit -a -m &quot;Initial commit&quot;
+$ git push upstream main</pre>			<p>There is<a id="_idIndexMarker183"></a> some discretion on what is committed to a Git repository. Environments that harness Composer to build code do not require built code to be committed to Git. The metadata found in composer.lock effectively means an environment can pull down the desired code from Git and build the application within the environment. As such, it is best practice to leverage .gitignore to not commit the code downloaded by Composer if an environment is able to build the codebase. In fact, one ships with some defaults found with Drupal core to exclude files related to caching, image styles, and more. New projects may need their own .gitignore tailored to <span class="No-Break">application-specific needs.</span></p>
+			<p>Applications that have a composer.lock can build a codebase by running Composer’s <span class="No-Break">install command:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$ composer install</pre>			<p><br />Alternately, updates to Drupal applications can be performed with the <span class="No-Break">following command:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$ composer update</pre>			<p>This rebuilds the Drupal codebase based on the logic provided in the composer.json file. The rebuild then updates the composer.lock file with any changes, which should be committed in any commit to a <span class="No-Break">Git repository.</span></p>
+			<p>Projects can be loaded into a Drupal application by leveraging Composer’s require command, as exemplified by the “<span class="No-Break">password_policy” project:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$ composer require drupal/password_policy</pre>			<p>Require commands can be found on every project page <span class="No-Break">on Drupal.org.</span></p>
+			<p>Drush can also be <a id="_idIndexMarker184"></a>loaded by Composer. Drush versions must match the corresponding Drupal application. As such, it is best practice to use “vendored Drush” which means that Drush is managed through Composer and associated with the specific version of Drupal running within the <span class="No-Break">application codebase.</span></p>
+			<pre class="console">
+$ cd my_directory
+$ composer require –dev drush/drush</pre>			<p>The use of “--dev” highlights Drush as a development dependency. This is a Composer construct designed to allow Drush <a id="_idIndexMarker185"></a>to be run on <span class="No-Break">different environments.</span></p>
+			<p>Finally, Composer supports Drupal’s patching strategy with a utility called Composer Patches. This approach uses patches to ensure Drupal core and projects are not manually overridden in a project (also known as the “don’t hack core” mantra). The public projects downloaded are pristine and there is a deliberate patch-based strategy implemented with Composer to manage any desired changes. The following demonstrates how to load <span class="No-Break">the utility:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$ composer global config --no-interaction allow-plugins.cweagans/composer-patches true
+$ composer require cweagans/composer-patches</pre>			<p>Patches for Drupal can then be managed through composer.json and loaded when executing the update command. An example composer.json with a Drupal core patch enabled looks like the following as exemplified by a fake <span class="No-Break">drupal.org patch:</span></p>
+			<pre class="source-code">
+&quot;extra&quot;: {
+&#160;&#160;&#160;&#160;&quot;patches&quot;: {
+&#160;&#160;&#160;&#160;&#160;&#160;&quot;drupal/core&quot;: {
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;Address a bug found in installation&quot;: &quot;https://www.drupal.org/files/issues/installation_bug-199658-66.patch&quot;
+&#160;&#160;&#160;&#160;&#160;&#160;}
+&#160;&#160;&#160;&#160;}
+&#160;&#160;}</pre>			<p>A<a id="_idIndexMarker186"></a> second utility can be used to load patches from the command line, which is exemplified by the same bogus patch <span class="No-Break">noted above:</span></p>
+			<pre class="console">
+$ cd my_directory<br /><br />$ composer global config --no-interaction allow-plugins.szeidler/composer-patches-cli true
+$ composer require szeidler/composer-patches-cli<br /><br />$ composer patch-add drupal/core &quot;Address a bug found in installation&quot; &quot;https://www.drupal.org/files/issues/installation_bug-199658-66.patch&quot;</pre>			<p>Many of the common commands highlighted have additional parameters that can be used to address different or advanced behaviors. Such parameters can be found through Drush’s documentation found online <span class="No-Break">at drush.org.</span></p>
+			<p>Composer is the tool required to establish a new Drupal 10 codebase and management of projects within a Drupal application. Git repositories can be an archive for the code and perform version control necessary for history and rollback of failed releases. Now that a codebase is established, the Drupal application can <span class="No-Break">be<a id="_idTextAnchor152"></a> installed.</span></p>
+			<h1 id="_idParaDest-90"><a id="_idTextAnchor153"></a>Installing Drupal</h1>
+			<p>Once the codebase<a id="_idIndexMarker187"></a> exists, it is time to install Drupal. Drupal is installed on every environment, including local systems. Drupal has two primary means of installation: through the UI, and through the command-line with Drush. Installation requires a few key requirements. And, after installation, the Drupal application can effectively bootstrap. It is only then can the application <span class="No-Break">be<a id="_idTextAnchor154"></a> configured.</span></p>
+			<h2 id="_idParaDest-91"><a id="_idTextAnchor155"></a>Installation preparation</h2>
+			<p>An environment should be prepared <a id="_idIndexMarker188"></a>to install Drupal. It requires a database and a web server that has the proper platform <span class="No-Break">requirements loaded.</span></p>
+			<p>Users have the option to specify which installation profile or distribution is loaded. By default, the “standard” installation profile is used that is delivered with core. This installs the most set of common features and themes. Developers commonly leverage the “testing” installation profile for a more minimal, but refined set of features aimed at creating an ideal testing<a id="_idIndexMarker189"></a> installation. And, custom distributions can be installed if loaded into the codebase <span class="No-Break">during<a id="_idTextAnchor156"></a> installation.</span></p>
+			<h2 id="_idParaDest-92"><a id="_idTextAnchor157"></a>UI-based installation</h2>
+			<p>When accessing Drupal for the<a id="_idIndexMarker190"></a> first time before an install, it will prompt the UI-based installer. This runs a series of installation steps with various options a user can configure Drupal. Please note that some installation steps will be auto populated if a settings.php file exists and has <span class="No-Break">provided values.</span></p>
+			<p>Follow these instructions to perform a <span class="No-Break">UI-based installation:</span></p>
+			<ol>
+				<li>The installer prompts the user for the language in the <span class="No-Break">following figure:</span></li>
+			</ol>
+			<div>
+				<div id="_idContainer030" class="IMG---Figure">
+					<img src="image/B19491_06_1.jpg" alt="Figure 6.1 - First installation step of language selection" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.1 - First installation step of language selection</p>
+			<ol>
+				<li value="2">The installer prompts the selection of the profile in the <span class="No-Break">next figure:</span></li>
+			</ol>
+			<div>
+				<div id="_idContainer031" class="IMG---Figure">
+					<img src="image/B19491_06_2.jpg" alt="Figure 6.2 - Second installation step of install profile selection" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.2 - Second installation step of install profile selection</p>
+			<p class="list-inset">If the codebase has a distribution loaded, it will prompt on that screen with the <span class="No-Break">installation profiles.</span></p>
+			<ol>
+				<li value="3">Drupal will verify the platform requirements. It will only show the third step when or if there is an issue with the verification. Otherwise, it <span class="No-Break">moves forward.</span></li>
+				<li>The installer<a id="_idIndexMarker191"></a> prompts the database setup as demonstrated by the <span class="No-Break">following figure:</span></li>
+			</ol>
+			<div>
+				<div id="_idContainer032" class="IMG---Figure">
+					<img src="image/B19491_06_3.jpg" alt="Figure 6.3 - Fourth installation step of database setup" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.3 - Fourth installation step of database setup</p>
+			<p class="list-inset">Parameters for the database name, username, password, server, and port will all be required in <span class="No-Break">this step.</span></p>
+			<p class="list-inset">Drupal will then perform its installation. A progress bar and sequence of steps will display as the <span class="No-Break">install happens.</span></p>
+			<ol>
+				<li value="5">Once the <a id="_idIndexMarker192"></a>installation finishes, the installer prompts for the initial configuration for the minimal settings needed for the Drupal application. The following figure shows the configuration of the site name, an administrative account, regional settings, and <span class="No-Break">notification settings:</span></li>
+			</ol>
+			<div>
+				<div id="_idContainer033" class="IMG---Figure">
+					<img src="image/B19491_06_4.jpg" alt="Figure 6.4 - Sixth installation step of the minimal configuration" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.4 - Sixth installation step of the minimal configuration</p>
+			<p>Once<a id="_idIndexMarker193"></a> configured, the installer redirects back to Drupal’s homepage authenticated with the administrative account configured in th<a id="_idTextAnchor158"></a>e <span class="No-Break">final step.</span></p>
+			<h2 id="_idParaDest-93"><a id="_idTextAnchor159"></a>Performing an installation with Drush</h2>
+			<p>Drupal is able to be <a id="_idIndexMarker194"></a>installed through the command line on an environment through Drush. The following example extends the earlier created Composer project and shows how to install the “standard” <span class="No-Break">installation profile:</span></p>
+			<pre class="console">
+$ cd my_directory/web
+$ ../vendor/bin/drush site:install standard</pre>			<p>The site install<a id="_idIndexMarker195"></a> command has a series of optional parameters that can be provided for each of the UI-based steps. The previous example was the minimal command without parameters that leverage default values for parameters like account name (admin) and locale/region (en). It will randomly generate an administrative password. Database credentials, if not provided, will attempt to load from settings.php or will throw an error if not provided. The following example demonstrates a more common Drush-based installation without a settings.php file present that sets bogus information for the database information, administrative account, and <span class="No-Break">site name:</span></p>
+			<pre class="console">
+$ cd my_directory/web
+$ ../vendor/bin/drush site:install standard –db-url=mysql://tugboat@tugboat:3306/tugboat –account-name=admin –account-pass=rAnd0M –site-name=&quot;Cool Site&quot;</pre>			<p>One key difference with Drush is that a Drupal application can be re-installed. The UI-based installer cannot be invoked after an application is already installed and tables in the database exist. Drush can run its installation at any point in the life cycle. This is especially helpful for developers testing installation routines or for expected results of a distribution after installation. For most use cases, especially a production system, it is not necessary or even desirable to reinstall as it destroys the application’s database, files, and configuration. Thankfully, Drush will prompt a confirmation double checking if the command should execute if it finds an existing da<a id="_idTextAnchor160"></a>tabase <span class="No-Break">in place.</span></p>
+			<h2 id="_idParaDest-94"><a id="_idTextAnchor161"></a>Post-installation</h2>
+			<p>Once installed, the <a id="_idIndexMarker196"></a>Drupal application can then be bootstrapped. The UI no longer redirects to the installer. A settings.php file exists that maintains hardcoded settings, like the database information. A writable filesystem directory is created to store Drupal’s file content. Drupal now has its installed configuration. An initial administrative account exists to start site building and content management activities. And, visitors can access the fro<a id="_idTextAnchor162"></a>nt-end <span class="No-Break">of Drupal.</span></p>
+			<h1 id="_idParaDest-95"><a id="_idTextAnchor163"></a>Out-of-the-box Drupal Building</h1>
+			<p>Drupal gained popularity as a low/no-code tool given its backend could readily be configured to meet a large number of common cases. A third persona of Drupal developer, beyond a backend or frontend developer, is known as a site builder. The site building activity is the combination of Drupal configuration and selection of community-provided modules to achieve the goals of an application. Modules often come with their own configuration as well. This is not an exercise of developing code but assembling existing capabilities that have been built by the community culminating in the desired intent of the <span class="No-Break">Dr<a id="_idTextAnchor164"></a>upal application.</span></p>
+			<h2 id="_idParaDest-96"><a id="_idTextAnchor165"></a>Developer Classification</h2>
+			<p>Drupal system concepts of front-end and backend have corresponding development practices. Front-end development<a id="_idIndexMarker197"></a> is considered working on Drupal themes (CSS, Twig templates, lightweight PHP) or building JavaScript-based integrations. Backend development<a id="_idIndexMarker198"></a> typically refers to PHP and harnessing Drupal’s framework through module development. Drupal developers commonly self-identify as having backend or <span class="No-Break">f<a id="_idTextAnchor166"></a>ront-end expertise.</span></p>
+			<h2 id="_idParaDest-97"><a id="_idTextAnchor167"></a>Site Building Concept</h2>
+			<p>Site building<a id="_idIndexMarker199"></a> is a third classification of development and a foundational skill all Drupalists, including developers, must learn. It starts by understanding how to configure Drupal’s out of the box subsystems and modules. Learning the terminology, experimenting with the functionality, and getting comfortable understanding the subsystems are critical. Thankfully community modules harness the same capabilities as core modules so the impact of site building extends well beyond just the out-of-the-box subsystems. Configuration requires authenticated access and proper permissions for users. Accessing the administrative area is most commonly found at “/admin”. Be mindful that one pattern adopted by Drupal community members is known as “UI modules’’ where the user interface and functionality can be enabled independently. In core, the Views capability is a common example of this, where the feature can be turned on but the site building user interfaces can be enabled or disabled as needed. It is common for local or non-production Drupal sites to hav<a id="_idTextAnchor168"></a>e <span class="No-Break">UI-modules enabled.</span></p>
+			<h2 id="_idParaDest-98"><a id="_idTextAnchor169"></a>Requirements Gathering</h2>
+			<p>The most critical aspect of developing an <a id="_idIndexMarker200"></a>application is having clear requirements. Understanding Drupal capabilities can help inform the kinds of questions to ask to get requirements. But, good requirements lead to good implementation choices and less rework later. Given that Drupal is so extensible, it’s important to get good direction upfront. With <a id="_idIndexMarker201"></a>great power comes great responsibility. And, the old saying of “measure twice, cut once” applies for Drupa<a id="_idTextAnchor170"></a>l development <span class="No-Break">as well.</span></p>
+			<h2 id="_idParaDest-99"><a id="_idTextAnchor171"></a>Beyond core features</h2>
+			<p>Drupal core delivers many common features for conventional content management capabilities but this is only one aspect of Drupal’s value proposition. Many competitors to Drupal offer similar features (both SaaS and PaaS products, both open source and proprietary). But, Drupal stands out and is often adopted because of its extensibility that appeals to the enterprise. Extending core features often spans site building exercises geared around community-provided modules and developing custom code with Drupal’s framework. Conventionally, I’ve found the “80/20 rule” to apply when developing applications. Site building<a id="_idIndexMarker202"></a> often comprises about 80% of the work to build a site. You can get really far, fairly quickly configuring core and various modules. Unique requirements like third party systems integration or specific business processes implementations, make the remaining 20% time consuming. Theming is also common, as it allows a Drupal application to be styled to match the branding of the organization it’s being created for. While Drupal is up to task, it is the last mile that often requires the <span class="No-Break">largest investment.</span></p>
+			<p>One of the most evergreen Drupal best practices is not “hacking core.” Drupal projects, like core and contrib, can be fully downloaded into an application’s repo and altered within the repo only. An alternate approach is leveraging patches, which keep the public projects pristine and apply changes systematically. More information on patching<a id="_idIndexMarker203"></a> can be found on drupal.org (<a href="https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches">https://www.drupal.org/docs/develop/git/using-git-to-contribute-to-drupal/working-with-patches</a>). Drupal is already configurable, extensible, and flexible. Hacking core creates a major issue in maintenance and can have unpredictable results. Given the number of subsystems and expectation of interoperability between those systems, even simple one-off changes may seem trivial but can create problems. Plus, it is a red flag to hack core when it is already extensible and has a framework intended for that purpose. It is far more likely someone did not do something correctly. The most notable issue is around Drupal core upgrades. Without a thoughtful patching strategy, a core hack basically creates a change management issue where the same change needs applied for every update. Again, it is far better to create your own modules, themes, <span class="No-Break">or patches.</span></p>
+			<p>Learning how to extend core features can be daunting when evaluating the vast ecosystem of community projects. A tip is to select well adopted, actively maintained, and popular projects. This helps avoid surprises because the community is actively using it, submitting fixes to bugs, and making improvements to code, documentation, and more. This speaks to Drupal’s value. Adoption grows contribution and projects mature because of it. The next person to use a project subsequently benefits and the ecosystem remains vibrant. It may seem obvious, but if you adopt projects that are not well maintained but address a more specific niche you need to solve, you may run into more challenges. It is even better if you can contribute to making the project better from that experience. But, the most adopted path is often the safest path that affords the le<a id="_idTextAnchor172"></a>ast number <span class="No-Break">of surprises.</span></p>
+			<h1 id="_idParaDest-100"><a id="_idTextAnchor173"></a>Basic configuration</h1>
+			<p>Site builders are often afforded<a id="_idIndexMarker204"></a> robust configuration options that allow Drupal to be extensible while not<a id="_idTextAnchor174"></a> having to get <span class="No-Break">into code.</span></p>
+			<h2 id="_idParaDest-101"><a id="_idTextAnchor175"></a>Post-installation configuration</h2>
+			<p>During Drupal’s installation, the<a id="_idIndexMarker205"></a> administrator is asked to select an installation profile during one of the steps. This profile enables a pre-defined set of modules and loads a default configuration. It is common to change the default configuration, especially for common use <span class="No-Break">cases, like:</span></p>
+			<ul>
+				<li>Application notifications email address, like who gets notified when <span class="No-Break">updates exist</span></li>
+				<li>Enabling caching <span class="No-Break">of pages</span></li>
+				<li>User registration settings, like open registration, invite-only, <span class="No-Break">and closed</span></li>
+				<li>Updating the default <span class="No-Break">logging mechanism</span></li>
+				<li>Enabling or disabling of core modules, like translation, web services, or various field types for your <span class="No-Break">content structures</span></li>
+				<li>Enabling or disabling of comments on out-of-the-box <span class="No-Break">content types</span></li>
+			</ul>
+			<p>Another useful starting point is the module listing page found at admin/modules. The codebase installed contains Drupal core and potentially projects that were added. Reviewing the projects found on the listing page can more rapidly enable or disable projects required for your application. Many modules still may have their own configuration that may need attention, even if the module is enabled. Common examples include disabling the Comment module for websites without user comments. Most Drupal<a id="_idIndexMarker206"></a> installations disable the DbLog module in favor of the Syslog module, which allows for Drupal to write logs to the system in favor of the database. Doing so helps with a multi-environment workflow, as it’s desirable to only store content in the database and keep the logs relevant only for the environment. Synchronizing a production database with logs to another environment would subsequently remove the logs from another environment. And, logs stored in the system often natively work wit<a id="_idTextAnchor176"></a>h enterprise <span class="No-Break">log platforms.</span></p>
+			<h2 id="_idParaDest-102"><a id="_idTextAnchor177"></a>Common configuration changes</h2>
+			<p>Again, configuration <a id="_idIndexMarker207"></a>will change based on the specific and desired use cases. But, reviewing the defaults is important to not unintentionally miss more <span class="No-Break">desirable configuration.</span></p>
+			<p>Drupal is intended to be configurable for the desired needs of the application, but there are some common configurations performed on most Drupal applications right after installation. Common use cases may vary depending on the specific requirements needed for the application, but it is useful to review common configuration regardless. And, configuration of Drupal is only possible when a user is authenticated and with a user account granted the <span class="No-Break">correct permissions.</span></p>
+			<p>A helpful starting point is the high level configuration page found at <strong class="source-inline">admin/config</strong>. Reviewing this page can help evaluate all of the potential configuration options. It is common to review some of the <span class="No-Break">default behaviors:</span></p>
+			<ul>
+				<li><strong class="source-inline">admin/config/people/accounts</strong>: contains user registration settings that are often disabled if visitors cannot create an account and maintains configuration for user-based contact forms that are only needed if there is engagement with <span class="No-Break">Drupal users</span></li>
+				<li><strong class="source-inline">admin/config/search/pages</strong>: helps define which entities are searchable and has settings for the interfaces provided to <span class="No-Break">end users</span></li>
+				<li><strong class="source-inline">admin/config/system/site-information</strong>: contains settings found in the installer, but adds the ability to specify paths to content for <span class="No-Break">error pages</span></li>
+				<li><strong class="source-inline">admin/config/development/logging</strong>: configures log-related settings and verbosity, which is important for production and non-production environments (often non-production should make errors visible for testing and include log backtracking <span class="No-Break">for context)</span></li>
+				<li><strong class="source-inline">admin/config/development/configuration</strong>: helps identify which configuration only exists in the database and has not been pushed to the filesystem. This typically suggests the configuration has not been committed or pushed to Git for deployment purposes or for other developers to pull down and load in their <span class="No-Break">Drupal applications.</span></li>
+				<li><strong class="source-inline">admin/config/development/performance</strong>: settings that help manage Drupal’s caching behaviors. It is common to enable caching and for site builders to use this page <a id="_idIndexMarker208"></a>when needing to clear the cache through <span class="No-Break">the UI.</span></li>
+			</ul>
+			<p>While the aforementioned configurations are not exhaustive, they represent typical cases a site builder can expect to review when<a id="_idTextAnchor178"></a> starting a new <span class="No-Break">Drupal build.</span></p>
+			<h1 id="_idParaDest-103"><a id="_idTextAnchor179"></a>Help, logs, and reporting</h1>
+			<p>Drupal core natively offers inline documentation to help guide users and features to rep<a id="_idTextAnchor180"></a>ort system logs <span class="No-Break">and insights.</span></p>
+			<h2 id="_idParaDest-104"><a id="_idTextAnchor181"></a>Help</h2>
+			<p>Authenticated users can<a id="_idIndexMarker209"></a> be granted access to Drupal’s native documentation found at admin/help. This is designed for multiple audiences. Help defined as a “tour” is designed to help with using Drupal. This can be as simple as editing page content or managing Drupal blocks. It also offers overviews for Drupal modules to help provide site builders more context about a module. All projects, even custom ones, are able to furnish their own documentation <a id="_idTextAnchor182"></a>through Drupal’s <span class="No-Break">help feature.</span></p>
+			<h2 id="_idParaDest-105"><a id="_idTextAnchor183"></a>Logs and Reporting</h2>
+			<p>Drupal maintains a robust logging and reporting system that can be helpful for administrators. All logging and reporting<a id="_idIndexMarker210"></a> capabilities are found at admin/reports. This can be specific to projects, like reporting on the frequency of search terms or Views-specific usage. Or, it can be helpful in getting insights for <span class="No-Break">the system.</span></p>
+			<p>The most useful page for insights is known as the status page, found at <strong class="source-inline">admin/reports/status</strong>. This page is an excellent overview of checks, warnings, and errors found that Drupal can self-report. The following image shows an example <span class="No-Break">status page:</span></p>
+			<div>
+				<div id="_idContainer034" class="IMG---Figure">
+					<img src="image/B19491_06_5.jpg" alt="Figure 6.5 - Drupal status page" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.5 - Drupal status page</p>
+			<p>The status page is able to<a id="_idIndexMarker211"></a> analyze your Drupal applications for specific issues. The figure demonstrates a Drupal application where the trusted host settings were not added to settings.php. The figure also demonstrates a warning where one of the recommended platform configurations was not observed in MySQL. This can be extremely useful for ensuring your Drupal configuration is correct. It is also a helpful overview for seeing what platform requirements are running on <span class="No-Break">the environment.</span></p>
+			<p>Drupal can self-report available updates by checking the metadata found in the codebase and referencing information found on drupal.org. The report can be found on <strong class="source-inline">admin/reports/updates</strong>. Checking for updates can be run manually or can happen through CRON, a Unix-based job scheduler, over a defined period of time. Users can be emailed when the system discovers updates, which can be configured <span class="No-Break">at </span><span class="No-Break"><strong class="source-inline">admin/reports/updates/settings</strong></span><span class="No-Break">.</span></p>
+			<p>Logs for Drupal are exposed through the UI at <strong class="source-inline">admin/reports/dblog</strong> when leveraging the <strong class="source-inline">DbLog</strong> module. The following figure demonstrates <span class="No-Break">this interface:</span></p>
+			<div>
+				<div id="_idContainer035" class="IMG---Figure">
+					<img src="image/B19491_06_6.jpg" alt="Figure 6.6 - User interface for Drupal generated logs" />
+				</div>
+			</div>
+			<p class="IMG---Caption" lang="en-US" xml:lang="en-US">Figure 6.6 - User interface for Drupal generated logs</p>
+			<p>The figure demonstrates a<a id="_idIndexMarker212"></a> paginated list of logs, starting with the most recent. Several columns, like the user, type, and date can be both filtered and sorted to drill down into specific types. Severity filters are very common when trying to debug a behavior in Drupal or to get context for a <span class="No-Break">critical error.</span></p>
+			<p>Drupal’s logging system also goes by the name <em class="italic">watchdog</em>, which dates back to earlier versions of Drupal. Watchdog <a id="_idIndexMarker213"></a>motivated a series of Drush commands related to Drupal’s log. The following example demonstrates an interactive log message listing <span class="No-Break">through Drush:</span></p>
+			<pre class="console">
+$ cd my_directory/web
+$ ../vendor/drush watchdog:list</pre>			<p>Drush also has a useful command for searching logs, as the following example shows for checking for new <span class="No-Break">user sessions:</span></p>
+			<pre class="console">
+$ cd my_directory/web
+$ ../vendor/drush watchdog:search &quot;session opened for&quot;</pre>			<p>All watchdog <a id="_idIndexMarker214"></a>commands in Drush have parameters that can be useful to tailor the results for specific needs. Such examples include the number of messages, search parame<a id="_idTextAnchor184"></a>ters, severity filters, <span class="No-Break">and more.</span></p>
+			<h1 id="_idParaDest-106"><a id="_idTextAnchor185"></a>Summary</h1>
+			<p>This chapter covered how to leverage Composer to create a new Drupal application and build its code. Setting this up properly ensures Drupal can be installed and maintained effectively. Installing Drupal through the UI or through Drush happens after the codebase is built to provide a functional Drupal application. Finally, a review of help pages, common post-install Drupal configuration, and system reporting capabilities were presented. Next chapter, readers will gain more knowledge on how to <span class="No-Break">maintain Drupal.</span></p>
+		</div>
+	</body>
+</html>

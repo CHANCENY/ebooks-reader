@@ -1,0 +1,14 @@
+{
+  "head": [
+    "/themes/book_store/assets/css/normalize.css",
+    "/themes/book_store/assets/icomoon/icomoon.css",
+    "/themes/book_store/assets/css/vendor.css",
+    "/themes/book_store/assets/css/style.css"
+  ],
+  "footer": [
+    "/themes/book_store/assets/js/jquery-1.11.0.min.js",
+    "<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js\"\n\t\tintegrity=\"sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm\"\n\t\tcrossorigin=\"anonymous\"></script>|ext-lib",
+    "/themes/book_store/assets/js/plugins.js",
+    "/themes/book_store/assets/js/script.js"
+  ]
+}
